@@ -12,6 +12,7 @@ from libraries.eweb.PageObjects import  selenium_server_connection
 from libraries.eweb import Locators
 from BaseWebElement import BaseWebElement, HyperLinkWebElement, TextBoxWebElement, EditBoxWebElement, DropDownBoxWebElement, ButtonWebElement
 
+
 class BasePageObject(object):
     """ Model a base web page"""
     
@@ -27,9 +28,9 @@ class BasePageObject(object):
         
     def focus(self):
         """ focus on current web page """
-        self.driver.switch_to_default_content()
+        self.driver.switch_to.default_content()
         #self.driver.switch_to_frame("mainFrame")
-        print "debug: switch back to default"
+        print("debug: switch back to default")
     
     def locate(self, locatorString):
         """ locate and return a wrapped web element on web page"""
@@ -78,9 +79,9 @@ class BaseFrameObject(BasePageObject):
         
     def focus(self):
         """ focus on current web page """
-        self.driver.switch_to_default_content()
-        self.driver.switch_to_frame("mainFrame")
-        print "debug: switch to frame mainFrame"
+        self.driver.switch_to.default_content()
+        self.driver.switch_to.frame("mainFrame")
+        print("debug: switch to frame mainFrame")
         
     
     def loading(self, timeout):

@@ -8,8 +8,8 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from libraries.eweb import Locators
-from libraries.eweb.PageObjects.BasePageObject import BasePageObject
-from libraries.eweb.PageObjects.BaseWebElement import ButtonWebElement, XTree
+from BasePageObject import BasePageObject
+from BaseWebElement import ButtonWebElement, XTree
 import time
 
 
@@ -22,7 +22,7 @@ class ReportTree(XTree):
     
     def WaitForUpdate(self):
         """ wait for tree node add/remove from tree"""
-        time.sleep(3)
+        time.sleep(5)
     
     def GetTreeRootNodes(self):
         """
@@ -36,6 +36,13 @@ class ReportTree(XTree):
             for item in rootNodes:
                 result.append(self._getTreeNodeName(item))
         return result
+    
+    def verifyTreeNodeDisplayed(self, nodePath):
+        driver = self.getDriver()
+        driver.switch_to.default_content()
+        result = super(ReportTree, self).verifyTreeNodeDisplayed(nodePath)
+        return result
+    
     
     
     def IsTreeNodeHighLighted(self, PathName):
@@ -73,13 +80,12 @@ class AccordionPageObj(BasePageObject):
         
     def __str__(self):
         return "enteliWEB Main Page left pane"
-    
-    
         
     def isLoaded(self):
         """
         verify the page is loaded in web browser successfully
         """
+        self.focus()
         result = True
         elem = self.locate("main.accordion")
         try: assert elem.isDisplayed() is True

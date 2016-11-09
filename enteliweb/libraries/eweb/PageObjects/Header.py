@@ -61,7 +61,7 @@ class HeaderPageObj(BasePageObject):
         titleExpected = "enteliWEB"
         titleCurrent = driver.title
         try: assert (titleExpected in titleCurrent) is True
-        except AssertionError, e:
+        except AssertionError as e:
             result = False
         return result
     

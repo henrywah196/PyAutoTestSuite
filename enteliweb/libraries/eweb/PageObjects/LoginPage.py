@@ -51,7 +51,7 @@ class LoginPageObj(BasePageObject):
         titleExpected = "enteliWEB Login Page"
         titleCurrent = driver.title
         try: assert titleExpected == titleCurrent
-        except AssertionError, e:
+        except AssertionError as e:
             result = False
         return result
     

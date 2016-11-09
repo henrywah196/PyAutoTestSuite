@@ -18,8 +18,8 @@ class SeleniumWrapper(object):
             cls._instance = super(SeleniumWrapper, cls).__new__(cls, *args, **kwargs)
         return cls._instance
     
-    def connect(self, host, browser="FIREFOX"):
-        self.browser = browser
+    def connect(self, host, browser="FIREFOX", ff_profile=None):
+        self.browser = browser.upper()
         self.base_url = "http://%s/enteliweb" %host
         self.connection = None
         self.mouse = None
@@ -29,7 +29,7 @@ class SeleniumWrapper(object):
         elif self.browser == 'IE':
             self.connection = getIEDriver()
         else:
-            self.connection = getFirefoxDriver()
+            self.connection = getFirefoxDriver(ff_profile)
             
         self.connection.implicitly_wait(30)
         self.connection.maximize_window()
@@ -84,11 +84,11 @@ def getElement(how, what, driver):
             myElement = driver.find_element_by_tag_name(what)
         else:
             myElement = driver.find_element(by=how, value=what)
-    except NoSuchElementException, e:
+    except NoSuchElementException as e:
         myElement = None
     return myElement
 
 
 if __name__ == "__main__":
     driver = getChromeDriver()
-    print driver
+    print(driver)

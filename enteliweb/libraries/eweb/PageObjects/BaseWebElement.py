@@ -25,6 +25,7 @@ class BaseWebElement(object):
     def getDriver(self):
         """ connect to an actived web driver """
         self.driver = selenium_server_connection.connection
+        return self.driver
     
     def getElement(self, locator):
         """ locate the web element on page """
@@ -174,6 +175,18 @@ class ButtonWebElement(BaseWebElement):
             return elem.get_attribute("value")
         if tagName == "span":
             return elem.text
+        
+    def isEnabled(self):
+        """return True if the button is in enabled state """
+        flag = "x-disabled"
+        if not self.isDisplayed():
+            return False
+        elem = self.getElement(self.locator)
+        val = elem.get_attribute("class")
+        if flag in val:
+            return False
+        else:
+            return True
         
         
 class TextBoxWebElement(BaseWebElement):
