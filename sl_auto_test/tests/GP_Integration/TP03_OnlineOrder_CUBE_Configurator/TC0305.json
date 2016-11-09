@@ -1,0 +1,90 @@
+[
+  { "Login"              : "hwang@deltacontrols.com",
+    "Partner"            : "DELTA INTERNAL (Delta Controls Internal)",
+    "Product"            : "CopperCube",
+    "PO"                 : "WAH20150204135201",
+    "Trend Logs"         : "250 TLs - Small",
+    "SQL Connector"      : null,
+    "Power Supply"       : "None",
+    "Quantity"           : "1",
+    "Shipping"           : "Shipping Info 01"
+  },
+  
+  { "Login"              : "hwang@deltacontrols.com",
+    "Partner"            : "DELTA INTERNAL (Delta Controls Internal)",
+    "Product"            : "CopperCube",
+    "PO"                 : "WAH20150204135202",
+    "Trend Logs"         : "250 TLs - Small",
+    "SQL Connector"      : "Yes",
+    "Power Supply"       : "220VAC to 12VDC (European)",
+    "Quantity"           : "2",
+    "Shipping"           : "Shipping Info 02"
+  },
+  
+  { "Login"              : "purchaser@escautomation.com",
+    "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+    "Product"            : "CopperCube",
+    "PO"                 : "CHD20150204135201",
+    "Trend Logs"         : "1000 TLs - Medium",
+    "SQL Connector"      : null,
+    "Power Supply"       : "110VAC to 12VDC (North America)",
+    "Quantity"           : "3",
+    "Shipping"           : "Shipping Info 03"
+  },
+  
+  { "Login"              : "purchaser@escautomation.com",
+    "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+    "Product"            : "CopperCube",
+    "PO"                 : "CHD20150204135202",
+    "Trend Logs"         : "1000 TLs - Medium",
+    "SQL Connector"      : "Yes",
+    "Power Supply"       : "None",
+    "Quantity"           : "4",
+    "Shipping"           : "Shipping Info 04"
+  },
+  
+  { "Login"              : "quoteuser@deltacontrols.com",
+    "Partner"            : "R-004 (Regulvar Inc.)",
+    "Product"            : "CopperCube",
+    "PO"                 : "R00420150204135201",
+    "Trend Logs"         : "2500 TLs - Large",
+    "SQL Connector"      : null,
+    "Power Supply"       : "220VAC to 12VDC (European)",
+    "Quantity"           : "5",
+    "Shipping"           : "Shipping Info 05"
+  },
+  
+  { "Login"              : "quoteuser@deltacontrols.com",
+    "Partner"            : "R-004 (Regulvar Inc.)",
+    "Product"            : "CopperCube",
+    "PO"                 : "R00420150204135202",
+    "Trend Logs"         : "2500 TLs - Large",
+    "SQL Connector"      : "Yes",
+    "Power Supply"       : "110VAC to 12VDC (North America)",
+    "Quantity"           : "25",
+    "Shipping"           : "Shipping Info 06"
+  },
+  
+  { "Login"              : "quoteuser@deltacontrols.com",
+    "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+    "Product"            : "CopperCube",
+    "PO"                 : "E00220150204135201",
+    "Trend Logs"         : "5000 TLs - Extra Large",
+    "SQL Connector"      : null,
+    "Power Supply"       : "None",
+    "Quantity"           : "1",
+    "Shipping"           : "Shipping Info 01"
+  },
+  
+  { "Login"              : "quoteuser@deltacontrols.com",
+    "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+    "Product"            : "CopperCube",
+    "PO"                 : "E00220150204135201",
+    "Trend Logs"         : "5000 TLs - Extra Large",
+    "SQL Connector"      : "Yes",
+    "Power Supply"       : "220VAC to 12VDC (European)",
+    "Quantity"           : "2",
+    "Shipping"           : "Shipping Info 02"
+  }
+  
+]				 			 

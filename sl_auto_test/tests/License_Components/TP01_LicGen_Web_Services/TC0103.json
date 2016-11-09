@@ -1,0 +1,689 @@
+[
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-S",
+	"serial"      : "5s8VU-65dF6-QzGai-4WEEa-ab5MO-0U5z4",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301130", "CuCube-S", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "CC"     : ["250", "None"],
+	                  "CCSQL"  : ["no", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "CCUPGR" : ["no", "30 Days"]
+	                }
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-L",
+	"serial"      : "2d8Vd-65dF6-QzGab-4WEEa-Wb5MO-0U5zB",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301132", "CuCube-L", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "CC"     : ["250", "None"],
+	                  "CCSQL"  : ["no", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "CCUPGR" : ["no", "30 Days"]
+	                }
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-M-SQL",
+	"serial"      : "NT8VU-65dF6-QzGaZ-4WEEa-rb5MO-095zx",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301135", "CuCube-M-SQL", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "CC"     : ["250", "None"],
+	                  "CCSQL"  : ["no", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "CCUPGR" : ["no", "30 Days"]
+	                } 
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-XL-SQL",
+	"serial"      : "ds8Ve-65dF6-QzGa1-4WEEa-Eb5MO-0k5zd",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301137", "CuCube-XL-SQL", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "CC"     : ["250", "None"],
+	                  "CCSQL"  : ["no", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "CCUPGR" : ["no", "30 Days"]
+	                } 
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "k68VQ-65dF6-QzGa2-4WEEa-mb5MO-025zm",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301051", "enteliBRIDGE", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["no", "None"]
+	                } 
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "pV8Vs-65dF6-QzGaJ-4WEEa-hb5MO-0v5zW",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [["301051", "enteliBRIDGE", "1"], ["345950", "enteliBRIDGE-ModBUS-TCP", "100"], ["345952", "enteliBRIDGE-N2", "200"], ["INTERNAL", "enteliBRIDGE-TestProto1", "300"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["no", "None"],
+	                  "GWP002" : ["100", "None"],
+	                  "GWP004" : ["200", "None"],
+	                  "GWP064" : ["300", "None"]
+	                } 
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+    "serial"      : "5X8Vx-65dF6-QzGam-4WEEa-Nb5MO-0l5zg",
+	"description" : [ "Unactivated" ],
+    "lg"          : {
+	                  "query components" : [["301051", "enteliBRIDGE", "1"], ["345950", "enteliBRIDGE-ModBUS-TCP", "99999"] ],
+				      "site info"        : null
+                    },
+    "ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["no", "None"],
+	                  "GWP002" : ["99999", "None"]
+	                }  
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "fg8V5-65dF6-QzGam-4WEEa-Hb5MO-035zR",
+	"description" : [ "eCore Binding", "eCore A" ],
+	"lg"          : {
+	                  "query components" : [["301051", "enteliBRIDGE", "1"], ["345950", "enteliBRIDGE-ModBUS-TCP", "11"], ["INTERNAL", "enteliBRIDGE-TestProto1", "55"]],
+				      "hardware serial"  : "78852/0001",
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["no", "None"],
+	                  "GWP002" : ["11", "None"],
+	                  "GWP064" : ["55", "None"]
+	                }  
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "AK8Vy-65dF6-QzGa6-4WEEa-1b5MO-0h5zP",
+	"description" : [ "eCore Binding", "eCore B" ],
+	"lg"          : {
+	                  "query components" : [["301051", "enteliBRIDGE", "1"], ["345950", "enteliBRIDGE-ModBUS-TCP", "222"], ["345952", "enteliBRIDGE-N2", "444"], ["INTERNAL", "enteliBRIDGE-TestProto1", "666"]],
+				      "hardware serial"  : "73902/0305",
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["no", "None"],
+	                  "GWP002" : ["222", "None"],
+	                  "GWP004" : ["444", "None"],
+	                  "GWP064" : ["666", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE-SDK",
+	"serial"      : "7m8VY-65dF6-QzGah-4WEEa-zb5MO-0P5zw",
+	"description" : [ "Unactivated", "enteliBRIDGE-SDK" ],
+	"lg"          : {
+	                  "query components" : [["SPECIAL", "enteliBRIDGE-SDK", "1"]],
+				      "site info"        : null
+	                },
+	"ModuleList"  : {
+	                  "GW"     : ["yes", "None"],
+	                  "SUB"    : ["yes", "183 Days"],
+	                  "STACK"  : ["yes", "None"],
+	                  "ACTIVE" : ["1", "183 Days"],
+	                  "TRYNO"  : ["999999999", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "GWP000" : ["yes", "None"]
+	                } 
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Trial",
+    "serial"      : "xf8VU-65dF6-QzGa9-4WEEa-6b5MO-095zX",
+	"description" : [ "Activated" ],
+    "lg"          : { 
+	                  "query components" : [["345738", "enteliWEB-Trial", "1"]],
+                      "site info"        : null
+				    },
+    "ModuleList"  : {
+	                  "IOPTS"  : ["0", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2014-12-23"],
+	                  "ACTIVE" : ["1", "2014-12-23"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "2015-11-23"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : "Od8V6-65dF6-QzGaz-4WEEa-Bb5MO-0S5zC",
+	"description" : [ "Activated", "Expired" ],
+    "lg"          : { 
+	                  "query components" : [["345715", "enteliWEB-Tech", "1"], ["345797", "enteliWEB-EV", "1"]],
+                      "site info"        : null
+				    },
+    "ModuleList"  : {
+	                  "IOPTS"  : ["0", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2014-08-21"],
+	                  "ACTIVE" : ["1", "2014-08-21"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "365 Days"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : "NB8VS-65dF6-QzGac-4WEEa-Nb5MO-0I5z3",
+	"description" : [ "Activated", "Offline" ],
+    "lg"          : { 
+	                  "query components" : [["345715", "enteliWEB-Tech", "1"], ["345797", "enteliWEB-EV", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-FS", "999"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"], ["PAS-ONLY", "enteliWEB-PAS-DT", "1"]],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["0", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2024-08-17"],
+	                  "ACTIVE" : ["1", "2024-08-17"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["yes", "None"],
+	                  "PAS002" : ["999", "None"],
+	                  "PAS003" : ["yes", "2024-08-17"],
+	                  "PAS004" : ["yes", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : "eT8Vk-65dF6-QzGaC-4WEEa-fb5MO-0i5z0",
+	"description" : [ "Unactivated" ],
+    "lg"          : { 
+	                  "query components" : [["345709", "enteliWEB-Lite", "1"], ["345798", "enteliWEB-EV", "1"]],
+                      "site info"        : null
+				    },
+    "ModuleList"  : {
+	                  "IOPTS"  : ["200", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "365 Days"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "365 Days"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : "RZ8VJ-65dF6-QzGaJ-4WEEa-Sb5MO-035zV",
+	"description" : [ "Transferred" ],
+    "lg"          : { 
+	                  "query components" : [["345709", "enteliWEB-Lite", "1"], ["345820", "enteliWEB-API", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"], ["OBSOLETE", "enteliWEB-PAS-MAPI", "1"]],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["200", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2025-08-20"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["no", "None"],
+	                  "PAS001" : ["yes", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["yes", "2025-08-20"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["yes", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : "Cr8VX-65dF6-QzGa2-4WEEa-8b5MO-005zS",
+	"description" : ["Transferred", "Expired"],
+    "lg"          : { 
+	                  "query components" : [["345710", "enteliWEB-Exp", "1"], ["PAS-ONLY", "enteliWEB-PAS-DT", "1"], ["OBSOLETE", "enteliWEB-PAS-MAPI", "1"] ],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["500", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2014-08-21"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["no", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "365 Days"],
+	                  "PAS004" : ["yes", "None"],
+	                  "PAS005" : ["yes", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : "xT8VK-65dF6-QzGaE-4WEEa-Cb5MO-0U5zS",
+	"description" : ["Unactivated", "VM"],
+    "lg"          : { 
+	                  "query components" : [["345710", "enteliWEB-Exp", "1"], ["345799", "enteliWEB-EV", "1"], ["345807", "enteliWEB-KEE", "1"], ["345817", "enteliWEB-VM", "1"], ["345821", "enteliWEB-API", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-FS", "1"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"] ],
+                      "site info"        : { "Site Name" : "AAA", "Partner" : "BBB", "Site Address" : "CCC" } 
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["500", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["yes", "None"],
+	                  "SUB"    : ["yes", "365 Days"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["yes", "None"],
+	                  "PAS002" : ["1", "None"],
+	                  "PAS003" : ["yes", "365 Days"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : "H68Vs-65dF6-QzGaz-4WEEa-fb5MO-025zl",
+	"description" : ["Activated", "Offline", "VM"],
+    "lg"          : { 
+	                  "query components" : [["345711", "enteliWEB-Pro", "1"], ["345800", "enteliWEB-EV", "1"], ["345813", "enteliWEB-KEL", "1"], ["345818", "enteliWEB-VM", "1"], ["345822", "enteliWEB-API", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-FS", "99999"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"], ["PAS-ONLY", "enteliWEB-PAS-DT", "1"], ["OBSOLETE", "enteliWEB-PAS-MAPI", "1"] ],
+                      "site info"        : { "Site Name" : "111", "Partner" : "222", "Site Address" : "333" } 
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["2500", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["yes", "2024-08-18"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["yes", "None"],
+	                  "SUB"    : ["yes", "2024-08-18"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["Yes", "None"],
+	                  "PAS002" : ["99999", "None"],
+	                  "PAS003" : ["yes", "2024-08-18"],
+	                  "PAS004" : ["yes", "None"],
+	                  "PAS005" : ["yes", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : "cr8VQ-65dF6-QzGab-4WEEa-0b5MO-0k5zf",
+	"description" : ["Activated", "Expired"],
+    "lg"          : { 
+	                  "query components" : [["345711", "enteliWEB-Pro", "1"], ["345822", "enteliWEB-API", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"], ["PAS-ONLY", "enteliWEB-PAS-DT", "1"] ],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["2500", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2014-08-22"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["no", "None"],
+	                  "PAS001" : ["yes", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["yes", "2014-08-22"],
+	                  "PAS004" : ["yes", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "HL8VY-65dF6-QzGaM-4WEEa-0b5MO-095zb",
+	"description" : [ "5000IO", "Transferred"],
+    "lg"          : { 
+	                  "query components" : [["345713", "enteliWEB-Ent", "1"]],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["5000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2024-08-18"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["no", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "2015-08-21"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "L28VJ-65dF6-QzGaH-4WEEa-rb5MO-0S5zu",
+	"description" : [ "35000IO", "Transferred", "Expired" ],
+    "lg"          : { 
+	                  "query components" : [["345713", "enteliWEB-Ent", "1"], ["345825", "enteliWEB-Ent-25000IO-AddOn", "1"], ["345796", "enteliWEB-Ent-2500IO-AddOn", "2"], ["345809", "enteliWEB-KEE", "1"]],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["35000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "2014-08-22"],
+	                  "ACTIVE" : ["1", "365 Days"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "2015-08-21"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "Hb8Vd-65dF6-QzGah-4WEEa-8b5MO-065zv",
+	"description" : [ "95000IO", "Unactivated" ],
+    "lg"          : { 
+	                  "query components" : [["345713", "enteliWEB-Ent", "1"], ["345826", "enteliWEB-Ent-50000IO-AddOn", "1"], ["345825", "enteliWEB-Ent-25000IO-AddOn", "1"], ["345796", "enteliWEB-Ent-2500IO-AddOn", "6"], ["PAS-ONLY", "enteliWEB-PAS-FS", "99999"], ["OBSOLETE", "enteliWEB-PAS-MAPI", "1"] ],
+                      "site info"        : null
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["95000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["no", "None"],
+	                  "SUB"    : ["yes", "365 Days"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["no", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["99999", "None"],
+	                  "PAS003" : ["no", "365 Days"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["yes", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "tD8Vr-65dF6-QzGae-4WEEa-1b5MO-0r5ze",
+	"description" : [ "180000IO", "Activated", "VM" ],
+    "lg"          : { 
+	                  "query components" : [["345713", "enteliWEB-Ent", "1"], ["345840", "enteliWEB-Ent-100000IO-AddOn", "1"], ["345839", "enteliWEB-Ent-50000IO-AddOn", "1"], ["345838", "enteliWEB-Ent-25000IO-AddOn", "1"], ["345801", "enteliWEB-EV", "1"], ["345819", "enteliWEB-VM", "1"], ["345823", "enteliWEB-API", "1"], ["PAS-ONLY", "enteliWEB-PAS-EED", "1"], ["PAS-ONLY", "enteliWEB-PAS-FS", "100"], ["PAS-ONLY", "enteliWEB-PAS-CM", "1"] ],
+                      "site info"        : { "Site Name" : "good site", "Partner" : "better partner", "Site Address" : "super address" } 
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["180000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["no", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["yes", "None"],
+	                  "SUB"    : ["yes", "2024-08-18"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["yes", "None"],
+	                  "PAS002" : ["100", "None"],
+	                  "PAS003" : ["yes", "2024-08-18"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "Up8VG-65dF6-QzGaR-4WFEa-Xb5MO-0i5zX",
+	"description" : [ "Upgraded from eWEB-Ent-PW-EV-VM" ],
+    "lg"          : { 
+	                  
+                      "query components" : [["345713", "enteliWEB-Ent", "1"], ["345801", "enteliWEB-EV", "1"], ["345809", "enteliWEB-KEE", "1"], ["345819", "enteliWEB-VM", "1"], ["OBSOLETE", "enteliWEB-UpgdFromEnt", "1"], ["OBSOLETE", "enteliWEB-OldPE", "1"] ],
+                      "site info"        : { "Site Name" : "Upgraded Site", "Partner" : "Upgraded Partner", "Site Address" : "Upgraded Address" }
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["5000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "2015-09-04"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["no", "None"],
+	                  "VMACT"  : ["yes", "None"],
+	                  "SUB"    : ["yes", "2025-09-04"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "2015-09-04"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["yes", "None"],
+	                  "PENRGY" : ["yes", "None"]
+	                }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "ar8VE-65dF6-QzGaH-4WEEa-db5MO-0i5zz",
+	"description" : [ "unlimitedIO", "Activated", "VM" ],
+    "lg"          : { 
+	                  "query components" : [["345713", "enteliWEB-Ent", "1"], ["345862", "enteliWEB-Ent-UnLtdIO-AddOn", "1"], ["345801", "enteliWEB-EV", "1"], ["345809", "enteliWEB-KEE", "1"], ["345819", "enteliWEB-VM", "1"], ["345823", "enteliWEB-API", "1"]],
+                      "site info"        : { "Site Name" : "DisneyLand Park", "Partner" : "SQA Tester", "Site Address" : "DisneyLand Drive" } 
+				    },
+	"ModuleList"  : {
+	                  "IOPTS"  : ["1000000000", "None"],
+	                  "FS"     : ["no", "None"],
+	                  "FDACFR" : ["no", "None"],
+	                  "ACCESS" : ["no", "None"],
+	                  "STACK"  : ["yes", "None"],
+	                  "KEWEB"  : ["yes", "None"],
+	                  "CCKEL"  : ["no", "None"],
+	                  "PRWIDG" : ["yes", "None"],
+	                  "APPS"   : ["yes", "None"],
+	                  "VMACT"  : ["yes", "None"],
+	                  "SUB"    : ["yes", "2016-02-24"],
+	                  "ACTIVE" : ["1", "None"],
+	                  "EVIZ"   : ["yes", "None"],
+	                  "PAS001" : ["no", "None"],
+	                  "PAS002" : ["0", "None"],
+	                  "PAS003" : ["no", "2016-02-24"],
+	                  "PAS004" : ["no", "None"],
+	                  "PAS005" : ["no", "None"],
+	                  "EDTN"   : ["yes", "None"],
+	                  "BENRGY" : ["no", "None"],
+	                  "PENRGY" : ["no", "None"]
+	                }
+  }
+]				 			 

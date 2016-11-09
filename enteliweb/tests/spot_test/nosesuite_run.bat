@@ -1,0 +1,1 @@
+C:\python27\scripts\nosetests --verbosity=2 --nocapture --with-html nosesuite.py

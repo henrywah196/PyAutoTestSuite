@@ -1,0 +1,14 @@
+[
+  { "Login"        : "hwang@deltacontrols.com",
+    "Partner"      : "R-004 (Regulvar Inc.)",
+    "Product"      : "enteliWEB",
+    "PO"           : "WAH201501231600",
+    "IO_Points"    : "40000",
+    "Add-Ons"      : ["enteliVIZ", "enteliWEB API", "Offline Virtual Machine", "Additional Subscription", "Kaizen for enteliWEB"],
+    "Site Name"    : "Mutual Tech",
+    "Site Address" : "388-13988 Cambie Rd, Richmond, V6V2K4",
+    "Subscription" : "3 years (4 years total)",
+    "Quantity"     : "3",
+    "Shipping"     : "Shipping Info 02"
+  }
+]				 			 

@@ -1,0 +1,7 @@
+SCMBranch=qa
+SCMRepository=qa/Automation/Software Licensing/sl_auto_test/libraries
+SCMMainlineUUID={e2f0bedb-bcc9-4bb7-a6fe-60fd3bce318a}
+SCMBranchRepositoryID=28640
+Utilities.py;3069531067;1;1412355393;|39367|4294967295
+__init__.py;2691777106;1;1193031326;|39368|4294967295
+config.py;234565081;1;1368250390;|39369|4294967295

@@ -1,0 +1,632 @@
+[
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-S",
+	"serial"      : "5s8VU-65dF6-QzGai-4WEEa-ab5MO-0U5z4",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 250], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-L",
+	"serial"      : "2d8Vd-65dF6-QzGab-4WEEa-Wb5MO-0U5zB",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 2500], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-M-SQL",
+	"serial"      : "NT8VU-65dF6-QzGaZ-4WEEa-rb5MO-095zx",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 1000], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-XL-SQL",
+	"serial"      : "ds8Ve-65dF6-QzGa1-4WEEa-Eb5MO-0k5zd",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 5000], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "k68VQ-65dF6-QzGa2-4WEEa-mb5MO-025zm",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "pV8Vs-65dF6-QzGaJ-4WEEa-hb5MO-0v5zW",
+	"description" : [ "Unactivated" ],
+	"lg"          : {
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "100"], ["enteliBRIDGE-N2", "200"], ["enteliBRIDGE-TestProto1", "300"] ],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999],
+									   "GWP002"  : ["Counter", 100],
+									   "GWP004"  : ["Counter", 200],
+									   "GWP064"  : ["Counter", 300]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+    "serial"      : "5X8Vx-65dF6-QzGam-4WEEa-Nb5MO-0l5zg",
+	"description" : [ "Unactivated" ],
+    "lg"          : {
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "99999"] ],
+				      "site info"        : null
+                    },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999],
+									   "GWP002"  : ["Counter", 99999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "fg8V5-65dF6-QzGam-4WEEa-Hb5MO-035zR",
+	"description" : [ "eCore Binding", "eCore A" ],
+	"lg"          : {
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "11"], ["enteliBRIDGE-TestProto1", "55"] ],
+				      "hardware serial"  : "78852/0001",
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999],
+									   "GWP002"  : ["Counter", 11],
+									   "GWP064"  : ["Counter", 55]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "AK8Vy-65dF6-QzGa6-4WEEa-1b5MO-0h5zP",
+	"description" : [ "eCore Binding", "eCore B" ],
+	"lg"          : {
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "222"], ["enteliBRIDGE-N2", "444"], ["enteliBRIDGE-TestProto1", "666"] ],
+				      "hardware serial"  : "73902/0305",
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999],
+									   "GWP002"  : ["Counter", 222],
+									   "GWP004"  : ["Counter", 444],
+									   "GWP064"  : ["Counter", 666]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE-SDK",
+	"serial"      : "7m8VY-65dF6-QzGah-4WEEa-zb5MO-0P5zw",
+	"description" : [ "Unactivated", "enteliBRIDGE-SDK" ],
+	"lg"          : {
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 183],
+								       "ACTIVE"  : ["Computer", 1, 183],
+									   "GW"      : ["Yes"],
+									   "GWP000"  : ["Yes"]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : "rg8V7-65dF6-QzGaR-4WEEa-Vb5MO-0L5z2",
+	"description" : [ "Unactivated", "zero counter" ],
+	"lg"          : {
+	                  "query components" : [["enteliBRIDGE-ModBUS-TCP", "0"], ["enteliBRIDGE-N2", "0"], ["enteliBRIDGE-TestProto1", "0"]],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "GWP000"  : ["No"],
+									   "GWP002"  : ["Counter", 0],
+									   "GWP004"  : ["Counter", 0],
+									   "GWP064"  : ["Counter", 0]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Trial",
+    "serial"      : "xf8VU-65dF6-QzGa9-4WEEa-6b5MO-095zX",
+	"description" : [ "Activated" ],
+    "lg"          : { 
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+	                                   "IOPTS"   : ["Counter", 0], 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "12/23/2014"],
+								       "ACTIVE"  : ["Computer", 1, "12/23/2014"],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+								       "PAS002"  : ["Counter", 0],
+								       "PAS003"  : ["No"]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : "Od8V6-65dF6-QzGaz-4WEEa-Bb5MO-0S5zC",
+	"description" : [ "Activated", "Expired" ],
+    "lg"          : { 
+	                  "query components" : [["enteliWEB-EV", ""]],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+	                                   "IOPTS"   : ["Counter", 0], 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/21/2014"],
+								       "ACTIVE"  : ["Computer", 1, "08/21/2014"],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+								       "PAS002"  : ["Counter", 0],
+								       "PAS003"  : ["No"]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : "NB8VS-65dF6-QzGac-4WEEa-Nb5MO-0I5z3",
+	"description" : [ "Activated", "Offline" ],
+    "lg"          : { 
+	                  "query components" : [["enteliWEB-EV", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "999"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""]],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 0], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/17/2024"],
+						    		   "ACTIVE"  : ["Computer", 1, "08/17/2024"],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["Yes"],
+						    		   "PAS002"  : ["Counter", 999],
+						    		   "PAS003"  : ["Yes", "08/17/2024"]
+							    	 } 
+				}
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : "eT8Vk-65dF6-QzGaC-4WEEa-fb5MO-0i5z0",
+	"description" : [ "Unactivated" ],
+    "lg"          : { 
+	                  "query components" : [["enteliWEB-EV", ""]],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : "RZ8VJ-65dF6-QzGaJ-4WEEa-Sb5MO-035zV",
+	"description" : [ "Transferred" ],
+    "lg"          : { 
+	                  "query components" : [["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-MAPI", ""]],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+							    	   "STACK"   : ["Yes"],
+							    	   "SUB"     : ["Yes", "08/20/2025"],
+							    	   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+		    						   "APPS"    : ["Yes"],
+			    			           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+				    		           "PAS001"  : ["Yes"],
+					    			   "PAS002"  : ["Counter", 0],
+						    		   "PAS003"  : ["Yes", "08/20/2025"]
+							    	 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : "Cr8VX-65dF6-QzGa2-4WEEa-8b5MO-005zS",
+	"description" : ["Transferred", "Expired"],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/21/2014"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["No"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 0],
+		    						   "PAS003"  : ["No", "08/20/2015"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : "xT8VK-65dF6-QzGaE-4WEEa-Cb5MO-0U5zS",
+	"description" : ["Unactivated", "VM"],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "1"], ["enteliWEB-PAS-CM", ""] ],
+                      "site info"        : { "Site Name" : "AAA", "Partner" : "BBB", "Site Address" : "CCC" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 365],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+						               "PAS001"  : ["Yes"],
+	    							   "PAS002"  : ["Counter", 1],
+		    						   "PAS003"  : ["Yes", 365]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : "H68Vs-65dF6-QzGaz-4WEEa-fb5MO-025zl",
+	"description" : ["Activated", "Offline", "VM"],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEL", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "99999"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "111", "Partner" : "222", "Site Address" : "333" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/18/2024"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", "08/18/2024"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+						               "PAS001"  : ["Yes"],
+	    							   "PAS002"  : ["Counter", 99999],
+		    						   "PAS003"  : ["Yes", "08/18/2024"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : "cr8VQ-65dF6-QzGab-4WEEa-0b5MO-0k5zf",
+	"description" : ["Activated", "Expired"],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/22/2014"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["Yes"],
+	    							   "PAS002"  : ["Counter", 0],
+		    						   "PAS003"  : ["Yes", "08/22/2014"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "HL8VY-65dF6-QzGaM-4WEEa-0b5MO-095zb",
+	"description" : [ "5000IO", "Transferred"],
+    "lg"          : { 
+	                  "query components" : [ ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 5000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/18/2024"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["No"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 0],
+		    						   "PAS003"  : ["No", "08/21/2015"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "L28VJ-65dF6-QzGaH-4WEEa-rb5MO-0S5zu",
+	"description" : [ "35000IO", "Transferred", "Expired" ],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "2"], ["enteliWEB-KEE", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 35000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/22/2014"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["No"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 0],
+		    						   "PAS003"  : ["No", "08/21/2015"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "Hb8Vd-65dF6-QzGah-4WEEa-8b5MO-065zv",
+	"description" : [ "95000IO", "Unactivated" ],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "6"], ["enteliWEB-PAS-FS", "99999"], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 95000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 365],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["No"],
+						               "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 99999],
+		    						   "PAS003"  : ["No", 365]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "tD8Vr-65dF6-QzGae-4WEEa-1b5MO-0r5ze",
+	"description" : [ "180000IO", "Activated", "VM" ],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-EV", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "100"], ["enteliWEB-PAS-CM", ""] ],
+                      "site info"        : { "Site Name" : "good site", "Partner" : "better partner", "Site Address" : "super address" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 180000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/18/2024"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+						               "PAS001"  : ["Yes"],
+	    							   "PAS002"  : ["Counter", 100],
+		    						   "PAS003"  : ["Yes", "08/18/2024"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "2b8VT-65dF6-QzGas-4WEEa-Tb5MO-0K5zo",
+	"description" : [ "300000IO", "Activated", "Expired", "VM" ],
+    "lg"          : { 
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "2"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-EV", ""], ["enteliWEB-KEL", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-FS", "500"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""]],
+                      "site info"        : { "Site Name" : "test site", "Partner" : "test partner", "Site Address" : "test address" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 300000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/22/2014"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", "08/22/2014"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 500],
+		    						   "PAS003"  : ["Yes", "08/22/2014"]
+			    					 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : "Up8VG-65dF6-QzGaR-4WFEa-Xb5MO-0i5zX",
+	"description" : [ "Upgraded from eWEB-Ent-PW-EV-VM" ],
+    "lg"          : { 
+	                  
+                      "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-UpgdFromEnt", ""], ["enteliWEB-OldPE", ""] ],
+                      "site info"        : { "Site Name" : "Upgraded Site", "Partner" : "Upgraded Partner", "Site Address" : "Upgraded Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 300000], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", "08/22/2014"],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", "08/22/2014"], 
+						               "PRWIDG"  : ["Yes"], 
+							    	   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+						               "PAS001"  : ["No"],
+	    							   "PAS002"  : ["Counter", 500],
+		    						   "PAS003"  : ["Yes", "08/22/2014"]
+			    					 } 
+				    }
+  }
+]				 			 

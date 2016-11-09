@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BaseUnits>
+    <!-- Area -->
+	<PointType Name="Outdoor Temp">
+        <Unit Value="°C" Type="DefaultMetric" />
+        <Unit Value="°F" Type="DefaultImperial" />
+    </PointType >
+
+	<!-- Electric -->
+    <PointType Name="Electricity Consumption">
+        <Unit Value="Wh" Type="" />
+        <Unit Value="kWh" Type="Default" />
+        <Unit Value="MWh" Type="" />
+        <Unit Value="GWh" Type="" />
+        <Unit Value="MJ" Type="" />
+    </PointType>
+
+    <PointType Name="Electricity Demand">
+        <Unit Value="W" Type="" />
+        <Unit Value="kW" Type="Default" />
+        <Unit Value="MW" Type="" />
+        <Unit Value="MJ/h" Type="" />
+    </PointType>
+	
+    <PointType Name="Apparent Consumption">
+        <Unit Value="kVAh" Type="Default" />
+        <Unit Value="MVAh" Type="" />
+        <Unit Value="GVAh" Type="" />
+    </PointType>
+	
+    <PointType Name="Apparent Demand">
+        <Unit Value="kVA" Type="Default" />
+        <Unit Value="MVA" Type="" />
+    </PointType>
+	
+    <!-- Gas -->
+    <PointType Name="Gas Consumption" >
+        <Unit Value="m³" Type="DefaultMetric" />
+        <Unit Value="ft³" Type="DefaultImperial" />
+        <Unit Value="CCF" Type="" />
+    </PointType>
+
+    <PointType Name="Gas Demand">
+        <Unit Value="ft³/h" Type="DefaultImperial" />
+        <Unit Value="ft³/m" Type="" />
+		<Unit Value="m³/h" Type="DefaultMetric" />
+    </PointType>
+
+    <PointType Name="Energy Consumption">
+        <Unit Value="Btu" Type="DefaultImperial" />
+        <Unit Value="kBtu" Type="" />
+        <Unit Value="ton-h" Type="" />
+        <Unit Value="MJ" Type="DefaultMetric" />
+        <Unit Value="GJ" Type="" />
+        <Unit Value="thm" Type="" />
+        <Unit Value="kWh" Type="" />
+    </PointType>
+
+    <PointType Name="Energy Demand">
+        <Unit Value="BTU/h" Type="DefaultImperial" />
+        <Unit Value="Tons" Type="" />
+        <Unit Value="MJ/h" Type="DefaultMetric" />
+        <Unit Value="GJ/h" Type="" />
+        <Unit Value="thm/h" Type="" />
+        <Unit Value="kW" Type="" />
+    </PointType>
+
+	<!-- Fuel -->
+    <PointType Name="Fuel Consumption">
+        <Unit Value="imp gal" Type="" />
+        <Unit Value="US gal" Type="DefaultImperial" />
+		<Unit Value="l" Type="DefaultMetric" />
+    </PointType>
+
+    <PointType Name="Fuel Demand">
+        <Unit Value="imp gph" Type="" />
+        <Unit Value="imp gpm" Type="" />
+		<Unit Value="US gph" Type="" />
+		<Unit Value="US gpm" Type="DefaultImperial" />
+        <Unit Value="l/h" Type="" />
+		<Unit Value="l/m" Type="DefaultMetric" />
+		<Unit Value="l/s" Type="" />
+    </PointType>
+    
+	<!-- Water -->
+	<PointType Name="Water Consumption">
+        <Unit Value="m³" Type="DefaultMetric" />
+        <Unit Value="ft³" Type="" />
+		<Unit Value="imp gal" Type="DefaultImperial" />
+        <Unit Value="US gal" Type="" />
+		<Unit Value="l" Type="" />
+    </PointType>
+	
+	<PointType Name="Water Demand">
+        <Unit Value="m³/h" Type="DefaultMetric" />
+        <Unit Value="ft³/h" Type="" />
+        <Unit Value="ft³/m" Type="" />
+        <Unit Value="imp gph" Type="" />
+        <Unit Value="imp gpm" Type="DefaultImperial" />
+        <Unit Value="US gph" Type="" />
+        <Unit Value="US gpm" Type="" />
+        <Unit Value="l/h" Type="" />
+		<Unit Value="l/m" Type="" />
+        <Unit Value="l/s" Type="" />
+    </PointType>
+	
+	<!-- Thermal -->
+    <PointType Name="Thermal Consumption">
+        <Unit Value="kWh" Type="DefaultMetric" />
+        <Unit Value="MWh" Type="" />
+        <Unit Value="Btu" Type="DefaultImperial" />
+        <Unit Value="kBtu" Type="" />
+        <Unit Value="ton-h" Type="" />
+        <Unit Value="MJ" Type="" />
+		<Unit Value="GJ" Type="" />
+    </PointType>
+	
+	<PointType Name="Thermal Demand">
+        <Unit Value="kW" Type="DefaultMetric" />
+        <Unit Value="MW" Type="" />
+        <Unit Value="BTU/h" Type="DefaultImperial" />
+        <Unit Value="RT" Type="" />
+        <Unit Value="MJ/s" Type="" />
+		<Unit Value="MJ/h" Type="" />
+		<Unit Value="GJ/h" Type="" />
+    </PointType>
+	
+	<!-- Steam -->
+    <PointType Name="Steam Consumption">
+        <Unit Value="kg" Type="DefaultMetric" />
+        <Unit Value="lb" Type="DefaultImperial" />
+    </PointType>
+	
+	<PointType Name="Steam Demand">
+        <Unit Value="kg/h" Type="DefaultMetric" />
+        <Unit Value="lbs/h" Type="DefaultImperial" />
+    </PointType>
+	
+	<!-- Carbon Emission -->
+    <PointType Name="Carbon Emission">
+        <Unit Value="kg" Type="DefaultMetric" />
+        <Unit Value="t" Type="DefaultImperial" />
+        <Unit Value="t US" Type="" />
+    </PointType>
+	
+	<!-- Rate Engine -->
+    <PointType Name="Currency">
+        <Unit Value="₡" Type="" />
+        <Unit Value="$" Type="Default" />
+        <Unit Value="€" Type="" />
+        <Unit Value="₱" Type="" />
+		<Unit Value="£" Type="" />
+		<Unit Value="¥" Type="" />
+		<Unit Value="zł" Type="" />
+		<Unit Value="₫" Type="" />
+    </PointType>
+
+</BaseUnits>

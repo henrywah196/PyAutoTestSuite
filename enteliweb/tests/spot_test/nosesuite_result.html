@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Unit Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: medium solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: thin solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+--></script>
+
+<div class='heading'>
+<h1>Unit Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-03-23 12:50:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.047000</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Failure 12</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>NoseSamples</td>
+    <td>0.00</td>
+    <td>7</td>
+    <td>0</td>
+    <td>7</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',7)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test01: Execute test 01</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.1', 'test01: Execute test 01')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.1'] = 'Test setup for test01\nExecute test 01\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples.py\", line 41, in test01\n    self.verify_IsTrue(result, step)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'1\' Large than second_value \'1\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test01\nExecute test 01\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test02: Execute test 02</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.2', 'test02: Execute test 02')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.2'] = 'Test setup for test02\nExecute test 02\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples.py\", line 54, in test02\n    self.verify_IsTrue(result, step)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'2\' Large than second_value \'2\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test02\nExecute test 02\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test03: Execute test 03</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.3', 'test03: Execute test 03')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.3'] = 'Test setup for test03\nExecute test 03\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples.py\", line 66, in test03\n    self.verify_IsTrue(result, step)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'1\' Large than second_value \'3\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test03\nExecute test 03\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='failCase'><div class='testcase'>test03: Execute test 03</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.4', 'test03: Execute test 03')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.4'] = 'Traceback (most recent call last):\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 29, in doCleanups\n    function(*args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 59, in verifyErrors\n    self.assertTrue(result, self.genErrorsMessage())\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: \nVerify first_value \'1\' equals to second_value \'3\'\nExpected: 1\nCurrent: 3\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test04: Execute test 04</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.5', 'test04: Execute test 04')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.5'] = 'Test setup for test04\nExecute test 04\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples.py\", line 78, in test04\n    self.verify_IsTrue(result, step)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'4\' Large than second_value \'4\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test04\nExecute test 04\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='failCase'><div class='testcase'>test05: Test 05, which using regular assert</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.6', 'test05: Test 05, which using regular assert')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.6'] = 'Test setup for test05\nTest 05, which using regular assert\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples.py\", line 87, in test05\n    self.assertEqual(first_value, second_value, step)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 513, in assertEqual\n    assertion_func(first, second, msg=msg)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 506, in _baseAssertEqual\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'1\' equals to second_value \'5\'\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test05\nTest 05, which using regular assert\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='failCase'><div class='testcase'>test06: Execute test 06</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.7', 'test06: Execute test 06')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.7'] = 'Test setup for test06\nExecute test 06\nTest tear down for test06\nTraceback (most recent call last):\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 29, in doCleanups\n    function(*args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 59, in verifyErrors\n    self.assertTrue(result, self.genErrorsMessage())\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: \nVerify first_value \'1\' equals to second_value \'5\'\nExpected: 1\nCurrent: 5\n\nVerify first_value \'1\' Large than second_value \'5\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test06\nExecute test 06\nTest tear down for test06\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>NoseSamples02</td>
+    <td>0.00</td>
+    <td>10</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',10)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_01_1__1__1_: Verify first_value \'1\' equals to second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_01_2__2__2_: Verify first_value \'2\' equals to second_value \'2\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_01_3__3__1_: Verify first_value \'3\' equals to second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft2.3', 'test_01_3__3__1_: Verify first_value \'3\' equals to second_value \'1\'')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft2.3'] = 'Test setup for test_01_3__3__1_\nExecute test_01_3__3__1_\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"C:\\Python27\\lib\\site-packages\\ddt.py\", line 122, in wrapper\n    return func(self, *args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples02.py\", line 46, in test_01\n    self.verify_IsEqual(first_value, second_value, self._testMethodDoc)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 76, in verify_IsEqual\n    self.assertEqual(expected, current, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 513, in assertEqual\n    assertion_func(first, second, msg=msg)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 506, in _baseAssertEqual\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'3\' equals to second_value \'1\'\nExpected: 3\nCurrent: 1\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test_01_3__3__1_\nExecute test_01_3__3__1_\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_01_4__4__4_: Verify first_value \'4\' equals to second_value \'4\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft2.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_01_5__5__1_: Verify first_value \'5\' equals to second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft2.5', 'test_01_5__5__1_: Verify first_value \'5\' equals to second_value \'1\'')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft2.5'] = 'Test setup for test_01_5__5__1_\nExecute test_01_5__5__1_\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"C:\\Python27\\lib\\site-packages\\ddt.py\", line 122, in wrapper\n    return func(self, *args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples02.py\", line 46, in test_01\n    self.verify_IsEqual(first_value, second_value, self._testMethodDoc)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 76, in verify_IsEqual\n    self.assertEqual(expected, current, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 513, in assertEqual\n    assertion_func(first, second, msg=msg)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 506, in _baseAssertEqual\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'5\' equals to second_value \'1\'\nExpected: 5\nCurrent: 1\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test_01_5__5__1_\nExecute test_01_5__5__1_\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft2.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_02_1__1__1_: Verify first_value \'1\' Large than second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft2.6', 'test_02_1__1__1_: Verify first_value \'1\' Large than second_value \'1\'')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft2.6'] = 'Test setup for test_02_1__1__1_\nExecute test_02_1__1__1_\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"C:\\Python27\\lib\\site-packages\\ddt.py\", line 122, in wrapper\n    return func(self, *args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples02.py\", line 55, in test_02\n    self.verify_IsTrue(result, self._testMethodDoc)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'1\' Large than second_value \'1\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test_02_1__1__1_\nExecute test_02_1__1__1_\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft2.7' class='none'>
+    <td class='failCase'><div class='testcase'>test_02_2__2__2_: Verify first_value \'2\' Large than second_value \'2\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft2.7', 'test_02_2__2__2_: Verify first_value \'2\' Large than second_value \'2\'')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft2.7'] = 'Test setup for test_02_2__2__2_\nExecute test_02_2__2__2_\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"C:\\Python27\\lib\\site-packages\\ddt.py\", line 122, in wrapper\n    return func(self, *args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples02.py\", line 55, in test_02\n    self.verify_IsTrue(result, self._testMethodDoc)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'2\' Large than second_value \'2\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test_02_2__2__2_\nExecute test_02_2__2__2_\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_02_3__3__1_: Verify first_value \'3\' Large than second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft2.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_02_4__4__4_: Verify first_value \'4\' Large than second_value \'4\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft2.9', 'test_02_4__4__4_: Verify first_value \'4\' Large than second_value \'4\'')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft2.9'] = 'Test setup for test_02_4__4__4_\nExecute test_02_4__4__4_\nTraceback (most recent call last):\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 329, in run\n    testMethod()\n  File \"C:\\Python27\\lib\\site-packages\\ddt.py\", line 122, in wrapper\n    return func(self, *args, **kwargs)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\tests\\spot_test\\nosesamples02.py\", line 55, in test_02\n    self.verify_IsTrue(result, self._testMethodDoc)\n  File \"U:\\PyAutoTestSuite\\enteliweb\\libraries\\PyAutoTestCase.py\", line 126, in verify_IsTrue\n    self.assertTrue(result, errMessage)\n  File \"C:\\Python27\\lib\\unittest\\case.py\", line 422, in assertTrue\n    raise self.failureException(msg)\nAssertionError: Verify first_value \'4\' Large than second_value \'4\'\nExpected: True\nCurrent: False\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nTest setup for test_02_4__4__4_\nExecute test_02_4__4__4_\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_02_5__5__1_: Verify first_value \'5\' Large than second_value \'1\'</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>0.00</td>
+    <td>17</td>
+    <td>5</td>
+    <td>12</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

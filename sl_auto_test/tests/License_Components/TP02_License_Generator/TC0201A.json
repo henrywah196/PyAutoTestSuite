@@ -1,0 +1,1493 @@
+[
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-S",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 250], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-M",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 1000], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-L",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 2500], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-XL",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 5000], 
+									   "CCSQL"   : ["No"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-S-SQL",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 250], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-M-SQL",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 1000], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-L-SQL",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 2500], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "CopperCube",
+	"product"     : "CuCube-XL-SQL",
+	"serial"      : null,
+	"description" : [ "CopperCube" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"        : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+	                                   "CC"      : ["Counter", 5000], 
+									   "CCSQL"   : ["Yes"],
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1]
+								     } 
+				    }
+					
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "no optional module" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "all optional module" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliBRIDGE-ModBUS-TCP", "9"], ["enteliBRIDGE-N2", "99"], ["enteliBRIDGE-TestProto1", "999"] ],
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "9"], ["enteliBRIDGE-N2", "99"], ["enteliBRIDGE-TestProto1", "999"] ],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "partial optional module" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliBRIDGE-ModBUS-TCP", "1"], ["enteliBRIDGE-N2", "10"] ],
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "1"], ["enteliBRIDGE-N2", "10"] ],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "one optional module" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliBRIDGE-ModBUS-TCP", "99999"] ],
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "99999"] ],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "one optional module" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliBRIDGE-N2", "99999"] ],
+	                  "query components" : [ ["enteliBRIDGE-N2", "99999"] ],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "TRNO"    : ["Counter", 999999999]
+								     } 
+				    }
+  },
+  {
+    "type"        : "enteliBRIDGE",
+	"product"     : "enteliBRIDGE",
+	"serial"      : null,
+	"description" : [ "enteliBRIDGE", "zero counter" ],
+	"lg"          : {
+	                  "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliBRIDGE-ModBUS-TCP", "0"], ["enteliBRIDGE-N2", "0"], ["enteliBRIDGE-TestProto1", "0"] ],
+	                  "query components" : [ ["enteliBRIDGE-ModBUS-TCP", "0"], ["enteliBRIDGE-N2", "0"], ["enteliBRIDGE-TestProto1", "0"] ],
+				      "site info"       : null
+	                },
+	"as"          : { 
+	                  "Modules"    : { 
+								       "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes"],
+								       "ACTIVE"  : ["Computer", 1],
+									   "GW"      : ["Yes"],
+									   "GWP000"  : ["No"],
+									   "GWP002"  : ["Counter", 0],
+									   "GWP004"  : ["Counter", 0],
+									   "GWP064"  : ["Counter", 0]
+								     } 
+				    }
+  },
+  
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Trial",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Trial", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+	                                   "IOPTS"   : ["Counter", 0], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 30],
+								       "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+						               "PAS001"  : ["No"],
+								       "PAS002"  : ["Counter", 0],
+							    	   "PAS003"  : ["No"]
+							    	 } 
+		    		}
+  },
+  
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Tech", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+	                                   "IOPTS"   : ["Counter", 0], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 365],
+								       "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["No"],
+						               "PAS001"  : ["No"],
+								       "PAS002"  : ["Counter", 0],
+							    	   "PAS003"  : ["No"]
+							    	 } 
+		    		}
+  },
+
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Tech", "all optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", 1], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [["enteliWEB-EV", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "1"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""]],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 0], 
+							    	   "STACK"   : ["Yes"],
+								       "SUB"     : ["Yes", 365],
+								       "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+								       "APPS"    : ["Yes"],
+						               "EVIZ"    : ["Yes"],
+						               "PAS001"  : ["Yes"],
+								       "PAS002"  : ["Counter", 1],
+								       "PAS003"  : ["Yes", 365]
+								     } 
+				    }
+  },
+  
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Tech", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-PAS-EED", "enteliWEB-PAS-CM", "enteliWEB-PAS-DT" ],
+	                  "query components" : [["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""]],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 0], 
+							    	   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+				    				   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           			    	           "CCKEL"   : ["No"], 
+					    	           "PRWIDG"  : ["Yes"], 
+					    			   "APPS"    : ["Yes"],
+					    	           "EVIZ"    : ["No"],
+					    	           "PAS001"  : ["Yes"],
+					    			   "PAS002"  : ["Counter", 0],
+					    			   "PAS003"  : ["Yes", 365]
+								     } 
+				    }
+  },
+  
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Tech", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV" ],
+	                  "query components" : [["enteliWEB-EV", ""]],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 0], 
+								       "STACK"   : ["Yes"],
+							    	   "SUB"     : ["Yes", 365],
+							    	   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+						    		   "APPS"    : ["Yes"],
+					    	           "EVIZ"    : ["Yes"],
+						               "PAS001"  : ["No"],
+					    			   "PAS002"  : ["Counter", 0],
+						    		   "PAS003"  : ["No"]
+								     } 
+				    }
+  },
+  
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Tech",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Tech", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-PAS-FS", 150] ],
+	                  "query components" : [ ["enteliWEB-PAS-FS", "150"] ],
+                      "site info"        : { "Site Name" : "", "Partner" : "", "Site Address" : "" } 
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 0], 
+					    			   "STACK"   : ["Yes"],
+					    			   "SUB"     : ["Yes", 365],
+					    			   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           			    	           "CCKEL"   : ["No"], 
+					    	           "PRWIDG"  : ["Yes"], 
+						    		   "APPS"    : ["Yes"],
+						               "EVIZ"    : ["No"],
+					    	           "PAS001"  : ["No"],
+					    			   "PAS002"  : ["Counter", 150],
+					    			   "PAS003"  : ["No"]
+							    	 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Lite", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Lite", "all optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "1"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "1"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 1],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Lite", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-API", "enteliWEB-PAS-EED", "enteliWEB-PAS-CM", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Lite", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV" ],
+	                  "query components" : [ ["enteliWEB-EV", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Lite",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Lite", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-KEE" ],
+	                  "query components" : [ ["enteliWEB-KEE", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Exp", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Exp", "all optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "1"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "1"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 1],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Exp", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV", "enteliWEB-KEL", "enteliWEB-VM", ["enteliWEB-PAS-FS", "10"], "enteliWEB-PAS-DT" ],
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEL", ""], ["enteliWEB-VM", ""], ["enteliWEB-PAS-FS", "10"], ["enteliWEB-PAS-DT", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 10],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Exp", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-KEL" ],
+	                  "query components" : [ ["enteliWEB-KEL", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Exp",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Exp", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-API" ],
+	                  "query components" : [ ["enteliWEB-API", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Pro", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Pro", "all optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "99999"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "99999"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 1],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Pro", "Partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-KEE", "enteliWEB-API", "enteliWEB-PAS-EED", "enteliWEB-PAS-CM", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-KEE", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Pro", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-VM" ],
+	                  "query components" : [ ["enteliWEB-VM", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Pro",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Pro", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ "enteliWEB-PAS-EED" ],
+	                  "query components" : [ ["enteliWEB-PAS-EED", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 2500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "no optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [],
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 5000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "all optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-2500IO-AddOn", "1"], "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "1"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-Ent-2500IO-AddOn", "1"], ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "1"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 7500], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 1],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-2500IO-AddOn", "4"], "enteliWEB-EV" ],
+	                  "query components" : [ ["enteliWEB-Ent-2500IO-AddOn", "4"], ["enteliWEB-EV", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 15000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-25000IO-AddOn", "1"], "enteliWEB-KEL" ],
+	                  "query components" : [ ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-KEL", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 30000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "2"], "enteliWEB-KEE" ],
+	                  "query components" : [ ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "2"], ["enteliWEB-KEE", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 35000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], "enteliWEB-PAS-DT" ],
+	                  "query components" : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-PAS-DT", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 55000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "4"], "enteliWEB-API" ],
+	                  "query components" : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "4"], ["enteliWEB-API", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 65000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], "enteliWEB-PAS-EED" ],
+	                  "query components" : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-PAS-EED", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 80000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "6"], ["enteliWEB-PAS-FS", "99999"] ],
+	                  "query components" : [ ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "6"], ["enteliWEB-PAS-FS", "99999"] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 95000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 99999],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "one optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], "enteliWEB-PAS-CM" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-PAS-CM", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 105000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "6"], "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "6"], ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 120000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], "enteliWEB-KEE", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "999"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-KEE", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "999"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 150000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 999],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "50"], "enteliWEB-PAS-CM", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "50"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 175000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 50],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], "enteliWEB-EV", "enteliWEB-VM", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "100"], "enteliWEB-PAS-CM" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-EV", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "100"], ["enteliWEB-PAS-CM", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 180000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 100],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], "enteliWEB-EV", "enteliWEB-KEL", "enteliWEB-VM", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "10"], "enteliWEB-PAS-CM" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "1"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-EV", ""], ["enteliWEB-KEL", ""], ["enteliWEB-VM", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "10"], ["enteliWEB-PAS-CM", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 200000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["Yes", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 10],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "2"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-API", "enteliWEB-PAS-EED", ["enteliWEB-PAS-FS", "5"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "2"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-EED", ""], ["enteliWEB-PAS-FS", "5"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""] ],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 250000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["Yes"],
+			    					   "PAS002"  : ["Counter", 5],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "partial optional module" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "2"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], "enteliWEB-EV", "enteliWEB-KEE", "enteliWEB-VM", "enteliWEB-API", ["enteliWEB-PAS-FS", "500"], "enteliWEB-PAS-CM", "enteliWEB-PAS-DT", "enteliWEB-PAS-MAPI" ],
+	                  "query components" : [ ["enteliWEB-Ent-100000IO-AddOn", "2"], ["enteliWEB-Ent-50000IO-AddOn", "1"], ["enteliWEB-Ent-25000IO-AddOn", "1"], ["enteliWEB-Ent-2500IO-AddOn", "8"], ["enteliWEB-EV", ""], ["enteliWEB-KEE", ""], ["enteliWEB-VM", ""], ["enteliWEB-API", ""], ["enteliWEB-PAS-FS", "500"], ["enteliWEB-PAS-CM", ""], ["enteliWEB-PAS-DT", ""], ["enteliWEB-PAS-MAPI", ""] ],
+                      "site info"        : { "Site Name" : "Good Site", "Partner" : "Smart Partner", "Site Address" : "Super Address" }
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 300000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["Yes"], 
+           				               "CCKEL"   : ["No", 365], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["Yes"],
+		    				           "EVIZ"    : ["Yes"],
+									   "VMACT"   : ["Yes"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 500],
+			    					   "PAS003"  : ["Yes", 365]
+				    				 } 
+				    }
+  },
+  {
+    "type"        : "enteliWEB_V2",
+    "product"     : "enteliWEB-Ent",
+    "serial"      : null,
+	"description" : [ "enteliWEB_V2", "Ent", "zero counter" ],
+    "lg"          : { 
+                      "customer name"    : "SQA Test",
+	                  "sales order"      : "123456789",
+	                  "components"       : [ ["enteliWEB-Ent-100000IO-AddOn", "0"], ["enteliWEB-Ent-50000IO-AddOn", "0"], ["enteliWEB-Ent-25000IO-AddOn", "0"], ["enteliWEB-Ent-2500IO-AddOn", "0"], ["enteliWEB-PAS-FS", "0"] ],
+	                  "query components" : [],
+                      "site info"        : null
+				    },
+    "as"          : { 
+	                  "Modules"    : { 
+				                       "IOPTS"   : ["Counter", 5000], 
+						    		   "STACK"   : ["Yes"],
+						    		   "SUB"     : ["Yes", 365],
+						    		   "ACTIVE"  : ["Computer", 1],
+                                       "KEWEB"   : ["No"], 
+           				               "CCKEL"   : ["No"], 
+						               "PRWIDG"  : ["Yes"], 
+				    				   "APPS"    : ["No"],
+		    				           "EVIZ"    : ["No"],
+									   "VMACT"   : ["No"],
+	    					           "PAS001"  : ["No"],
+			    					   "PAS002"  : ["Counter", 0],
+			    					   "PAS003"  : ["No", 365],
+			    					   "PAS004"  : ["No"],
+			    					   "Pas005"  : ["No"]
+				    				 } 
+				    }
+  }
+]				 			 

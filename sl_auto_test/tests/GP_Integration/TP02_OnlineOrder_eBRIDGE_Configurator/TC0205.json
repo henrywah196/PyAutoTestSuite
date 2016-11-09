@@ -1,0 +1,134 @@
+[
+  { "Login"              : "hwang@deltacontrols.com",
+    "Partner"            : "DELTA INTERNAL (Delta Controls Internal)",
+    "Product"            : "enteliBRIDGE",
+    "PO"                 : "WAH20150204135101",
+    "Add-Ons"            : [],
+    "Counter_ModBUS_TCP" : "20",
+    "Power Supply"       : "None",
+    "Quantity"           : "1",
+    "Shipping"           : "Shipping Info 01"
+  },
+  
+   { "Login"              : "hwang@deltacontrols.com",
+     "Partner"            : "DELTA INTERNAL (Delta Controls Internal)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "WAH20150204135102",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "50",
+     "Power Supply"       : "220VAC to 12VDC (European)",
+     "Quantity"           : "2",
+     "Shipping"           : "Shipping Info 02"
+  },
+  
+   { "Login"              : "hwang@deltacontrols.com",
+     "Partner"            : "DELTA INTERNAL (Delta Controls Internal)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "WAH20150204135103",
+     "Add-Ons"            : [],
+     "Counter_ModBUS_TCP" : "20",
+     "Power Supply"       : "110VAC to 12VDC (North America)",
+     "Quantity"           : "3",
+     "Shipping"           : "Shipping Info 03"
+  },
+  
+   { "Login"              : "purchaser@escautomation.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "CHD20150204135101",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "150",
+     "Power Supply"       : "None",
+     "Quantity"           : "4",
+     "Shipping"           : "Shipping Info 04"
+   },
+   
+   { "Login"              : "purchaser@escautomation.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "CHD20150204135102",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "500",
+     "Power Supply"       : "220VAC to 12VDC (European)",
+     "Quantity"           : "5",
+     "Shipping"           : "Shipping Info 05"
+   },
+   
+   { "Login"              : "purchaser@escautomation.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "CHD20150204135103",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "1000",
+     "Power Supply"       : "110VAC to 12VDC (North America)",
+     "Quantity"           : "25",
+     "Shipping"           : "Shipping Info 06"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "E00220150204135101",
+     "Add-Ons"            : [],
+     "Counter_ModBUS_TCP" : "20",
+     "Power Supply"       : "None",
+     "Quantity"           : "1",
+     "Shipping"           : "Shipping Info 01"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "E00220150204135102",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "20",
+     "Power Supply"       : "220VAC to 12VDC (European)",
+     "Quantity"           : "2",
+     "Shipping"           : "Shipping Info 02"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "E-002 (ESC Automation Inc.-CDN)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "E00220150204135103",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "100000",
+     "Power Supply"       : "110VAC to 12VDC (North America)",
+     "Quantity"           : "3",
+     "Shipping"           : "Shipping Info 03"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "R-004 (Regulvar Inc.)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "R00420150204135101",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "115",
+     "Power Supply"       : "None",
+     "Quantity"           : "4",
+     "Shipping"           : "Shipping Info 04"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "R-004 (Regulvar Inc.)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "R00420150204135102",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "1500",
+     "Power Supply"       : "220VAC to 12VDC (European)",
+     "Quantity"           : "5",
+     "Shipping"           : "Shipping Info 05"
+   },
+   
+   { "Login"              : "quoteuser@deltacontrols.com",
+     "Partner"            : "R-004 (Regulvar Inc.)",
+     "Product"            : "enteliBRIDGE",
+     "PO"                 : "R00420150204135103",
+     "Add-Ons"            : ["ModBUS TCP"],
+     "Counter_ModBUS_TCP" : "5000",
+     "Power Supply"       : "110VAC to 12VDC (North America)",
+     "Quantity"           : "25",
+     "Shipping"           : "Shipping Info 06"
+   }
+  
+]				 			 
