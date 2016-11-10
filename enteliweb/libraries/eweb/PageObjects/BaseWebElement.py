@@ -40,8 +40,11 @@ class BaseWebElement(object):
     
     def click(self):
         elem = self.getElement(self.locator)
-        elem.location_once_scrolled_into_view
-        elem.click()
+        if elem is not None:
+            elem.location_once_scrolled_into_view
+            elem.click()
+        else:
+            raise Exception("'%s' cannot be located on page."%self.locatorString)
         
     def isDisplayed(self):
         """ return true if the web element is displayed on web page """
@@ -205,41 +208,33 @@ class XTree(BaseWebElement):
     """
     def __init__(self, locatorString):
         super(XTree, self).__init__(locatorString)
-        #self.TreeNodes = self._getTreeNodes()
+        self.className = "x-grid-cell-inner-treecolumn"
 
     def _getTreeNodes(self):
         """ return a list of treeNode WebElements
         """
         elem = self.getElement(self.locator)
-        elem = elem.find_element_by_tag_name('table')
+        tableElems = elem.find_elements_by_tag_name('table')
         #elem = elem.find_elements_by_tag_name('tr')
-        elem = elem.find_elements_by_xpath("./tbody/tr[not(@class='x-grid-header-row')]")
-        #print "debug XTree._getTreeNodes(): %s" %(len(elem))
-        return elem
+        #elem = elem.find_elements_by_xpath("./tbody/tr[not(@class='x-grid-header-row')]")
+        return tableElems
 
     def _getTreeNodeName(self, treeNodeObj):
         """return the text string of the treeNode object
         """
-        treeNodeName = None
-        divObj = treeNodeObj.find_element_by_tag_name("div")
-        if divObj:
-            treeNodeName = divObj.text
-
-        if treeNodeName == None:    # report tree node
-            aObj = divObj.find_element_by_tag_name("a")
-            if aObj:
-                treeNodeName = aObj.text
-
-        return treeNodeName
+        divElem = treeNodeObj.find_element_by_class_name(self.className)
+        childElems = divElem.find_elements_by_css_selector("*")
+        elem = childElems[len(childElems) - 1]
+        return elem.text
 
     def _getTreeNodeLayer(self, treeNodeObj):
         """ the helper method return the layer number of the treeNode object
             the root node object suppose return number 0
             the direct underneath of the root suppose return number 1
         """
-        imgNodes = treeNodeObj.find_elements_by_tag_name("img")
-        layer = len(imgNodes) - 2
-
+        divElem = treeNodeObj.find_element_by_class_name(self.className)
+        childElems = divElem.find_elements_by_css_selector("*")
+        layer = len(childElems) - 3
         return layer
 
     def _expandTreeNode(self, treeNodeObj):
@@ -249,23 +244,18 @@ class XTree(BaseWebElement):
 
             @return boolean    return true if no error found during execution
         """
-        className = 'x-grid-tree-node-expanded'
+        classNames = ['x-grid-tree-node-expanded', 'x-grid-tree-node-leaf']
         result = True
         try:
-            if className not in treeNodeObj.get_attribute('class'):
-                treeElbow = None
-                #treeElbow = treeNodeObj.find_element_by_xpath("./td/div/img[starts-with(@class, 'x-tree-elbow-plus')]")
-                imgObjs = treeNodeObj.find_elements_by_tag_name('img')
-                for imgObj in imgObjs:
-                    classString = imgObj.get_attribute('class')
-                    if ('x-tree-elbow-plus' in classString) or ('x-tree-elbow-end-plus' in classString):
-                        treeElbow = imgObj
-                        break
-                if treeElbow != None:
-                    treeElbow.click()
-                    time.sleep(5)
-                    #print "debug XTree._expandTreeNode(): treeElbow was clicked."
-                    self.TreeNodes = self._getTreeNodes()
+            trElem = treeNodeObj.find_element_by_tag_name("tr")
+            classString = trElem.get_attribute('class')
+            if (classNames[0] not in classString) and (classNames[1] not in classString):
+                divElem = treeNodeObj.find_element_by_class_name(self.className)
+                childElems = divElem.find_elements_by_css_selector("*")
+                treeElbowElem = childElems[len(childElems) - 3]
+                treeElbowElem.click()
+                time.sleep(5)
+                self.TreeNodes = self._getTreeNodes()
         except Exception as e:
             print( "XTree._expandTreeNode() get Exception: %s" %e )
             result = False
@@ -282,19 +272,14 @@ class XTree(BaseWebElement):
         className = 'x-grid-tree-node-expanded'
         result = True
         try:
-            if className in treeNodeObj.get_attribute('class'):
-                treeElbow = None
-                #treeElbow = treeNodeObj.find_element_by_xpath("./td/div/img[starts-with(@class, 'x-tree-elbow-plus')]")
-                imgObjs = treeNodeObj.find_elements_by_tag_name('img')
-                for imgObj in imgObjs:
-                    classString = imgObj.get_attribute('class')
-                    if ('x-tree-elbow-plus' in classString) or ('x-tree-elbow-end-plus' in classString):
-                        treeElbow = imgObj
-                        break
-                if treeElbow != None:
-                    treeElbow.click()
-                    time.sleep(5)
-                    self.TreeNodes = self._getTreeNodes()
+            trElem = treeNodeObj.find_element_by_tag_name("tr")
+            if className in trElem.get_attribute('class'):
+                divElem = treeNodeObj.find_element_by_class_name(self.className)
+                childElems = divElem.find_elements_by_css_selector("*")
+                treeElbowElem = childElems[len(childElems) - 3]
+                treeElbowElem.click()
+                time.sleep(5)
+                self.TreeNodes = self._getTreeNodes()
         except Exception as e:
             print( "XTree._collapseTreeNode() get Exception: %s" %e )
             result = False

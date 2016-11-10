@@ -97,6 +97,8 @@ def SelectReportInstance(PathName):
     """
 
     accordion = AccordionPageObj()
+    accordion.select(accordion.reports)
+    time.sleep(2)
     if not accordion.reportTree.isDisplayed():
         accordion.select(accordion.reports)
         time.sleep(2)
@@ -105,7 +107,7 @@ def SelectReportInstance(PathName):
         time.sleep(2)
         result = accordion.reportTree.expandTreeNode(PathName)    # try one more time if tree not expanded
     if result:    
-        targetNode = (accordion.reportTree._getTreeNode(PathName)).find_element_by_tag_name('div')
+        targetNode = accordion.reportTree._getTreeNode(PathName)
         if targetNode:
             targetNode.click()
             time.sleep(3)

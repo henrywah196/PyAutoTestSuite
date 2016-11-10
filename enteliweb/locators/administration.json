@@ -15,7 +15,7 @@
   "admin.meters"                  : {"by":"id",    "value":"link_listMeters",      "parent":null, "tag_name":"a",    "type":"HyperLink"},
   "admin.base_unit_configuration" : {"by":"id",    "value":"link_reportbaseunits", "parent":null, "tag_name":"a",    "type":"HyperLink"},
   
-  "accordion.reports"     : {"by":"id", "value":"accordion_Reports_header_hd-textEl", "parent":null, "tag_name":"span", "type":"Button"},
+  "accordion.reports"     : {"by":"id", "value":"accordion_Reports_header-title",     "parent":null, "tag_name":"div", "type":"Button"},
   "accordion.report_tree" : {"by":"id", "value":"reportTree-body",                    "parent":null, "tag_name":"div",  "type":"Container"},
   
   "units.title"                                : {"by":"id",    "value":"headertitle",                      "parent":null, "tag_name":"span",  "type":"TextBox"},
