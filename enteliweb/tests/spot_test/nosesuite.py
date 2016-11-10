@@ -5,7 +5,7 @@ Created on May 11, 2013
 '''
 import os, nose
 # import test cases
-from nosesamples import NoseSamples
+from tests.spot_test.testsamples import NoseSamples
 from nosesamples02 import NoseSamples02
 
 

@@ -28,18 +28,6 @@ class TestSuiteTemplate(unittest.TestSuite):
 
 
 class TestCaseTemplate(unittest.TestCase):
-    
-    def setUp(self):
-        self.verificationErrors = []
-        self.addCleanup(self.verifyErrors)
-        self.currentTest = self.id().split('.')[-1]
-
-    def tearDown(self):
-        #try: self.assertEqual([], self.verificationErrors, self.genErrorsMessage())
-        #except: 
-        #    self._resultForDoCleanups.addFailure(self, sys.exc_info())
-        pass
-    
            
     def doCleanups(self):
         """override the original TestCase.doCleanups() not add error to result for verifyErrors()"""
@@ -53,13 +41,32 @@ class TestCaseTemplate(unittest.TestCase):
                 raise
             except:
                 ok = False
-                if function == self.verifyErrors:
+                if function == self._verifyErrors:
                     result.addFailure(self, sys.exc_info())
                 else:
                     result.addError(self, sys.exc_info())
         return ok
+    
+    def setUp(self):
+        self.verificationErrors = []
+        self.addCleanup(self._verifyErrors)
+    
+    def getCurrentTestName(self,):
+        return self._testMethodName
+        
+    def setCurrentTestDoc(self, testMethodDocString):
+        self._testMethodDoc = testMethodDocString
+        
+    def getCurrentTestDoc(self):
+        return self._testMethodDoc
+    
+    def perform(self, assertFun, *args ):
+        """ continue the rest of test if assert failed
+        """
+        try: assertFun(*args)
+        except AssertionError, e: self.verificationErrors.append(unicode(e))
 
-    def genErrorsMessage(self):
+    def _genErrorsMessage(self):
         """ format the error messages before it is used by test report
         """
         errMessage = ''
@@ -71,17 +78,16 @@ class TestCaseTemplate(unittest.TestCase):
                     errMessage = errMessage + '\n\n' + err
         return errMessage
 
-    def verifyErrors(self):
+    def _verifyErrors(self):
         """ verify if the container is blank
         """
         try:
-            longMessageState = self.longMessage
-            self.longMessage = False 
             result = not self.verificationErrors
-            self.assertTrue(result, self.genErrorsMessage())
+            self.assertTrue(result, self._genErrorsMessage())
         finally: 
             self.verificationErrors = []
-            self.longMessage = longMessageState
+            
+            
             
     def verify_IsAlmostEqual(self, expected, current, places=7, errMessage=None, HaltOnErr=True, ScreenCapture=False):
         """  verify expected and current are almost equal
