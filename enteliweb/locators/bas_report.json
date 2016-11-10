@@ -1,0 +1,54 @@
+{
+
+  "energyreport.config_panel"          : {"by":"id", "value":"west-region",                      "parent":null, "tag_name":"div", "type":"Container"},
+  "energyreport.config_panel_collapse" : {"by":"id", "value":"west-region-placeholder-targetEl", "parent":null, "tag_name":"div", "type":"Container"},
+  "energyreport.config_panel_header"   : {"by":"id", "value":"west-region_header-targetEl",      "parent":null, "tag_name":"div", "type":"Container"},
+  "energyreport.selected_meter_tree"   : {"by":"id", "value":"selectedTree-body",                "parent":null, "tag_name":"div", "type":"Container"},
+  "energyreport.addnew_button"         : {"by":"id", "value":"plus-toolEl",                      "parent":null, "tag_name":"img", "type":"Button"},
+  "energyreport.meter_tree"            : {"by":"id", "value":"listTree-body",                    "parent":null, "tag_name":"div", "type":"Container"},
+  "energyreport.gear_button"           : {"by":"id", "value":"gear-toolEl",                      "parent":null, "tag_name":"img", "type":"Button"},
+  "energyreport.close_button"          : {"by":"id", "value":"close-toolEl",                     "parent":null, "tag_name":"img", "type":"Button"},
+  "energyreport.save"                  : {"by":"id", "value":"saveButton",                       "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.run"                   : {"by":"id", "value":"runButton",                        "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.delete"                : {"by":"id", "value":"deleteButton",                     "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.copy"                  : {"by":"id", "value":"copyButton",                       "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.schedule"              : {"by":"id", "value":"scheduleButton",                   "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.email"                 : {"by":"id", "value":"emailButton",                      "parent":null, "tag_name":"a",   "type":"Button"},
+  "energyreport.report_history"        : {"by":"id", "value":"historyBtn",                       "parent":null, "tag_name":"a",   "type":"DropDownBox"},
+  
+  "energyreport.report_name"  : {"by":"id", "value":"reportName-inputEl",             "parent":null, "tag_name":"input", "type":"EditBox"},
+  "energyreport.report_title" : {"by":"id", "value":"reportFormReport+Title-inputEl", "parent":null, "tag_name":"input", "type":"EditBox"},
+  "energyreport.meter_type"   : {"by":"id", "value":"reportFormReportType-inputEl",   "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.site"         : {"by":"id", "value":"reportFormSite-inputEl",         "parent":null, "tag_name":"input", "type":"EditBox"},
+  
+  "energyreport.date_range"   : {"by":"id", "value":"reportFormPeriod-inputEl",        "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.date_from"    : {"by":"id", "value":"reportFormStartTime-inputEl",     "parent":null, "tag_name":"input", "type":"EditBox"},
+  "energyreport.date_to"      : {"by":"id", "value":"reportFormEndTime-inputEl",       "parent":null, "tag_name":"input", "type":"EditBox"},
+  "energyreport.date_groupby" : {"by":"id", "value":"reportFormInterval-inputEl",      "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.date_days"    : {"by":"id", "value":"reportFormWeekdaysCombo-inputEl", "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.date_Sun"     : {"by":"id", "value":"reportFormWeekdaysSun-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Mon"     : {"by":"id", "value":"reportFormWeekdaysMon-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Tue"     : {"by":"id", "value":"reportFormWeekdaysTue-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Wed"     : {"by":"id", "value":"reportFormWeekdaysWed-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Thu"     : {"by":"id", "value":"reportFormWeekdaysThu-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Fri"     : {"by":"id", "value":"reportFormWeekdaysFri-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.date_Sat"     : {"by":"id", "value":"reportFormWeekdaysSat-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  
+  "energyreport.occupancy_from" : {"by":"id", "value":"reportFormOnHoursStart-inputEl",          "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.occupancy_to"   : {"by":"id", "value":"reportFormOnHoursEnd-inputEl",            "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.occupancy_days" : {"by":"id", "value":"reportFormOccupiedWeekdaysCombo-inputEl", "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.occupancy_Sun"  : {"by":"id", "value":"reportFormOccupiedWeekdaysSun-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Mon"  : {"by":"id", "value":"reportFormOccupiedWeekdaysMon-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Tue"  : {"by":"id", "value":"reportFormOccupiedWeekdaysTue-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Wed"  : {"by":"id", "value":"reportFormOccupiedWeekdaysWed-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Thu"  : {"by":"id", "value":"reportFormOccupiedWeekdaysThu-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Fri"  : {"by":"id", "value":"reportFormOccupiedWeekdaysFri-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "energyreport.occupancy_Sat"  : {"by":"id", "value":"reportFormOccupiedWeekdaysSat-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  
+  "energyreport.baseline_offset_by"     : {"by":"id", "value":"reportFormBaselineOffsetType-inputEl",  "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "energyreport.baseline_starting_date" : {"by":"id", "value":"reportFormBaselineOffsetStart-inputEl", "parent":null, "tag_name":"input", "type":"EditBox"},
+  
+  "energyreport.Report_Loading_Mask"   : {"by":"id", "value":"reportPanelLoader",  "parent":null, "tag_name":"div", "type":"mask"}
+  
+  
+}
