@@ -90,8 +90,11 @@ class EditBoxWebElement(BaseWebElement):
     def __set__(self, obj, val):
         """ set the current value of the edit box """
         elem = self.getElement(self.locator)
-        elem.clear()
-        elem.send_keys(val)
+        if elem is not None:
+            elem.clear()
+            elem.send_keys(val)
+        else:
+            raise Exception("'%s' cannot be located on page."%self.locatorString)
     
     def isInvalid(self):
         """ return true if the web element is in invalid state """
