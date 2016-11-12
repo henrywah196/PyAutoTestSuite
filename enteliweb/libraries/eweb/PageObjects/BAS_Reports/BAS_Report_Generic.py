@@ -30,15 +30,15 @@ class ReportHistoryDropDown(DropDownBoxWebElement):
 class ObjectFilterWindow(BaseWebElement):
     """ Model the object filter window web element """
     
-    title       = BaseWebElement("ObjectFilterWindow.title")
-    type        = DropDownBoxWebElement("ObjectFilterWindow.type")
-    instance    = EditBoxWebElement("ObjectFilterWindow.instance") 
-    addRule     = ButtonWebElement("ObjectFilterWindow.addRule")
-    addProperty = ButtonWebElement("ObjectFilterWindow.addProperty")
-    logicAND    = ButtonWebElement("ObjectFilterWindow.logicAND")
-    logicOR     = ButtonWebElement("ObjectFilterWindow.logicOR")
-    btnOK       = ButtonWebElement("ObjectFilterWindow.btnOK")
-    btnCancel   = ButtonWebElement("ObjectFilterWindow.btnCancel")
+    title          = BaseWebElement("ObjectFilterWindow.title")
+    type           = DropDownBoxWebElement("ObjectFilterWindow.type")
+    instance       = EditBoxWebElement("ObjectFilterWindow.instance") 
+    btnAddRule     = ButtonWebElement("ObjectFilterWindow.btnAddRule")
+    btnAddProperty = ButtonWebElement("ObjectFilterWindow.btnAddProperty")
+    logicAND       = ButtonWebElement("ObjectFilterWindow.logicAND")
+    logicOR        = ButtonWebElement("ObjectFilterWindow.logicOR")
+    btnOK          = ButtonWebElement("ObjectFilterWindow.btnOK")
+    btnCancel      = ButtonWebElement("ObjectFilterWindow.btnCancel")
     
     propertyFilterPanel = BaseWebElement("ObjectFilterWindow.propertyFilterPanel")
     
@@ -58,16 +58,16 @@ class ObjectFilterWindow(BaseWebElement):
         """ add a new property based on propertyValueComparison.
             The propertyValueComparison is a list of [property_name, operator, value]  
         """
-        self.addProperty.click()
+        self.btnAddProperty.click()
         total = self.getTotalPropertyFilters()
-        targetElem = self.getPropertyFilter(total - 1)
+        targetElem = self.getPropertyFilter(total)
         self._modifyProperty(targetElem, propertyValueComparison)
         
     def addRule(self, propertyValueComparisonRule):
         """ Add a new property rule based on propertyValueComparisonRule.
             The propertyValueComparisonRule is a dictionary of {logic, list of propertyValueComparison}
         """
-        self.addRule.click()
+        self.btnAddRule.click()
         total = self.getTotalPropertyFilters()
         targetRuleElem = self.getPropertyFilter(total - 1)
         
@@ -83,13 +83,13 @@ class ObjectFilterWindow(BaseWebElement):
     def getTotalPropertyFilters(self):
         """ return total number of property or rule in property filter panel """
         divElem = self.propertyFilterPanel.getElement(self.propertyFilterPanel.locator)
-        childElems = divElem.find_elements_by_css_selector("*")
+        childElems = divElem.find_elements_by_xpath("*")
         return len(childElems)
     
     def getPropertyFilter(self, position):
         """ return the propetyFilter elem specified by position """
         divElem = self.propertyFilterPanel.getElement(self.propertyFilterPanel.locator)
-        childElems = divElem.find_elements_by_css_selector("*")
+        childElems = divElem.find_elements_by_xpath("*")
         if position <= len(childElems):
             return childElems[position - 1]
         else:
@@ -124,6 +124,7 @@ class ObjectFilterWindow(BaseWebElement):
             The propertyValueComparison is a list of [property_name, operator, value]
         """
         flag = propertyElem.get_attribute("id") + '-targetEl'
+        self.getDriver()
         divElem = self.driver.find_element_by_id(flag)
         propertyNameElem = divElem.find_element_by_xpath(".//div[1]")
         propertyOperatorElem = divElem.find_element_by_xpath(".//div[2]")
@@ -162,7 +163,7 @@ class ObjectFilterWindow(BaseWebElement):
     def getPropertyFromRule(self, propertyRuleElem, position):
         """ return the property elem under the specified property rule by its position """
         divElem = propertyRuleElem.find_element_by_xpath(".//div[contains(@id, 'propertyFilterPanelSub_') and contains(@id, 'targetEl')]")
-        childElems = divElem.find_elements_by_css_selector("*")
+        childElems = divElem.find_elements_by_xpath("*")
         if position <= len(childElems):
             return childElems[position - 1]
         else:
@@ -199,6 +200,8 @@ class BASReportPageObj(BaseFrameObject):
     addFilter    = ButtonWebElement("BASReportPageObj.addFilter")
     editFilter   = ButtonWebElement("BASReportPageObj.editFilter")
     deleteFilter = ButtonWebElement("BASReportPageObj.deleteFilter")
+    
+    objectFilterWindow = ObjectFilterWindow("BASReportPageObj.objectFilterWindow")
     
     
     loadingMask = TextBoxWebElement("BASReportPageObj.loadingMask")

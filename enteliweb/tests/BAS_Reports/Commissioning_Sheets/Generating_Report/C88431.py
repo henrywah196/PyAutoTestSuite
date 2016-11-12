@@ -55,6 +55,8 @@ class TC88431(TestCaseTemplate):
         
         self.commissioningSheetsReport.addFilter.click()
         time.sleep(10)
+        result = self.commissioningSheetsReport.objectFilterWindow.isDisplayed()
+        self.commissioningSheetsReport.objectFilterWindow.addProperty(["Present_Value", ">=", "20.5"])
         
         
         
