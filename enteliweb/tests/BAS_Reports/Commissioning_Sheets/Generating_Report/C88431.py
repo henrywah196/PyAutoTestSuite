@@ -57,6 +57,11 @@ class TC88431(TestCaseTemplate):
         time.sleep(10)
         result = self.commissioningSheetsReport.objectFilterWindow.isDisplayed()
         self.commissioningSheetsReport.objectFilterWindow.addProperty(["Present_Value", ">=", "20.5"])
+        propertyValueComparisonRule = {"logic" : "OR",
+                                       "list of propertyValueComparison": [ ["Present_Value", ">=", "20.5"],
+                                                                            ["Description", "=", "testing"]
+                                                                          ]}
+        self.commissioningSheetsReport.objectFilterWindow.addRule(propertyValueComparisonRule)
         
         
         

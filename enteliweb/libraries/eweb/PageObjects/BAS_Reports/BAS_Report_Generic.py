@@ -69,14 +69,17 @@ class ObjectFilterWindow(BaseWebElement):
         """
         self.btnAddRule.click()
         total = self.getTotalPropertyFilters()
-        targetRuleElem = self.getPropertyFilter(total - 1)
+        targetRuleElem = self.getPropertyFilter(total)
         
         listOfPropertyValueComparison = propertyValueComparisonRule["list of propertyValueComparison"]
-        for propertyValueComparison in listOfPropertyValueComparison:
-            self.addPropertyToRule(targetRuleElem)
+        i =  0
+        while i < len(listOfPropertyValueComparison):
+            if not i == 0:
+                self.addPropertyToRule(targetRuleElem)
             total = self.getTotalPropertyFromRule(targetRuleElem)
-            targetElem = self.getPropertyFromRule(targetRuleElem, total - 1)
-            self._modifyProperty(targetElem, propertyValueComparison)
+            targetElem = self.getPropertyFromRule(targetRuleElem, total)
+            self._modifyProperty(targetElem, listOfPropertyValueComparison[i])
+            i = i + 1
         theLogic = propertyValueComparisonRule["logic"]
         self.changePropertyRuleLogic(targetRuleElem, theLogic)
         
@@ -126,9 +129,10 @@ class ObjectFilterWindow(BaseWebElement):
         flag = propertyElem.get_attribute("id") + '-targetEl'
         self.getDriver()
         divElem = self.driver.find_element_by_id(flag)
-        propertyNameElem = divElem.find_element_by_xpath(".//div[1]")
-        propertyOperatorElem = divElem.find_element_by_xpath(".//div[2]")
-        propertyValueElem = divElem.find_element_by_xpath(".//div[3]")
+        childElems = divElem.find_elements_by_xpath("*")
+        propertyNameElem = childElems[0]
+        propertyOperatorElem = childElems[1]
+        propertyValueElem = childElems[2]
         self._modifyPropertyItem(propertyNameElem, propertyValueComparison[0])
         self._modifyPropertyItem(propertyOperatorElem, propertyValueComparison[1])
         self._modifyPropertyItem(propertyValueElem, propertyValueComparison[2])
@@ -141,7 +145,7 @@ class ObjectFilterWindow(BaseWebElement):
     def getTotalPropertyFromRule(self, propertyRuleElem):
         """ return total number of properties under the specified rule """ 
         divElem = propertyRuleElem.find_element_by_xpath(".//div[contains(@id, 'propertyFilterPanelSub_') and contains(@id, 'targetEl')]")
-        childElems = divElem.find_elements_by_css_selector("*")
+        childElems = divElem.find_elements_by_xpath("*")
         return len(childElems)
         
     def addPropertyToRule(self, propertyRuleElem):
