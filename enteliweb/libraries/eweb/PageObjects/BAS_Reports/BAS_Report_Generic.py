@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from libraries.eweb.PageObjects.BasePageObject import BaseFrameObject
 from libraries.eweb.PageObjects.BaseWebElement import BaseWebElement, TextBoxWebElement, EditBoxWebElement, ButtonWebElement, DropDownBoxWebElement, CheckBoxWebElement
 import time, datetime
+import types
 
 
 class ReportHistoryDropDown(DropDownBoxWebElement):
@@ -132,7 +133,7 @@ class ObjectFilterWindow(BaseWebElement):
         total = self.getTotalPropertyFilters()
         targetRuleElem = self.getPropertyFilter(total)
         
-        listOfPropertyValueComparison = propertyValueComparisonRule["list of propertyValueComparison"]
+        listOfPropertyValueComparison = propertyValueComparisonRule["Properties"]
         i =  0
         while i < len(listOfPropertyValueComparison):
             if not i == 0:
@@ -141,7 +142,7 @@ class ObjectFilterWindow(BaseWebElement):
             targetElem = self.getPropertyFromRule(targetRuleElem, total)
             self._modifyProperty(targetElem, listOfPropertyValueComparison[i])
             i = i + 1
-        theLogic = propertyValueComparisonRule["logic"]
+        theLogic = propertyValueComparisonRule["Rule Logic"]
         self.changePropertyRuleLogic(targetRuleElem, theLogic)
         
     def getTotalPropertyFilters(self):
@@ -297,13 +298,37 @@ class BASReportPageObj(BaseFrameObject):
         else:
             return False
         
-    def addObjectFilter(self):
+    def addObjectFilter(self, dicObjectFilter):
         """ click the Add filter button to load the object filter window """
         self.addFilter.click()
         time.sleep(1)
         result = self.objectFilterWindow.isDisplayed()
         if not result:
             raise Exception("object filter window is not displayed after click Add filter button")
+        
+        objectTypes = dicObjectFilter["Type"]
+        for objectType in objectTypes:
+            self.objectFilterWindow.objectType = objectType
+        self.objectFilterWindow.objectType.collapse()
+        
+        objectInstance = dicObjectFilter["Instance"]
+        self.objectFilterWindow.instance = objectInstance
+        
+        properties = dicObjectFilter["Properties"]
+        for property in properties:
+            if isinstance(property, types.ListType):
+                self.objectFilterWindow.addProperty(property)
+            else:
+                self.objectFilterWindow.addRule(property)
+           
+        propertyLogic = dicObjectFilter["Property Logic"]
+        if propertyLogic == "OR":
+            self.objectFilterWindow.logicOR.click()
+        else:
+            self.objectFilterWindow.logicAND.click()
+            
+        self.objectFilterWindow.btnOK.click()
+        
         
     def _getObjectFilter(self, position):
         """ return the specified object filter elemetn under filter panel """

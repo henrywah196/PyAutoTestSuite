@@ -1,0 +1,26 @@
+[
+  {
+    "Report Name"     : "My Auto testing Report 001",
+    "Report Title"    : "My Auto testing Report 001",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "BO"],
+                            "Instance"       : "100-199",
+							"Property Logic" : "OR",
+							"Properties"     : [
+							                      ["Present_Value", ">=", "20.5"],
+												  {
+												    "Rule Logic" : "OR",
+                                                    "Properties" : [ 
+													                 ["Present_Value", ">=", "20.5"],
+                                                                     ["Description", "=", "testing"]
+                                                                   ]
+												  }
+							                   ]
+						  }
+						]
+  }
+  
+]

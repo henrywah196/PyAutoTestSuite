@@ -6,6 +6,42 @@ from libraries.eweb.PageObjects.Accordion import AccordionPageObj
 from libraries.eweb.PageObjects.BAS_Reports.Commissioning_Sheets import CommissioningSheetsPageObj
 import os, time
 from selenium import webdriver
+import json
+
+
+# Global Settings
+JSON_FILE_LOCATION = os.path.abspath(os.path.join(os.path.dirname(__file__), "C88431.json"))
+
+
+def getTestingData():
+    """
+    return a list of commissioning sheet report settings
+    """
+    
+    class TestData():
+        def __init__(self):
+            self.reportName  = None
+            self.reportTitle = None
+            self.site = None
+            self.deviceRange = None
+            self.objectFilters = None
+            
+    result = None
+    json_file = open(JSON_FILE_LOCATION, "r")
+    json_data = json.load(json_file)
+            
+    for item in json_data:
+        myTestData = TestData()
+        myTestData.reportName = item["Report Name"]
+        myTestData.reportTitle = item["Report Title"]
+        myTestData.site = item["Site"]
+        myTestData.deviceRange = item["Device Range"]
+        myTestData.objectFilters = item["Object Filters"]
+        if result is None:
+            result = []
+        result.append(myTestData)
+        
+    return result
 
 
 class TC88431(TestCaseTemplate):
@@ -43,37 +79,22 @@ class TC88431(TestCaseTemplate):
         
         self.commissioningSheetsReport = CommissioningSheetsPageObj()
         
-        reportName = "My Auto testing Report 001"
-        reportTitle = reportName
-        site = "$LocalSite"
-        deviceRange = "1200"
+        self.testData = getTestingData()[0]
+        
+        reportName = self.testData.reportName
+        reportTitle = self.testData.reportTitle
+        site = self.testData.site
+        deviceRange = self.testData.deviceRange
+        objectFilters = self.testData.objectFilters
         
         self.commissioningSheetsReport.reportName = reportName
         self.commissioningSheetsReport.reportTitle = reportTitle
         self.commissioningSheetsReport.site = site
         self.commissioningSheetsReport.deviceRange = deviceRange
         
-        self.commissioningSheetsReport.addFilter.click()
-        time.sleep(10)
-        result = self.commissioningSheetsReport.objectFilterWindow.isDisplayed()
-        
-        self.commissioningSheetsReport.objectFilterWindow.objectType = "IP"
-        self.commissioningSheetsReport.objectFilterWindow.objectType = "OP"
-        self.commissioningSheetsReport.objectFilterWindow.objectType.clearSelection()
-        self.commissioningSheetsReport.objectFilterWindow.objectType = "AI"
-        self.commissioningSheetsReport.objectFilterWindow.objectType = "BO"
-        self.commissioningSheetsReport.objectFilterWindow.objectType.collapse()
-        
-        self.commissioningSheetsReport.objectFilterWindow.addProperty(["Present_Value", ">=", "20.5"])
-        
-        propertyValueComparisonRule = {"logic" : "OR",
-                                       "list of propertyValueComparison": [ ["Present_Value", ">=", "20.5"],
-                                                                            ["Description", "=", "testing"]
-                                                                          ]}
-        
-        self.commissioningSheetsReport.objectFilterWindow.addRule(propertyValueComparisonRule)
-        
-        self.commissioningSheetsReport.objectFilterWindow.btnOK.click()
+        for objectFilter in objectFilters:
+            self.commissioningSheetsReport.addObjectFilter(objectFilter)
+            
         time.sleep(10)
         
         
