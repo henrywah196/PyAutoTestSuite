@@ -56,12 +56,25 @@ class TC88431(TestCaseTemplate):
         self.commissioningSheetsReport.addFilter.click()
         time.sleep(10)
         result = self.commissioningSheetsReport.objectFilterWindow.isDisplayed()
+        
+        self.commissioningSheetsReport.objectFilterWindow.objectType = "IP"
+        self.commissioningSheetsReport.objectFilterWindow.objectType = "OP"
+        self.commissioningSheetsReport.objectFilterWindow.objectType.clearSelection()
+        self.commissioningSheetsReport.objectFilterWindow.objectType = "AI"
+        self.commissioningSheetsReport.objectFilterWindow.objectType = "BO"
+        self.commissioningSheetsReport.objectFilterWindow.objectType.collapse()
+        
         self.commissioningSheetsReport.objectFilterWindow.addProperty(["Present_Value", ">=", "20.5"])
+        
         propertyValueComparisonRule = {"logic" : "OR",
                                        "list of propertyValueComparison": [ ["Present_Value", ">=", "20.5"],
                                                                             ["Description", "=", "testing"]
                                                                           ]}
+        
         self.commissioningSheetsReport.objectFilterWindow.addRule(propertyValueComparisonRule)
+        
+        self.commissioningSheetsReport.objectFilterWindow.btnOK.click()
+        time.sleep(10)
         
         
         

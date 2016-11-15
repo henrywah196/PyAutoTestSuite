@@ -27,11 +27,72 @@ class ReportHistoryDropDown(DropDownBoxWebElement):
                 target.click()
                 
                 
+class ObjectFilterTypeDropDown(DropDownBoxWebElement):
+    """ Model the Type DropDown Box web element under Object filter window """
+    def __init__(self, locatorString):
+        super(ObjectFilterTypeDropDown, self).__init__("ObjectFilterWindow.objectType", invalidIcon=False)
+        
+    def getDropDownList(self): 
+        """ return the drop down list web element """ 
+        driver = self.getDriver()
+        dropDownList = None
+        
+        if not self.isExpanded():
+            flag = "filterObject-trigger-picker"
+            elem = self.getElement(self.locator)
+            divElem = elem.find_element_by_id(flag)
+            divElem.click ()    # click to expand the drop down list
+        
+        boundLists = driver.find_elements_by_class_name('x-boundlist-list-ct')
+        if boundLists:
+            for boundList in boundLists:
+                if boundList.is_displayed():
+                    dropDownList = boundList
+                    break
+        del boundLists
+        return dropDownList
+    
+    def isExpanded(self):
+        """ return true if the dropdown box is expanded to show the list """
+        result = False
+        try:
+            driver = self.getDriver()
+            boundLists = driver.find_elements_by_class_name('x-boundlist-list-ct')
+            for boundList in boundLists:
+                if boundList.is_displayed():
+                    result = True
+                    break
+        except:
+            pass
+        return result
+    
+    def collapse(self):
+        """ collapse the drop down list """
+        if self.isExpanded():
+            flag = "filterObject-trigger-picker"
+            elem = self.getElement(self.locator)
+            divElem = elem.find_element_by_id(flag)
+            divElem.click ()    # click to close dropdown list
+    
+    def clearSelection(self):
+        """ remove all selected items from type field """
+        flag = "filterObject-itemList"
+        elem = self.getElement(self.locator)
+        ulElem = elem.find_element_by_id(flag)
+        liElems = ulElem.find_elements_by_tag_name("li")
+        if len(liElems) > 1:
+            liElem = liElems[0]
+            flag = "x-tagfield-item-close"
+            divElem = liElem.find_element_by_class_name(flag)
+            divElem.click()
+            self.clearSelection()
+               
+                
 class ObjectFilterWindow(BaseWebElement):
     """ Model the object filter window web element """
     
     title          = BaseWebElement("ObjectFilterWindow.title")
-    type           = DropDownBoxWebElement("ObjectFilterWindow.type")
+    objectType     = ObjectFilterTypeDropDown("ObjectFilterWindow.objectType")
     instance       = EditBoxWebElement("ObjectFilterWindow.instance") 
     btnAddRule     = ButtonWebElement("ObjectFilterWindow.btnAddRule")
     btnAddProperty = ButtonWebElement("ObjectFilterWindow.btnAddProperty")
@@ -139,6 +200,7 @@ class ObjectFilterWindow(BaseWebElement):
     
     def _modifyPropertyItem(self, propertyItemElem, strPropertyItemValue):
         inputElem = propertyItemElem.find_element_by_tag_name("input")
+        inputElem.click()
         inputElem.clear()
         inputElem.send_keys(strPropertyItemValue)
     
@@ -202,8 +264,7 @@ class BASReportPageObj(BaseFrameObject):
     deviceRange = EditBoxWebElement("BASReportPageObj.deviceRange")
     
     addFilter    = ButtonWebElement("BASReportPageObj.addFilter")
-    editFilter   = ButtonWebElement("BASReportPageObj.editFilter")
-    deleteFilter = ButtonWebElement("BASReportPageObj.deleteFilter")
+    filterPanel  = BaseWebElement("BASReportPageObj.filterPanel")
     
     objectFilterWindow = ObjectFilterWindow("BASReportPageObj.objectFilterWindow")
     
@@ -235,3 +296,32 @@ class BASReportPageObj(BaseFrameObject):
             return result
         else:
             return False
+        
+    def addObjectFilter(self):
+        """ click the Add filter button to load the object filter window """
+        self.addFilter.click()
+        time.sleep(1)
+        result = self.objectFilterWindow.isDisplayed()
+        if not result:
+            raise Exception("object filter window is not displayed after click Add filter button")
+        
+    def _getObjectFilter(self, position):
+        """ return the specified object filter elemetn under filter panel """
+        elem = self.filterPanel.getElement(self.filterPanel.locator)
+        childElems = elem.find_elements_by_xpath("*")
+        if position <= len(childElems):
+            return childElems[position - 1]
+        else:
+            raise Exception("position '%s' is out of boundary"%position)
+    
+    def editObjectFilter(self, position):
+        """ click the edit filter button by the specified position to load object filter window """
+        divElem = self._getObjectFilter(position)
+        aElem = divElem.find_element_by_xpath(".//a[contains(@onclick, 'displayFilter')]")
+        aElem.click()
+    
+    def deleteObjectFilter(self, position):
+        """ click the delete filter button by the specified position to remove a object filter """
+        divElem = self._getObjectFilter(position)
+        aElem = divElem.find_element_by_xpath(".//a[contains(@onclick, 'deleteFilter')]")
+        aElem.click()
