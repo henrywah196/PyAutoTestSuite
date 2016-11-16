@@ -221,11 +221,12 @@ class ObjectFilterWindow(BaseWebElement):
         if theLogic not in ["AND", "OR"]:
             raise Exception("theLogic should be either 'AND' or 'OR'.")
         else:
-            divElem = propertyRuleElem.find_element_by_xpath(".//div[contains(@id, 'logic_sub_')]")
-            aElem = divElem.find_element_by_xpath(".//a[1]")
+            divElem = propertyRuleElem.find_element_by_xpath(".//table[contains(@id, 'logic_sub_')]")
+            tdElem = divElem.find_element_by_xpath(".//tbody/tr/td[1]")
             if theLogic == 'OR':
-                aElem = divElem.find_element_by_xpath(".//a[2]")
-            aElem.click()
+                tdElem = divElem.find_element_by_xpath(".//tbody/tr/td[2]")
+            inputElem = tdElem.find_element_by_tag_name("input")
+            inputElem.click()
         
     def getPropertyFromRule(self, propertyRuleElem, position):
         """ return the property elem under the specified property rule by its position """
@@ -241,6 +242,16 @@ class ObjectFilterWindow(BaseWebElement):
         targetElem = self.getPropertyFromRule(propertyRuleElem, position)
         aElem = targetElem.find_element_by_xpath(".//a[contains(@onclick, 'deletePropertyFilter')]")
         aElem.click()
+        
+        
+class DeleteConfirmWindow(BaseWebElement):
+    """ Model the delete confirmation window web element """
+    
+    btnYes = ButtonWebElement("DeleteConfirmWindow.btnYes")
+    btnNo  = ButtonWebElement("DeleteConfirmWindow.btnNo")
+    
+    def __init__(self, locatorString):
+        super(DeleteConfirmWindow, self).__init__("BASReportPageObj.deleteConfirmWindow")
     
 
 class BASReportPageObj(BaseFrameObject):
@@ -268,6 +279,8 @@ class BASReportPageObj(BaseFrameObject):
     filterPanel  = BaseWebElement("BASReportPageObj.filterPanel")
     
     objectFilterWindow = ObjectFilterWindow("BASReportPageObj.objectFilterWindow")
+    
+    deleteConfirmWindow = DeleteConfirmWindow("BASReportPageObj.deleteConfirmWindow")
     
     
     loadingMask = TextBoxWebElement("BASReportPageObj.loadingMask")
@@ -297,6 +310,32 @@ class BASReportPageObj(BaseFrameObject):
             return result
         else:
             return False
+        
+    def saveChange(self):
+        """ click the save button and wait page refreshed"""
+        self.save.click()    # click the save button
+        
+        timeout = 10
+        locator = self.configPanel_Header.locator
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
+        except TimeoutException:
+            raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+        
+    def deleteInstance(self):
+        """ click the delete button and select yes in popup and wait page refresh """
+        self.delete.click()
+        result = self.deleteConfirmWindow.isDisplayed()
+        if not result:
+            raise Exception("Delete confirm window is not displayed after click the Delete button")
+        self.deleteConfirmWindow.btnYes.click()
+        timeout = 10
+        locator = self.configPanel_Header.locator
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
+        except TimeoutException:
+            raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+        
         
     def addObjectFilter(self, dicObjectFilter):
         """ click the Add filter button to load the object filter window """

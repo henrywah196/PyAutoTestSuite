@@ -95,7 +95,13 @@ class TC88431(TestCaseTemplate):
         for objectFilter in objectFilters:
             self.commissioningSheetsReport.addObjectFilter(objectFilter)
             
+        self.commissioningSheetsReport.saveChange()
+        
         time.sleep(10)
+        
+        Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
+        
+        self.commissioningSheetsReport.deleteInstance()
         
         
         

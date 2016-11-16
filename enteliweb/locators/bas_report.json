@@ -22,7 +22,9 @@
   "BASReportPageObj.addFilter"              : {"by":"tag_name", "value":"a",                                         "parent":"BASReportPageObj.addFilter_Container",  "tag_name":"a",   "type":"Button"},
   "BASReportPageObj.filterPanel"            : {"by":"id",       "value":"filterPanel-targetEl",                      "parent":null,                                    "tag_name":"div", "type":"Container"}, 
   
-  "BASReportPageObj.objectFilterWindow" : {"by":"id", "value":"filterWindow", "parent":null, "tag_name":"div", "type":"Window"},
+  "BASReportPageObj.objectFilterWindow"  : {"by":"id",    "value":"filterWindow", "parent":null, "tag_name":"div", "type":"Window"},
+  
+  "BASReportPageObj.deleteConfirmWindow" : {"by":"xpath", "value":"//div[contains(@class, 'x-message-box')]", "parent":null, "tag_name":"div", "type":"Window"},
   
   "BASReportPageObj.loadingMask"   : {"by":"id", "value":"reportPanelLoader", "parent":null, "tag_name":"div", "type":""},
   
@@ -35,10 +37,14 @@
   "ObjectFilterWindow.instance"            : {"by":"id",    "value":"filterInstance-inputEl",                  "parent":null,                                   "tag_name":"input", "type":"EditBox"},
   "ObjectFilterWindow.btnAddRule"          : {"by":"xpath", "value":".//a[contains(@onclick, 'addRule')]",     "parent":"ObjectFilterWindow.mainPropertyPanel", "tag_name":"a",     "type":"Button"},
   "ObjectFilterWindow.btnAddProperty"      : {"by":"xpath", "value":".//a[contains(@onclick, 'addProperty')]", "parent":"ObjectFilterWindow.mainPropertyPanel", "tag_name":"a",     "type":"Button"},
-  "ObjectFilterWindow.logicAND"            : {"by":"xpath", "value":".//a[1]",                                 "parent":"ObjectFilterWindow.logicButtons",      "tag_name":"a",     "type":"Button"},
-  "ObjectFilterWindow.logicOR"             : {"by":"xpath", "value":".//a[2]",                                 "parent":"ObjectFilterWindow.logicButtons",      "tag_name":"a",     "type":"Button"},
+  "ObjectFilterWindow.logicAND"            : {"by":"id",    "value":"logic_main_and-inputEl",                  "parent":null,                                    "tag_name":"a",     "type":"Button"},
+  "ObjectFilterWindow.logicOR"             : {"by":"id",    "value":"logic_main_or-inputEl",                   "parent":null,                                    "tag_name":"a",     "type":"Button"},
   "ObjectFilterWindow.btnOK"               : {"by":"id",    "value":"filterSave",                              "parent":null,                                   "tag_name":"a",     "type":"Button"},
-  "ObjectFilterWindow.btnCancel"           : {"by":"id",    "value":"filterCancel",                            "parent":null,                                   "tag_name":"a",     "type":"Button"}
+  "ObjectFilterWindow.btnCancel"           : {"by":"id",    "value":"filterCancel",                            "parent":null,                                   "tag_name":"a",     "type":"Button"},
+  
+  "DeleteConfirmWindow.toolbar" : {"by":"xpath", "value":"//div[contains(@id, 'messagebox-') and contains(@id, 'toolbar-targetEl')], "parent":null,                          "tag_name":"div", "type":"Container"},
+  "DeleteConfirmWindow.btnYes"  : {"by":"xpath",    "value":".//a[2]",                                                               "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",     "type":"Button"},
+  "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                               "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",     "type":"Button"},
   
   
 }
