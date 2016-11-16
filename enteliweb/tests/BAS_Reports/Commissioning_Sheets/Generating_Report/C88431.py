@@ -101,6 +101,10 @@ class TC88431(TestCaseTemplate):
         
         Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
         
+        self.commissioningSheetsReport.generatingReport(TimeLimit=600)
+        
+        Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
+        
         self.commissioningSheetsReport.deleteInstance()
         
         
