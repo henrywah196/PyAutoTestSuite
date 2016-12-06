@@ -107,21 +107,21 @@ class TC88431(TestCaseTemplate):
         result = self.commissioningSheetsReport.generatedReportHasNoData()
         self.assertTrue(result, "expect no data returned in the generated report")
         
-<<<<<<< HEAD
         Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
-=======
-        self.commissioningSheetsReport.generatingReport(TimeLimit=600)
-        
-        Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
-        
->>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
         self.commissioningSheetsReport.deleteInstance()
         
         Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\EWEB-19031 abc")
         
+        time.sleep(10)
+        
         result = self.commissioningSheetsReport.generatedReportGetData()
         
-        time.sleep(10)
+        for item in result:
+            print "header: %s"%item["header"]
+            print "location: %s"%item["location"]
+            print "model: %s"%item["model"]
+            print "ip: %s"%item["ip"]
+            print "" 
         
         
         
