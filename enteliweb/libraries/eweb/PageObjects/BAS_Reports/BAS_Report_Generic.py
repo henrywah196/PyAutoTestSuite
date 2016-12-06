@@ -10,6 +10,25 @@ import time, datetime
 import types
 
 
+class GeneratedReportLogo(BaseWebElement):
+    """ Model the report logo web element in generated report """
+    
+    def __init__(self, locatorString):
+        super(GeneratedReportLogo, self).__init__("BASReportPageObj.generatedReportLogo")
+        
+    def getElement(self, locator):
+        """ locate the web element on page """
+        driver = self.getDriver()
+        driver.switch_to_default_content()
+        driver.switch_to_frame("mainFrame")
+        driver.switch_to_frame("resultReport")
+        elementid = locator["value"]
+        flag = "//img[starts-with(@id, '%s')]"%elementid
+        elem = driver.find_element_by_xpath(flag)
+        driver.switch_to_default_content()
+        driver.switch_to_frame("mainFrame")
+        return elem
+
 class ReportHistoryDropDown(DropDownBoxWebElement):
     """ Model the Report History DropDown Box web element """
     def __init__(self, locatorString):
@@ -285,6 +304,8 @@ class BASReportPageObj(BaseFrameObject):
     
     loadingMask = TextBoxWebElement("BASReportPageObj.loadingMask")
     
+    generatedReportLogo = GeneratedReportLogo("BASReportPageObj.generatedReportLogo")
+    
     
     def __init__(self):
         super(BASReportPageObj, self).__init__()
@@ -311,30 +332,76 @@ class BASReportPageObj(BaseFrameObject):
         else:
             return False
         
-    def saveChange(self):
+    def saveChange(self, timeout=10):
         """ click the save button and wait page refreshed"""
         self.save.click()    # click the save button
-        
-        timeout = 10
+        time.sleep(2)
         locator = self.configPanel_Header.locator
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
             raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
         
-    def deleteInstance(self):
+    def deleteInstance(self, timeout=10):
         """ click the delete button and select yes in popup and wait page refresh """
+        self.focus()
         self.delete.click()
         result = self.deleteConfirmWindow.isDisplayed()
         if not result:
             raise Exception("Delete confirm window is not displayed after click the Delete button")
         self.deleteConfirmWindow.btnYes.click()
-        timeout = 10
+        time.sleep(2)
         locator = self.configPanel_Header.locator
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
             raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+        
+    def generatingReport(self, timeout):
+        """ command to click run button and waits till the report is generated and if the waitting time exceed time limit
+            it give timeout warning and return false otheer wise it will return true
+            
+            @param string timeout    timeout time for the report generating
+            @return boolean          return true if the node is successively created under the specified path.
+        """
+        result = False
+        driver = self.driver
+        try:
+            self.focus()
+            self.run.click()
+            # wait 8 seconds first
+            time.sleep(8)
+            # waiting for loading mask finish up
+            elementID = self.loadingMask.locator.get("value")
+            errMessage = "Report doesn't finish generating within %s seconds"%timeout
+            WebDriverWait(driver, timeout).until(EC.invisibility_of_element_located((By.ID, elementID)), errMessage)
+            # examine the report logo
+            errMessage = "Generated report is not as expected"
+            elementID = self.generatedReportLogo.locator.get("value")
+            flag = "//img[starts-with(@id, '%s')]"%elementID
+            elem = WebDriverWait(driver, 3).until(self._elem_available_cb(flag), errMessage)
+            if elem:
+                result = True
+        except Exception, e:
+            print "generatingReport(): get Exception: %s"%e 
+            result = False
+        return result
+    
+    def _elem_available_cb(self, flag):
+        """ helper function for generatingReport()
+            return a callback that checks whether the element is available
+        """
+        def callback(Inputdriver):
+            result = True
+            try:
+                Inputdriver.switch_to_default_content()
+                Inputdriver.switch_to_frame("mainFrame")
+                Inputdriver.switch_to_frame("resultReport")
+                elem = Inputdriver.find_element_by_xpath(flag)
+            except Exception, e:
+                result = False
+            return result
+        return callback
         
         
     def addObjectFilter(self, dicObjectFilter):
@@ -354,17 +421,18 @@ class BASReportPageObj(BaseFrameObject):
         self.objectFilterWindow.instance = objectInstance
         
         properties = dicObjectFilter["Properties"]
-        for property in properties:
-            if isinstance(property, types.ListType):
-                self.objectFilterWindow.addProperty(property)
-            else:
-                self.objectFilterWindow.addRule(property)
+        if properties != None: 
+            for property in properties:
+                if isinstance(property, types.ListType):
+                    self.objectFilterWindow.addProperty(property)
+                else:
+                    self.objectFilterWindow.addRule(property)
            
-        propertyLogic = dicObjectFilter["Property Logic"]
-        if propertyLogic == "OR":
-            self.objectFilterWindow.logicOR.click()
-        else:
-            self.objectFilterWindow.logicAND.click()
+            propertyLogic = dicObjectFilter["Property Logic"]
+            if propertyLogic == "OR":
+                self.objectFilterWindow.logicOR.click()
+            else:
+                self.objectFilterWindow.logicAND.click()
             
         self.objectFilterWindow.btnOK.click()
         
@@ -389,3 +457,22 @@ class BASReportPageObj(BaseFrameObject):
         divElem = self._getObjectFilter(position)
         aElem = divElem.find_element_by_xpath(".//a[contains(@onclick, 'deleteFilter')]")
         aElem.click()
+        
+        
+    ##################################
+    # generated report related method
+    ##################################
+    def generatedReportHasNoData(self):
+        """ return true if the generated has no data to display
+        """
+        driver = self.driver
+        driver.switch_to_default_content()
+        driver.switch_to_frame("mainFrame")
+        driver.switch_to_frame("resultReport")
+        elem = driver.find_element_by_xpath("//*[contains(text(), 'No data to display')]")
+        result = elem.is_displayed()
+        driver.switch_to_default_content()
+        driver.switch_to_frame("mainFrame")
+        return result
+        
+    

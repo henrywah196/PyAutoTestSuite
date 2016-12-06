@@ -92,17 +92,29 @@ class TC88431(TestCaseTemplate):
         self.commissioningSheetsReport.site = site
         self.commissioningSheetsReport.deviceRange = deviceRange
         
+        # delete the default object filter
+        self.commissioningSheetsReport.deleteObjectFilter(1)
+        
         for objectFilter in objectFilters:
             self.commissioningSheetsReport.addObjectFilter(objectFilter)
             
         self.commissioningSheetsReport.saveChange()
         
-        time.sleep(10)
+        Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
+        result = self.commissioningSheetsReport.generatingReport(timeout=600)
+        self.assertTrue(result, "failed to generate report")
+        
+        result = self.commissioningSheetsReport.generatedReportHasNoData()
+        self.assertTrue(result, "expect no data returned in the generated report")
         
         Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\My Auto testing Report 001")
-        
         self.commissioningSheetsReport.deleteInstance()
         
+        Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\EWEB-19031 abc")
+        
+        result = self.commissioningSheetsReport.generatedReportGetData()
+        
+        time.sleep(10)
         
         
         

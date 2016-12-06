@@ -28,6 +28,7 @@
   
   "BASReportPageObj.loadingMask"   : {"by":"id", "value":"reportPanelLoader", "parent":null, "tag_name":"div", "type":""},
   
+  "BASReportPageObj.generatedReportLogo" : {"by":"id", "value":"AUTOGENBOOKMARK_2_", "parent":null, "tag_name":"img", "type":"Image"},
   
   "ObjectFilterWindow.mainPropertyPanel"   : {"by":"id",    "value":"propertyPanelMain",                       "parent":null,                                   "tag_name":"div",   "type":"Container"},
   "ObjectFilterWindow.propertyFilterPanel" : {"by":"id",    "value":"propertyFilterPanel-targetEl",            "parent":null,                                   "tag_name":"div",   "type":"Container"},
@@ -42,9 +43,9 @@
   "ObjectFilterWindow.btnOK"               : {"by":"id",    "value":"filterSave",                              "parent":null,                                   "tag_name":"a",     "type":"Button"},
   "ObjectFilterWindow.btnCancel"           : {"by":"id",    "value":"filterCancel",                            "parent":null,                                   "tag_name":"a",     "type":"Button"},
   
-  "DeleteConfirmWindow.toolbar" : {"by":"xpath", "value":"//div[contains(@id, 'messagebox-') and contains(@id, 'toolbar-targetEl')], "parent":null,                          "tag_name":"div", "type":"Container"},
-  "DeleteConfirmWindow.btnYes"  : {"by":"xpath",    "value":".//a[2]",                                                               "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",     "type":"Button"},
-  "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                               "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",     "type":"Button"},
+  "DeleteConfirmWindow.toolbar" : {"by":"xpath", "value":"//div[contains(@id, 'messagebox-') and contains(@id, 'toolbar-targetEl')]", "parent":null,                          "tag_name":"div", "type":"Container"},
+  "DeleteConfirmWindow.btnYes"  : {"by":"xpath",    "value":".//a[2]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"},
+  "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"}
   
   
 }
