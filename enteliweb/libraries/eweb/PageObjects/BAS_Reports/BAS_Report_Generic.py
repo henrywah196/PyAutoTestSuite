@@ -15,7 +15,11 @@ class GeneratedReportLogo(BaseWebElement):
     
     def __init__(self, locatorString):
         super(GeneratedReportLogo, self).__init__("BASReportPageObj.generatedReportLogo")
+<<<<<<< HEAD
         
+=======
+    
+>>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
     def getElement(self, locator):
         """ locate the web element on page """
         driver = self.getDriver()
@@ -23,12 +27,20 @@ class GeneratedReportLogo(BaseWebElement):
         driver.switch_to_frame("mainFrame")
         driver.switch_to_frame("resultReport")
         elementid = locator["value"]
+<<<<<<< HEAD
         flag = "//img[starts-with(@id, '%s')]"%elementid
+=======
+        flag = "//img[starts-with(@id, '" + elementid + "')]"    #
+>>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
         elem = driver.find_element_by_xpath(flag)
         driver.switch_to_default_content()
         driver.switch_to_frame("mainFrame")
         return elem
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
 class ReportHistoryDropDown(DropDownBoxWebElement):
     """ Model the Report History DropDown Box web element """
     def __init__(self, locatorString):
@@ -356,6 +368,58 @@ class BASReportPageObj(BaseFrameObject):
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
             raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+    
+    
+    def generatingReport(self, TimeLimit):
+        """
+        This command click run button and waits till the report is generated and if the waiting time  exceed time limit
+        it give timeout warning and return false otherwise it will return true
+
+        @param string TimeLimit            Timeout time for the report generating
+
+        @return boolean                    return True if the node is successively created under the specified path.
+        """
+    
+        result = False
+        driver = self.driver
+        try:
+            self.focus()
+            self.run.click()
+            # 1. wait 8 seconds
+            time.sleep(8)
+            # 2. examine and waiting for loading mask finish up
+            ElementID = self.loadingMask.locator.get("value")
+            errMessage = "Report doesn't finish generating within %s seconds"%TimeLimit
+            WebDriverWait(driver, TimeLimit).until(EC.invisibility_of_element_located((By.ID, ElementID)), errMessage)
+            # 3. examine the report logo
+            errMessage = "Generated report is not as expected"
+            elementid = self.generatedReportLogo.locator.get("value")
+            flag = "//img[starts-with(@id, '" + elementid + "')]"    # locate the report logo
+            elem = WebDriverWait(driver, 3).until(self._elem_available_cb(flag), errMessage)
+            if elem:
+                result = True
+        except Exception, e:
+            print "generatingReport() get Exception: %s" %e
+            result = False
+        return result
+
+    def _elem_available_cb(self, flag):
+        """
+        helper function for  WaitForReport()
+        return a callback that checks whether the element is available
+        """
+        def callback(Inputdriver):
+            result = True
+            try:
+                Inputdriver.switch_to_default_content()
+                Inputdriver.switch_to_frame("mainFrame")
+                Inputdriver.switch_to_frame("resultReport")
+                elem = Inputdriver.find_element_by_xpath(flag)
+            except Exception, e:
+                result = False
+            return result
+        return callback
+
         
     def generatingReport(self, timeout):
         """ command to click run button and waits till the report is generated and if the waitting time exceed time limit

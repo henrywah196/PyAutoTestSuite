@@ -28,7 +28,11 @@
   
   "BASReportPageObj.loadingMask"   : {"by":"id", "value":"reportPanelLoader", "parent":null, "tag_name":"div", "type":""},
   
+<<<<<<< HEAD
   "BASReportPageObj.generatedReportLogo" : {"by":"id", "value":"AUTOGENBOOKMARK_2_", "parent":null, "tag_name":"img", "type":"Image"},
+=======
+  "BASReportPageObj.generatedReportLogo" :  {"by":"id", "value":"AUTOGENBOOKMARK_2_", "parent":null, "tag_name":"img", "type":"Image"},
+>>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
   
   "ObjectFilterWindow.mainPropertyPanel"   : {"by":"id",    "value":"propertyPanelMain",                       "parent":null,                                   "tag_name":"div",   "type":"Container"},
   "ObjectFilterWindow.propertyFilterPanel" : {"by":"id",    "value":"propertyFilterPanel-targetEl",            "parent":null,                                   "tag_name":"div",   "type":"Container"},
@@ -44,8 +48,15 @@
   "ObjectFilterWindow.btnCancel"           : {"by":"id",    "value":"filterCancel",                            "parent":null,                                   "tag_name":"a",     "type":"Button"},
   
   "DeleteConfirmWindow.toolbar" : {"by":"xpath", "value":"//div[contains(@id, 'messagebox-') and contains(@id, 'toolbar-targetEl')]", "parent":null,                          "tag_name":"div", "type":"Container"},
+<<<<<<< HEAD
   "DeleteConfirmWindow.btnYes"  : {"by":"xpath",    "value":".//a[2]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"},
   "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"}
+=======
+  "DeleteConfirmWindow.btnYes"  : {"by":"xpath", "value":".//a[2]",                                                                   "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"},
+  "DeleteConfirmWindow.btnNo"   : {"by":"xpath", "value":".//a[3]",                                                                   "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"}
+  
+  
+>>>>>>> 46c804ef16b2945686a01543f9bf67880c780765
   
   
 }
