@@ -117,11 +117,10 @@ class TC88431(TestCaseTemplate):
         result = self.commissioningSheetsReport.generatedReportGetData()
         
         for item in result:
-            print "header: %s"%item["header"]
-            print "location: %s"%item["location"]
-            print "model: %s"%item["model"]
-            print "ip: %s"%item["ip"]
-            print "" 
+            for key, value in item.iteritems():
+                print "%s: %s"%(key, value)
+            print ""
+            print ""
         
         
         
