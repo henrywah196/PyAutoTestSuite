@@ -4,12 +4,12 @@ Created on Sep 23, 2015
 @author: hwang
 '''
 import time
-from libraries.eweb import Utilities
+from libraries.eweb import OldUtilities
 from settings import ArchiverDB
 
 
 def TableInfo():
-    cucubeDBConn = Utilities.DBConnect(ArchiverDB["CubeDBConn_cucube228"])
+    cucubeDBConn = OldUtilities.DBConnect(ArchiverDB["CubeDBConn_cucube228"])
     cucubeDBConn.mkConnect()
 
     table_info_list = []

@@ -7,6 +7,7 @@ from libraries.eweb.PageObjects.BAS_Reports.Commissioning_Sheets import Commissi
 import os, time
 from selenium import webdriver
 import json
+from libraries.eweb.testhelper.BasReportTestHelper import BasReportTestHelper
 
 
 # Global Settings
@@ -113,7 +114,7 @@ class TC88431(TestCaseTemplate):
         Macros.SelectReportInstance("Building Automation\\Commissioning Sheets\EWEB-19031 abc")
         
         time.sleep(10)
-        
+        '''
         result = self.commissioningSheetsReport.generatedReportGetData()
         
         for item in result:
@@ -121,6 +122,11 @@ class TC88431(TestCaseTemplate):
                 print "%s: %s"%(key, value)
             print ""
             print ""
+        '''
+            
+        testHelper = BasReportTestHelper(self.commissioningSheetsReport.driver)
+        testHelper.getDevicesListFromSite("$LocalSite")
+        print testHelper.r.text
         
         
         

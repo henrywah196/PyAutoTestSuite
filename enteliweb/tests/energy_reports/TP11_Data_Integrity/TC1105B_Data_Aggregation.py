@@ -19,7 +19,7 @@ Created on May 11, 2013
 import time, datetime, collections
 import settings
 from libraries.PyAutoTestCase import *
-from libraries.eweb import Utilities
+from libraries.eweb import OldUtilities
 from libraries.eweb.DataObjects.WebGroup import WebGroupDBObj
 from ddt import ddt, data
 from pytz import timezone
@@ -446,12 +446,12 @@ class TC1105B_DataAggregation(TestCaseTemplate):
         
         myDBConn = self.webgroup
         group = testData
-        groupModel = Utilities.getGroupModel(myDBConn, group)
-        areameterInstance = Utilities.getInstanceByGroup(myDBConn, group)
-        aggreEnergies = Utilities.getAggreEnergyType(myDBConn, areameterInstance)
+        groupModel = OldUtilities.getGroupModel(myDBConn, group)
+        areameterInstance = OldUtilities.getInstanceByGroup(myDBConn, group)
+        aggreEnergies = OldUtilities.getAggreEnergyType(myDBConn, areameterInstance)
         
         for aggreEnergy in aggreEnergies:
-            aggreTypes = Utilities.getAggregationType(myDBConn, areameterInstance, aggreEnergy)
+            aggreTypes = OldUtilities.getAggregationType(myDBConn, areameterInstance, aggreEnergy)
             for aggreType in aggreTypes:
                 startDay = None
                 finishDay = None
@@ -470,9 +470,9 @@ class TC1105B_DataAggregation(TestCaseTemplate):
                 expected = None
                 if groupModel == 'Meter':
                     if aggreType == 'Sum':
-                        tlInstance = Utilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
+                        tlInstance = OldUtilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
                     else:
-                        tlInstance = Utilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
+                        tlInstance = OldUtilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
                     cursor = myDBConn.cursor.execute("select min(timestamp) as start from report_rate_data where tlinstance = ?", tlInstance)
                     row = cursor.fetchone()
                     expected = (row.start).date()
@@ -482,14 +482,14 @@ class TC1105B_DataAggregation(TestCaseTemplate):
                     expected = datetime.datetime.combine(expected, midnight)
                 else:
                     # verify Area groups
-                    meterList = Utilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
+                    meterList = OldUtilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
                     startList = []
                     for meterID in meterList:
                         firstTimestamp = None
                         if aggreType == 'Sum':
-                            firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
+                            firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
                         else:
-                            firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
+                            firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
                         if firstTimestamp:
                             startList.append(firstTimestamp.date())
                     if startList:
@@ -507,19 +507,19 @@ class TC1105B_DataAggregation(TestCaseTemplate):
                     expected = None
                     if groupModel == 'Meter':
                         if aggreType == 'Sum':
-                            expected = Utilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
+                            expected = OldUtilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
                         else:
-                            expected = Utilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
+                            expected = OldUtilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
                     else:
                         # verify Area groups
-                        meterList = Utilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
+                        meterList = OldUtilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
                         finishList = []
                         for meterID in meterList:
                             lastTimestamp = None
                             if aggreType == 'Sum':
-                                lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
+                                lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
                             else:
-                                lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
+                                lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
                             if lastTimestamp:
                                 finishList.append(lastTimestamp)
                         if finishList:

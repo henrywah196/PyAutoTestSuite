@@ -8,7 +8,7 @@ Created on May 11, 2013
 import time, datetime, collections
 import settings
 from libraries.PyAutoTestCase import *
-from libraries.eweb import Utilities
+from libraries.eweb import OldUtilities
 from libraries.eweb.DataObjects.WebGroup import WebGroupDBObj
 from ddt import ddt, data
 
@@ -84,20 +84,20 @@ class DataAggregation(TestCaseTemplate):
         
         # get expected
         expected = None
-        groupModel = Utilities.getGroupModel(myDBConn, group)
+        groupModel = OldUtilities.getGroupModel(myDBConn, group)
         if groupModel == 'Meter':
-            meterInstance = Utilities.getInstanceByGroup(myDBConn, group)
-            firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterInstance)
+            meterInstance = OldUtilities.getInstanceByGroup(myDBConn, group)
+            firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterInstance)
             if firstTimestamp:
                 expected = firstTimestamp.date()
                 midnight = datetime.time(0)
                 expected = datetime.datetime.combine(expected, midnight)
         else:    # Area group
-            areaID = Utilities.getInstanceByGroup(myDBConn, group)
-            meterList = Utilities.getMeterList(myDBConn, areaID)
+            areaID = OldUtilities.getInstanceByGroup(myDBConn, group)
+            meterList = OldUtilities.getMeterList(myDBConn, areaID)
             startList = []
             for meterID in meterList:
-                firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterID)
+                firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterID)
                 if firstTimestamp:
                     startList.append(firstTimestamp.date())
             if startList:
@@ -126,18 +126,18 @@ class DataAggregation(TestCaseTemplate):
         
         # get expected
         expected = None
-        groupModel = Utilities.getGroupModel(myDBConn, group)
+        groupModel = OldUtilities.getGroupModel(myDBConn, group)
         if groupModel == 'Meter':
-            meterInstance = Utilities.getInstanceByGroup(myDBConn, group)
-            lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterInstance)
+            meterInstance = OldUtilities.getInstanceByGroup(myDBConn, group)
+            lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterInstance)
             if lastTimestamp:
                 expected = lastTimestamp
         else:    # Area group
-            areaID = Utilities.getInstanceByGroup(myDBConn, group)
-            meterList = Utilities.getMeterList(myDBConn, areaID)
+            areaID = OldUtilities.getInstanceByGroup(myDBConn, group)
+            meterList = OldUtilities.getMeterList(myDBConn, areaID)
             finishList = []
             for meterID in meterList:
-                lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterID)
+                lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterID)
                 if lastTimestamp:
                     finishList.append(lastTimestamp)
             if finishList:
@@ -163,7 +163,7 @@ class DataAggregation(TestCaseTemplate):
         cursor = myDBConn.cursor.execute("select Model, instance from datapoint_group_map where `Group` = ?", group)
         row = cursor.fetchone()
         if row:
-            expected = Utilities.getAggreEnergyType(myDBConn, row.instance)
+            expected = OldUtilities.getAggreEnergyType(myDBConn, row.instance)
             cursor = myDBConn.cursor.execute("select distinct Type from datapoint_group_data where `Group` = ?", group)
             rows = cursor.fetchall()
             current = []
@@ -192,7 +192,7 @@ class DataAggregation(TestCaseTemplate):
         cursor = myDBConn.cursor.execute("select Model, instance from datapoint_group_map where `Group` = ?", group)
         row = cursor.fetchone()
         if row:
-            energyTypeList = Utilities.getAggreEnergyType(myDBConn, row.instance)
+            energyTypeList = OldUtilities.getAggreEnergyType(myDBConn, row.instance)
             for item in energyTypeList:
                 cursor = myDBConn.cursor.execute("select distinct Aggregation from datapoint_group_data where type = ? and `Group` = ?", item, group)
                 rows = cursor.fetchall()
@@ -200,7 +200,7 @@ class DataAggregation(TestCaseTemplate):
                 if rows:
                     for newRow in rows:
                         current.append(newRow.Aggregation)
-                expected = Utilities.getAggregationType(myDBConn, row.instance, item)
+                expected = OldUtilities.getAggregationType(myDBConn, row.instance, item)
                 result = (set(expected) == set(current))
                 errMessage = "Aggregation for energy type '%s' are inconsistent in Group: %s" %(item, group)
                 errMessage = errMessage + "\n" + "Expected: %s" %(expected,)
@@ -240,12 +240,12 @@ class DataAggregation(TestCaseTemplate):
         
         myDBConn = self.webgroup
         group = testData
-        groupModel = Utilities.getGroupModel(myDBConn, group)
-        areameterInstance = Utilities.getInstanceByGroup(myDBConn, group)
-        aggreEnergies = Utilities.getAggreEnergyType(myDBConn, areameterInstance)
+        groupModel = OldUtilities.getGroupModel(myDBConn, group)
+        areameterInstance = OldUtilities.getInstanceByGroup(myDBConn, group)
+        aggreEnergies = OldUtilities.getAggreEnergyType(myDBConn, areameterInstance)
         
         for aggreEnergy in aggreEnergies:
-            aggreTypes = Utilities.getAggregationType(myDBConn, areameterInstance, aggreEnergy)
+            aggreTypes = OldUtilities.getAggregationType(myDBConn, areameterInstance, aggreEnergy)
             for aggreType in aggreTypes:
                 startDay = None
                 finishDay = None
@@ -264,9 +264,9 @@ class DataAggregation(TestCaseTemplate):
                 expected = None
                 if groupModel == 'Meter':
                     if aggreType == 'Sum':
-                        tlInstance = Utilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
+                        tlInstance = OldUtilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
                     else:
-                        tlInstance = Utilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
+                        tlInstance = OldUtilities.getTLinstance(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
                     cursor = myDBConn.cursor.execute("select min(timestamp) as start from report_rate_data where tlinstance = ?", tlInstance)
                     row = cursor.fetchone()
                     expected = (row.start).date()
@@ -274,14 +274,14 @@ class DataAggregation(TestCaseTemplate):
                     expected = datetime.datetime.combine(expected, midnight)
                 else:
                     # verify Area groups
-                    meterList = Utilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
+                    meterList = OldUtilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
                     startList = []
                     for meterID in meterList:
                         firstTimestamp = None
                         if aggreType == 'Sum':
-                            firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
+                            firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
                         else:
-                            firstTimestamp = Utilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
+                            firstTimestamp = OldUtilities.getFirstTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
                         if firstTimestamp:
                             startList.append(firstTimestamp.date())
                     if startList:
@@ -298,19 +298,19 @@ class DataAggregation(TestCaseTemplate):
                     expected = None
                     if groupModel == 'Meter':
                         if aggreType == 'Sum':
-                            expected = Utilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
+                            expected = OldUtilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'CONSUMPTION')
                         else:
-                            expected = Utilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
+                            expected = OldUtilities.getLastTimestamp(myDBConn, areameterInstance, aggreEnergy, 'DEMAND')
                     else:
                         # verify Area groups
-                        meterList = Utilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
+                        meterList = OldUtilities.getMeterList(myDBConn, areameterInstance, aggreEnergy)
                         finishList = []
                         for meterID in meterList:
                             lastTimestamp = None
                             if aggreType == 'Sum':
-                                lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
+                                lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'CONSUMPTION')
                             else:
-                                lastTimestamp = Utilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
+                                lastTimestamp = OldUtilities.getLastTimestamp(myDBConn, meterID, aggreEnergy, 'DEMAND')
                             if lastTimestamp:
                                 finishList.append(lastTimestamp)
                         if finishList:
