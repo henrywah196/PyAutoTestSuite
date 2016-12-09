@@ -5,6 +5,7 @@ Created on Dec 7, 2016
 '''
 import settings
 import requests
+import re
 try:
     from lxml import etree
 except ImportError:
@@ -275,6 +276,39 @@ class BasReportTestHelper(object):
                 objDic["status"] = element.get("status")
                 result = objDic
             return result
+        
+    def isObjectExisting(self, siteName, deviceNumber, objectReference):
+        """ return true if the specified object reference existing in device
+            objectReference could be a type of object, which means any object
+            reference of that type.
+        """
+        objectList = self.getObjectsList(siteName, deviceNumber)
+        objectReference = self._splitObjectRef(objectReference)
+        if objectReference[1] is None:    # object type
+            for item in objectList:
+                if item["object type"] == objectReference[0]:
+                    return True
+        else:                             # object reference
+            for item in objectList:
+                if item["object type"] == objectReference[0] and item["object number"] == objectReference[1]:
+                    return True
+        return False
+    
+    def _splitObjectRef(self, objRefString):
+        """ split object reference and return its type and number in a list format
+            for example, AV12 returns [AV, 12]
+        """
+        result = []
+        try: number = re.search(r'\d+', objRefString).group()
+        except AttributeError: number = None
+        if number is not None:
+            type = objRefString[:-len(number)]
+            result.append(type)
+            result.append(number)
+        else:
+            result.append(objRefString)
+            result.append(number)
+        return result
             
     
         

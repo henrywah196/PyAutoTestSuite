@@ -139,6 +139,13 @@ class TC88431(TestCaseTemplate):
         result = testHelper.getPropertyValue("$LocalSite", "1200", "DEV1200", "Local_Date")
         print result
         
+        result = testHelper.isObjectExisting("$LocalSite", "1200", "DEV1200")
+        print result
+        result = testHelper.isObjectExisting("$LocalSite", "1200", "BO")
+        print result
+        result = testHelper.isObjectExisting("$LocalSite", "1200", "EVX1")
+        print result
+        
         
         
         
