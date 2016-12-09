@@ -125,9 +125,19 @@ class TC88431(TestCaseTemplate):
         '''
             
         testHelper = BasReportTestHelper(self.commissioningSheetsReport.driver)
-        testHelper.getDevicesListFromSite("$LocalSite")
-        print testHelper.r.text
-        
+        result = testHelper.getDevicesList("$LocalSite")
+        for item in result:
+            print item
+        result = testHelper.getNumberOfObjects("$LocalSite", "1200")
+        print result
+        result = testHelper.getObjectsList("$LocalSite", "1200")
+        for item in result:
+            print item
+        result = testHelper.getPropertyList("$LocalSite", "1200", "DEV1200")
+        for item in result:
+            print item
+        result = testHelper.getPropertyValue("$LocalSite", "1200", "DEV1200", "Local_Date")
+        print result
         
         
         
