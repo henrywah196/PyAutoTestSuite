@@ -1,0 +1,43 @@
+[
+  {
+    "Report Name"     : "Commissioning Sheet Auto Testing Report 001",
+    "Report Title"    : "Commissioning Sheet Auto Testing Report 001",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "BO"],
+                            "Instance"       : "100-199",
+							"Property Logic" : "OR",
+							"Properties"     : [
+							                      ["Present_Value", ">=", "20.5"],
+												  {
+												    "Rule Logic" : "OR",
+                                                    "Properties" : [ 
+													                 ["Present_Value", ">=", "20.5"],
+                                                                     ["Description", "=", "testing"]
+                                                                   ]
+												  }
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Commissioning Sheet Auto Testing Report 001",
+    "Report Title"    : "Commissioning Sheet Auto Testing Report 001",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+							"Property Logic" : "OR",
+							"Properties"     : [
+							                      ["Flags", "=", "*not-commissioned*"]
+							                   ]
+						  }
+						]
+  }
+  
+]

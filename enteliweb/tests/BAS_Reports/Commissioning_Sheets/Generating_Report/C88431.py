@@ -146,6 +146,12 @@ class TC88431(TestCaseTemplate):
         result = testHelper.isObjectExisting("$LocalSite", "1200", "EVX1")
         print result
         
+        objFilter = {}
+        objFilter["Type"] = ["AI", "OP"]
+        objFilter["Instance"] = "1-100 1051-1053 1102" 
+        result = testHelper.objQueryGetObjectList("$LocalSite", "1200", objFilter)
+        print result
+        
         
         
         

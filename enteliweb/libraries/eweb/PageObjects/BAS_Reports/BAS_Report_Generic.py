@@ -430,12 +430,13 @@ class BASReportPageObj(BaseFrameObject):
                     self.objectFilterWindow.addProperty(property)
                 else:
                     self.objectFilterWindow.addRule(property)
-           
-            propertyLogic = dicObjectFilter["Property Logic"]
-            if propertyLogic == "OR":
-                self.objectFilterWindow.logicOR.click()
-            else:
-                self.objectFilterWindow.logicAND.click()
+            
+            if len(properties) > 1:
+                propertyLogic = dicObjectFilter["Property Logic"]
+                if propertyLogic == "OR":
+                    self.objectFilterWindow.logicOR.click()
+                else:
+                    self.objectFilterWindow.logicAND.click()
             
         self.objectFilterWindow.btnOK.click()
         
@@ -472,8 +473,11 @@ class BASReportPageObj(BaseFrameObject):
         driver.switch_to_default_content()
         driver.switch_to_frame("mainFrame")
         driver.switch_to_frame("resultReport")
-        elem = driver.find_element_by_xpath("//*[contains(text(), 'No data to display')]")
-        result = elem.is_displayed()
+        try:
+            elem = driver.find_element_by_xpath("//*[contains(text(), 'No data to display')]")
+            result = elem.is_displayed()
+        except Exception:
+            result = False
         driver.switch_to_default_content()
         driver.switch_to_frame("mainFrame")
         return result

@@ -87,8 +87,27 @@ def GoToBaseUnitsConfiguration():
     
 
 #########################
-# energy report related
-#########################    
+# report related
+#########################
+def isReportInstanceExisting(PathName):
+    """
+    return true is the report instnace is displayed in report tree
+    
+    @param string PathName        A string of path which uniquely identify the tree node in report tree
+    """
+    accordion = AccordionPageObj()
+    accordion.select(accordion.reports)
+    time.sleep(2)
+    if not accordion.reportTree.isDisplayed():
+        accordion.select(accordion.reports)
+        time.sleep(2)
+    result = accordion.reportTree.expandTreeNode(PathName)
+    if not accordion.reportTree.verifyTreeNodeDisplayed(PathName):
+        time.sleep(2)
+        result = accordion.reportTree.expandTreeNode(PathName)    # try one more time if tree not expanded
+    return result
+    
+
 def SelectReportInstance(PathName):
     """
     Command to select a report instance from the left report tree
