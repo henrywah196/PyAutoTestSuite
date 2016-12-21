@@ -1,0 +1,18 @@
+[
+  
+  {
+    "Report Name"     : "Commissioning Sheet Auto Testing Report",
+    "Report Title"    : "Commissioning Sheet Auto Testing Report",
+    "Site"            : "RV Site",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+							"Property Logic" : "OR",
+							"Properties"     : null
+						  }
+						]
+  }
+  
+]

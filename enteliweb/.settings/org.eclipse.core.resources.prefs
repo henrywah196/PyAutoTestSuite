@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88431.py=utf-8
 encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88432.py=utf-8
+encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88437.py=utf-8
 encoding//tests/energy_reports/TP01_Configuration/TC0101_Base_Units.py=utf-8
 encoding//tests/energy_reports/TP01_Configuration/sample_test.py=utf-8
 encoding//tests/energy_reports/TP11_Data_Integrity/EWEB_8481.py=utf-8
+encoding//tests/spot_test/BAS_Performance_Testing/NetworkInfo.py=utf-8

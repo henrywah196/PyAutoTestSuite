@@ -20,7 +20,7 @@ class CommissioningSheetsPageObj(BASReportPageObj):
     ##################################
     # generated report related method
     ##################################
-    def generatedReportGetData(self):
+    def generatedReportGetData(self, strKeyWord=None):
         """ return data from generated report
         """
         result = []
@@ -31,8 +31,9 @@ class CommissioningSheetsPageObj(BASReportPageObj):
         tocElements = self._generateReportGetKeyTOCElements()
         for tocElem in tocElements:
             deviceInfo = self._generatedReportGetDeviceInfo(tocElem[0])
-            ioInfo = self._generatedReportGetIOInfo(tocElem)
-            deviceInfo.update(ioInfo)
+            if strKeyWord != "device info only":
+                ioInfo = self._generatedReportGetIOInfo(tocElem)
+                deviceInfo.update(ioInfo)
             result.append(deviceInfo)
         driver.switch_to_default_content()
         driver.switch_to_frame("mainFrame")
