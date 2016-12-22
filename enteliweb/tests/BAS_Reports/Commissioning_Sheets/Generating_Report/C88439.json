@@ -4,15 +4,13 @@
     "Report Name"     : "Commissioning Sheet Auto Testing Report",
     "Report Title"    : "Commissioning Sheet Auto Testing Report",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1000-2000",
+    "Device Range"    : "1000-3000",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP", "OP"],
                             "Instance"       : "*",
 							"Property Logic" : "OR",
-							"Properties"     : [ 
-												 ["Flags", "=", "*not-commissioned*"]
-                                               ]
+							"Properties"     : null
 						  }
 						]
   }

@@ -14,14 +14,16 @@ from libraries.PyAutoTestCase import *
 ####################
 from tests.BAS_Reports.Commissioning_Sheets.Generating_Report.C88436 import TC88436
 from tests.BAS_Reports.Commissioning_Sheets.Generating_Report.C88437 import TC88437
+from tests.BAS_Reports.Commissioning_Sheets.Generating_Report.C88439 import TC88439
 
 ######################
 # prepare test suites
 ######################
 c88436 = TC88436.suite()
 c88437 = TC88437.suite()
+c88439 = TC88439.suite()
 mainTestSuite = TestSuiteTemplate()
-mainTestSuite.addTests((c88436, c88437))
+mainTestSuite.addTests((c88436, c88437, c88439))
 
 
 if __name__ == "__main__":
