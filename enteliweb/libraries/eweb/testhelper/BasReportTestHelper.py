@@ -5,8 +5,13 @@ Created on Dec 7, 2016
 '''
 import settings
 import requests
+import socket
+import errno
 import re
 import datetime
+import time
+#from test.badsyntax_future3 import result
+#from unittest.test.test_program import RESULT
 try:
     from lxml import etree
 except ImportError:
@@ -207,10 +212,26 @@ class BasReportTestHelper(object):
     def __repr__(self):
         super(BasReportTestHelper, self).__repr__()
         
+    def _getRequest(self, url, retry=1):
+        """ helper to dealing with request return 10054 error """
+        try:
+            result =  requests.get(url, cookies=self.cookie)
+            return result
+        except socket.error as error:
+            if error.errorno == errno.WSAECONNRESET and retry >=1:
+                time.sleep(60)
+                retry = retry - 1
+                
+                print "debug: retry get request"
+                
+                self._getRequest(url, retry)
+            else:
+                raise
+        
     def getDevicesList(self, siteName):
         """ get a list of Devices on a site """
         url = "%s/api/.bacnet/%s/"%(self.base_url, siteName)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elements = root.getchildren()
         result = []
@@ -224,7 +245,7 @@ class BasReportTestHelper(object):
     def getNumberOfObjects(self, siteName, deviceNumber):
         """ return the total number of objects in a device """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.DEV%s.Object_List[0]"%(self.base_url, siteName, deviceNumber, deviceNumber)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         result = root.find("./Object/Property")
         try: return str(int((result.get("value")).strip()) + 10)   # try handling inconsistent of total objects in device.
@@ -235,7 +256,7 @@ class BasReportTestHelper(object):
         """ return a list of objects in a device """
         numberOfObjects = self.getNumberOfObjects(siteName, deviceNumber)
         url = "%s/api/.bacnet/%s/%s?max-results=%s"%(self.base_url, siteName, deviceNumber, numberOfObjects)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elements = root.getchildren()
         result = []
@@ -262,7 +283,7 @@ class BasReportTestHelper(object):
     def getPropertyList(self, siteName, deviceNumber, objectReference):
         """ return a list of property which the objectReference is supported """
         url = "%s/wsbac/getpropertyall?ObjRef=//%s/%s.%s"%(self.base_url, siteName, deviceNumber, objectReference)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elemObject = root.find("./Object")
         elements = elemObject.getchildren()
@@ -285,7 +306,7 @@ class BasReportTestHelper(object):
     def getPropertyValue(self, siteName, deviceNumber, objectReference, propertyName):
         """ return property value in differetn format based on the data type of the property """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elemObject = root.find("./Object")
         element = (elemObject.getchildren())[0]
@@ -392,7 +413,7 @@ class BasReportTestHelper(object):
     def isPropertyExisting(self, siteName, deviceNumber, objectReference, propertyName):
         """ helper to verify if the specified object reference contain the specified property """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
-        self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elemObject = root.find("./Object")
         element = (elemObject.getchildren())[0]
@@ -405,7 +426,8 @@ class BasReportTestHelper(object):
     def propertyValueIsNull(self, siteName, deviceNumber, objectReference, propertyName):
         """ helper to verify and return true if the web service has isNULL="TRUE" returned """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
-        self.r = requests.get(url, cookies=self.cookie)
+        #self.r = requests.get(url, cookies=self.cookie)
+        self.r = self._getRequest(url)
         root = etree.fromstring(self.r.content)
         elemObject = root.find("./Object")
         element = (elemObject.getchildren())[0]

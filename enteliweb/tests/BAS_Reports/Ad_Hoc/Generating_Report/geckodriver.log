@@ -1,71 +1,71 @@
-1484757591731	geckodriver	INFO	Listening on 127.0.0.1:19117
-1484757593561	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.EOGqKnCHbgND
-1484757593605	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1484757593621	geckodriver::marionette	INFO	Connecting to Marionette on localhost:19126
-1484757593749	addons.manager	DEBUG	Application has been upgraded
-1484757593764	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
-1484757593765	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
-1484757593767	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
-1484757593768	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
-1484757593768	addons.manager	DEBUG	Starting provider: XPIProvider
-1484757593769	addons.xpi	DEBUG	startup
-1484757593769	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
-1484757593770	addons.xpi	INFO	Mapping loop@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1484757593770	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-1484757593770	addons.xpi	DEBUG	checkForChanges
-1484757593771	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
-1484757593771	addons.xpi	DEBUG	New add-on loop@mozilla.org in app-system-defaults
-1484757593771	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1484757593772	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
-1484757593772	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1484757593772	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"loop@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","st":1465414448130}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1481910005724}}}
-1484757593777	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.EOGqKnCHbgND\extensions.json
-1484757593778	addons.xpi-utils	DEBUG	New add-on loop@mozilla.org installed in app-system-defaults
+1484767666717	geckodriver	INFO	Listening on 127.0.0.1:43454
+1484767668497	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.3nAid8pAocTW
+1484767668543	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1484767668557	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43460
+1484767668691	addons.manager	DEBUG	Application has been upgraded
+1484767668707	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1484767668708	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1484767668709	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1484767668710	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1484767668710	addons.manager	DEBUG	Starting provider: XPIProvider
+1484767668711	addons.xpi	DEBUG	startup
+1484767668711	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1484767668711	addons.xpi	INFO	Mapping loop@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1484767668712	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1484767668712	addons.xpi	DEBUG	checkForChanges
+1484767668713	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1484767668713	addons.xpi	DEBUG	New add-on loop@mozilla.org in app-system-defaults
+1484767668713	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1484767668714	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1484767668714	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1484767668714	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"loop@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","st":1465414448130}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1481910005724}}}
+1484767668719	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.3nAid8pAocTW\extensions.json
+1484767668721	addons.xpi-utils	DEBUG	New add-on loop@mozilla.org installed in app-system-defaults
 *** Blocklist::_loadBlocklistFromFile: blocklist is disabled
-1484757593786	DeferredSave.extensions.json	DEBUG	Save changes
-1484757593786	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
-1484757593788	DeferredSave.extensions.json	DEBUG	Starting timer
-1484757593788	DeferredSave.extensions.json	DEBUG	Save changes
-1484757593789	addons.xpi-utils	INFO	Hiding the updated system add-ons.
-1484757593793	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1484757593801	addons.xpi	DEBUG	Calling bootstrap method install on loop@mozilla.org version 1.1.14
-1484757593801	addons.xpi-utils	DEBUG	Make addon app-system-defaults:loop@mozilla.org visible
-1484757593801	DeferredSave.extensions.json	DEBUG	Save changes
-1484757593801	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
-1484757593801	DeferredSave.extensions.json	DEBUG	Save changes
-1484757593801	addons.xpi	DEBUG	Updating XPIState for {"id":"loop@mozilla.org","syncGUID":"UAYVctEbsN-e","location":"app-system-defaults","version":"1.1.14","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox Hello Beta","description":"Web sharing for Firefox","creator":"Mozilla","homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1465414448130,"updateDate":1465414448130,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4109769,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.0","maxVersion":"45.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
-1484757593801	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1484757593802	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"k1CSUATokUe-","location":"app-global","version":"45.6.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1481910005724,"updateDate":1481910005724,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.6.0","maxVersion":"45.6.0"}],"targetPlatforms":[],"seen":true}
-1484757593802	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1484757593802	DeferredSave.extensions.json	DEBUG	Save changes
-1484757593802	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1484757593802	addons.xpi-utils	DEBUG	Updating add-on states
-1484757593804	addons.xpi-utils	DEBUG	Writing add-ons list
-1484757593805	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1484757593806	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.1.14
-1484757593808	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1484757593808	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1484757593808	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1484757593808	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1484757593808	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1484757593809	addons.manager	DEBUG	Starting provider: GMPProvider
-1484757593812	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1484757593812	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1484757593812	addons.manager	DEBUG	Starting provider: PluginProvider
-1484757593812	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1484757593812	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1484757593813	addons.manager	DEBUG	Completed startup sequence
-1484757594007	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1484757594007	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1484757594007	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-1484757594076	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
-1484757594076	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
-1484757594076	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
-1484757594078	DeferredSave.extensions.json	DEBUG	Starting write
-1484757594240	DeferredSave.extensions.json	DEBUG	Write succeeded
-1484757594240	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 17
-1484757595281 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: password, tagName: INPUT, className: field
-1484757595328 Marionette: Element is missing an accesible name -> id: btn_login, tagName: INPUT, className: loginBtn
+1484767668728	DeferredSave.extensions.json	DEBUG	Save changes
+1484767668728	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1484767668730	DeferredSave.extensions.json	DEBUG	Starting timer
+1484767668730	DeferredSave.extensions.json	DEBUG	Save changes
+1484767668731	addons.xpi-utils	INFO	Hiding the updated system add-ons.
+1484767668735	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1484767668743	addons.xpi	DEBUG	Calling bootstrap method install on loop@mozilla.org version 1.1.14
+1484767668743	addons.xpi-utils	DEBUG	Make addon app-system-defaults:loop@mozilla.org visible
+1484767668743	DeferredSave.extensions.json	DEBUG	Save changes
+1484767668744	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1484767668744	DeferredSave.extensions.json	DEBUG	Save changes
+1484767668744	addons.xpi	DEBUG	Updating XPIState for {"id":"loop@mozilla.org","syncGUID":"z30av-G83grc","location":"app-system-defaults","version":"1.1.14","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox Hello Beta","description":"Web sharing for Firefox","creator":"Mozilla","homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1465414448130,"updateDate":1465414448130,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4109769,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.0","maxVersion":"45.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1484767668744	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1484767668744	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"dhKKQxdEGFw3","location":"app-global","version":"45.6.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1481910005724,"updateDate":1481910005724,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.6.0","maxVersion":"45.6.0"}],"targetPlatforms":[],"seen":true}
+1484767668744	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1484767668745	DeferredSave.extensions.json	DEBUG	Save changes
+1484767668745	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1484767668745	addons.xpi-utils	DEBUG	Updating add-on states
+1484767668746	addons.xpi-utils	DEBUG	Writing add-ons list
+1484767668748	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1484767668748	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.1.14
+1484767668750	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1484767668751	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1484767668751	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1484767668751	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1484767668751	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1484767668751	addons.manager	DEBUG	Starting provider: GMPProvider
+1484767668755	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1484767668755	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1484767668755	addons.manager	DEBUG	Starting provider: PluginProvider
+1484767668755	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1484767668755	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1484767668755	addons.manager	DEBUG	Completed startup sequence
+1484767668976	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1484767668976	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1484767668977	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1484767669044	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1484767669044	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1484767669044	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1484767669045	DeferredSave.extensions.json	DEBUG	Starting write
+1484767669212	DeferredSave.extensions.json	DEBUG	Write succeeded
+1484767669212	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 17
+1484767670544 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: password, tagName: INPUT, className: field
+1484767670571 Marionette: Element is missing an accesible name -> id: btn_login, tagName: INPUT, className: loginBtn
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
@@ -74,38 +74,44 @@ JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
-1484757601661 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
-1484757608078 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
-1484757620170 Marionette: Element does not have an accessible object -> id: treeview-1037-record-17, tagName: TABLE, className: x-grid-item
+1484767677414 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
+1484767683791 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
+1484767695818 Marionette: Element does not have an accessible object -> id: treeview-1037-record-17, tagName: TABLE, className: x-grid-item
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
-1484757634672 Marionette: Element does not have an accessible object -> id: Site-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1484757634948 Marionette: Element is missing an accesible name -> id: , tagName: A, className: 
+1484767710424 Marionette: Element does not have an accessible object -> id: Site-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
+1484767710632 Marionette: Element is missing an accesible name -> id: , tagName: A, className: 
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
-1484757637212 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1484757639188 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  x-form-trigger-focus
-1484757639390 Marionette: Element is missing an accesible name -> id: propertyName_0-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  
-1484757639412 Marionette: Element is missing an accesible name -> id: propertyName_0-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
-1484757640671 Marionette: Element does not have an accessible object -> id: propertyOp_0-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1484757641801 Marionette: Element is missing an accesible name -> id: propertyValue_0-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  
-1484757641826 Marionette: Element is missing an accesible name -> id: propertyValue_0-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
-1484757641997 Marionette: Element is missing an accesible name -> id: propertyName_1-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  
-1484757642017 Marionette: Element is missing an accesible name -> id: propertyName_1-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
-1484757643162 Marionette: Element does not have an accessible object -> id: propertyOp_1-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1484757644350 Marionette: Element is missing an accesible name -> id: propertyValue_1-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  
-1484757644374 Marionette: Element is missing an accesible name -> id: propertyValue_1-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
-1484757644531 Marionette: Element is missing an accesible name -> id: propertyName_2-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  
-1484757644553 Marionette: Element is missing an accesible name -> id: propertyName_2-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
-1484757645680 Marionette: Element does not have an accessible object -> id: propertyOp_2-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1484757646859 Marionette: Element is missing an accesible name -> id: propertyValue_2-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  
-1484757646888 Marionette: Element is missing an accesible name -> id: propertyValue_2-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  x-form-focus x-field-form-focus x-field-default-form-focus
+1484767712864 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
+1484767714828 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default 
+1484767715024 Marionette: Element is missing an accesible name -> id: propertyName_0-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  
+1484767715043 Marionette: Element is missing an accesible name -> id: propertyName_0-inputEl, tagName: INPUT, className: x-form-field x-form-required-field x-form-text x-form-text-default  
+1484767716180 Marionette: Element does not have an accessible object -> id: propertyOp_0-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
+1484767717373 Marionette: Element is missing an accesible name -> id: propertyValue_0-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  
+1484767717391 Marionette: Element is missing an accesible name -> id: propertyValue_0-inputEl, tagName: INPUT, className: x-form-field x-form-text x-form-text-default  
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
 JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
-1484757654588	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/45.6.0/20161209150850/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
+1484767725978 Marionette: Element does not have an accessible object -> id: treeview-1037-record-17, tagName: TABLE, className: x-grid-item x-grid-item-selected
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
+1484767729568	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/45.6.0/20161209150850/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
+1484767729648	addons.productaddons	INFO	Completed downloading document
+1484767729664	addons.productaddons	INFO	Downloading from https://cdmdownload.adobe.com/firefox/win/x86/primetime_gmp_win_x86_gmc_30527.1.zip to C:\Users\hwang\AppData\Local\Temp\tmpaddon-2
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 45811: unreachable code after return statement
+JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.256, line 2687: unreachable code after return statement
+1484767731851	addons.productaddons	INFO	Downloading from http://ciscobinary.openh264.org/openh264-win32-0410d336bb748149a4f560eb6108090f078254b1.zip to C:\Users\hwang\AppData\Local\Temp\tmpaddon-2
+1484768066306	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
+wang\AppData\Local\Temp\tmpaddon-2
+1484767666289	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
+date/3/GMP/45.6.0/20161209150850/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
 1484757654665	addons.productaddons	INFO	Completed downloading document
 1484757654681	addons.productaddons	INFO	Downloading from https://cdmdownload.adobe.com/firefox/win/x86/primetime_gmp_win_x86_gmc_30527.1.zip to C:\Users\hwang\AppData\Local\Temp\tmpaddon-2
 1484757655678 Marionette: Element does not have an accessible object -> id: treeview-1037-record-17, tagName: TABLE, className: x-grid-item x-grid-item-selected

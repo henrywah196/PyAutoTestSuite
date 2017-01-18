@@ -17,6 +17,10 @@ from tests.BAS_Reports.Commissioning_Sheets.Generating_Report.C88437 import TC88
 from tests.BAS_Reports.Commissioning_Sheets.Generating_Report.C88439 import TC88439
 
 from tests.BAS_Reports.Ad_Hoc.Generating_Report.C1722294 import TC1722294
+from tests.BAS_Reports.Ad_Hoc.Generating_Report.C1722295 import TC1722295
+from tests.BAS_Reports.Ad_Hoc.Generating_Report.C1722296 import TC1722296
+from tests.BAS_Reports.Ad_Hoc.Generating_Report.C1722297 import TC1722297
+from tests.BAS_Reports.Ad_Hoc.Generating_Report.C1722299 import TC1722299
 
 ######################
 # prepare test suites
@@ -26,9 +30,13 @@ c88437 = TC88437.suite()
 c88439 = TC88439.suite()
 
 c1722294 = TC1722294.suite()
+c1722295 = TC1722295.suite()
+c1722296 = TC1722296.suite()
+c1722297 = TC1722297.suite()
+c1722299 = TC1722299.suite()
 
 mainTestSuite = TestSuiteTemplate()
-mainTestSuite.addTests((c88436, c88437, c88439, c1722294))
+mainTestSuite.addTests((c1722294,c1722295,c1722296,c1722297,c1722299))
 
 
 if __name__ == "__main__":
