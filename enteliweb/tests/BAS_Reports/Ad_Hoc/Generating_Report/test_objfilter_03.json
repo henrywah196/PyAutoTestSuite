@@ -1,0 +1,34 @@
+[
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1300",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : [
+						                         "AC", "ACI", "AI", "AK", "AO", 
+						                         "AT", "AV", "AVG", "BI", "BO",
+						                         "BT", "BV", "CAL", "CO", "COM",
+						                         "DC", "DG"
+						                       ],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Manual_Override", "<>", "null"]
+							                   ]
+						  },
+						  
+						  {
+						    "Type"           : ["SCH"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Out_Of_Service", "<>", "1"]
+							                   ]
+						  }
+						]
+  }
+  
+]

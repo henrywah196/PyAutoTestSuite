@@ -1,0 +1,19 @@
+[
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Description", "=", ""]
+							                   ]
+						  }
+						]
+  }
+  
+]

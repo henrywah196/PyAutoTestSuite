@@ -1,0 +1,23 @@
+[
+  {
+    "Description"     : "Present_Value = start OR stop OR hot OR %&/<>",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Present_Value", "=", "start"],
+							                      ["Present_Value", "=", "stop"],
+							                      ["Present_Value", "=", "hot"],
+							                      ["Present_Value", "=", "%&/<>"]
+							                   ]
+						  }
+						]
+  }
+  
+]

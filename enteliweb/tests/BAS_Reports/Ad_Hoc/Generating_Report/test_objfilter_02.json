@@ -1,0 +1,2122 @@
+[
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACR"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACU"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ACZ"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AE"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AEL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AIC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AK"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AOC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AST"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ATZ"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AVG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BCP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BDC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BDE"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BMD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BST"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BSV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BTZ"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CAL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CEL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CMS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["COM"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CR"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CSV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CU"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DBI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DER"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DES"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DGL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DPV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DRT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DTP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DTV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DWS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ENS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVA"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVF"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVN"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVR"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVX"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["FIL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GCS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GRP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GW"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GWD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GWF"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GWS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["GWT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["HS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["INS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IOM"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IPS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LAV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LCD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LNK"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LPT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LSP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MDS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MIC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MN"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MNP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MOC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["NET"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["NF"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["NP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["NVS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ORS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OSV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PAN"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PI"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PIV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PRS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["RPL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["RPS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["RPT"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["RS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SCH"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SDL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SEL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SNS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SSS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["STA"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SUA"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SUG"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["TL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["TLM"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["TNS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["TPV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["TV"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["UNS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["V2P"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["VGS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["WDL"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["WSD"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ZBS"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ZC"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ZF"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ZN"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000-9999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["ZP"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AO"],
+                            "Instance"       : "0"
+						  }
+						]
+  },
+  
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BI"],
+                            "Instance"       : "1"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BO"],
+                            "Instance"       : "12"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MI"],
+                            "Instance"       : "1101"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MO"],
+                            "Instance"       : "4194302"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["PI"],
+                            "Instance"       : "0,1,4194302"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["LO"],
+                            "Instance"       : "1,12,1101"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP"],
+                            "Instance"       : "100-199"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "0-4194302"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AC"],
+                            "Instance"       : "0"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AV"],
+                            "Instance"       : "1"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AVG"],
+                            "Instance"       : "12"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["CAL"],
+                            "Instance"       : "1101"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "2000-9999"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EV"],
+                            "Instance"       : "1,12,1101,100-199"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MV"],
+                            "Instance"       : "1,12,1101,100-199"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["BV"],
+                            "Instance"       : "1,12,1101,100-199"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["SCH"],
+                            "Instance"       : "1,12,1101,100-199"
+						  }
+						]
+  }
+  
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "Description"     : "Manual_Override = NULL",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Manual_Override", "=", "NULL"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Manual_Override <> null",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Manual_Override", "<>", "null"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Priority_Array[5] = null",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Priority_Aarray[5]", "=", "null"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Priority_Array[5] <> NULL",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Priority_Aarray[5]", "<>", "NULL"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Priority_Array[5] >= NULL (expect no data returned)",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Priority_Aarray[5]", ">=", "NULL"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Manual_Override < null (expect no data returned)",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200, 2100",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Manual_Override", "<", "null"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Description"     : "Profile_Name <> NULL",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Profile_Name", "<>", "NULL"]
+							                   ]
+						  }
+						]
+  }
+  
+]

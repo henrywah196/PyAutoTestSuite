@@ -38,78 +38,155 @@ IP_OP_TYPE_MAPPING = {
                      }
 
 OBJECT_TYPE_MAPPING = { 
+                        "accumulator"           : "AC",
                         "access-credential"     : "ACC",
+                        "access-door"           : "ACD",
+                        "access-point"          : "ACP",
+                        "access-rights"         : "ACR",
+                        "access-user"           : "ACU",
+                        "access-zone"           : "ACZ",
                         "acs"                   : "ACS",
                         "ag"                    : "AG",
+                        "alert-enrollment"      : "AE",
                         "analog-input"          : "AI",
                         "aic"                   : "AIC",
                         "analog-output"         : "AO",
                         "aoc"                   : "AOC",
                         "as"                    : "AS",
                         "analog-value"          : "AV",
-                        "ast"                   : "AST", 
+                        "ast"                   : "AST",
+                        "at"                    : "AT", 
+                        "atz"                   : "ATZ",
+                        "averaging"             : "AVG",
                         
                         "bdc"                   : "BDC",
+                        "bde"                   : "BDE", 
+                        "bcp"                   : "BCP",
                         "binary-input"          : "BI",
                         "bmd"                   : "BMD",
                         "binary-output"         : "BO",
                         "bt"                    : "BT",
                         "binary-value"          : "BV",
+                        "bitstring-value"       : "BSV",
+                        "bst"                   : "BST",
+                        "btz"                   : "BTZ",
                         
                         "calendar"              : "CAL",
                         "cel"                   : "CEL",
+                        "com"                   : "COM",
+                        "command"               : "CS",
+                        "characterstring-value" : "CSV",
                         "cr"                    : "CR",
                         "credential-data-input" : "ACI",
                         "cu"                    : "CU",
+                        "cms"                   : "CMS",
                         
-                        "dbi"                   : "DBI",
-                        "dc"                    : "DC",
-                        "der"                   : "DER",
-                        "des"                   : "DES",
-                        "device"                : "DEV",
-                        "dg"                    : "DG",
+                        "date-pattern-value"     : "DPV",
+                        "datetime-pattern-value" : "DTP",
+                        "datetime-value"         : "DTV",
+                        "date-value"             : "DV",
+                        "dbi"                    : "DBI",
+                        "dc"                     : "DC",
+                        "del"                    : "DEL", 
+                        "der"                    : "DER",
+                        "des"                    : "DES",
+                        "device"                 : "DEV",
+                        "dg"                     : "DG",
+                        "dgl"                    : "DGL",
+                        "drt"                    : "DRT",
+                        "dws"                    : "DWS",
+                        
                         
                         "ec"                    : "EC",
                         "event-enrollment"      : "EV",
+                        "event-log"             : "EL",
                         "eva"                   : "EVA",
+                        "evf"                   : "EVF",
                         "evl"                   : "EVL",
                         "evn"                   : "EVN",
                         "evr"                   : "EVR",
                         "evs"                   : "EVS",
                         "evx"                   : "EVX",
+                        "ens"                   : "ENS",
                         
                         "file"                  : "FIL",
                         
-                        "iom"                   : "IOM",
-                        "ips"                   : "IPS",
+                        "group"                 : "GRP",
+                        "gcs"                   : "GCS",
+                        "gw"                    : "GW",
+                        "gwt"                   : "GWT",
                         
+                        "hs"                    : "HS", 
+                        
+                        "iom"                   : "IOM",
+                        "ins"                   : "INS",
+                        "ips"                   : "IPS",
+                        "integer-value"         : "IV",
+                        
+                        "large-analog-value"    : "LAV",
                         "lc"                    : "LC",
+                        "lcd"                   : "LCD",
                         "lighting-output"       : "LO",
+                        "lg"                    : "LG", 
                         "loop"                  : "CO",
+                        "load-control"          : "LS",
+                        "life-safety-zone"      : "ZN",
+                        "life-safety-point"     : "ZP",
+                        "lnk"                   : "LNK",
+                        "lpt"                   : "LPT",
+                        "lsp"                   : "LSP",
                         
                         "multi-state-input"     : "MI",
                         "mic"                   : "MIC",
                         "moc"                   : "MOC",
+                        "mds"                   : "MDS",
                         "mt"                    : "MT",
+                        "mn"                    : "MN",
+                        "mnp"                   : "MNP",
                         "multi-state-value"     : "MV",
                         "multi-state-output"    : "MO",
                         
-                        "net"                   : "NET",
-                        "notification-class"    : "EVC",
-                        "np"                    : "NP",
+                        "net"                    : "NET",
+                        "notification-class"     : "EVC",
+                        "notification-forwarder" : "NF",
+                        "np"                     : "NP",
+                        "nvs"                    : "NVS",
                         
-                        "pan"                   : "PAN",
-                        "program"               : "PG",
-                        "pi"                    : "PI",
+                        "octetstring-value"     : "OSV",
+                        "ors"                   : "ORS",
+                        "os"                    : "OS",
+                        
+                        "pan"                    : "PAN",
+                        "program"                : "PG",
+                        "pi"                     : "PI",
+                        "pulse-converter"        : "PC",
+                        "positive-integer-value" : "PIV",
+                        
+                        "rps"                   : "RPS",
+                        "rpt"                   : "RPT",
                         
                         "schedule"              : "SCH",
+                        "sd"                    : "SD",
                         "sel"                   : "SEL",
+                        "sns"                   : "SNS",
+                        "ss"                    : "SS",
+                        "sss"                   : "SSS",
                         "sdl"                   : "SDL",
                         "sua"                   : "SUA",
                         "sug"                   : "SUG",
                         "structured-view"       : "SV",
                         
-                        "trend-log"             : "TL"
+                        "tns"                   : "TNS",
+                        "time-pattern-value"    : "TPV",
+                        "time-value"            : "TV",
+                        "trend-log"             : "TL",
+                        "trend-log-multiple"    : "TLM",
+                        
+                        "uns"                   : "UNS",
+                        "vgs"                   : "VGS",
+                        
+                        "zc"                    : "ZC",
+                        "zf"                    : "ZF"
                         
                       }
 
@@ -150,7 +227,8 @@ class BasReportTestHelper(object):
         self.r = requests.get(url, cookies=self.cookie)
         root = etree.fromstring(self.r.content)
         result = root.find("./Object/Property")
-        return result.get("value")
+        try: return str(int((result.get("value")).strip()) + 10)   # try handling inconsistent of total objects in device.
+        except ValueError: return result.get("value")
         
         
     def getObjectsList(self, siteName, deviceNumber):
@@ -164,20 +242,21 @@ class BasReportTestHelper(object):
         for elem in elements:
             objDic = {}
             objReference = elem.get("name")
-            objReference = objReference.split(",")
+            if objReference is not None:
+                objReference = objReference.split(",")
             
-            # objReference validation before contineu
-            if len(objReference) != 2:
-                continue
-            try: int(objReference[1])
-            except ValueError: continue 
+                # objReference validation before contineu
+                if len(objReference) != 2:
+                    continue
+                try: int(objReference[1])
+                except ValueError: continue 
             
-            #print deviceNumber, objReference
-            try: objDic["object type"] = OBJECT_TYPE_MAPPING[objReference[0]]
-            except KeyError: objDic["object type"] = objReference[0]
-            objDic["object number"] = objReference[1]
-            objDic["object name"] = elem.get("displayName")
-            result.append(objDic)
+                #print deviceNumber, objReference
+                try: objDic["object type"] = OBJECT_TYPE_MAPPING[objReference[0]]
+                except KeyError: objDic["object type"] = objReference[0]
+                objDic["object number"] = objReference[1]
+                objDic["object name"] = elem.get("displayName")
+                result.append(objDic)
         return result
     
     def getPropertyList(self, siteName, deviceNumber, objectReference):
@@ -548,6 +627,7 @@ class BasReportTestHelper(object):
         """ helper method used by _meetPropertyCriteria method. return true if 
             the object reference meet the specific property value comparison
         """
+        
         propertyName = propertyValueCompare[0]
         operator = propertyValueCompare[1]
         propertyValue = propertyValueCompare[2]
@@ -557,6 +637,9 @@ class BasReportTestHelper(object):
         if isinstance(propertyValueInfo, list):      # complex property or array
             pass
         else:
+            
+            #print "debug: %s"%propertyValueInfo
+            
             currentPropertyValue = propertyValueInfo["value"]
             currentPropertyDataType = propertyValueInfo["data type"]
             
@@ -570,14 +653,14 @@ class BasReportTestHelper(object):
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
-                return self._valueComparePresentValue(currentPropertyDataType, currentPropertyValue, propertyValue, operator)
+                return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
             
             # dealing property with multiple data type, such as Present_Value
             elif propertyName in ("Present_Value", "Manual_Override"):
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
-                return self._valueComparePresentValue(currentPropertyDataType, currentPropertyValue, propertyValue, operator)
+                return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
             
             # dealing with number value
             elif currentPropertyDataType in ("Signed", "Unsigned", "Real"):
@@ -597,6 +680,10 @@ class BasReportTestHelper(object):
             
     def _valueCompare(self, valueCurrent, valueExpected, operator):
         """ the basic value compare """
+        if isinstance(valueCurrent, str) or isinstance(valueCurrent, unicode):
+            valueCurrent = valueCurrent.lower()
+        if isinstance(valueExpected, str) or isinstance(valueExpected, unicode):
+            valueExpected = valueExpected.lower()
         if operator == "=":
             return valueCurrent == valueExpected
         elif operator == "<>":
@@ -639,17 +726,26 @@ class BasReportTestHelper(object):
                 return self._valueCompare(valueCurrent, valueExpected, operator)
             
         elif objType in ("MI", "MO", "MV"):
+            
+            #print "debug: %s, %s: %s, %s"%(self.deviceNumber, self.objectReference, valueCurrent, valueExpected)
+            
             isNativeValue = True
             try: int(valueExpected)
             except ValueError: isNativeValue = False
             if isNativeValue:    # verify native value
                 return self._valueCompareNumber(valueCurrent, valueExpected, operator)
-            else:                # verify state text
+            else:
                 valueInfo = self.getPropertyValue(self.siteName, self.deviceNumber, self.objectReference, "State_Text")
-                idx = int(valueExpected)
-                valueInfo = valueInfo[idx - 1]
-                valueCurrent = valueInfo["value"]
-                return self._valueCompare(valueCurrent, valueExpected, operator)
+                if isinstance(valueInfo, dict):    # handling object has no State_Text property
+                    return self._valueCompareNumber(valueCurrent, valueExpected, operator)
+                else:    # verify state text
+                    try: 
+                        idx = int(valueCurrent)
+                        valueInfo = valueInfo[idx - 1]
+                        valueCurrent = valueInfo["value"]
+                        return self._valueCompare(valueCurrent, valueExpected, operator)
+                    except ValueError:
+                        return self._valueCompare(valueCurrent, valueExpected, operator)
         elif objType in ("SCH"):
             pass
                 
@@ -689,27 +785,33 @@ class BasReportTestHelper(object):
         
     def _valueCompareString(self, valueCurrent, valueExpected, operator):
         """ helper used by _propertyValueCompareHelper(), which support string containing wildcard """
-        startChar = valueExpected[0]
-        endChar = valueExpected[len(valueExpected) - 1]
-        if startChar == "*" and endChar == "*":                                     # containing string
-            targetString = valueExpected[1:-1]
-            if operator == "=":
-                return targetString.lower() in valueCurrent.lower()
-            elif operator == "<>":
-                return targetString.lower() not in valueCurrent.lower()
-        elif startChar == "*":                                                      # end with string
-            targetString = valueExpected[1:]
-            if operator == "=":
-                return (valueCurrent.lower()).endswith(targetString.lower())
-            elif operator == "<>":
-                return not (valueCurrent.lower()).endswith(targetString.lower())
-        elif endChar == "*":                                                        # start with string
-            targetString = valueExpected[:-1]
-            if operator == "=":
-                return (valueCurrent.lower()).startswith(targetString.lower())
-            elif operator == "<>":
-                return not (valueCurrent.lower()).startswith(targetString.lower())
-        else:                                                                       # exactly matching
+        if len(valueExpected) > 0:
+            startChar = valueExpected[0]
+            endChar = valueExpected[len(valueExpected) - 1]
+            if startChar == "*" and endChar == "*":                                     # containing string
+                targetString = valueExpected[1:-1]
+                if operator == "=":
+                    return targetString.lower() in valueCurrent.lower()
+                elif operator == "<>":
+                    return targetString.lower() not in valueCurrent.lower()
+            elif startChar == "*":                                                      # end with string
+                targetString = valueExpected[1:]
+                if operator == "=":
+                    return (valueCurrent.lower()).endswith(targetString.lower())
+                elif operator == "<>":
+                    return not (valueCurrent.lower()).endswith(targetString.lower())
+            elif endChar == "*":                                                        # start with string
+                targetString = valueExpected[:-1]
+                if operator == "=":
+                    return (valueCurrent.lower()).startswith(targetString.lower())
+                elif operator == "<>":
+                    return not (valueCurrent.lower()).startswith(targetString.lower())
+            else:                                                                       # exactly matching
+                if operator == "=":
+                    return valueCurrent.lower() == valueExpected.lower()
+                elif operator == "<>":
+                    return valueCurrent.lower() != valueExpected.lower()
+        else:
             if operator == "=":
                 return valueCurrent.lower() == valueExpected.lower()
             elif operator == "<>":

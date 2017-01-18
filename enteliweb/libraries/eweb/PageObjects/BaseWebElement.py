@@ -142,6 +142,7 @@ class DropDownBoxWebElement(EditBoxWebElement):
                     target = item
                     break
             if target:
+                target.location_once_scrolled_into_view
                 target.click()
      
     def getDropDownList(self): 

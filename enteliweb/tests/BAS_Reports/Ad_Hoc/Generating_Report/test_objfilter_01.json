@@ -1,0 +1,54 @@
+[
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1000, 5000, 4194302, 0",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "AO", "BI", "BO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1000-2999",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "AO", "BI", "BO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "6400-4194302",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "AO", "BI", "BO"],
+                            "Instance"       : "*"
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1000, 6400-4194302, 5000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "AO", "BI", "BO"],
+                            "Instance"       : "*"
+						  }
+						]
+  }
+  
+]

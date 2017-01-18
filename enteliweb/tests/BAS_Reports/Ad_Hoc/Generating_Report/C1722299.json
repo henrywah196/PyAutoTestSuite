@@ -1,0 +1,22 @@
+[
+  {
+    "Description"     : "Active_Text = start OR Present_Value = StoP OR Manual_Override = hOt",
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Active_Text", "=", "start"],
+							                      ["Present_Value", "=", "StoP"],
+							                      ["Manual_Override", "=", "hOt"]
+							                   ]
+						  }
+						]
+  }
+  
+]

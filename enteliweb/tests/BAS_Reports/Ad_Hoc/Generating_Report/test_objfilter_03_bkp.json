@@ -1,0 +1,71 @@
+[
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Calibration", "<>", "0"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI"],
+                            "Instance"       : "1-7",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Calibration", ">", "0"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Vendor_Identifier", "=", "8"]
+							                   ]
+						  }
+						]
+  },
+  
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [
+							                      ["Object_Name", "=", "test*"]
+							                   ]
+						  }
+						]
+  }
+  
+  
+]

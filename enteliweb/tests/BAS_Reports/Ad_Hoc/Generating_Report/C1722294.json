@@ -1,0 +1,27 @@
+[
+  {
+    "Report Name"     : "Ad Hoc Auto testing Report",
+    "Report Title"    : "Ad Hoc Auto testing Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [
+                                                  {
+												    "Rule Logic" : "OR",
+                                                    "Properties" : [ 
+													                 ["FLAGS", "=", "*not-comissioned*"],
+                                                                     ["flags", "=", "fault"]
+                                                                   ]
+												  },
+												  
+							                      ["present_VALUE", "=", "0"]
+							                   ]
+						  }
+						]
+  }
+  
+]

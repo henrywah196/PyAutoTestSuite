@@ -221,10 +221,24 @@ class ObjectFilterWindow(BaseWebElement):
         self._modifyPropertyItem(propertyValueElem, propertyValueComparison[2])
     
     def _modifyPropertyItem(self, propertyItemElem, strPropertyItemValue):
-        inputElem = propertyItemElem.find_element_by_tag_name("input")
-        inputElem.click()
-        inputElem.clear()
-        inputElem.send_keys(strPropertyItemValue)
+        strID = propertyItemElem.get_attribute("id")
+        if "propertyOp" in strID:
+            # special handling of the operator drop down
+            driver = self.getDriver()
+            target = driver.find_element_by_id("%s-trigger-picker"%strID)
+            target.click()
+            time.sleep(1)
+            target = driver.find_element_by_id("%s-picker-listEl"%strID)
+            liElements = target.find_elements_by_tag_name("li")
+            for liElem in liElements:
+                if liElem.text == strPropertyItemValue:
+                    liElem.click()
+                    break
+        else:
+            inputElem = propertyItemElem.find_element_by_tag_name("input")
+            inputElem.click()
+            inputElem.clear()
+            inputElem.send_keys(strPropertyItemValue)
     
     def getTotalPropertyFromRule(self, propertyRuleElem):
         """ return total number of properties under the specified rule """ 
@@ -423,20 +437,21 @@ class BASReportPageObj(BaseFrameObject):
         objectInstance = dicObjectFilter["Instance"]
         self.objectFilterWindow.instance = objectInstance
         
-        properties = dicObjectFilter["Properties"]
-        if properties != None: 
-            for property in properties:
-                if isinstance(property, types.ListType):
-                    self.objectFilterWindow.addProperty(property)
-                else:
-                    self.objectFilterWindow.addRule(property)
+        if "Properties" in dicObjectFilter:
+            properties = dicObjectFilter["Properties"]
+            if properties != None: 
+                for property in properties:
+                    if isinstance(property, types.ListType):
+                        self.objectFilterWindow.addProperty(property)
+                    else:
+                        self.objectFilterWindow.addRule(property)
             
-            if len(properties) > 1:
-                propertyLogic = dicObjectFilter["Property Logic"]
-                if propertyLogic == "OR":
-                    self.objectFilterWindow.logicOR.click()
-                else:
-                    self.objectFilterWindow.logicAND.click()
+                if len(properties) > 1:
+                    propertyLogic = dicObjectFilter["Property Logic"]
+                    if propertyLogic == "OR":
+                        self.objectFilterWindow.logicOR.click()
+                    else:
+                        self.objectFilterWindow.logicAND.click()
             
         self.objectFilterWindow.btnOK.click()
         
