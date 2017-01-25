@@ -53,6 +53,23 @@ class ObjectFilterTypeDropDown(DropDownBoxWebElement):
     """ Model the Type DropDown Box web element under Object filter window """
     def __init__(self, locatorString):
         super(ObjectFilterTypeDropDown, self).__init__("ObjectFilterWindow.objectType", invalidIcon=False)
+    
+    def __set__(self, obj, val):
+        """ select a item from the drop down box """
+        dropDownList = self.getDropDownList()
+        if dropDownList:
+            itemObjs = dropDownList.find_elements_by_class_name('x-boundlist-item')
+            target = None
+            for item in itemObjs:
+                if val == "AEL" and item.text == val:
+                    target = item
+                    break
+                elif "(%s)"%val in item.text:
+                    target = item
+                    break
+            if target:
+                target.location_once_scrolled_into_view
+                target.click()
         
     def getDropDownList(self): 
         """ return the drop down list web element """ 

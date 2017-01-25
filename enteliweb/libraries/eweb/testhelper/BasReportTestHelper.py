@@ -5,6 +5,7 @@ Created on Dec 7, 2016
 '''
 import settings
 import requests
+from requests.exceptions import ConnectionError
 import socket
 import errno
 import re
@@ -217,12 +218,12 @@ class BasReportTestHelper(object):
         try:
             result =  requests.get(url, cookies=self.cookie)
             return result
-        except socket.error as error:
-            if error.errorno == errno.WSAECONNRESET and retry >=1:
+        except ConnectionError:
+            if retry >=1:
                 time.sleep(60)
                 retry = retry - 1
                 
-                print "debug: retry get request"
+                print "debug: retry get request after Connection aborted"
                 
                 self._getRequest(url, retry)
             else:
@@ -303,7 +304,131 @@ class BasReportTestHelper(object):
             result.append(objDic)
         return result
     
+    def _propertyValueObjComposer(self, element):
+        """ helper used by getPropertyValue() to compose and return property as an object """ 
+        
+        class Property():
+            def __init__(self):
+                self.name     = None
+                self.status   = None
+                self.dataType = None
+                self.isNull   = None
+                self.value    = None
+                
+            def __str__(self):
+                return "Property(name: %s, status: %s, dataType: %s, isNull: %s, value: %s)"%(self.name, self.status, self.dataType, self.isNull, self.value)
+                
+        class Union():
+            def __init__(self):
+                self.name   = None
+                self.status = None
+                
+            def __str__(self):
+                return "Union(name: %s, status: %s)"%(self.name, self.status)
+                
+        class Group():
+            def __init__(self):
+                self.name = None
+                
+            def __str__(self):
+                return "Group(name: %s)"%self.name
+                
+        tagName = element.tag
+        
+        if tagName == "Property":
+            propertyObj = Property()
+            propertyObj.name = element.get("name")
+            propertyObj.status = element.get("status")
+            propertyObj.dataType = element.get("dataType")
+            propertyObj.value = element.get("value")
+            return propertyObj
+        
+        elif tagName in ("Array", "List"):
+            result = []
+            elements = element.getchildren()
+            if len(elements) > 0:
+                for elem in elements:
+                    result.append(self._propertyValueObjComposer(elem))
+            return result
+        
+        elif tagName == "Union":
+            unionObj = Union()
+            unionObj.name = element.get("name")
+            unionObj.status = element.get("status")
+            elements = element.getchildren()
+            if len(elements) > 0:
+                for elem in elements:
+                    elemObj = self._propertyValueObjComposer(elem)
+                    setattr(unionObj, elemObj.name, elemObj)
+            return unionObj
+                    
+        elif tagName == "Group":
+            groupObj = Group()
+            groupObj.name = element.get("name")
+            elements = element.getchildren()
+            if len(elements) > 0:
+                for elem in elements:
+                    elemObj = self._propertyValueObjComposer(elem)
+                    setattr(groupObj, elemObj.name, elemObj)
+            return groupObj
+    
     def getPropertyValue(self, siteName, deviceNumber, objectReference, propertyName):
+        """ return property vlaue in different format based on the data type of the property """
+        
+        url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
+        self.r = self._getRequest(url)
+        root = etree.fromstring(self.r.content)
+        elemObject = root.find("./Object")
+        element = (elemObject.getchildren())[0]
+        
+        return self._propertyValueObjComposer(element)
+    
+    def getPresentValueStateText(self, siteName, deviceNumber, objectReference):
+        """ return Active / Inactive text for binary object, state_text for multi-state object
+            based on its present_value. for 3rd party devices which has no state_text, just return
+            the present_value. the function will return a list containing two item, the first item
+            is its present_value, the second item is its state_text
+        """
+        result = []
+        objType = self._getObjTypeFromObjRef(objectReference)
+        propertyValue = self.getPropertyValue(siteName, deviceNumber, objectReference, "Present_Value")
+        propertyValue = propertyValue.value
+        
+        if objType in ("BI", "BO", "BV"):
+            result.append(propertyValue)
+            if propertyValue == "active":
+                valueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, "Active_Text")
+                valueCurrent = valueInfo.value
+                result.append(valueCurrent)
+            elif propertyValue == "inactive":
+                valueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, "Inactive_Text")
+                valueCurrent = valueInfo.value
+                result.append(valueCurrent)
+            else:
+                result.append(propertyValue)
+            return result
+            
+        elif objType in ("MI", "MO", "MV"): 
+            result.append(propertyValue)          
+            valueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, "State_Text")
+            if not isinstance(valueInfo, list):    # handling object has no State_Text property
+                result.append(propertyValue)
+                return result
+            else:    # verify state text
+                try: 
+                    idx = int(propertyValue)
+                    valueInfo = valueInfo[idx - 1]
+                    valueCurrent = valueInfo.value
+                    result.append(valueCurrent)
+                    return result
+                except ValueError:
+                    result.append(propertyValue)
+                    return result
+        else:
+            return [propertyValue, propertyValue]
+    
+    
+    def getPropertyValue_old(self, siteName, deviceNumber, objectReference, propertyName):
         """ return property value in differetn format based on the data type of the property """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
         self.r = self._getRequest(url)
@@ -541,7 +666,9 @@ class BasReportTestHelper(object):
                 
     
     def _objQueryGetObjListByObjRef(self, siteName, deviceNumber, dicObjectReference):
-        """ helper to return list of object based on the given object reference """
+        """ helper to return a list of object which were found on the device based on 
+            the given object reference
+        """
         result = []
         objectList = self.getObjectsList(siteName, deviceNumber)
         for key, value in dicObjectReference.items():
@@ -651,19 +778,36 @@ class BasReportTestHelper(object):
         """
         
         propertyName = propertyValueCompare[0]
+        
+        # dealing with sub properties
+        propertyName = propertyName.split('.')    # propertyName is a list now
+        
         operator = propertyValueCompare[1]
         propertyValue = propertyValueCompare[2]
         
-        propertyValueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName)
+        propertyValueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName[0])
         
-        if isinstance(propertyValueInfo, list):      # complex property or array
+        if isinstance(propertyValueInfo, list):      # list or array
             pass
         else:
             
             #print "debug: %s"%propertyValueInfo
             
-            currentPropertyValue = propertyValueInfo["value"]
-            currentPropertyDataType = propertyValueInfo["data type"]
+            currentPropertyValue = None
+            currentPropertyDataType = None
+            if len(propertyName) > 1:
+                targetObj = propertyValueInfo
+                i = 1
+                while i < len(propertyName):
+                    attrName = propertyName[i]
+                    targetObj = getattr(targetObj, attrName)
+                    i = i + 1
+                currentPropertyValue = targetObj.value
+                currentPropertyDataType = targetObj.dataType
+                    
+            else:
+                currentPropertyValue = propertyValueInfo.value
+                currentPropertyDataType = propertyValueInfo.dataType
             
             # dealing with special marker 'NULL'
             if propertyValue.lower() == "null":
@@ -741,10 +885,10 @@ class BasReportTestHelper(object):
             else:                                                  # verify Active/Inactive Text
                 if valueCurrent == "active":
                     valueInfo = self.getPropertyValue(self.siteName, self.deviceNumber, self.objectReference, "Active_Text")
-                    valueCurrent = valueInfo["value"]
+                    valueCurrent = valueInfo.value
                 elif valueCurrent == "inactive":
                     valueInfo = self.getPropertyValue(self.siteName, self.deviceNumber, self.objectReference, "Inactive_Text")
-                    valueCurrent = valueInfo["value"]
+                    valueCurrent = valueInfo.value
                 return self._valueCompare(valueCurrent, valueExpected, operator)
             
         elif objType in ("MI", "MO", "MV"):
@@ -758,13 +902,13 @@ class BasReportTestHelper(object):
                 return self._valueCompareNumber(valueCurrent, valueExpected, operator)
             else:
                 valueInfo = self.getPropertyValue(self.siteName, self.deviceNumber, self.objectReference, "State_Text")
-                if isinstance(valueInfo, dict):    # handling object has no State_Text property
+                if not isinstance(valueInfo, list):    # handling object has no State_Text property
                     return self._valueCompareNumber(valueCurrent, valueExpected, operator)
                 else:    # verify state text
                     try: 
                         idx = int(valueCurrent)
                         valueInfo = valueInfo[idx - 1]
-                        valueCurrent = valueInfo["value"]
+                        valueCurrent = valueInfo.value
                         return self._valueCompare(valueCurrent, valueExpected, operator)
                     except ValueError:
                         return self._valueCompare(valueCurrent, valueExpected, operator)
@@ -882,6 +1026,22 @@ class BasReportTestHelper(object):
                 return False
         except ValueError:
             return False
+        
+        
+    def dataFormatHelper(self, dataRaw, valueFormatType, valueFormat):
+        """ helper to preformat the expected data before comparing """
+        result = dataRaw
+        if valueFormatType == "DateTime":
+            if valueFormat == "MMMM d,y hh:mm a":
+                try:
+                    datetimeObj = parse(dataRaw)
+                    result = datetimeObj.strftime("%B %d,%Y %I:%M %p")
+                except ValueError:
+                    result = dataRaw
+                
+        return result
+                
+        
         
         
                    

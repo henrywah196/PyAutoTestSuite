@@ -1,0 +1,133 @@
+[
+  {
+    "Description"     : "Sanity Test Active Alarms Report",
+    "Report Name"     : "Sanity Test Active Alarms Report",
+    "Report Title"    : "Sanity Test Active Alarms Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EV"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Event_State", "<>", "Normal"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Name",             "Property" : "Object_Name"},
+	                      {"Heading" : "Monitored Object", "Property" : "Object_Property_Reference"},
+	                      {"Heading" : "Event Class",      "Property" : "Event_Class_Ref"} 
+	                    ] 
+  },
+  
+  {
+    "Description"     : "Sanity Test Calibration Report",
+    "Report Name"     : "Sanity Test Calibration Report",
+    "Report Title"    : "Sanity Test Calibration Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI"],
+                            "Instance"       : "1-7",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Calibration", ">=", "0"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number",    "Property" : "Device_Number"},
+	                      {"Heading" : "Name",             "Property" : "Object_Name"},
+	                      {"Heading" : "Calibration",      "Property" : "Calibration"} 
+	                    ] 
+  },
+  
+  {
+    "Description"     : "Sanity Test Controller Firmware Report",
+    "Report Name"     : "Sanity Test Controller Firmware Report",
+    "Report Title"    : "Sanity Test Controller Firmware Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Model_Name", "<>", "OWS340"],
+							                      ["Model_Name", "<>", "enteliWEB"],
+							                      ["Model_Name", "<>", "BACnet Server"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Type",            "Property" : "Model_Name"},
+	                      {"Heading" : "Vendor",          "Property" : "Vendor_Name"},
+	                      {"Heading" : "Firmware",        "Property" : "Application_Software_Version"},
+	                      {"Heading" : "Build",           "Property" : "Firmware_Revision"},
+	                      {"Heading" : "Last Reset Time", "Property" : "Last_Reset_Time", "Format": ["DateTime", "MMMM d,y hh:mm a"]},
+	                      {"Heading" : "Scan Rate",       "Property" : "Scan_Rate"},
+	                      {"Heading" : "Status",          "Property" : "System_Status"} 
+	                    ] 
+  },
+  
+  {
+    "Description"     : "Sanity Test Data Exchange Settings Report",
+    "Report Name"     : "Sanity Test Data Exchange Settings Report",
+    "Report Title"    : "Sanity Test Data Exchange Settings Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DES"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Broadcast_Interval", "<", "60"],
+							                      ["Broadcast_Addresses[1].address.network-number", "<>", "0"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number",         "Property" : "Device_Number"},
+	                      {"Heading" : "Broadcast Interval(s)", "Property" : "Broadcast_Interval"},
+	                      {"Heading" : "Default Type",          "Property" : "Default_Exchange_Type"},
+	                      {"Heading" : "Broadcast Destination", "Property" : "Broadcast_Addresses"} 
+	                    ] 
+  },
+  
+  {
+    "Description"     : "Sanity Test Decommissioned - Fault Report",
+    "Report Name"     : "Sanity Test Decommissioned - Fault Report",
+    "Report Title"    : "Sanity Test Decommissioned - Fault Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "BI", "MI", "AO", "BO", "MO"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Commission_Flag", "=", "not-commissioned"],
+							                      ["Commissioned", "=", "0"],
+							                      ["Flags", "=", "*fault*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number", "Property" : "Device_Number"},
+	                      {"Heading" : "Device_Name",   "Property" : "Device_Name"},
+	                      {"Heading" : "ObjectID",     "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",          "Property" : "Object_Name"},
+	                      {"Heading" : "Value",         "Property" : "Present_Value"},
+	                      {"Heading" : "(Units)",       "Property" : "Units"},
+	                      {"Heading" : "A/D Value",     "Property" : "AD_Value"},
+	                      {"Heading" : "Flags",         "Property" : "Flags"}
+	                      
+	                    ] 
+  }
+  
+]
