@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Reporting Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Reporting Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-01-26 09:15:00</p>
+<p class='attribute'><strong>Duration:</strong> 00:00:54.647</p>
+<p class='attribute'><strong>Status:</strong> Pass 61 Failure 8</p>
+
+<p class='description'>Test against eweb4.4.262 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.energy_reports.TP11_Data_Integrity.TC1105A_Data_Interpolation.TC1105A_DataInterpolation</td>
+    <td>00:00:34.421</td>
+    <td>30</td>
+    <td>28</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',30)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_1: Verify Timestamp interpolation for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.133</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_2: Verify Timestamp interpolation for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:01.176</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_3: Verify Timestamp interpolation for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:01.461</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_4: Verify Timestamp interpolation for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:01.106</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_5: Verify Timestamp interpolation for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:00.923</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_1: Verify Start (timestamp) for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.153</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.6: Local: 2016-07-26 08:35:00
+Raw: 2016-07-26 08:33:23.220000
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_2: Verify Start (timestamp) for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:00.143</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.7: Local: 2008-01-01 00:00:00
+Raw: 2008-01-01 00:00:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_3: Verify Start (timestamp) for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:00.213</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.8: Local: 2007-01-01 00:00:00
+Raw(Baseline): 2007-01-01 00:00:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_4: Verify Start (timestamp) for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:00.110</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.9: Local: 2008-01-01 00:00:00
+Raw: 2008-01-01 00:00:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_5: Verify Start (timestamp) for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:00.082</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.10: Local: 2007-01-01 00:00:00
+Raw(Baseline): 2007-01-01 00:00:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_1: Verify Finish (timestamp) for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.003</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.11: Local: 2017-01-26 06:25:00
+Raw: 2017-01-26 06:31:07
+difference: 0:06:07
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_2: Verify Finish (timestamp) for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:00.006</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.12: Local: 2017-01-26 09:05:00
+Raw: 2017-01-26 09:10:00
+difference: 0:05:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.13' class='none'>
+    <td class='failCase'><div class='testcase'>test03_3: Verify Finish (timestamp) for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:00.007</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.13')" >
+        fail</a>
+
+    <div id='div_ft1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.13: Local: 2017-01-26 08:50:00
+Raw: 2017-01-26 09:00:00
+difference: 0:10:00
+
+Local(BaselineFinish): 2007-01-01 00:00:00
+Raw: 2007-01-01 00:00:00
+difference: 0:00:00
+
+AssertionError: 
+The difference between local and raw BaselineFinish (timestamp) should not more than 5 minutes
+Expected: True
+Current: False
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_4: Verify Finish (timestamp) for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:00.005</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.14: Local: 2017-01-26 09:05:00
+Raw: 2017-01-26 09:10:00
+difference: 0:05:00
+
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='failCase'><div class='testcase'>test03_5: Verify Finish (timestamp) for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:00.005</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        fail</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.15: Local: 2017-01-26 08:50:00
+Raw: 2017-01-26 09:00:00
+difference: 0:10:00
+
+Local(BaselineFinish): 2007-01-01 00:00:00
+Raw: 2007-01-01 00:00:00
+difference: 0:00:00
+
+AssertionError: 
+The difference between local and raw BaselineFinish (timestamp) should not more than 5 minutes
+Expected: True
+Current: False
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_1: Verify no duplicated Timestamp for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.080</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_2: Verify no duplicated Timestamp for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:00.995</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_3: Verify no duplicated Timestamp for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:00.927</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_4: Verify no duplicated Timestamp for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:00.791</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_5: Verify no duplicated Timestamp for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:00.734</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_1: Verify no missing samples for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.355</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_2: Verify no missing samples for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:05.152</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_3: Verify no missing samples for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:05.382</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_4: Verify no missing samples for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:04.763</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_5: Verify no missing samples for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:05.337</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_1: Verify sample energy value for [//Hist DB/1000.PI1.Total_Pulses]</div></td>
+    <td>00:00:00.145</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_2: Verify sample energy value for [//RV Site/1100.AV104.Present_Value]</div></td>
+    <td>00:00:00.972</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_3: Verify sample energy value for [//RV Site/1100.AV2004.Present_Value]</div></td>
+    <td>00:00:00.993</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_4: Verify sample energy value for [//RV Site/1100.AV105.Present_Value]</div></td>
+    <td>00:00:01.014</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_5: Verify sample energy value for [//RV Site/1100.AV2005.Present_Value]</div></td>
+    <td>00:00:01.255</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.energy_reports.TP11_Data_Integrity.TC1105B_Data_Aggregation.TC1105B_DataAggregation</td>
+    <td>00:00:20.226</td>
+    <td>39</td>
+    <td>33</td>
+    <td>6</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',39)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01: Verify valid area and meter has datapoint group in datapoint_group_map tables</div></td>
+    <td>00:00:00.060</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02: verify no NULL in Start, Finish column in datapoint_group table</div></td>
+    <td>00:00:00.007</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03: verify all datapoint groups have data in datapoint_group_data table</div></td>
+    <td>00:00:00.068</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04: verify no duplicated Group in datapoint_group_map table</div></td>
+    <td>00:00:00.003</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05: verify no duplicated Instance in datapoint_group_map table</div></td>
+    <td>00:00:00.002</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_1: Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-1</div></td>
+    <td>00:00:00.002</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
+        pass</a>
+
+    <div id='div_pt2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.6: test06_1 - Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-1
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_2: Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-3</div></td>
+    <td>00:00:00.002</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.7')" >
+        pass</a>
+
+    <div id='div_pt2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.7: test06_2 - Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-3
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_3: Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-5</div></td>
+    <td>00:00:00.002</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
+        pass</a>
+
+    <div id='div_pt2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.8: test06_3 - Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-5
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_4: Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-6</div></td>
+    <td>00:00:00.005</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.9')" >
+        pass</a>
+
+    <div id='div_pt2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.9: test06_4 - Verify the consistent of Start and Finish between datapoint_group and dataapoint_group_data table for group-6
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_1: Verify the integrity of Start field in datapoint_group table for group-1</div></td>
+    <td>00:00:00.068</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
+        pass</a>
+
+    <div id='div_pt2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.10: test07_1 - Verify the integrity of Start field in datapoint_group table for group-1
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.11' class='none'>
+    <td class='failCase'><div class='testcase'>test07_2: Verify the integrity of Start field in datapoint_group table for group-3</div></td>
+    <td>00:00:00.102</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.11')" >
+        fail</a>
+
+    <div id='div_ft2.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.11: test07_2 - Verify the integrity of Start field in datapoint_group table for group-3
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\energy_reports\TP11_Data_Integrity\TC1105B_Data_Aggregation.py", line 240, in test07
+    self.assertEqual(expected, current, errMessage)
+AssertionError: Datapoint_Group Start field is inconsistent for Group: 3
+Start Field (expected, current): 2007-01-01 00:00:00, 2000-01-01 00:00:00
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.12' class='none'>
+    <td class='failCase'><div class='testcase'>test07_3: Verify the integrity of Start field in datapoint_group table for group-5</div></td>
+    <td>00:00:00.080</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.12')" >
+        fail</a>
+
+    <div id='div_ft2.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.12: test07_3 - Verify the integrity of Start field in datapoint_group table for group-5
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\energy_reports\TP11_Data_Integrity\TC1105B_Data_Aggregation.py", line 240, in test07
+    self.assertEqual(expected, current, errMessage)
+AssertionError: Datapoint_Group Start field is inconsistent for Group: 5
+Start Field (expected, current): 2007-01-01 00:00:00, 2000-01-01 00:00:00
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.13' class='none'>
+    <td class='failCase'><div class='testcase'>test07_4: Verify the integrity of Start field in datapoint_group table for group-6</div></td>
+    <td>00:00:00.021</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.13')" >
+        fail</a>
+
+    <div id='div_ft2.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.13: test07_4 - Verify the integrity of Start field in datapoint_group table for group-6
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\energy_reports\TP11_Data_Integrity\TC1105B_Data_Aggregation.py", line 240, in test07
+    self.assertEqual(expected, current, errMessage)
+AssertionError: Datapoint_Group Start field is inconsistent for Group: 6
+Start Field (expected, current): 2007-01-01 00:00:00, 2000-01-01 00:00:00
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_1: Verify the integrity of Finish field in datapoint_group table for group-1</div></td>
+    <td>00:00:00.102</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.14')" >
+        pass</a>
+
+    <div id='div_pt2.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.14: test08_1 - Verify the integrity of Finish field in datapoint_group table for group-1
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_2: Verify the integrity of Finish field in datapoint_group table for group-3</div></td>
+    <td>00:00:02.644</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.15')" >
+        pass</a>
+
+    <div id='div_pt2.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.15: test08_2 - Verify the integrity of Finish field in datapoint_group table for group-3
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_3: Verify the integrity of Finish field in datapoint_group table for group-5</div></td>
+    <td>00:00:02.074</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.16')" >
+        pass</a>
+
+    <div id='div_pt2.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.16: test08_3 - Verify the integrity of Finish field in datapoint_group table for group-5
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_4: Verify the integrity of Finish field in datapoint_group table for group-6</div></td>
+    <td>00:00:04.487</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.17')" >
+        pass</a>
+
+    <div id='div_pt2.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.17: test08_4 - Verify the integrity of Finish field in datapoint_group table for group-6
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_1: Verify the integrity of Type field in datapoint_group_data table for group-1</div></td>
+    <td>00:00:00.151</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.18')" >
+        pass</a>
+
+    <div id='div_pt2.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.18: test09_1 - Verify the integrity of Type field in datapoint_group_data table for group-1
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_2: Verify the integrity of Type field in datapoint_group_data table for group-3</div></td>
+    <td>00:00:00.866</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.19')" >
+        pass</a>
+
+    <div id='div_pt2.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.19: test09_2 - Verify the integrity of Type field in datapoint_group_data table for group-3
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_3: Verify the integrity of Type field in datapoint_group_data table for group-5</div></td>
+    <td>00:00:01.332</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.20')" >
+        pass</a>
+
+    <div id='div_pt2.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.20: test09_3 - Verify the integrity of Type field in datapoint_group_data table for group-5
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_4: Verify the integrity of Type field in datapoint_group_data table for group-6</div></td>
+    <td>00:00:01.462</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.21')" >
+        pass</a>
+
+    <div id='div_pt2.21' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.21').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.21: test09_4 - Verify the integrity of Type field in datapoint_group_data table for group-6
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_1: Verify the integrity of Aggregation field in datapoint_group_data table for group-1</div></td>
+    <td>00:00:00.103</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.22')" >
+        pass</a>
+
+    <div id='div_pt2.22' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.22').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.22: test10_1 - Verify the integrity of Aggregation field in datapoint_group_data table for group-1
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_2: Verify the integrity of Aggregation field in datapoint_group_data table for group-3</div></td>
+    <td>00:00:00.277</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.23')" >
+        pass</a>
+
+    <div id='div_pt2.23' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.23').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.23: test10_2 - Verify the integrity of Aggregation field in datapoint_group_data table for group-3
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_3: Verify the integrity of Aggregation field in datapoint_group_data table for group-5</div></td>
+    <td>00:00:00.536</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.24')" >
+        pass</a>
+
+    <div id='div_pt2.24' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.24').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.24: test10_3 - Verify the integrity of Aggregation field in datapoint_group_data table for group-5
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_4: Verify the integrity of Aggregation field in datapoint_group_data table for group-6</div></td>
+    <td>00:00:00.377</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.25')" >
+        pass</a>
+
+    <div id='div_pt2.25' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.25').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.25: test10_4 - Verify the integrity of Aggregation field in datapoint_group_data table for group-6
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_1: Verify the integrity of Period field in datapoint_group_data table for group-1 (Type: Carbon_Emission, Aggregation: Sum)</div></td>
+    <td>00:00:00.147</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.26')" >
+        pass</a>
+
+    <div id='div_pt2.26' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.26').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.26: test11_1 - Verify the integrity of Period field in datapoint_group_data table for group-1 (Type: Carbon_Emission, Aggregation: Sum)
+energy type: Carbon_Emission, aggregation: Sum, period: D
+start time 2016-07-26 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 184
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.27' class='none'>
+    <td class='failCase'><div class='testcase'>test11_10: Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Sum)</div></td>
+    <td>00:00:00.463</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.27')" >
+        fail</a>
+
+    <div id='div_ft2.27' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.27').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.27: test11_10 - Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Sum)
+energy type: Electric_Energy, aggregation: Sum, period: D
+start time 2000-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 6235
+AssertionError: 
+Verify integrity of total hours by check no missing hours
+Expected: []
+Current: [{'hours_current': '23', 'day': '2000-03-12', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2001-03-11', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2002-03-10', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2003-03-09', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2004-03-14', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2005-03-13', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2006-03-12', 'hours_expected': '24'}]
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_11: Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Avg)</div></td>
+    <td>00:00:00.371</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.28')" >
+        pass</a>
+
+    <div id='div_pt2.28' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.28').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.28: test11_11 - Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Avg)
+energy type: Electric_Energy, aggregation: Avg, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_12: Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Max)</div></td>
+    <td>00:00:00.377</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.29')" >
+        pass</a>
+
+    <div id='div_pt2.29' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.29').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.29: test11_12 - Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Max)
+energy type: Electric_Energy, aggregation: Max, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_13: Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Min)</div></td>
+    <td>00:00:00.401</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.30')" >
+        pass</a>
+
+    <div id='div_pt2.30' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.30').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.30: test11_13 - Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Electric_Energy, Aggregation: Min)
+energy type: Electric_Energy, aggregation: Min, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_14: Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Carbon_Emission, Aggregation: Sum)</div></td>
+    <td>00:00:00.335</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.31')" >
+        pass</a>
+
+    <div id='div_pt2.31' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.31').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.31: test11_14 - Verify the integrity of Period field in datapoint_group_data table for group-6 (Type: Carbon_Emission, Aggregation: Sum)
+energy type: Carbon_Emission, aggregation: Sum, period: D
+start time 2016-07-26 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 184
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.32' class='none'>
+    <td class='failCase'><div class='testcase'>test11_2: Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Sum)</div></td>
+    <td>00:00:00.505</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.32')" >
+        fail</a>
+
+    <div id='div_ft2.32' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.32').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.32: test11_2 - Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Sum)
+energy type: Electric_Energy, aggregation: Sum, period: D
+start time 2000-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 6235
+AssertionError: 
+Verify integrity of total hours by check no missing hours
+Expected: []
+Current: [{'hours_current': '23', 'day': '2000-03-12', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2001-03-11', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2002-03-10', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2003-03-09', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2004-03-14', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2005-03-13', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2006-03-12', 'hours_expected': '24'}]
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_3: Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Avg)</div></td>
+    <td>00:00:00.384</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.33')" >
+        pass</a>
+
+    <div id='div_pt2.33' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.33').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.33: test11_3 - Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Avg)
+energy type: Electric_Energy, aggregation: Avg, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_4: Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Max)</div></td>
+    <td>00:00:00.374</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.34')" >
+        pass</a>
+
+    <div id='div_pt2.34' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.34').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.34: test11_4 - Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Max)
+energy type: Electric_Energy, aggregation: Max, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_5: Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Min)</div></td>
+    <td>00:00:00.396</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.35')" >
+        pass</a>
+
+    <div id='div_pt2.35' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.35').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.35: test11_5 - Verify the integrity of Period field in datapoint_group_data table for group-3 (Type: Electric_Energy, Aggregation: Min)
+energy type: Electric_Energy, aggregation: Min, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.36' class='none'>
+    <td class='failCase'><div class='testcase'>test11_6: Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Sum)</div></td>
+    <td>00:00:00.489</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.36')" >
+        fail</a>
+
+    <div id='div_ft2.36' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.36').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.36: test11_6 - Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Sum)
+energy type: Electric_Energy, aggregation: Sum, period: D
+start time 2000-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 6235
+AssertionError: 
+Verify integrity of total hours by check no missing hours
+Expected: []
+Current: [{'hours_current': '23', 'day': '2000-03-12', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2001-03-11', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2002-03-10', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2003-03-09', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2004-03-14', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2005-03-13', 'hours_expected': '24'}, {'hours_current': '23', 'day': '2006-03-12', 'hours_expected': '24'}]
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_7: Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Avg)</div></td>
+    <td>00:00:00.370</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.37')" >
+        pass</a>
+
+    <div id='div_pt2.37' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.37').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.37: test11_7 - Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Avg)
+energy type: Electric_Energy, aggregation: Avg, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_8: Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Max)</div></td>
+    <td>00:00:00.406</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.38')" >
+        pass</a>
+
+    <div id='div_pt2.38' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.38').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.38: test11_8 - Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Max)
+energy type: Electric_Energy, aggregation: Max, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_9: Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Min)</div></td>
+    <td>00:00:00.375</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.39')" >
+        pass</a>
+
+    <div id='div_pt2.39' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.39').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.39: test11_9 - Verify the integrity of Period field in datapoint_group_data table for group-5 (Type: Electric_Energy, Aggregation: Min)
+energy type: Electric_Energy, aggregation: Min, period: D
+start time 2008-01-01 00:00:00
+finish time 2017-01-25 00:00:00
+total of days 3313
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:00:54.647</td>
+    <td>69</td>
+    <td>61</td>
+    <td>8</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

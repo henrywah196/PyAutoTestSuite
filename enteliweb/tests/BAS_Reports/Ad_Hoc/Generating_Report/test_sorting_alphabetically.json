@@ -1,0 +1,19 @@
+[
+  {
+    "Description"     : "test sorting alphabetically",
+    "Report Name"     : "test sorting alphabetically",
+    "Report Title"    : "test sorting alphabetically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Name",             "Property" : "Object_Name"}
+	                    ] 
+  }
+  
+]

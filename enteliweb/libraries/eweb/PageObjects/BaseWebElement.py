@@ -122,7 +122,18 @@ class CheckBoxWebElement(BaseWebElement):
             return True
         else:
             return False
-       
+        
+    def __set__(self, obj, val):
+        """ check or uncheck the checkbox """
+        result = self.isChecked()
+        if result:
+            if val == False:
+                self.click()
+                
+        else:
+            if val == True:
+                self.click()
+            
     
 class DropDownBoxWebElement(EditBoxWebElement):
     """ Model a DropDown Box web element """
@@ -138,7 +149,7 @@ class DropDownBoxWebElement(EditBoxWebElement):
             itemObjs = dropDownList.find_elements_by_tag_name('li')
             target = None
             for item in itemObjs:
-                if item.text == val:
+                if (item.text).strip() == val:
                     target = item
                     break
             if target:

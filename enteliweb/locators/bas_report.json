@@ -46,7 +46,27 @@
   
   "DeleteConfirmWindow.toolbar" : {"by":"xpath", "value":"//div[contains(@id, 'messagebox-') and contains(@id, 'toolbar-targetEl')]", "parent":null,                          "tag_name":"div", "type":"Container"},
   "DeleteConfirmWindow.btnYes"  : {"by":"xpath",    "value":".//a[2]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"},
-  "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"}
+  "DeleteConfirmWindow.btnNo"   : {"by":"xpath",    "value":".//a[3]",                                                                "parent":"DeleteConfirmWindow.toolbar", "tag_name":"a",   "type":"Button"},
+  
+  "AdHocPageObj.editFormat"         : {"by":"xpath", "value":"//a[contains(@onclick, 'editFormatWindow')]", "parent":null, "tag_name":"a",   "type":"Button"},
+  "AdHocPageObj.reportFormatWindow" : {"by":"id",    "value":"reportFormatWindow",                          "parent":null, "tag_name":"div", "type":"Window"},
+  
+  "ReportFormatWindow.formatPreviewGrid"  : {"by":"id",    "value":"reportPreviewGrid",                                  "parent":null,                              "tag_name":"div",   "type":"Container"},
+  "ReportFormatWindow.columnFormatWindow" : {"by":"id",    "value":"addColumnWindow",                                    "parent":null,                              "tag_name":"div",   "type":"Window"},
+  "ReportFormatWindow.groupSortProperty"  : {"by":"id",    "value":"sortProperty-trigger-picker",                        "parent":null,                              "tag_name":"input", "type":"DropDownBox"},
+  "ReportFormatWindow.groupSortDirection" : {"by":"id",    "value":"sortDirection-trigger-picker",                       "parent":null,                              "tag_name":"input", "type":"DropDownBox"},
+  "ReportFormatWindow.addColumn"          : {"by":"xpath", "value":".//a[contains(@onclick, 'displayAddColumnWindow')]", "parent":"AdHocPageObj.reportFormatWindow", "tag_name":"a",     "type":"Button"},
+  "ReportFormatWindow.ok"                 : {"by":"id",    "value":"reportFormatSave",                                   "parent":null,                              "tag_name":"a",     "type":"Button"},
+  "ReportFormatWindow.cancel"             : {"by":"id",    "value":"reportFormatCancel",                                 "parent":null,                              "tag_name":"a",     "type":"Button"},
+  
+  
+  "ColumnFormatWindow.columnName"     : {"by":"id", "value":"colName-inputEl",        "parent":null, "tag_name":"input", "type":"EditBox"},
+  "ColumnFormatWindow.columnProperty" : {"by":"id", "value":"colProperty-inputEl",    "parent":null, "tag_name":"input", "type":"EditBox"},
+  "ColumnFormatWindow.alignment"      : {"by":"id", "value":"alignmentCombo-inputEl", "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "ColumnFormatWindow.valueFormat"    : {"by":"id", "value":"formatCombo-inputEl",    "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "ColumnFormatWindow.visible"        : {"by":"id", "value":"visibleCheck-inputEl",   "parent":null, "tag_name":"input", "type":"CheckBox"},
+  "ColumnFormatWindow.ok"             : {"by":"id", "value":"addColumnSave",          "parent":null, "tag_name":"a",     "type":"Button"},
+  "ColumnFormatWindow.cancel"         : {"by":"id", "value":"addColumnCancel",        "parent":null, "tag_name":"a",     "type":"Button"}
   
   
 }

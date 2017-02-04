@@ -1,0 +1,104 @@
+[
+  {
+    "Description"     : "sorting numerically without value format",
+    "Report Name"     : "test sorting numerically",
+    "Report Title"    : "test sorting numerically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI","AO","AV"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value "}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Value", "Sort Ascending"]}
+  },
+  
+  {
+    "Description"     : "sorting numerically with value format",
+    "Report Name"     : "test sorting numerically",
+    "Report Title"    : "test sorting numerically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI","AO","AV"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value ", "Format": "#.#####"}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Value", "Sort Ascending"]}
+  },
+  
+  {
+    "Description"     : "sorting numerically descending",
+    "Report Name"     : "test sorting numerically",
+    "Report Title"    : "test sorting numerically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI","AO","AV"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value ", "Format": "#.#####"}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Value", "Sort Descending"]}
+  },
+  
+  {
+    "Description"     : "in group sorting numerically ascending",
+    "Report Name"     : "test sorting numerically",
+    "Report Title"    : "test sorting numerically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI","AO","AV"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value ", "Format": "#.#####"},
+	                      {"Heading" : "Device",   "Property" : "Device_Number"}
+	                    ],
+	"Sort and Group"  : {"Group By" : "Device", "Sort Group By" : ["Value", "Ascending"] }
+  },
+  
+  {
+    "Description"     : "in group sorting numerically descending",
+    "Report Name"     : "test sorting numerically",
+    "Report Title"    : "test sorting numerically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI","AO","AV"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value ", "Format": "#.#####"},
+	                      {"Heading" : "Device",   "Property" : "Device_Number"}
+	                    ],
+	"Sort and Group"  : {"Group By" : "Device", "Sort Group By" : ["Value", "Descending"] }
+  }
+  
+]
