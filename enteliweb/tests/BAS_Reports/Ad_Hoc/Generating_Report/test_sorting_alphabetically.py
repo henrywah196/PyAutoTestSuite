@@ -2,7 +2,8 @@
 ################################################################################################
 # Test Case   : test sorting alphabetically
 #
-# Description : Verify the testing report instance generate and return data correctly
+# Description : Sorting should be alphabetically if the data type of the selected property is 
+#               text (string), such as Object_Name, Device_Name, etc.
 #
 ################################################################################################
 import settings
@@ -49,6 +50,7 @@ def getTestingData():
         myTestData.deviceRange = item["Device Range"]
         myTestData.objectFilters = item["Object Filters"]
         myTestData.dynamicColumns = item["Dynamic Columns"]
+        myTestData.sortAndGroup = item["Sort and Group"]
         if "Description" in item:
             myTestData.Description = item["Description"]
         if result is None:
@@ -131,15 +133,29 @@ class SanityTest(TestCaseTemplate):
         
             # verify sorting
             resultFromReport = self.testingReport.generatedReportGetData()
+            if isinstance(resultFromReport, dict):
+                for key, value in resultFromReport.iteritems():
+                    self._testSorting(value, key)
+            else:
+                self._testSorting(resultFromReport)
+                
+                
+    def _testSorting(self, testData, device=None):
             current = []
-            for item in resultFromReport:
+            for item in testData:
                 current.append(item["Name"])
                 
             # work around for EWEB-20412
             current = self._removeInvalidString(current)
-                
-            expected = sorted(current, key=unicode.lower)
-            self.assertListEqual(current, expected, "Verify object name are ascending sorted failed.")
+            
+            expected = None
+            direction = "ascending"
+            isReverse = False
+            if "descending" in self.testData.Description:
+                direction = "descending"
+                isReverse = True
+            expected = sorted(current, reverse=isReverse, key=unicode.lower)
+            self.assertListEqual(current, expected, "Verify object names (text) are alphabetically %s sorted failed."%direction)
             
             
     def _removeInvalidString(self, listOfString):
@@ -187,11 +203,13 @@ class SanityTest(TestCaseTemplate):
     
     def _setupReportInstance(self):
         
-        reportName    = self.testData.reportName
-        reportTitle   = self.testData.reportTitle
-        site          = self.testData.site
-        deviceRange   = self.testData.deviceRange
-        objectFilters = self.testData.objectFilters
+        reportName     = self.testData.reportName
+        reportTitle    = self.testData.reportTitle
+        site           = self.testData.site
+        deviceRange    = self.testData.deviceRange
+        objectFilters  = self.testData.objectFilters
+        dynamicColumns = self.testData.dynamicColumns
+        sortAndGroup   = self.testData.sortAndGroup
         
         if Macros.isReportInstanceExisting("Building Automation\\Object Query\\%s"%reportName):
             Macros.SelectReportInstance("Building Automation\\Object Query\\%s"%reportName)
@@ -206,11 +224,14 @@ class SanityTest(TestCaseTemplate):
         self.testingReport.site = site
         self.testingReport.deviceRange = deviceRange
         
-        # delete the default object filter
-        self.testingReport.deleteObjectFilter(1)
+        # setup object filter
+        self.testingReport.deleteObjectFilter(1)    # delete the default object filter
         
         for objectFilter in objectFilters:
             self.testingReport.addObjectFilter(objectFilter)
+            
+        # setup dynamic columns
+        self.testingReport.editReportFormat(dynamicColumns, sortAndGroup)
             
         self.testingReport.saveChange()
     

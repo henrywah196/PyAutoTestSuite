@@ -527,8 +527,11 @@ class AdHocPageObj(BASReportPageObj):
                         tdElements = dataRowElem.find_elements_by_tag_name("td")
                         j = 0
                         while j < len(tdElements):
-                            divElem = tdElements[j].find_element_by_xpath("./div/div")
-                            rowDic[columnHeaders[j]] = divElem.text
+                            try:
+                                divElem = tdElements[j].find_element_by_xpath("./div/div")
+                                rowDic[columnHeaders[j]] = divElem.text
+                            except NoSuchElementException:
+                                rowDic[columnHeaders[j]] = ""
                             j = j + 1
                         groupResult.append(rowDic)
                     result[groupLabel] = groupResult

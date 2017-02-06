@@ -1,19 +1,84 @@
 [
   {
-    "Description"     : "test sorting alphabetically",
+    "Description"     : "sort ascending alphabetically",
     "Report Name"     : "test sorting alphabetically",
     "Report Title"    : "test sorting alphabetically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "2000",
+    "Device Range"    : "1200",
     "Object Filters"  : [
 	                      {
-						    "Type"           : ["IP"],
+						    "Type"           : ["IP", "PI"],
                             "Instance"       : "*"
 						  }
 						],
 	"Dynamic Columns" : [
-	                      {"Heading" : "Name",             "Property" : "Object_Name"}
-	                    ] 
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value "}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Name", "Sort Ascending"]}
+  },
+  
+  {
+    "Description"     : "sort descending alphabetically",
+    "Report Name"     : "test sorting alphabetically",
+    "Report Title"    : "test sorting alphabetically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "PI"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value "}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Name", "Sort Descending"]}
+  },
+  
+  {
+    "Description"     : "in group sort ascending alphabetically",
+    "Report Name"     : "test sorting alphabetically",
+    "Report Title"    : "test sorting alphabetically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP","PI"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value "},
+	                      {"Heading" : "Device",   "Property" : "Device_Number"}
+	                    ],
+	"Sort and Group"  : {"Group By" : "Device", "Sort Group By" : ["Name", "Ascending"] }
+  },
+  
+  {
+    "Description"     : "in group sort descending alphabetically",
+    "Report Name"     : "test sorting alphabetically",
+    "Report Title"    : "test sorting alphabetically",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP","PI"],
+                            "Instance"       : "*"
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID", "Property" : "Object_Ref"},
+	                      {"Heading" : "Name",     "Property" : "Object_Name"},
+	                      {"Heading" : "Value",    "Property" : "Present_Value "},
+	                      {"Heading" : "Device",   "Property" : "Device_Number"}
+	                    ],
+	"Sort and Group"  : {"Group By" : "Device", "Sort Group By" : ["Name", "Descending"] }
   }
   
 ]
