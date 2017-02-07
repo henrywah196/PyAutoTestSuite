@@ -143,7 +143,7 @@ class ReportFormatWindow(BaseWebElement):
         self.groupSortProperty = columnName
         self.groupSortDirection = direction
         
-    def setGroupBy(self, columnName, clearGroupBy=False):
+    def setGroupBy(self, columnName, clearGroupBy=False, reTry=3):
         """ set or clear Group By """
         menuItemName = "Group By This Field"
         if clearGroupBy:
@@ -161,17 +161,23 @@ class ReportFormatWindow(BaseWebElement):
             targetElem.click()
             time.sleep(1)
             targetElem = driver.find_element_by_id(item[2])
-            targetElem.click()
-            time.sleep(1)
-            result = self.isContextMenuDisplayed()
-            if result:
-                menuItem = self._getContextMenuItem(menuItemName)
-                if menuItemName == "Show in groups" and self._isContextMenuItemEnabled(menuItemName):
-                    menuItem.click()
-                elif menuItemName == "Group By This Field":
-                    menuItem.click()
+            if not targetElem.is_displayed() and reTry > 0:
+                # try one more time
+                reTry = reTry - 1
+                self.setGroupBy(columnName, clearGroupBy, reTry)
+            else:
+                targetElem.click()
+                time.sleep(1)
+                result = self.isContextMenuDisplayed()
+                if result:
+                    menuItem = self._getContextMenuItem(menuItemName)
+                    if menuItemName == "Show in groups" and self._isContextMenuItemEnabled(menuItemName):
+                        menuItem.click()
+                    elif menuItemName == "Group By This Field":
+                        menuItem.click()
+                        
         
-    def setSortBy(self, columnName, sorting="Sort Ascending"):
+    def setSortBy(self, columnName, sorting="Sort Ascending", reTry=3):
         """ set sort by the specific column
             sorting could be Sort Ascending, Sort Descending or Clear Sort
         """
@@ -187,12 +193,17 @@ class ReportFormatWindow(BaseWebElement):
             targetElem.click()
             time.sleep(1)
             targetElem = driver.find_element_by_id(item[2])
-            targetElem.click()
-            time.sleep(1)
-            result = self.isContextMenuDisplayed()
-            if result:
-                menuItem = self._getContextMenuItem(sorting)
-                menuItem.click()
+            if not targetElem.is_displayed() and reTry > 0:
+                # try one more time
+                reTry = reTry - 1
+                self.setSortBy(columnName, sorting, reTry)
+            else:
+                targetElem.click()
+                time.sleep(1)
+                result = self.isContextMenuDisplayed()
+                if result:
+                    menuItem = self._getContextMenuItem(sorting)
+                    menuItem.click()
         
     def addNewColumn(self, dicColumnSetting):
         """ add a new column to preview grid """
@@ -235,7 +246,7 @@ class ReportFormatWindow(BaseWebElement):
                 break
         return result
         
-    def deleteColumn(self, columnName):
+    def deleteColumn(self, columnName, reTry=3):
         """ Remove column from current column view grid """
         target = None
         driver = self.getDriver()
@@ -249,14 +260,19 @@ class ReportFormatWindow(BaseWebElement):
             targetElem.click()
             time.sleep(1)
             targetElem = driver.find_element_by_id(item[2])
-            targetElem.click()
-            time.sleep(1)
-            result = self.isContextMenuDisplayed()
-            if result:
-                menuItem = self._getContextMenuItem("Remove Column")
-                menuItem.click()
+            if not targetElem.is_displayed() and reTry > 0:
+                # try one more time
+                reTry = reTry - 1
+                self.deleteColumn(columnName, reTry)
             else:
-                raise Exception("deleteColumn(): Context Menu is not displayed in time")
+                targetElem.click()
+                time.sleep(1)
+                result = self.isContextMenuDisplayed()
+                if result:
+                    menuItem = self._getContextMenuItem("Remove Column")
+                    menuItem.click()
+                else:
+                    raise Exception("deleteColumn(): Context Menu is not displayed in time")
                 
     def getColumnHeaders(self):
         """ return a list of existing column headers """
@@ -269,6 +285,10 @@ class ReportFormatWindow(BaseWebElement):
     def isContextMenuDisplayed(self):
         """ return true if the context menu is displayed """
         idString = self._getContexMenuElemID()
+        if idString is None:
+            # try one more time
+            time.sleep(1)
+            idString = self._getContexMenuElemID()
         driver = self.getDriver()
         target = driver.find_element_by_id(idString)
         return target.is_displayed()
@@ -301,8 +321,12 @@ class ReportFormatWindow(BaseWebElement):
         """ helper to return the context menu web element id """
         flag = "x-menu"
         driver = self.getDriver()
-        target = driver.find_element_by_class_name(flag)
-        return target.get_attribute("id")
+        try:
+            target = driver.find_element_by_class_name(flag)
+            return target.get_attribute("id")
+        except NoSuchElementException:
+            return None
+            
     
     def _getContextMenuItems(self):
         """ helper to return a list of context menu  menuitem web elements """
