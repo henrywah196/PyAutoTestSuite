@@ -1,0 +1,33 @@
+[ 
+  {
+    "Description"     : "Sanity Test Decommissioned - Fault Report1",
+    "Report Name"     : "Sanity Test Decommissioned - Fault Report1",
+    "Report Title"    : "Sanity Test Decommissioned - Fault Report1",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200,2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI", "BI", "MI", "AO", "BO", "MO"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Commission_Flag", "=", "not-commissioned"],
+							                      ["Commissioned", "=", "0"],
+							                      ["Flags", "=", "*fault*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number", "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device_Name",   "Property" : "Device_Name ",   "Visible" : false },
+	                      {"Heading" : "ObjectID",     "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",          "Property" : "Object_Name "},
+	                      {"Heading" : "Value",         "Property" : "Present_Value "},
+	                      {"Heading" : "(Units)",       "Property" : "Units "},
+	                      {"Heading" : "A/D Value",     "Property" : "AD_Value "},
+	                      {"Heading" : "Flags",         "Property" : "Flags "}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+  
+]

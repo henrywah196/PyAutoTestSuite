@@ -1,0 +1,29 @@
+[
+  {
+    "Description"     : "Sanity Test DER Failure Report",
+    "Report Name"     : "Sanity Test DER Failure Report",
+    "Report Title"    : "Sanity Test DER Failure Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DER"],
+                            "Instance"       : "*",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Exchange_Flags", "=", "*fault*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number", "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",   "Property" : "Device_Name ",   "Visible" : false},
+	                      {"Heading" : "ObjectID",      "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",          "Property" : "Object_Name "},
+	                      {"Heading" : "ExchangeFlags", "Property" : "Exchange_Flags ",   "Alignment" : "Center"},
+	                      {"Heading" : "RemoteRef",     "Property" : "Remote_Reference ", "Alignment" : "Center"} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"} 
+  }
+  
+]

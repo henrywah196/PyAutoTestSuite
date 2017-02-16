@@ -1,0 +1,28 @@
+[ 
+  {
+    "Description"     : "Test Array.Property",
+    "Report Name"     : "Test Array.Property",
+    "Report Title"    : "Test Array.Property",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-3000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["IP", "OP"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Priority_Array[5]", "<>", "NULL"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false},
+	                      {"Heading" : "Property Value", "Property" : "Priority_Array[5] "} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+  
+]

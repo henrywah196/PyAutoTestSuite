@@ -3,16 +3,35 @@ Created on Nov 9, 2016
 
 @author: hwang
 '''
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from BAS_Report_Generic import BASReportPageObj
 from libraries.eweb.PageObjects.BaseWebElement import BaseWebElement, EditBoxWebElement, DropDownBoxWebElement, CheckBoxWebElement, ButtonWebElement
 from selenium.common.exceptions import NoSuchElementException
 import time
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 ###################################
 # Column Format Window web element
 ###################################
+class VisibleCheckBox(CheckBoxWebElement):
+    """ Model the Visible check box web element """
+    
+    def __init__(self, locatorString):
+        super(VisibleCheckBox, self).__init__("ColumnFormatWindow.visible")
+        
+    def isChecked(self):
+        """ verify and return True if the check box is checked """
+        elem = self.getElement(self.locator)
+        elem.location_once_scrolled_into_view
+        result = elem.get_attribute("aria-checked")
+        if result == "false":
+            return False
+        else:
+            return True
+
 class AlignmentDropDownBox(DropDownBoxWebElement):
     """ Model the Alignment dropdown box web element """
     
@@ -74,7 +93,7 @@ class ColumnFormatWindow(BaseWebElement):
     columnProperty = EditBoxWebElement("ColumnFormatWindow.columnProperty")
     alignment      = AlignmentDropDownBox("ColumnFormatWindow.alignment")
     valueFormat    = ValueFormatDropDownBox("ColumnFormatWindow.valueFormat")
-    visible        = CheckBoxWebElement("ColumnFormatWindow.visible")
+    visible        = VisibleCheckBox("ColumnFormatWindow.visible")
     ok             = ButtonWebElement("ColumnFormatWindow.ok")
     cancel         = ButtonWebElement("ColumnFormatWindow.cancel")
     
@@ -402,9 +421,6 @@ class AdHocPageObj(BASReportPageObj):
             self.reportFormatWindow.addNewColumn(item)
             
         # Setup sort and group
-        if "Sort By" in dicSortGroup:
-            sortBy = dicSortGroup["Sort By"]
-            self.reportFormatWindow.setSortBy(sortBy[0], sortBy[1])
         if "Group By" in dicSortGroup:
             groupBy = dicSortGroup["Group By"]
             self.reportFormatWindow.setGroupBy(groupBy)
@@ -412,6 +428,9 @@ class AdHocPageObj(BASReportPageObj):
         if "Sort Group By" in dicSortGroup:
             sortGroupBy = dicSortGroup["Sort Group By"]
             self.reportFormatWindow.setSortGroupBy(sortGroupBy[0], sortGroupBy[1])
+        if "Sort By" in dicSortGroup:
+            sortBy = dicSortGroup["Sort By"]
+            self.reportFormatWindow.setSortBy(sortBy[0], sortBy[1])
             
         self.reportFormatWindow.ok.click()
         
@@ -551,11 +570,7 @@ class AdHocPageObj(BASReportPageObj):
                         tdElements = dataRowElem.find_elements_by_tag_name("td")
                         j = 0
                         while j < len(tdElements):
-                            try:
-                                divElem = tdElements[j].find_element_by_xpath("./div/div")
-                                rowDic[columnHeaders[j]] = divElem.text
-                            except NoSuchElementException:
-                                rowDic[columnHeaders[j]] = ""
+                            rowDic[columnHeaders[j]] =  (tdElements[j].text).strip()
                             j = j + 1
                         groupResult.append(rowDic)
                     result[groupLabel] = groupResult
@@ -571,11 +586,7 @@ class AdHocPageObj(BASReportPageObj):
                     tdElements = dataRowElem.find_elements_by_tag_name("td")
                     i = 0
                     while i < len(tdElements):
-                        try:
-                            divElem = tdElements[i].find_element_by_xpath("./div/div")
-                            rowDic[columnHeaders[i]] = divElem.text
-                        except NoSuchElementException:
-                            rowDic[columnHeaders[i]] = ""
+                        rowDic[columnHeaders[i]] = (tdElements[i].text).strip()
                         i = i + 1
                     result.append(rowDic)
                 return result

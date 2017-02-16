@@ -119,7 +119,11 @@ def postProcessing(reportName=None):
     now = datetime.datetime.now()
     file_name = "%s_%s.html"%(reportName, now.strftime("%Y%m%d%H%M"))
     dst = os.path.join(path, file_name)
-    shutil.move(src, dst)
+    try:
+        shutil.move(src, dst)
+    except:
+        time.sleep(30)
+        shutil.move(src, dst)
     
         
 ###########################

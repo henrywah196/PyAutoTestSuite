@@ -1,0 +1,28 @@
+[ 
+  {
+    "Description"     : "Sanity Test AdHoc Calibration Report",
+    "Report Name"     : "Sanity Test AdHoc Calibration Report",
+    "Report Title"    : "Sanity Test AdHoc Calibration Report",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200,2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["AI"],
+                            "Instance"       : "1-7",
+                            "Property Logic" : "OR",
+                            "Properties"     : [  
+							                      ["Calibration", ">=", "0"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number", "Property" : "Device_Number"},
+	                      {"Heading" : "Device Name",   "Property" : "Device_Name", "Visible" : false},
+	                      {"Heading" : "Name",          "Property" : "Object_Name"},
+	                      {"Heading" : "ObjectID",      "Property" : "Object_Ref"},
+	                      {"Heading" : "Calibration",   "Property" : "Calibration"} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+  
+]

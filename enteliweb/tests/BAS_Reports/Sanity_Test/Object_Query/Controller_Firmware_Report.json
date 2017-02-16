@@ -1,0 +1,34 @@
+[ 
+  {
+    "Description"     : "Sanity Test Controller Firmware Report1",
+    "Report Name"     : "Sanity Test Controller Firmware Report1",
+    "Report Title"    : "Sanity Test Controller Firmware Report1",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Model_Name", "<>", "OWS340"],
+							                      ["Model_Name", "<>", "enteliWEB"],
+							                      ["Model_Name", "<>", "BACnet Server"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number",   "Property" : "Device_Number"},
+	                      {"Heading" : "Device Name",     "Property" : "Device_Name"},
+	                      {"Heading" : "Type",            "Property" : "Model_Name"},
+	                      {"Heading" : "Vendor",          "Property" : "Vendor_Name"},
+	                      {"Heading" : "Firmware",        "Property" : "Application_Software_Version"},
+	                      {"Heading" : "Build",           "Property" : "Firmware_Revision"},
+	                      {"Heading" : "Last Reset Time", "Property" : "Last_Reset_Time", "Format": ["DateTime", "MMMM d,y hh:mm a"]},
+	                      {"Heading" : "Scan Rate",       "Property" : "Scan_Rate"},
+	                      {"Heading" : "Status",          "Property" : "System_Status"} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"]}
+  }
+  
+]

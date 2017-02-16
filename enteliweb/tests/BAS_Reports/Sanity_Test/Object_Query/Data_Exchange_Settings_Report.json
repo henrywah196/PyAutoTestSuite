@@ -1,0 +1,28 @@
+[ 
+  {
+    "Description"     : "Sanity Test Data Exchange Settings Report1",
+    "Report Name"     : "Sanity Test Data Exchange Settings Report1",
+    "Report Title"    : "Sanity Test Data Exchange Settings Report1",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DES"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Broadcast_Interval", "<", "60"],
+							                      ["Broadcast_Addresses[1].address.network-number", "<>", "0"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "Device Number",         "Property" : "Device_Number "},
+	                      {"Heading" : "Broadcast Interval(s)", "Property" : "Broadcast_Interval "},
+	                      {"Heading" : "Default Type",          "Property" : "Default_Exchange_Type "},
+	                      {"Heading" : "Broadcast Destination", "Property" : "Broadcast_Addresses[1].address.network-number "} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"]}
+  }
+  
+]

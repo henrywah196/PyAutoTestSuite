@@ -31,7 +31,7 @@ class SeleniumWrapper(object):
         else:
             self.connection = getFirefoxDriver(ff_profile)
             
-        self.connection.implicitly_wait(30)
+        self.connection.implicitly_wait(3)
         self.connection.maximize_window()
         
         self.connection.get(self.base_url)

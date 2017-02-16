@@ -33,7 +33,7 @@ def LoadEnteliWEB(hostName, browserType, userName, passWord, ff_profile=None):
     loginPage.click(LoginPageObj.submit)
     
     # verify enteliWEB header loaded
-    eWEBHeader.loading(timeout = 10)
+    eWEBHeader.loading(timeout = 15)
     result = eWEBHeader.isLoaded()
     errMessage = "Verify enteliWEB Main Page Header is loaded (Expected, Current): %s, %s" %(True, result)
     assert result == True, errMessage

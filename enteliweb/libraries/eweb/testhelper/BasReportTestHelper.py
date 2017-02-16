@@ -243,10 +243,17 @@ class BasReportTestHelper(object):
             result.append(objDic)
         return result
         
-    def getNumberOfObjects(self, siteName, deviceNumber):
+    def getNumberOfObjects(self, siteName, deviceNumber, reTry=3):
         """ return the total number of objects in a device """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.DEV%s.Object_List[0]"%(self.base_url, siteName, deviceNumber, deviceNumber)
         self.r = self._getRequest(url)
+        if self.r is None:
+            reTry = reTry -1
+            if reTry > 0:
+                time.sleep(3)
+                self.getNumberOfObjects(siteName, deviceNumber, reTry)
+            else:
+                raise Exception("requests in getNumberOfObjects(%s, %s) returns null."%(siteName, deviceNumber))
         root = etree.fromstring(self.r.content)
         result = root.find("./Object/Property")
         try: return str(int((result.get("value")).strip()) + 10)   # try handling inconsistent of total objects in device.
@@ -811,18 +818,18 @@ class BasReportTestHelper(object):
             
             # dealing with special marker 'NULL'
             if propertyValue.lower() == "null":
-                isNull = self.propertyValueIsNull(siteName, deviceNumber, objectReference, propertyName)
+                isNull = self.propertyValueIsNull(siteName, deviceNumber, objectReference, propertyName[0])
                 return self._valueCompareNull(isNull, operator)
             
             # dealing with Priority_Array
-            elif "Priority_Array" in propertyName:
+            elif "Priority_Array" in propertyName[0]:
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
                 return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
             
             # dealing property with multiple data type, such as Present_Value
-            elif propertyName in ("Present_Value", "Manual_Override"):
+            elif propertyName[0] in ("Present_Value", "Manual_Override"):
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
@@ -1025,10 +1032,10 @@ class BasReportTestHelper(object):
             else:
                 return False
         except ValueError:
-            return False
+            return self._valueCompare(valueCurrent, valueExpected, operator)
         
         
-    def dataFormatHelper(self, dataRaw, valueFormatType, valueFormat):
+    def dataFormatHelper(self, dataRaw, valueFormatType, valueFormat=None):
         """ helper to preformat the expected data before comparing """
         result = dataRaw
         if valueFormatType == "DateTime":
@@ -1036,6 +1043,12 @@ class BasReportTestHelper(object):
                 try:
                     datetimeObj = parse(dataRaw)
                     result = datetimeObj.strftime("%B %d,%Y %I:%M %p")
+                except ValueError:
+                    result = dataRaw
+            else:
+                try:
+                    datetimeObj = parse(dataRaw)
+                    result = datetimeObj.strftime("%Y-%m-%d %H:%M:%S")
                 except ValueError:
                     result = dataRaw
                 

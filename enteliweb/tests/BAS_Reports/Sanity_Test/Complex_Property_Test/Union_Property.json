@@ -1,0 +1,29 @@
+[ 
+  {
+    "Description"     : "Test Union.Property",
+    "Report Name"     : "Test Union.Property",
+    "Report Title"    : "Test Union.Property",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1200-3000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DEV"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Last_Restore_Time.dateTime", "<>", "NULL"],
+							                      ["Last_Restore_Time.dateTime", "<>", "*-*-*-*T*:*:*.*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false},
+	                      {"Heading" : "Property Value", "Property" : "Last_Restore_Time.dateTime "} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+  
+]
