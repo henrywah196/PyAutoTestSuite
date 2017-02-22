@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Reporting Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Reporting Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-02-21 16:44:02</p>
+<p class='attribute'><strong>Duration:</strong> 00:43:56.371</p>
+<p class='attribute'><strong>Status:</strong> Pass 11 Failure 1 Error 1</p>
+
+<p class='description'>Test against eweb4.4.300 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.Active_Alarms_Report.ActiveAlarmsReport</td>
+    <td>00:02:18.066</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Active Alarms Report1</div></td>
+    <td>00:02:18.066</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt1.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Calibration_Report.AdHocCalibrationReport</td>
+    <td>00:02:10.101</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test AdHoc Calibration Report</div></td>
+    <td>00:02:10.101</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Decommissioned_Fault_Report.AdHocDecommFaultReport</td>
+    <td>00:03:45.162</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Decommissioned - Fault Report1</div></td>
+    <td>00:03:45.162</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt3.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.Controller_Firmware_Report.ControllerFirmwareReport</td>
+    <td>00:05:05.468</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Controller Firmware Report1</div></td>
+    <td>00:05:05.468</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft4.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+AssertionError: False is not true : 
+Element counts were not equal:
+First has 1, Second has 0:  u'5'
+First has 1, Second has 0:  u'65'
+First has 1, Second has 0:  u'88'
+First has 1, Second has 0:  u'93'
+First has 1, Second has 0:  u'127'
+First has 1, Second has 0:  u'129'
+First has 1, Second has 0:  u'137'
+First has 1, Second has 0:  u'738'
+First has 1, Second has 0:  u'2400'
+First has 1, Second has 0:  u'6200'
+First has 1, Second has 0:  u'7314'
+First has 1, Second has 0:  u'7532'
+First has 1, Second has 0:  u'7642'
+First has 1, Second has 0:  u'7823'
+First has 1, Second has 0:  u'7896'
+First has 1, Second has 0:  u'7900'
+First has 1, Second has 0:  u'8382'
+First has 1, Second has 0:  u'8398'
+First has 1, Second has 0:  u'8711'
+First has 1, Second has 0:  u'8800'
+First has 1, Second has 0:  u'8913'
+First has 1, Second has 0:  u'8914'
+First has 1, Second has 0:  u'8924'
+First has 1, Second has 0:  u'9000'
+First has 1, Second has 0:  u'9001'
+First has 1, Second has 0:  u'9002'
+First has 1, Second has 0:  u'9010'
+First has 1, Second has 0:  u'9011'
+First has 1, Second has 0:  u'9021'
+First has 1, Second has 0:  u'9050'
+First has 1, Second has 0:  u'9051'
+First has 1, Second has 0:  u'9061'
+First has 1, Second has 0:  u'9433'
+First has 1, Second has 0:  u'9700'
+First has 1, Second has 0:  u'9900'
+First has 1, Second has 0:  u'9950'
+First has 1, Second has 0:  u'17887'
+First has 1, Second has 0:  u'30609'
+First has 1, Second has 0:  u'36999'
+First has 1, Second has 0:  u'42386'
+First has 1, Second has 0:  u'44006'
+First has 1, Second has 0:  u'45587'
+First has 1, Second has 0:  u'45819'
+First has 1, Second has 0:  u'78967'
+First has 1, Second has 0:  u'90968'
+First has 1, Second has 0:  u'90981'
+First has 1, Second has 0:  u'98712'
+First has 1, Second has 0:  u'541797'
+First has 1, Second has 0:  u'547894'
+First has 1, Second has 0:  u'573489'
+First has 1, Second has 0:  u'712873'
+First has 1, Second has 0:  u'3231231'
+First has 1, Second has 0:  u'4127843'
+First has 1, Second has 0:  u'4194102' : Verify the accuracy of returned devices failed
+
+u'Vinn' != '' : Verify returned data 'Device Name' for device 5 failed
+
+u'Ringworld' != '' : Verify returned data 'Device Name' for device 65 failed
+
+u'Yan OWS' != '' : Verify returned data 'Device Name' for device 88 failed
+
+u'natWS93' != '' : Verify returned data 'Device Name' for device 93 failed
+
+u'rkim_ows' != '' : Verify returned data 'Device Name' for device 127 failed
+
+u'enteliWEB 129' != '' : Verify returned data 'Device Name' for device 129 failed
+
+u'enteliWEB 137' != '' : Verify returned data 'Device Name' for device 137 failed
+
+u'CopperCube 228' != '' : Verify returned data 'Device Name' for device 228 failed
+
+u'CopperCube_229' != '' : Verify returned data 'Device Name' for device 229 failed
+
+u'CopperCube 230' != '' : Verify returned data 'Device Name' for device 230 failed
+
+u'CopperCube 231' != '' : Verify returned data 'Device Name' for device 231 failed
+
+u'CopperCube 234' != '' : Verify returned data 'Device Name' for device 234 failed
+
+u'enteliWEB 738' != '' : Verify returned data 'Device Name' for device 738 failed
+
+u'Simulated Energy Data [DONT ALTER DATABASE]' != '' : Verify returned data 'Device Name' for device 1000 failed
+
+u'Testing Controller ~!@#$%^&amp;*&lt;&gt;()_+{}|:"' != '' : Verify returned data 'Device Name' for device 1200 failed
+
+u'enteliTOUCH Device 1300' != '' : Verify returned data 'Device Name' for device 1300 failed
+
+u'3.4' != '3.40' : Verify returned data 'Firmware' for device 1300 failed
+
+u'eBRIDGE 1400' != '' : Verify returned data 'Device Name' for device 1400 failed
+
+u'AHU100' != '' : Verify returned data 'Device Name' for device 1401 failed
+
+u'VAV101' != '' : Verify returned data 'Device Name' for device 1402 failed
+
+u'VAV102' != '' : Verify returned data 'Device Name' for device 1403 failed
+
+u'VAV103' != '' : Verify returned data 'Device Name' for device 1404 failed
+
+u'VAV104' != '' : Verify returned data 'Device Name' for device 1405 failed
+
+u'50000 Card Users' != '' : Verify returned data 'Device Name' for device 1500 failed
+
+u'Router 2000' != '' : Verify returned data 'Device Name' for device 2000 failed
+
+u'DNS-H24' != '' : Verify returned data 'Device Name' for device 2001 failed
+
+u'26' != '0026' : Verify returned data 'Build' for device 2001 failed
+
+u'BACstat 2002' != '' : Verify returned data 'Device Name' for device 2002 failed
+
+u'4' != '4.0' : Verify returned data 'Firmware' for device 2002 failed
+
+u'enOcean [DONT DELETE OBJECTS]' != '' : Verify returned data 'Device Name' for device 2003 failed
+
+u'Room Controller T\xe9st 2004' != '' : Verify returned data 'Device Name' for device 2004 failed
+
+u'DNS-14' != '' : Verify returned data 'Device Name' for device 2012 failed
+
+u'1' != '1.00' : Verify returned data 'Firmware' for device 2012 failed
+
+u'48' != '0048' : Verify returned data 'Build' for device 2012 failed
+
+u'eBCON 2100' != '' : Verify returned data 'Device Name' for device 2100 failed
+
+u'eBCON 2200' != '' : Verify returned data 'Device Name' for device 2200 failed
+
+u'Meterbus GW' != '' : Verify returned data 'Device Name' for device 2300 failed
+
+u'Modbus GW' != '' : Verify returned data 'Device Name' for device 2400 failed
+
+u'EnOcean GW' != '' : Verify returned data 'Device Name' for device 2500 failed
+
+u'Somfy GW' != '' : Verify returned data 'Device Name' for device 2600 failed
+
+u'Access Controller 3000' != '' : Verify returned data 'Device Name' for device 3000 failed
+
+u'Lighting ControAller 3001' != '' : Verify returned data 'Device Name' for device 3001 failed
+
+u'Lighting Controller 3002' != '' : Verify returned data 'Device Name' for device 3002 failed
+
+u'GE OEM Lighting Controller A' != '' : Verify returned data 'Device Name' for device 3100 failed
+
+u'CLCBnet 3200' != '' : Verify returned data 'Device Name' for device 3200 failed
+
+u'enteliBUS Manager 4000' != '' : Verify returned data 'Device Name' for device 4000 failed
+
+u'BACnetIO' != '' : Verify returned data 'Device Name' for device 4001 failed
+
+u'29' != '0029' : Verify returned data 'Build' for device 4001 failed
+
+u'BACnet PI' != '' : Verify returned data 'Device Name' for device 4002 failed
+
+u'32' != '0032' : Verify returned data 'Build' for device 4002 failed
+
+u'eZV-440 4010' != '' : Verify returned data 'Device Name' for device 4010 failed
+
+u'eZVP-440 4011' != '' : Verify returned data 'Device Name' for device 4011 failed
+
+u'eZP-440R4-230 4012' != '' : Verify returned data 'Device Name' for device 4012 failed
+
+u'eZP-440R4-230 4013' != '' : Verify returned data 'Device Name' for device 4013 failed
+
+u'eZFC-424R4-24 4014' != '' : Verify returned data 'Device Name' for device 4014 failed
+
+u'eZFCP-424R4-24 4015' != '' : Verify returned data 'Device Name' for device 4015 failed
+
+u'12x12 Controller 5000' != '' : Verify returned data 'Device Name' for device 5000 failed
+
+u'VAV Controller 5001' != '' : Verify returned data 'Device Name' for device 5001 failed
+
+u'VAV Controller 5002' != '' : Verify returned data 'Device Name' for device 5002 failed
+
+u'Fan Coil Controller 5003' != '' : Verify returned data 'Device Name' for device 5003 failed
+
+u'VAV Controller 5016' != '' : Verify returned data 'Device Name' for device 5016 failed
+
+u'12x12 Controller 5100' != '' : Verify returned data 'Device Name' for device 5100 failed
+
+u'6x6 Controller 5101' != '' : Verify returned data 'Device Name' for device 5101 failed
+
+u'VAV Controller 5400' != '' : Verify returned data 'Device Name' for device 5400 failed
+
+u'CPU 5900' != '' : Verify returned data 'Device Name' for device 5900 failed
+
+u'Device 6000' != '' : Verify returned data 'Device Name' for device 6000 failed
+
+u'3.4' != '3.40' : Verify returned data 'Firmware' for device 6000 failed
+
+u'Device 6100' != '' : Verify returned data 'Device Name' for device 6100 failed
+
+u'3.4' != '3.40' : Verify returned data 'Firmware' for device 6100 failed
+
+u'Device 6200' != '' : Verify returned data 'Device Name' for device 6200 failed
+
+u'LG-OWS' != '' : Verify returned data 'Device Name' for device 7314 failed
+
+u'enteliWEB 7532' != '' : Verify returned data 'Device Name' for device 7532 failed
+
+u'QA_Win7x64' != '' : Verify returned data 'Device Name' for device 7642 failed
+
+u'QA enteliWEB' != '' : Verify returned data 'Device Name' for device 7823 failed
+
+u'Saurabh' != '' : Verify returned data 'Device Name' for device 7896 failed
+
+u'Wrinkie OWS' != '' : Verify returned data 'Device Name' for device 7900 failed
+
+u'Devin ORCAview' != '' : Verify returned data 'Device Name' for device 8382 failed
+
+u'WebVMHost ORCAview' != '' : Verify returned data 'Device Name' for device 8398 failed
+
+u'Yan VM enteliWEB' != '' : Verify returned data 'Device Name' for device 8711 failed
+
+u'enteliSYNC 8800' != '' : Verify returned data 'Device Name' for device 8800 failed
+
+u'SEAN_TEST_QA_8913' != '' : Verify returned data 'Device Name' for device 8913 failed
+
+u'SEAN_WIN_QA2_8914' != '' : Verify returned data 'Device Name' for device 8914 failed
+
+u'SEAN_TEST_8924' != '' : Verify returned data 'Device Name' for device 8924 failed
+
+u'ANG_DEV_9000' != '' : Verify returned data 'Device Name' for device 9000 failed
+
+u'ANG_DEV_9001' != '' : Verify returned data 'Device Name' for device 9001 failed
+
+u'ANG_DEV_9002' != '' : Verify returned data 'Device Name' for device 9002 failed
+
+u'enteliWEB 9010' != '' : Verify returned data 'Device Name' for device 9010 failed
+
+u'enteliWEB 9011' != '' : Verify returned data 'Device Name' for device 9011 failed
+
+u'ANG_DEV_9021' != '' : Verify returned data 'Device Name' for device 9021 failed
+
+u'DEV9050' != '' : Verify returned data 'Device Name' for device 9050 failed
+
+u'ANG_DEV_9051' != '' : Verify returned data 'Device Name' for device 9051 failed
+
+u'ANG_DEV_9061' != '' : Verify returned data 'Device Name' for device 9061 failed
+
+u'Henry_OWS' != '' : Verify returned data 'Device Name' for device 9433 failed
+
+u'BACnet Server 9700' != '' : Verify returned data 'Device Name' for device 9700 failed
+
+u'BACnet Server 9900' != '' : Verify returned data 'Device Name' for device 9900 failed
+
+u'SimBA Sophisticated Device' != '' : Verify returned data 'Device Name' for device 9901 failed
+
+u'SimBA Basic Device' != '' : Verify returned data 'Device Name' for device 9902 failed
+
+u'SimBA Simple Device' != '' : Verify returned data 'Device Name' for device 9903 failed
+
+u'BACnet Server 9950' != '' : Verify returned data 'Device Name' for device 9950 failed
+
+u'enteliWEB 17887' != '' : Verify returned data 'Device Name' for device 17887 failed
+
+u'Saurabh' != '' : Verify returned data 'Device Name' for device 30609 failed
+
+u'TS TRNG EWEB VM' != '' : Verify returned data 'Device Name' for device 36999 failed
+
+u'QA Network' != '' : Verify returned data 'Device Name' for device 42386 failed
+
+u'Kalyani eweb' != '' : Verify returned data 'Device Name' for device 44006 failed
+
+u'Maria Worskstation' != '' : Verify returned data 'Device Name' for device 45587 failed
+
+u'enteliWEB 45819' != '' : Verify returned data 'Device Name' for device 45819 failed
+
+u'DEV_78967' != '' : Verify returned data 'Device Name' for device 78967 failed
+
+u'ANG_DEV_90968' != '' : Verify returned data 'Device Name' for device 90968 failed
+
+u'enteliWEB 90981' != '' : Verify returned data 'Device Name' for device 90981 failed
+
+u'Saurabh' != '' : Verify returned data 'Device Name' for device 98712 failed
+
+u'enteliSYNC 419430' != '' : Verify returned data 'Device Name' for device 419430 failed
+
+u'dev_541797' != '' : Verify returned data 'Device Name' for device 541797 failed
+
+u'DEV_547894' != '' : Verify returned data 'Device Name' for device 547894 failed
+
+u'enteliWEB 573489' != '' : Verify returned data 'Device Name' for device 573489 failed
+
+u'DEV_4127843' != '' : Verify returned data 'Device Name' for device 712873 failed
+
+u'sdasd' != '' : Verify returned data 'Device Name' for device 3231231 failed
+
+u'DEV_4127843' != '' : Verify returned data 'Device Name' for device 4127843 failed
+
+u'enteliWEB 4194102' != '' : Verify returned data 'Device Name' for device 4194102 failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.Data_Exchange_Settings_Report.DataExchangeSettingsReport</td>
+    <td>00:03:40.015</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Data Exchange Settings Report1</div></td>
+    <td>00:03:40.015</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt5.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.DER_Failure_Report.DERFailureReport</td>
+    <td>00:04:24.494</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test DER Failure Report</div></td>
+    <td>00:04:24.494</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt6.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Object_Query.Network_Number_Report.NetworkNumberReport</td>
+    <td>00:00:23.154</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>testMain_1</div></td>
+    <td>00:00:23.154</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft7.1: debug: switch back to default
+Traceback (most recent call last):
+  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Object_Query\Network_Number_Report.py", line 80, in setUp
+    Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\Macros\__init__.py", line 36, in LoadEnteliWEB
+    eWEBHeader.loading(timeout = 15)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Header.py", line 53, in loading
+    raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Array_Property.TestCase</td>
+    <td>00:07:10.502</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test Array.Property</div></td>
+    <td>00:07:10.502</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt8.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Union_Property.TestCase</td>
+    <td>00:02:43.737</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test Union.Property</div></td>
+    <td>00:02:43.737</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt9.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Group_Property.TestCase</td>
+    <td>00:05:17.389</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test NET.Statistics.packetsDropped</div></td>
+    <td>00:02:28.338</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt10.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt10.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: Test SCH.Effective_Period.startDate</div></td>
+    <td>00:02:49.051</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.2')" >
+        pass</a>
+
+    <div id='div_pt10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt10.2: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Union_Group_Property.TestCase</td>
+    <td>00:06:58.283</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',2)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test DEV.Daylight_Savings_Start.weekNDay.dayOfWeek</div></td>
+    <td>00:03:11.143</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt11.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: Test EV.Event_Parameters.out-of-range.time-delay</div></td>
+    <td>00:03:47.140</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.2')" >
+        pass</a>
+
+    <div id='div_pt11.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt11.2: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:43:56.371</td>
+    <td>13</td>
+    <td>11</td>
+    <td>1</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

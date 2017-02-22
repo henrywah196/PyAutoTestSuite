@@ -82,6 +82,7 @@ def postProcessing(reportName=None):
     if reportName is None:
         reportName = "test_report"
     src = os.path.join(os.path.dirname(os.path.abspath(__file__)), reportName + ".html")
+    
         
     # email notification
     config = configparser.ConfigParser()
@@ -119,11 +120,8 @@ def postProcessing(reportName=None):
     now = datetime.datetime.now()
     file_name = "%s_%s.html"%(reportName, now.strftime("%Y%m%d%H%M"))
     dst = os.path.join(path, file_name)
-    try:
-        shutil.move(src, dst)
-    except:
-        time.sleep(30)
-        shutil.move(src, dst)
+    shutil.copy(src, dst)
+    os.remove(src)
     
         
 ###########################

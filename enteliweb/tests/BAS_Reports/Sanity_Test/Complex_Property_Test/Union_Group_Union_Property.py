@@ -1,9 +1,8 @@
 # coding: utf-8
 ################################################################################################
-# Test Case   : test sorting alphabetically
+# Test Case   : AD Hoc report sanity test
 #
-# Description : Sorting should be alphabetically if the data type of the selected property is 
-#               text (string), such as Object_Name, Device_Name, etc.
+# Description : Verify the testing report instance generate and return data correctly
 #
 ################################################################################################
 import settings
@@ -22,7 +21,7 @@ from dateutil.parser import parse
 
 
 # Global Settings
-JSON_FILE_LOCATION = os.path.abspath(os.path.join(os.path.dirname(__file__), "test_sorting_alphabetically.json"))
+JSON_FILE_LOCATION = os.path.abspath(os.path.join(os.path.dirname(__file__), "Union_Group_Union_Property.json"))
 
 
 def getTestingData():
@@ -61,11 +60,11 @@ def getTestingData():
 
 
 @ddt
-class SanityTest(TestCaseTemplate):
+class TestCase(TestCaseTemplate):
     
     @classmethod
     def setUpClass(cls):
-        super(SanityTest, cls).setUpClass()
+        super(TestCase, cls).setUpClass()
         cls.Browser = settings.BROWSER
         cls.Host = settings.HOST
         cls.Username = settings.USERNAME
@@ -73,10 +72,10 @@ class SanityTest(TestCaseTemplate):
         
     @classmethod
     def tearDownClass(cls):
-        super(SanityTest, cls).tearDownClass()
+        super(TestCase, cls).tearDownClass()
     
     def setUp(self):
-        super(SanityTest, self).setUp()
+        super(TestCase, self).setUp()
         profile = webdriver.FirefoxProfile()
         profile.set_preference('webdriver_enable_native_events', True)
         Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
@@ -86,7 +85,7 @@ class SanityTest(TestCaseTemplate):
         self.maxDiff = None
 
     def tearDown(self):
-        super(SanityTest, self).tearDown()
+        super(TestCase, self).tearDown()
         Macros.CloseEnteliWEB()
         del self.accordion
 
@@ -131,49 +130,63 @@ class SanityTest(TestCaseTemplate):
             result = not self.testingReport.generatedReportHasNoData()
             self.assertTrue(result, "Expecting data returned in the generated report failed")
         
-            # verify sorting
-            resultFromReport = self.testingReport.generatedReportGetData()
-            if isinstance(resultFromReport, dict):
-                for key, value in resultFromReport.iteritems():
-                    self._testSorting(value, key)
-            else:
-                self._testSorting(resultFromReport)
-                
-                
-    def _testSorting(self, testData, device=None):
-            current = []
-            for item in testData:
-                current.append(item["Name"])
-                
-            # work around for EWEB-20412
-            current = self._removeInvalidString(current)
+            # verify returned data
+            self._test03(testData)
             
-            expected = None
-            direction = "ascending"
-            isReverse = False
-            if "descending" in self.testData.Description:
-                direction = "descending"
-                isReverse = True
-            expected = sorted(current, reverse=isReverse, key=unicode.lower)
-            self.assertListEqual(current, expected, "Verify object names (text) are alphabetically %s sorted failed."%direction)
+        
+    def _test03(self, testData):
+        """ Sanity Test Data Exchange Settings Report """
+        
+        # verify grouping label
+        current = self.testingReport.generatedReportGetData("grouping label")
+        resultDeviceList = list(self.resultFromHelper.keys())
+        resultDeviceList.sort()
+        expected = []
+        for deviceNumber in resultDeviceList:
+            propertyValue = self.testHelper.getPropertyValue(testData.site, deviceNumber, "DEV%s"%deviceNumber, "Object_Name")
+            deviceName = propertyValue.value
+            expected.append("%s (%s)"%(deviceName, deviceNumber))
             
-            
-    def _removeInvalidString(self, listOfString):
-        """ helper to workaround EWEB-20412 """
-        result = []
-        for item in listOfString:
-            try:
-                float(item)
-            except ValueError:
-                result.append(item)
-        listOfString = result
-        result = []
-        for item in listOfString:
-            try:
-                parse(item)
-            except ValueError:
-                result.append(item)
-        return result
+        self.perform(self.assertItemsEqual, current, expected, "Verify the accuracy of grouping label failed")
+        
+        # verify returned object references in each group
+        resultFromReport = self.testingReport.generatedReportGetData()
+        for key, value in resultFromReport.iteritems():
+            deviceNumber = self._getDeviceNumberFromHeaderString(key)
+            if deviceNumber in self.resultFromHelper:
+                current = []
+                for item in value:
+                    current.append(item["ObjectID"])
+                expected = []
+                for item in self.resultFromHelper[deviceNumber]:
+                    objReference = "%s.%s%s"%(deviceNumber, item["object type"], item["object number"])
+                    expected.append(objReference)
+                errMessage = "Verify the accuracy of returned object references for group '%s' failed"%key
+                self.perform(self.assertItemsEqual, current, expected, errMessage)
+        
+        # verify returned column data for Property Value column
+        for key, value in resultFromReport.iteritems():
+            for item in value:
+                objID = item["ObjectID"]
+                deviceNumber = (objID.split("."))[0]
+                objReference = (objID.split("."))[1]
+                propertyName = self._getColumnPropertyName(testData.dynamicColumns, "Property Value")
+                
+                errMessage = "Verify returned data '%s' for %s under %s failed"%(propertyName, objReference, key)
+                current = item["Property Value"].strip()
+                propertyValue = self.testHelper.getPropertyValue(testData.site, deviceNumber, objReference, propertyName)
+                
+                propertyName = propertyName.split('.')    # propertyName is a list now
+                i = 1
+                while i < len(propertyName):
+                    attrName = propertyName[i]
+                    propertyValue = getattr(propertyValue, attrName)
+                    i = i + 1
+                expected = (propertyValue.value).strip()
+                
+                if "dateTime" in propertyName:
+                    expected = self.testHelper.dataFormatHelper(expected, "DateTime")
+                self.perform(self.assertEqual, current, expected, errMessage)  
                 
                 
     def _getColumnFormat(self, listDynamicColumns, columnLabel):  
@@ -188,7 +201,8 @@ class SanityTest(TestCaseTemplate):
         return result
                 
                     
-    def _getColumnPropertyName(self, listDynamicColumns, columnLabel):  
+    def _getColumnPropertyName(self, listDynamicColumns, columnLabel):
+    
         """ helper to find the property name assigned in dynamic column 
             based on the given column label name
         """ 
@@ -197,9 +211,8 @@ class SanityTest(TestCaseTemplate):
             if item["Heading"] == columnLabel:
                 result = item["Property"]
                 break
-        return result
+        return result.strip()
                          
-    
     
     def _setupReportInstance(self):
         

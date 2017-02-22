@@ -373,7 +373,7 @@ class BASReportPageObj(BaseFrameObject):
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
-            raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+            raise Exception("%s Setup UI is not finish loading within %s seconds"%(self, timeout))
         
     def deleteInstance(self, timeout=10):
         """ click the delete button and select yes in popup and wait page refresh """
@@ -388,7 +388,7 @@ class BASReportPageObj(BaseFrameObject):
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
-            raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
+            raise Exception("%s Setup UI is not finish loading within %s seconds"%(self, timeout))
 
         
     def generatingReport(self, timeout):

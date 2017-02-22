@@ -12,8 +12,18 @@ from libraries.PyAutoTestCase import *
 ####################
 # import test cases
 ####################
+from tests.BAS_Reports.Sanity_Test.Sorting_Test import test_sorting_alphabetically
+from tests.BAS_Reports.Sanity_Test.Sorting_Test import test_sorting_numerically
+
 from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Property
 from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Union_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Group_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Union_Group_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Union_Group_Union_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Group_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Union_Group_Property
+from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Group_Union_Property
+
 from tests.BAS_Reports.Sanity_Test.Object_Query.Active_Alarms_Report import ActiveAlarmsReport
 from tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Calibration_Report import AdHocCalibrationReport
 from tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Decommissioned_Fault_Report import AdHocDecommFaultReport
@@ -36,6 +46,15 @@ suites.append(NetworkNumberReport.suite())
 
 suites.append(Array_Property.TestCase.suite())
 suites.append(Union_Property.TestCase.suite())
+suites.append(Group_Property.TestCase.suite())
+suites.append(Union_Group_Property.TestCase.suite())
+suites.append(Union_Group_Union_Property.TestCase.suite())
+suites.append(Array_Group_Property.TestCase.suite())
+suites.append(Array_Union_Group_Property.TestCase.suite())
+suites.append(Array_Group_Union_Property.TestCase.suite())
+
+suites.append(test_sorting_alphabetically.TestCase.suite())
+suites.append(test_sorting_numerically.TestCase.suite())
 
 
 mainTestSuite = TestSuiteTemplate()

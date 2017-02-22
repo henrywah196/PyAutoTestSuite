@@ -61,11 +61,11 @@ def getTestingData():
 
 
 @ddt
-class SanityTest(TestCaseTemplate):
+class TestCase(TestCaseTemplate):
     
     @classmethod
     def setUpClass(cls):
-        super(SanityTest, cls).setUpClass()
+        super(TestCase, cls).setUpClass()
         cls.Browser = settings.BROWSER
         cls.Host = settings.HOST
         cls.Username = settings.USERNAME
@@ -73,10 +73,10 @@ class SanityTest(TestCaseTemplate):
         
     @classmethod
     def tearDownClass(cls):
-        super(SanityTest, cls).tearDownClass()
+        super(TestCase, cls).tearDownClass()
     
     def setUp(self):
-        super(SanityTest, self).setUp()
+        super(TestCase, self).setUp()
         profile = webdriver.FirefoxProfile()
         profile.set_preference('webdriver_enable_native_events', True)
         Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
@@ -86,7 +86,7 @@ class SanityTest(TestCaseTemplate):
         self.maxDiff = None
 
     def tearDown(self):
-        super(SanityTest, self).tearDown()
+        super(TestCase, self).tearDown()
         Macros.CloseEnteliWEB()
         del self.accordion
 

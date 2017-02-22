@@ -1,0 +1,28 @@
+[ 
+  {
+    "Description"     : "MT.Trend_Log_List[1].reference",
+    "Report Name"     : "Test Array.Group.Property",
+    "Report Title"    : "Test Array.Group.Property",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1000-3000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MT"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Trend_Log_List[1].reference", "<>", "*_Buffer*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false},
+	                      {"Heading" : "Property Value", "Property" : "Trend_Log_List[1].reference "} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+
+]

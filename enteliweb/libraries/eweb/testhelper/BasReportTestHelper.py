@@ -336,9 +336,15 @@ class BasReportTestHelper(object):
         class Group():
             def __init__(self):
                 self.name = None
+                self.status = None
                 
             def __str__(self):
                 return "Group(name: %s)"%self.name
+            
+        class ArrayList(list):
+            def __init__(self):
+                super(ArrayList, self).__init__()
+                self.name = None
                 
         tagName = element.tag
         
@@ -351,9 +357,11 @@ class BasReportTestHelper(object):
             return propertyObj
         
         elif tagName in ("Array", "List"):
-            result = []
+            result = ArrayList()
+            result.name = element.get("name")
             elements = element.getchildren()
             if len(elements) > 0:
+                result.append(len(elements))
                 for elem in elements:
                     result.append(self._propertyValueObjComposer(elem))
             return result
@@ -372,6 +380,7 @@ class BasReportTestHelper(object):
         elif tagName == "Group":
             groupObj = Group()
             groupObj.name = element.get("name")
+            groupObj.status = element.get("status")
             elements = element.getchildren()
             if len(elements) > 0:
                 for elem in elements:
@@ -388,6 +397,7 @@ class BasReportTestHelper(object):
         elemObject = root.find("./Object")
         element = (elemObject.getchildren())[0]
         
+        #print deviceNumber, objectReference    # debug info
         return self._propertyValueObjComposer(element)
     
     def getPresentValueStateText(self, siteName, deviceNumber, objectReference):
@@ -554,6 +564,30 @@ class BasReportTestHelper(object):
             return True
         else:
             return False
+        
+        '''
+        propertyValueObj = self._propertyValueObjComposer(element)
+        propertyName = propertyName.split('.')    # propertyName is a list now
+        if len(propertyName) > 1:
+            i = 1
+            while i < len(propertyName):
+                attrName = propertyName[i]
+                if hasattr(propertyValueObj, attrName):
+                    propertyValueObj = getattr(propertyValueObj, attrName)
+                    i = i + 1
+                else:
+                    return False
+                if propertyValueObj.status == "OK":
+                    return True
+                else:
+                    return False
+        else:
+            if propertyValueObj.status == "OK":
+                return True
+            else:
+                return False
+        '''
+        
         
     def propertyValueIsNull(self, siteName, deviceNumber, objectReference, propertyName):
         """ helper to verify and return true if the web service has isNULL="TRUE" returned """
@@ -805,12 +839,16 @@ class BasReportTestHelper(object):
             if len(propertyName) > 1:
                 targetObj = propertyValueInfo
                 i = 1
-                while i < len(propertyName):
+                while i < len(propertyName) and targetObj != None:
                     attrName = propertyName[i]
-                    targetObj = getattr(targetObj, attrName)
-                    i = i + 1
-                currentPropertyValue = targetObj.value
-                currentPropertyDataType = targetObj.dataType
+                    if hasattr(targetObj, attrName):
+                        targetObj = getattr(targetObj, attrName)
+                        i = i + 1
+                    else:
+                        targetObj = None
+                if targetObj is not None:
+                    currentPropertyValue = targetObj.value
+                    currentPropertyDataType = targetObj.dataType
                     
             else:
                 currentPropertyValue = propertyValueInfo.value
@@ -840,7 +878,7 @@ class BasReportTestHelper(object):
                 return self._valueCompareNumber(currentPropertyValue, propertyValue, operator)
             
             # dealing with string value
-            elif currentPropertyDataType in ("Text", "Bitlist"):
+            elif currentPropertyDataType in ("Text", "Bitlist", "Ref", "Device Object Property Reference"):
                 return self._valueCompareString(currentPropertyValue, propertyValue, operator)
             
             # dealing with date time value

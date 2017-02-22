@@ -1,0 +1,28 @@
+[ 
+  {
+    "Description"     : "NET.Advanced_Adapter[2].mstp.network",
+    "Report Name"     : "Test Array.Group.Union.Property",
+    "Report Title"    : "Test Array.Group.Union.Property",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1000-3000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["EVC"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Destination_List[2].recipient.address.network-number", "=", "100"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false},
+	                      {"Heading" : "Property Value", "Property" : "Destination_List[2].recipient.address.network-number "} 
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+
+]
