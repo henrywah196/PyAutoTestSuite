@@ -50,7 +50,7 @@ def getReportBuildInfo():
 def preProcessing():
     # obtain build number
     import requests
-    r = requests.get("http://%s/enteliweb"%settings.HOST)
+    r = requests.get("http://%s/enteliweb"%settings.HOST, verify=False)
     assert r.status_code == 200, "preProcessing(): get request returns incorrect code"
     m = re.search('<div>Version \d.\d.\d\d\d</div>', r.text)
     assert m is not None, "build_version is not found"

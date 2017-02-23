@@ -279,19 +279,27 @@ class ReportFormatWindow(BaseWebElement):
             targetElem.click()
             time.sleep(1)
             targetElem = driver.find_element_by_id(item[2])
-            if not targetElem.is_displayed() and reTry > 0:
+            if (not targetElem.is_displayed()) and reTry > 0:
                 # try one more time
                 reTry = reTry - 1
                 self.deleteColumn(columnName, reTry)
             else:
-                targetElem.click()
-                time.sleep(1)
-                result = self.isContextMenuDisplayed()
-                if result:
-                    menuItem = self._getContextMenuItem("Remove Column")
-                    menuItem.click()
+                if targetElem.is_displayed():
+                    targetElem.click()
+                    time.sleep(1)
+                    result = self.isContextMenuDisplayed()
+                    if (not result) and reTry > 0:
+                        # try one more time
+                        reTry = reTry - 1
+                        self.deleteColumn(columnName, reTry)
+                    else:
+                        if result:
+                            menuItem = self._getContextMenuItem("Remove Column")
+                            menuItem.click()
+                        else:
+                            raise Exception("deleteColumn(): Context Menu is not displayed in time")
                 else:
-                    raise Exception("deleteColumn(): Context Menu is not displayed in time")
+                    raise Exception("deleteColumn(): column trigger button is not displayed in time")
                 
     def getColumnHeaders(self):
         """ return a list of existing column headers """
