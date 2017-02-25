@@ -1,0 +1,21 @@
+[
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Commissioning Sheets Report",
+    "Report Title"       : "Sanity Test Commissioning Sheets Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["IP", "OP"],
+                               "Instance"       : "*",
+                               "Property Logic" : "AND",
+                               "Properties"     : [  
+						    	                   ["Flags", "=", "*not-commissioned*"]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : true
+  }
+  
+]

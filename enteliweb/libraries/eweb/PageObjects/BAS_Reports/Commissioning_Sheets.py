@@ -78,11 +78,14 @@ class CommissioningSheetsPageObj(BASReportPageObj):
         """ helper to return the device information based on __TOC_X_0 element """
         result = {}
         preSiblingElements = keyTOCElement.find_elements_by_xpath("./preceding-sibling::tr")
-        # obtain device label
-        target = preSiblingElements[len(preSiblingElements) - 2]
-        elem = target.find_element_by_xpath("./td[1]/div/div")
-        result["header"] = elem.text
+        
+        # obtain device label from its tr element
+        target = preSiblingElements[len(preSiblingElements) - 4]
+        #elem = target.find_element_by_xpath("./td[1]/div/div")
+        result["header"] = target.text
+        
         # obtain device info
+        '''
         target = preSiblingElements[len(preSiblingElements) - 1]
         tableElem = target.find_element_by_xpath("./td[1]/table")
         trElements = tableElem.find_elements_by_tag_name("tr")
@@ -95,6 +98,17 @@ class CommissioningSheetsPageObj(BASReportPageObj):
                 result["model"] = tdValueElem.text
             elif "IP" in tdNameElem.text:
                 result["ip"] = tdValueElem.text
+        '''
+        target = preSiblingElements[len(preSiblingElements) - 3]    # Location info
+        tdValueElem = target.find_element_by_xpath("./td[2]/div")
+        result["location"] = tdValueElem.text
+        target = preSiblingElements[len(preSiblingElements) - 2]    # Model info
+        tdValueElem = target.find_element_by_xpath("./td[2]/div")
+        result["model"] = tdValueElem.text
+        target = preSiblingElements[len(preSiblingElements) - 1]    # IP info
+        tdValueElem = target.find_element_by_xpath("./td[2]/div")
+        result["ip"] = tdValueElem.text
+                
         return result
     
     def _generatedReportGetRowElems(self, startElem, endElem=None):

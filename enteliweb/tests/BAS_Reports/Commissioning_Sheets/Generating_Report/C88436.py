@@ -118,7 +118,7 @@ class TC88436(TestCaseTemplate):
             testHelper = BasReportTestHelper(self.cls.commissioningSheetsReport.driver)
             result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "Object_Name")
             
-            expected = "%s (%s)"%(result["value"], deviceNumber)
+            expected = "%s (%s)"%(result.value, deviceNumber)
             current = groupingLabel
             errMessage = "Verify grouping label for device '%s' failed"%deviceNumber
             self.perform(self.assertEqual, current, expected, errMessage)
@@ -143,21 +143,21 @@ class TC88436(TestCaseTemplate):
             # verify Model Name
             result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "Model_Name")
             current = item["model"]
-            expected = (result["value"]).strip()
+            expected = (result.value).strip()
             errMessage = "Verify device '%s' Model Name failed"%deviceNumber
             self.perform(self.assertEqual, current, expected, errMessage)
          
             # verify Location 
             result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "Location")
             current = item["location"]
-            expected = (result["value"]).strip()
+            expected = (result.value).strip()
             errMessage = "Verify device '%s' Location failed"%deviceNumber
             self.perform(self.assertEqual, current, expected, errMessage)
             
             # verify IP Address
             result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "IP_Address")
             current = item["ip"]
-            expected = (result["value"]).strip()
+            expected = (result.value).strip()
             errMessage = "Verify device '%s' IP Address failed"%deviceNumber
             self.perform(self.assertEqual, current, expected, errMessage)
         
