@@ -127,15 +127,29 @@ class TestCase(TestCaseTemplate):
         else:
             result = not self.testingReport.generatedReportHasNoData()
             self.assertTrue(result, "Expecting data returned in the generated report failed")
-        
-            # verify returned data
-            #self._test01(testData)
             
+            self.resultFromReport = self.testingReport.generatedReportGetData()
         
+            # verify grouping label
+            self._test01(testData)
+            
+            # verify device info
+            self._test02(testData)
+            
+            # verify returned object in each group
+            self._test03(testData)
+            
+            # verify grouping & sorting under inputs outputs table
+            self._test04(testData)
+    
     def _test01(self, testData):
         
         # verify grouping label
-        current = self.testingReport.generatedReportGetData("grouping label")
+        result = self.testingReport.generatedReportGetData("device info only")
+        current = []
+        for item in result:
+            current.append(item["header"])
+            
         resultDeviceList = list(self.resultFromHelper.keys())
         resultDeviceList.sort()
         expected = []
@@ -146,106 +160,114 @@ class TestCase(TestCaseTemplate):
             
         self.perform(self.assertItemsEqual, current, expected, "Verify the accuracy of grouping label failed")
         
-        # verify returned object references in each group
-        resultFromReport = self.testingReport.generatedReportGetData()
-        for key, value in resultFromReport.iteritems():
-            deviceNumber = self._getDeviceNumberFromHeaderString(key)
-            if deviceNumber in self.resultFromHelper:
+    
+    def _test02(self, testData):
+        # Verify devices info
+        
+        deviceInfoList = self.testingReport.generatedReportGetData(strKeyWord = "device info only")
+        
+        for item in deviceInfoList:
+            
+            groupingLabel = item["header"]
+            # obtain the device number from grouping label
+            deviceNumber = self._getDeviceNumberFromHeaderString(groupingLabel)
+            siteName = testData.site
+            objectReference = "DEV" + deviceNumber
+            
+            testHelper = self.testHelper
+            
+            # verify Model Name
+            result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "Model_Name")
+            current = item["model"]
+            expected = (result.value).strip()
+            errMessage = "Verify device '%s' Model Name failed"%deviceNumber
+            self.perform(self.assertEqual, current, expected, errMessage)
+         
+            # verify Location 
+            result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "Location")
+            current = item["location"]
+            expected = (result.value).strip()
+            errMessage = "Verify device '%s' Location failed"%deviceNumber
+            self.perform(self.assertEqual, current, expected, errMessage)
+            
+            # verify IP Address
+            result = testHelper.getPropertyValue(siteName, deviceNumber, objectReference, "IP_Address")
+            current = item["ip"]
+            expected = None
+            if result.value:
+                expected = (result.value).strip()
+            else:
+                expected = ""
+            errMessage = "Verify device '%s' IP Address failed"%deviceNumber
+            self.perform(self.assertEqual, current, expected, errMessage)
+            
+            
+    def _test03(self, testData):
+        # verify returned object reference in each group
+        resultFromReport = self.resultFromReport
+        for item in resultFromReport:
+            groupingLabel = item["header"]
+            # obtain the device number from grouping label
+            deviceNumber = self._getDeviceNumberFromHeaderString(groupingLabel)
+            if not deviceNumber in self.resultFromHelper:
+                continue
+            objExpected = (self.resultFromHelper)[deviceNumber]
+            
+            if "inputs" in item:
+                # verify returned inputs objects
+                inputs = item["inputs"]
+                inputsCurrent = []
+                for input in inputs:
+                    inputsCurrent.append(input["id"])
+                
+                inputsExpected = []
+                for obj in objExpected:
+                    if obj["object type"] in ("AI", "BI", "MI"):
+                        inputsExpected.append(obj["object type"] + obj["object number"])
+                        
+                errMessage = "Verify the accuracy of returned Inputs object references for device '%s' failed"%deviceNumber
+                self.perform(self.assertItemsEqual, inputsCurrent, inputsExpected, errMessage)
+        
+                
+            if "outputs" in item:
+                # verify returned outputs objects
+                outputs = item["outputs"]
+                outputsCurrent = []
+                for output in outputs:
+                    outputsCurrent.append(output["id"])
+                
+                outputsExpected = []
+                for obj in objExpected:
+                    if obj["object type"] in ("AO", "BO", "MO", "LO"):
+                        outputsExpected.append(obj["object type"] + obj["object number"])
+                
+                errMessage = "Verify the accuracy of returned Outputs object references for device '%s' failed"%deviceNumber        
+                self.perform(self.assertItemsEqual, outputsCurrent, outputsExpected, errMessage)
+                
+    def _test04(self, testData):
+        # verify grouping & sorting under inputs outputs table
+        resultFromReport = self.resultFromReport
+        
+        for item in resultFromReport:
+            
+            headerString = item["header"]
+            deviceNumber = self._getDeviceNumberFromHeaderString(headerString)
+            
+            if "inputs" in item:
                 current = []
-                for item in value:
-                    current.append(item["ObjectID"])
-                expected = []
-                for item in self.resultFromHelper[deviceNumber]:
-                    objReference = "%s.%s%s"%(deviceNumber, item["object type"], item["object number"])
-                    expected.append(objReference)
-                errMessage = "Verify the accuracy of returned object references for group '%s' failed"%key
-                self.perform(self.assertItemsEqual, current, expected, errMessage)
-                
-        # verify returned column data for each group
-        for key, value in resultFromReport.iteritems():
-            for item in value:
-                objID = item["ObjectID"]
-                deviceNumber = (objID.split("."))[0]
-                objReference = (objID.split("."))[1]
-                for subKey, subValue in item.iteritems():
-                    propertyName = self._getColumnPropertyName(testData.dynamicColumns, subKey)
-                    if propertyName is None or propertyName in ("Object_Ref"):
-                        continue
-                    
-                    errMessage = "Verify returned data '%s' for %s under %s failed"%(subKey, objReference, key)
-                    current = subValue.strip()
-                    expected = None
-                    if propertyName == "Device_Number":
-                        expected = deviceNumber
-                        
-                    elif propertyName == "Present_Value":    # dealing with present_value
-                        propertyValue = self.testHelper.getPropertyValue(testData.site, deviceNumber, objReference, propertyName)
-                        objType = self.testHelper._getObjTypeFromObjRef(objReference)
-                        if objType in ("BI", "BO", "BV"):
-                            if current.lower() in ("active", "inactive"):    # verify native value
-                                expected = propertyValue.value
-                            else:
-                                expected = (self.testHelper.getPresentValueStateText(testData.site, deviceNumber, objReference))[1]
-                        elif objType in ("MI", "MO", "MV"):
-                            isNativeValue = True
-                            try: int(propertyValue.value)
-                            except ValueError: isNativeValue = False
-                            if isNativeValue:    # verify native value
-                                expected = propertyValue.value
-                            else:
-                                expected = (self.testHelper.getPresentValueStateText(testData.site, deviceNumber, objReference))[1]
-                                
-                    elif propertyName == "AD_Value":
-                        REGEX = re.compile('^(0|[1-9][0-9]*)$')
-                        result = REGEX.match(current)
-                        current = result is not None
-                        expected = True
-                        
-                    else:
-                        propertyName = self._getColumnPropertyName(testData.dynamicColumns, subKey)
-                        propertyValue = self.testHelper.getPropertyValue(testData.site, deviceNumber, objReference, propertyName)
-                        expected = propertyValue.value
-                        
-                        # dealing None returned
-                        if expected is None:
-                            expected = ""
-                
-                        # removing white space at the header and tail
-                        expected = expected.strip()
-                
-                        # substitute multiple whitespace with single whitespace
-                        expected = ' '.join(expected.split())
-                        
-                        # dealing with HTML char entities
-                        for k, v in ({"&amp;" : "&"}).iteritems():
-                            if k in expected:
-                                expected = string.replace(expected, k, v)
-                        
-                        self.perform(self.assertEqual, current, expected, errMessage)
-                
-                
-    def _getColumnFormat(self, listDynamicColumns, columnLabel):  
-        """ helper to find the value format assigned in dynamic column 
-            based on the given column label name
-        """ 
-        result = None
-        for item in listDynamicColumns:
-            if item["Heading"] == columnLabel:
-                result = item["Format"]
-                break
-        return result
-                
-                    
-    def _getColumnPropertyName(self, listDynamicColumns, columnLabel):  
-        """ helper to find the property name assigned in dynamic column 
-            based on the given column label name
-        """ 
-        result = None
-        for item in listDynamicColumns:
-            if item["Heading"] == columnLabel:
-                result = item["Property"]
-                break
-        return result.strip()
+                for inputObj in item["inputs"]:
+                    current.append(inputObj["id"])
+                expected = self._helperSortingOrdering(current)
+                errMessage = "Verify Device '%s' Inputs table sorting and grouping failed."%deviceNumber
+                self.perform(self.assertEqual, current, expected, errMessage)
+            
+            if "outputs" in item:
+                current = []
+                for outputObj in item["outputs"]:
+                    current.append(outputObj["id"])
+                expected = self._helperSortingOrdering(current)
+                errMessage = "Verify Device '%s' Outputs table sorting and grouping failed."%deviceNumber
+                self.perform(self.assertEqual, current, expected, errMessage)
                          
     
     def _setupReportInstance(self):
@@ -288,6 +310,72 @@ class TestCase(TestCaseTemplate):
             found = m.group(0)
             return found[1:-1]
         
+        
+    def _getObjTypeFromObjRef(self, objectReference):
+        """ helper to return adn object type part string from the object reference string
+            for example, return AV from AV100
+        """
+        return re.sub(r'\d+', '', objectReference) 
+    
+    
+    def _getObjNumberFromObjRef(self, objRefString):
+        """ return the number part of an object reference string"""
+        result = None
+        m = re.search('\d+$', objRefString)
+        if m:
+            result = m.group(0)
+        return result
+        
+        
+    def _helperSortingOrdering(self, objList):
+        """ helper to regenerate a list of grouped and ordered objet list """
+        groupList = []
+        for objRef in objList:
+            objNumber = self._getObjNumberFromObjRef(objRef)
+            if int(objNumber) < 100:
+                if 99 not in groupList:
+                    groupList.append(99)
+            else:
+                patNumber = objNumber[:-2] + "00"
+                if int(patNumber) not in groupList:
+                    groupList.append(int(patNumber))
+        groupList.sort(key=int)
+        
+        groupDic = {}
+        for item in groupList:
+            groupDic[item] = []
+            
+        for objRef in objList:
+            objNumber = self._getObjNumberFromObjRef(objRef)
+            if int(objNumber) < 100:
+                groupDic[99].append(objRef)
+            else:
+                patNumber = objNumber[:-2] + "00"
+                if int(patNumber) in groupDic:
+                    groupDic[int(patNumber)].append(objRef)
+                    
+        for key, value in groupDic.iteritems():
+            objTypeGroup = {"AI": [], "AO": [], "BI": [], "BO": [], "MI": [], "MO": [], "LO": [], "PI": []}
+            for objRef in value:
+                objType = self._getObjTypeFromObjRef(objRef)
+                objNumber = self._getObjNumberFromObjRef(objRef)
+                if objType in objTypeGroup:
+                    objTypeGroup[objType].append(int(objNumber))
+            for k, v in objTypeGroup.iteritems():
+                if len(v) > 0:
+                    v.sort(key=int)
+            groupDic[key] = objTypeGroup
+                    
+        result = []
+        typeList = ["AI", "BI", "MI", "PI", "AO", "BO", "LO", "MO"]
+        for item in groupList:
+            objTypeGroup = groupDic[item]
+            for objType in typeList:
+                if len(objTypeGroup[objType]) > 0:
+                    for objNumber in objTypeGroup[objType]:
+                        result.append(objType + str(objNumber))
+        return result
+    
 
 if __name__ == "__main__":
     unittest.main()

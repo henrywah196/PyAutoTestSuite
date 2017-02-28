@@ -119,6 +119,12 @@ class TC88439(TestCaseTemplate):
                 expected = self._helperSortingOrdering(current)
                 errMessage = "Verify Device '%s' Inputs table sorting and grouping failed."%deviceNumber
                 self.perform(self.assertEqual, current, expected, errMessage)
+                '''
+                print deviceNumber
+                print current
+                print expected
+                self.assertEqual(current, expected, errMessage)
+                '''
             
     def test02(self):
         self._testMethodDoc = 'Verify data grouping ordering in Outputs table'
@@ -137,6 +143,12 @@ class TC88439(TestCaseTemplate):
                 expected = self._helperSortingOrdering(current)
                 errMessage = "Verify Device '%s' Outputs table sorting and grouping failed."%deviceNumber
                 self.perform(self.assertEqual, current, expected, errMessage)
+                '''
+                print deviceNumber
+                print current
+                print expected
+                self.assertEqual(current, expected, errMessage)
+                '''
             
         
         
@@ -146,13 +158,13 @@ class TC88439(TestCaseTemplate):
         for objRef in objList:
             objNumber = self._getObjNumberFromObjRef(objRef)
             if int(objNumber) < 100:
-                if 100 not in groupList:
-                    groupList.append(100)
+                if 99 not in groupList:
+                    groupList.append(99)
             else:
                 patNumber = objNumber[:-2] + "00"
                 if int(patNumber) not in groupList:
                     groupList.append(int(patNumber))
-        groupList.sort()
+        groupList.sort(key=int)
         
         groupDic = {}
         for item in groupList:
@@ -161,7 +173,7 @@ class TC88439(TestCaseTemplate):
         for objRef in objList:
             objNumber = self._getObjNumberFromObjRef(objRef)
             if int(objNumber) < 100:
-                groupDic[100].append(objRef)
+                groupDic[99].append(objRef)
             else:
                 patNumber = objNumber[:-2] + "00"
                 if int(patNumber) in groupDic:
@@ -176,7 +188,7 @@ class TC88439(TestCaseTemplate):
                     objTypeGroup[objType].append(int(objNumber))
             for k, v in objTypeGroup.iteritems():
                 if len(v) > 0:
-                    v.sort()
+                    v.sort(key=int)
             groupDic[key] = objTypeGroup
                     
         result = []

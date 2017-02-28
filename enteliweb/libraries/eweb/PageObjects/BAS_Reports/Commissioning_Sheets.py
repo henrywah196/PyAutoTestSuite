@@ -117,7 +117,7 @@ class CommissioningSheetsPageObj(BASReportPageObj):
             result = []
             #nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr")
             flag = endElem.get_attribute("id")
-            nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr[@class='style_69'] | ./following-sibling::tr[@id='%s']"%flag)
+            nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr[@class='style_70'] | ./following-sibling::tr[@id='%s']"%flag)
             for elem in nextSiblingElements:
                 if elem == endElem:
                     break
@@ -125,7 +125,7 @@ class CommissioningSheetsPageObj(BASReportPageObj):
                     result.append(elem)
             return result
         else:
-            nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr[@class='style_69']")
+            nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr[@class='style_70']")
             return nextSiblingElements
         
     def _generatedReportGetIOInfo(self, keyTOCElement):
