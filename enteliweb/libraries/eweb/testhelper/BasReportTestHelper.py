@@ -213,10 +213,15 @@ class BasReportTestHelper(object):
     def __repr__(self):
         super(BasReportTestHelper, self).__repr__()
         
-    def _getRequest(self, url, retry=1):
+    def _getRequest(self, url, retry=3):
         """ helper to dealing with request return 10054 error """
         try:
             result =  requests.get(url, cookies=self.cookie)
+            if result is None:
+                if retry >=1:
+                    time.sleep(10)
+                    retry = retry - 1
+                    self._getRequest(url, retry)
             return result
         except ConnectionError:
             if retry >=1:

@@ -4,7 +4,7 @@
     "Report Name"     : "Test Union.Property",
     "Report Title"    : "Test Union.Property",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-3000",
+    "Device Range"    : "1200-1499, 1501-3000",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["DEV"],

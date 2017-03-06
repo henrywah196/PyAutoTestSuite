@@ -554,6 +554,15 @@ class AdHocPageObj(BASReportPageObj):
         else:
             nextSiblingElements = startElem.find_elements_by_xpath("./following-sibling::tr[starts-with(@class, 'style_')]")
             return nextSiblingElements
+    
+    def _isOffLine(self, dataRowElement):
+        """ helper used by _generatedReportGetObjInfo() will return true
+            if the record in the generated report is indicated as offline
+            which will be highlighted in red.
+        """
+        flag = "color: red"
+        styleString = dataRowElement.get_attribute("style")
+        return flag in styleString
         
     def _generatedReportGetObjInfo(self):
         """ helper to return the object list in the data table """
@@ -580,6 +589,13 @@ class AdHocPageObj(BASReportPageObj):
                         while j < len(tdElements):
                             rowDic[columnHeaders[j]] =  (tdElements[j].text).strip()
                             j = j + 1
+                        
+                        # Offline check
+                        if self._isOffLine(dataRowElem):
+                            rowDic["_OffLine"] = True
+                        else:
+                            rowDic["_OffLine"] = False
+                        
                         groupResult.append(rowDic)
                     result[groupLabel] = groupResult
                     i = i + 1
@@ -596,6 +612,13 @@ class AdHocPageObj(BASReportPageObj):
                     while i < len(tdElements):
                         rowDic[columnHeaders[i]] = (tdElements[i].text).strip()
                         i = i + 1
+                    
+                    # Offline check
+                    if self._isOffLine(dataRowElem):
+                        rowDic["_OffLine"] = True
+                    else:
+                        rowDic["_OffLine"] = False
+                    
                     result.append(rowDic)
                 return result
             

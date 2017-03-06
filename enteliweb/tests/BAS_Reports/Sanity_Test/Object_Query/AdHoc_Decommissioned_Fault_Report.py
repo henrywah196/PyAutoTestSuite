@@ -136,7 +136,14 @@ class AdHocDecommFaultReport(TestCaseTemplate):
     def _test01(self, testData):
         
         # verify grouping label
-        current = self.testingReport.generatedReportGetData("grouping label")
+        currentRaw = self.testingReport.generatedReportGetData("grouping label")
+        
+        # offline check
+        current = []
+        for item in currentRaw:
+            if not "Device Offline" in item:
+                current.append(item)
+        
         resultDeviceList = list(self.resultFromHelper.keys())
         resultDeviceList.sort()
         expected = []
@@ -165,6 +172,11 @@ class AdHocDecommFaultReport(TestCaseTemplate):
         # verify returned column data for each group
         for key, value in resultFromReport.iteritems():
             for item in value:
+                
+                # offline check
+                if item["_OffLine"]:
+                    continue
+                
                 objID = item["ObjectID"]
                 deviceNumber = (objID.split("."))[0]
                 objReference = (objID.split("."))[1]
@@ -246,7 +258,10 @@ class AdHocDecommFaultReport(TestCaseTemplate):
             if item["Heading"] == columnLabel:
                 result = item["Property"]
                 break
-        return result.strip()
+        if result:
+            return result.strip()
+        else:
+            return result
                          
     
     def _setupReportInstance(self):

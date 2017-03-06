@@ -44,7 +44,7 @@
     "Report Name"     : "test sorting alphabetically",
     "Report Title"    : "test sorting alphabetically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-2200",
+    "Device Range"    : "1200-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP","PI"],
@@ -65,7 +65,7 @@
     "Report Name"     : "test sorting alphabetically",
     "Report Title"    : "test sorting alphabetically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-2200",
+    "Device Range"    : "1200-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP","PI"],

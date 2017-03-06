@@ -137,7 +137,14 @@ class TestCase(TestCaseTemplate):
         """ Sanity Test Data Exchange Settings Report """
         
         # verify grouping label
-        current = self.testingReport.generatedReportGetData("grouping label")
+        currentRaw = self.testingReport.generatedReportGetData("grouping label")
+        
+        # offline check
+        current = []
+        for item in currentRaw:
+            if not "Device Offline" in item:
+                current.append(item)
+        
         resultDeviceList = list(self.resultFromHelper.keys())
         resultDeviceList.sort()
         expected = []
@@ -166,6 +173,11 @@ class TestCase(TestCaseTemplate):
         # verify returned column data for Property Value column
         for key, value in resultFromReport.iteritems():
             for item in value:
+                
+                # offline check
+                if item["_OffLine"]:
+                    continue
+                
                 objID = item["ObjectID"]
                 deviceNumber = (objID.split("."))[0]
                 objReference = (objID.split("."))[1]

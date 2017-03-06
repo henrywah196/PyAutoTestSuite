@@ -140,6 +140,11 @@ class ControllerFirmwareReport(TestCaseTemplate):
         resultFromReport = self.testingReport.generatedReportGetData()
         current = []
         for item in resultFromReport:
+            
+            # Offline check
+            if item["_OffLine"]:
+                continue
+            
             deviceNumber = item["Device Number"]
             deviceNumber = re.sub('[,]', '', deviceNumber)    # get rid of comma in string
             current.append(deviceNumber)
@@ -152,15 +157,22 @@ class ControllerFirmwareReport(TestCaseTemplate):
             
         # verify returned column data for each devices
         for item in resultFromReport:
+            
+            # Omitting OffLine records
+            if item["_OffLine"]:
+                continue
+            
             deviceNumber = item["Device Number"]
             deviceNumber = re.sub('[,]', '', deviceNumber)
             objReference = "DEV%s"%deviceNumber
             for key, value in item.iteritems():
-                if key in ("Device Number", "Scan Rate"):
+                if key in ("Device Number", "Scan Rate", "_OffLine"):
                     continue
                 errMessage = "Verify returned data '%s' for device %s failed"%(key, deviceNumber)
                 current = value.strip()
                 propertyName = self._getColumnPropertyName(testData.dynamicColumns, key)
+                if propertyName == "Device_Name":
+                    propertyName = "Object_Name"
                 propertyValue = self.testHelper.getPropertyValue(testData.site, deviceNumber, objReference, propertyName)
                 expected = propertyValue.value
                 
@@ -204,7 +216,10 @@ class ControllerFirmwareReport(TestCaseTemplate):
             if item["Heading"] == columnLabel:
                 result = item["Property"]
                 break
-        return result.strip()
+        if result:
+            return result.strip()
+        else:
+            return result
                          
     
     def _setupReportInstance(self):

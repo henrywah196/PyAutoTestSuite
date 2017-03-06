@@ -4,7 +4,7 @@
     "Report Name"     : "Test Array.Property",
     "Report Title"    : "Test Array.Property",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-3000",
+    "Device Range"    : "1200-1499, 1501-3000",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP", "OP"],

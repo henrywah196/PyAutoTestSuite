@@ -4,7 +4,7 @@
     "Report Name"     : "Test Array.Group.Property",
     "Report Title"    : "Test Array.Group.Property",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1000-3000",
+    "Device Range"    : "1000-1499, 1501-3000",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["MT"],

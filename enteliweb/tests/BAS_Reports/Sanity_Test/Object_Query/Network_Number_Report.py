@@ -140,6 +140,11 @@ class NetworkNumberReport(TestCaseTemplate):
         resultFromReport = self.testingReport.generatedReportGetData()
         current = []
         for item in resultFromReport:
+            
+            # offline check
+            if item["_OffLine"]:
+                continue
+            
             deviceNumber = item["Device Number"]
             deviceNumber = re.sub('[,]', '', deviceNumber)    # get rid of comma in string
             current.append(deviceNumber)
@@ -151,11 +156,16 @@ class NetworkNumberReport(TestCaseTemplate):
         
         # verify returned column data for each devices
         for item in resultFromReport:
+            
+            # offline check
+            if item["_OffLine"]:
+                continue
+            
             deviceNumber = item["Device Number"]
             deviceNumber = re.sub('[,]', '', deviceNumber)
             objReference = "NET1"
             for key, value in item.iteritems():
-                if key in ("Device Number"):
+                if key in ("Device Number", "_OffLine"):
                     continue
                 errMessage = "Verify returned data '%s' for device %s failed"%(key, deviceNumber)
                 current = value.strip()
@@ -213,7 +223,10 @@ class NetworkNumberReport(TestCaseTemplate):
             if item["Heading"] == columnLabel:
                 result = item["Property"]
                 break
-        return result.strip()
+        if result:
+            return result.strip()
+        else:
+            return result
                          
     
     def _setupReportInstance(self):

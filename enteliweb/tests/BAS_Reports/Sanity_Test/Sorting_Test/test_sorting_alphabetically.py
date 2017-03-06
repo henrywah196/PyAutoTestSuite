@@ -197,7 +197,10 @@ class TestCase(TestCaseTemplate):
             if item["Heading"] == columnLabel:
                 result = item["Property"]
                 break
-        return result
+        if result:
+            return result.strip()
+        else:
+            return result
                          
     
     
