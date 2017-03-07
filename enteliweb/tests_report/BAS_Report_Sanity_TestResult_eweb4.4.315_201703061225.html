@@ -192,11 +192,11 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>enteliWEB Reporting Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-03-02 17:43:29</p>
-<p class='attribute'><strong>Duration:</strong> 01:25:22.870</p>
-<p class='attribute'><strong>Status:</strong> Pass 16 Failure 7 Error 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-06 11:03:39</p>
+<p class='attribute'><strong>Duration:</strong> 01:22:13.387</p>
+<p class='attribute'><strong>Status:</strong> Pass 23 Failure 3 Error 1</p>
 
-<p class='description'>Test against eweb4.4.311 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+<p class='description'>Test against eweb4.4.315 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
 </div>
 
 
@@ -226,72 +226,39 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Commissioning_Sheets.Commissioning_Sheets_Report.TestCase</td>
-    <td>00:08:27.106</td>
+    <td>00:07:06.801</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Default settings test</div></td>
-    <td>00:08:27.106</td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Default settings test</div></td>
+    <td>00:07:06.801</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft1.1: debug: switch back to default
+pt1.1: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
-AssertionError: False is not true : 
-Element counts were not equal:
-First has 1, Second has 0:  u'50000 Card Users (1500)'
-First has 0, Second has 1:  ' (1500)' : Verify the accuracy of grouping label failed
-
-u'eBCON' != '' : Verify device '1500' Model Name failed
-
-u'010.010.006.101' != '' : Verify device '1500' IP Address failed
-
-Element counts were not equal:
-First has 1, Second has 0:  u'BI201004'
-First has 1, Second has 0:  u'BI201008'
-First has 1, Second has 0:  u'BI201009'
-First has 1, Second has 0:  u'BI201011'
-First has 1, Second has 0:  u'MI201001'
-First has 1, Second has 0:  u'MI201005'
-First has 1, Second has 0:  u'BI203004'
-First has 1, Second has 0:  u'BI203008'
-First has 1, Second has 0:  u'BI203009'
-First has 1, Second has 0:  u'BI203011'
-First has 1, Second has 0:  u'MI203001'
-First has 1, Second has 0:  u'MI203005' : Verify the accuracy of returned Inputs object references for device '1500' failed
-
-Element counts were not equal:
-First has 1, Second has 0:  u'BO201007'
-First has 1, Second has 0:  u'BO201009'
-First has 1, Second has 0:  u'BO203001'
-First has 1, Second has 0:  u'BO203003'
-First has 1, Second has 0:  u'BO203004'
-First has 1, Second has 0:  u'BO203005'
-First has 1, Second has 0:  u'BO203007'
-First has 1, Second has 0:  u'BO203008'
-First has 1, Second has 0:  u'BO203009' : Verify the accuracy of returned Outputs object references for device '1500' failed
 
 
         </pre></div>
@@ -303,7 +270,7 @@ First has 1, Second has 0:  u'BO203009' : Verify the accuracy of returned Output
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.Active_Alarms_Report.ActiveAlarmsReport</td>
-    <td>00:02:13.037</td>
+    <td>00:02:14.204</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -313,7 +280,7 @@ First has 1, Second has 0:  u'BO203009' : Verify the accuracy of returned Output
 
 <tr id='pt2.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Active Alarms Report1</div></td>
-    <td>00:02:13.037</td>
+    <td>00:02:14.204</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -345,7 +312,7 @@ debug: switch to frame mainFrame
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Calibration_Report.AdHocCalibrationReport</td>
-    <td>00:02:01.724</td>
+    <td>00:02:00.189</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -355,7 +322,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt3.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test AdHoc Calibration Report</div></td>
-    <td>00:02:01.724</td>
+    <td>00:02:00.189</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -385,43 +352,39 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Decommissioned_Fault_Report.AdHocDecommFaultReport</td>
-    <td>00:03:04.974</td>
+    <td>00:03:08.644</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
 </tr>
 
-<tr id='ft4.1' class='none'>
-    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Decommissioned - Fault Report1</div></td>
-    <td>00:03:04.974</td>
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Decommissioned - Fault Report1</div></td>
+    <td>00:03:08.644</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
 
-    <div id='div_ft4.1' class="popup_window">
+    <div id='div_pt4.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft4.1: debug: switch back to default
+pt4.1: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
-AssertionError: False is not true : 
-Element counts were not equal:
-First has 0, Second has 1:  'Testing Controller ~!@#$%^&amp;*&lt;&gt;()_+{}|:" (1200)'
-First has 0, Second has 1:  'eBCON 2200 (2200)' : Verify the accuracy of grouping label failed
 
 
         </pre></div>
@@ -433,7 +396,7 @@ First has 0, Second has 1:  'eBCON 2200 (2200)' : Verify the accuracy of groupin
 
 <tr class='failClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.Controller_Firmware_Report.ControllerFirmwareReport</td>
-    <td>00:05:07.895</td>
+    <td>00:05:11.181</td>
     <td>1</td>
     <td>0</td>
     <td>1</td>
@@ -443,7 +406,7 @@ First has 0, Second has 1:  'eBCON 2200 (2200)' : Verify the accuracy of groupin
 
 <tr id='ft5.1' class='none'>
     <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Controller Firmware Report1</div></td>
-    <td>00:05:07.895</td>
+    <td>00:05:11.181</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -465,22 +428,7 @@ debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
 AssertionError: False is not true : 
-Element counts were not equal:
-First has 1, Second has 0:  u'1500' : Verify the accuracy of returned devices failed
-
 u'3.4' != '3.40' : Verify returned data 'Firmware' for device 1300 failed
-
-u'operational' != '' : Verify returned data 'Status' for device 1500 failed
-
-u'50000 Card Users' != '' : Verify returned data 'Device Name' for device 1500 failed
-
-u'V3.40' != '' : Verify returned data 'Firmware' for device 1500 failed
-
-u'511845' != '' : Verify returned data 'Build' for device 1500 failed
-
-u'Delta Controls' != '' : Verify returned data 'Vendor' for device 1500 failed
-
-u'eBCON' != '' : Verify returned data 'Type' for device 1500 failed
 
 u'26' != '0026' : Verify returned data 'Build' for device 2001 failed
 
@@ -508,7 +456,7 @@ u'3.4' != '3.40' : Verify returned data 'Firmware' for device 6100 failed
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.Data_Exchange_Settings_Report.DataExchangeSettingsReport</td>
-    <td>00:02:38.919</td>
+    <td>00:02:42.358</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -518,7 +466,7 @@ u'3.4' != '3.40' : Verify returned data 'Firmware' for device 6100 failed
 
 <tr id='pt6.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Data Exchange Settings Report1</div></td>
-    <td>00:02:38.919</td>
+    <td>00:02:42.358</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -548,56 +496,39 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.DER_Failure_Report.DERFailureReport</td>
-    <td>00:03:46.021</td>
+    <td>00:03:20.511</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
 </tr>
 
-<tr id='ft7.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test DER Failure Report</div></td>
-    <td>00:03:46.021</td>
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test DER Failure Report</div></td>
+    <td>00:03:20.511</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
 
-    <div id='div_ft7.1' class="popup_window">
+    <div id='div_pt7.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft7.1: debug: switch back to default
+pt7.1: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
-debug: retry get request after Connection aborted
-Traceback (most recent call last):
-  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
-    return func(self, *args, **kwargs)
-  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Object_Query\DER_Failure_Report.py", line 120, in testMain
-    self.resultFromHelper = self.testHelper.objQueryGetObjectList(site, deviceList, objectFilters)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 682, in objQueryGetObjectList
-    objList = self.objQueryGetObjectList(siteName, item["device number"], objectFilters)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 703, in objQueryGetObjectList
-    if self._meetPropertyCriteria(siteName, deviceNumber, strObjRef, dicPropertyValueComparison):
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 795, in _meetPropertyCriteria
-    if self. _propertyValueCompareHelper(siteName, deviceNumber, objectReference, propertyValueComparison):
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 829, in _propertyValueCompareHelper
-    propertyValueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName[0])
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 396, in getPropertyValue
-    root = etree.fromstring(self.r.content)
-AttributeError: 'NoneType' object has no attribute 'content'
 
 
         </pre></div>
@@ -607,46 +538,39 @@ AttributeError: 'NoneType' object has no attribute 'content'
     </td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Object_Query.Network_Number_Report.NetworkNumberReport</td>
-    <td>00:02:06.558</td>
+    <td>00:02:04.071</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
 </tr>
 
-<tr id='ft8.1' class='none'>
-    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Network Number Report</div></td>
-    <td>00:02:06.558</td>
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Sanity Test Network Number Report</div></td>
+    <td>00:02:04.071</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
 
-    <div id='div_ft8.1' class="popup_window">
+    <div id='div_pt8.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft8.1: debug: switch back to default
+pt8.1: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
-AssertionError: False is not true : 
-Element counts were not equal:
-First has 0, Second has 1:  '4000'
-First has 0, Second has 1:  '3100'
-First has 0, Second has 1:  '3001'
-First has 0, Second has 1:  '3000'
-First has 0, Second has 1:  '3002' : Verify the accuracy of returned devices failed
 
 
         </pre></div>
@@ -656,45 +580,39 @@ First has 0, Second has 1:  '3002' : Verify the accuracy of returned devices fai
     </td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Array_Property.TestCase</td>
-    <td>00:06:46.649</td>
+    <td>00:03:40.579</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
 </tr>
 
-<tr id='ft9.1' class='none'>
-    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Test Array.Property</div></td>
-    <td>00:06:46.649</td>
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test Array.Property</div></td>
+    <td>00:03:40.579</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
 
-    <div id='div_ft9.1' class="popup_window">
+    <div id='div_pt9.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft9.1: debug: switch back to default
+pt9.1: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
-AssertionError: False is not true : 
-Element counts were not equal:
-First has 1, Second has 0:  u'50000 Card Users (1500)'
-First has 0, Second has 1:  ' (1500)' : Verify the accuracy of grouping label failed
-
-u'inactive' != '' : Verify returned data 'Priority_Array[5]' for BO201001 under 50000 Card Users (1500) failed
 
 
         </pre></div>
@@ -706,7 +624,7 @@ u'inactive' != '' : Verify returned data 'Priority_Array[5]' for BO201001 under 
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Union_Property.TestCase</td>
-    <td>00:02:45.549</td>
+    <td>00:02:25.774</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -716,7 +634,7 @@ u'inactive' != '' : Verify returned data 'Priority_Array[5]' for BO201001 under 
 
 <tr id='pt10.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test Union.Property</div></td>
-    <td>00:02:45.549</td>
+    <td>00:02:25.774</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -748,7 +666,7 @@ debug: switch to frame mainFrame
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Group_Property.TestCase</td>
-    <td>00:05:47.194</td>
+    <td>00:05:29.812</td>
     <td>2</td>
     <td>2</td>
     <td>0</td>
@@ -758,7 +676,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt11.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test NET.Statistics.packetsDropped</div></td>
-    <td>00:02:53.901</td>
+    <td>00:02:31.159</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -790,7 +708,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt11.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: Test SCH.Effective_Period.startDate</div></td>
-    <td>00:02:53.293</td>
+    <td>00:02:58.653</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -820,19 +738,19 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Union_Group_Property.TestCase</td>
-    <td>00:06:56.938</td>
+    <td>00:06:26.767</td>
     <td>2</td>
-    <td>2</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td><a href="javascript:showClassDetail('c12',2)">Detail</a></td>
 </tr>
 
 <tr id='pt12.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Test DEV.Daylight_Savings_Start.weekNDay.dayOfWeek</div></td>
-    <td>00:03:04.046</td>
+    <td>00:03:03.410</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -862,29 +780,44 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr id='pt12.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: Test EV.Event_Parameters.out-of-range.time-delay</div></td>
-    <td>00:03:52.892</td>
+<tr id='ft12.2' class='none'>
+    <td class='errorCase'><div class='testcase'>testMain_2: Verify report data returned for filter: Test EV.Event_Parameters.out-of-range.time-delay</div></td>
+    <td>00:03:23.357</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.2')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.2')" >
+        error</a>
 
-    <div id='div_pt12.2' class="popup_window">
+    <div id='div_ft12.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.2').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-pt12.2: debug: switch back to default
+ft12.2: debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch back to default
 debug: switch to frame mainFrame
 debug: switch back to default
 debug: switch to frame mainFrame
+debug: retry get request after Connection aborted
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Complex_Property_Test\Union_Group_Property.py", line 121, in testMain
+    self.resultFromHelper = self.testHelper.objQueryGetObjectList(site, deviceList, objectFilters)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 687, in objQueryGetObjectList
+    objList = self.objQueryGetObjectList(siteName, item["device number"], objectFilters)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 708, in objQueryGetObjectList
+    if self._meetPropertyCriteria(siteName, deviceNumber, strObjRef, dicPropertyValueComparison):
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 799, in _meetPropertyCriteria
+    if self.isPropertyExisting(siteName, deviceNumber, objectReference, propertyName):
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\testhelper\BasReportTestHelper.py", line 564, in isPropertyExisting
+    root = etree.fromstring(self.r.content)
+AttributeError: 'NoneType' object has no attribute 'content'
 
 
         </pre></div>
@@ -896,7 +829,7 @@ debug: switch to frame mainFrame
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Union_Group_Union_Property.TestCase</td>
-    <td>00:03:55.272</td>
+    <td>00:03:12.815</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -906,7 +839,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt13.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: EV.Context.change-of-state.previousValue.binary-value</div></td>
-    <td>00:03:55.272</td>
+    <td>00:03:12.815</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -936,41 +869,39 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Array_Group_Property.TestCase</td>
-    <td>00:00:25.433</td>
+    <td>00:02:13.796</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
 </tr>
 
-<tr id='ft14.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testMain_1</div></td>
-    <td>00:00:25.433</td>
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: MT.Trend_Log_List[1].reference</div></td>
+    <td>00:02:13.796</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
 
-    <div id='div_ft14.1' class="popup_window">
+    <div id='div_pt14.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft14.1: debug: switch back to default
-Traceback (most recent call last):
-  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Complex_Property_Test\Array_Group_Property.py", line 81, in setUp
-    Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\Macros\__init__.py", line 36, in LoadEnteliWEB
-    eWEBHeader.loading(timeout = 15)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Header.py", line 53, in loading
-    raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
-Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
+pt14.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
 
 
         </pre></div>
@@ -980,41 +911,39 @@ Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Array_Union_Group_Property.TestCase</td>
-    <td>00:00:24.266</td>
+    <td>00:02:13.762</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
 </tr>
 
-<tr id='ft15.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testMain_1</div></td>
-    <td>00:00:24.266</td>
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: NET.Advanced_Adapter[2].mstp.network</div></td>
+    <td>00:02:13.762</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
 
-    <div id='div_ft15.1' class="popup_window">
+    <div id='div_pt15.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft15.1: debug: switch back to default
-Traceback (most recent call last):
-  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Complex_Property_Test\Array_Union_Group_Property.py", line 81, in setUp
-    Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\Macros\__init__.py", line 36, in LoadEnteliWEB
-    eWEBHeader.loading(timeout = 15)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Header.py", line 53, in loading
-    raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
-Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
+pt15.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
 
 
         </pre></div>
@@ -1026,7 +955,7 @@ Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Complex_Property_Test.Array_Group_Union_Property.TestCase</td>
-    <td>00:02:49.567</td>
+    <td>00:02:39.380</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -1036,7 +965,7 @@ Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
 
 <tr id='pt16.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: NET.Advanced_Adapter[2].mstp.network</div></td>
-    <td>00:02:49.567</td>
+    <td>00:02:39.380</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1068,7 +997,7 @@ debug: switch to frame mainFrame
 
 <tr class='passClass'>
     <td>tests.BAS_Reports.Sanity_Test.Sorting_Test.test_sorting_alphabetically.TestCase</td>
-    <td>00:09:01.771</td>
+    <td>00:07:49.874</td>
     <td>4</td>
     <td>4</td>
     <td>0</td>
@@ -1078,7 +1007,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt17.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: sort ascending alphabetically</div></td>
-    <td>00:01:53.345</td>
+    <td>00:01:52.603</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1110,7 +1039,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt17.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: sort descending alphabetically</div></td>
-    <td>00:01:48.304</td>
+    <td>00:01:47.950</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1142,7 +1071,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt17.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_3: Verify report data returned for filter: in group sort ascending alphabetically</div></td>
-    <td>00:03:01.202</td>
+    <td>00:02:04.231</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1174,7 +1103,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt17.4' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_4: Verify report data returned for filter: in group sort descending alphabetically</div></td>
-    <td>00:02:18.920</td>
+    <td>00:02:05.090</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1204,41 +1133,39 @@ debug: switch to frame mainFrame
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='failClass'>
     <td>tests.BAS_Reports.Sanity_Test.Sorting_Test.test_sorting_numerically.TestCase</td>
-    <td>00:17:03.997</td>
+    <td>00:18:12.869</td>
     <td>5</td>
+    <td>3</td>
     <td>2</td>
-    <td>2</td>
-    <td>1</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c18',5)">Detail</a></td>
 </tr>
 
-<tr id='ft18.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testMain_1</div></td>
-    <td>00:00:24.717</td>
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify sorting numerically without value format</div></td>
+    <td>00:01:52.951</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
 
-    <div id='div_ft18.1' class="popup_window">
+    <div id='div_pt18.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft18.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
            [x]</a>
         </div>
         <div class="result_detail"><pre>
         
-ft18.1: debug: switch back to default
-Traceback (most recent call last):
-  File "U:\PyAutoTestSuite\enteliweb\tests\BAS_Reports\Sanity_Test\Sorting_Test\test_sorting_numerically.py", line 82, in setUp
-    Macros.LoadEnteliWEB(self.Host, self.Browser, self.Username, self.Password, ff_profile=profile)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\Macros\__init__.py", line 36, in LoadEnteliWEB
-    eWEBHeader.loading(timeout = 15)
-  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Header.py", line 53, in loading
-    raise Exception("%s is not finish loading within %s seconds"%(self, timeout))
-Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
+pt18.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
 
 
         </pre></div>
@@ -1250,7 +1177,7 @@ Exception: enteliWEB Main Page Header is not finish loading within 15 seconds
 
 <tr id='pt18.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_2: Verify sorting numerically with value format</div></td>
-    <td>00:01:55.079</td>
+    <td>00:01:49.146</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1282,7 +1209,7 @@ debug: switch to frame mainFrame
 
 <tr id='pt18.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>testMain_3: Verify sorting numerically descending</div></td>
-    <td>00:01:51.446</td>
+    <td>00:01:48.479</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1314,7 +1241,7 @@ debug: switch to frame mainFrame
 
 <tr id='ft18.4' class='none'>
     <td class='failCase'><div class='testcase'>testMain_4: Verify in group sorting numerically ascending</div></td>
-    <td>00:06:21.508</td>
+    <td>00:06:16.661</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1338,8 +1265,6 @@ debug: switch to frame mainFrame
 AssertionError: False is not true : 
 False is not true : Manual sort current values for device '2000' failed: 'decimal' codec can't encode character u'\ufffd' in position 0: invalid decimal Unicode string
 
-False is not true : Manual sort current values for device '1500' failed: could not convert string to float: 
-
 
         </pre></div>
     </div>
@@ -1350,7 +1275,7 @@ False is not true : Manual sort current values for device '1500' failed: could n
 
 <tr id='ft18.5' class='none'>
     <td class='failCase'><div class='testcase'>testMain_5: Verify in group sorting numerically descending</div></td>
-    <td>00:06:31.247</td>
+    <td>00:06:25.632</td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1374,8 +1299,6 @@ debug: switch to frame mainFrame
 AssertionError: False is not true : 
 False is not true : Manual sort current values for device '2000' failed: 'decimal' codec can't encode character u'\ufffd' in position 0: invalid decimal Unicode string
 
-False is not true : Manual sort current values for device '1500' failed: could not convert string to float: 
-
 
         </pre></div>
     </div>
@@ -1386,11 +1309,11 @@ False is not true : Manual sort current values for device '1500' failed: could n
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>01:25:22.870</td>
+    <td>01:22:13.387</td>
     <td>27</td>
-    <td>16</td>
-    <td>7</td>
-    <td>4</td>
+    <td>23</td>
+    <td>3</td>
+    <td>1</td>
     <td>&nbsp;</td>
 </tr>
 </table>

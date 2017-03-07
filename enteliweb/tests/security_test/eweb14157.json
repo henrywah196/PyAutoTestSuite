@@ -1,0 +1,21 @@
+[
+  {
+    "Description"        : "Security Sanity test",
+    "Report Name"        : "Security Sanity Test Report",
+    "Report Title"       : "Security Sanity Test Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200-1499, 1501-2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["IP", "OP"],
+                               "Instance"       : "*",
+                               "Property Logic" : "AND",
+                               "Properties"     : [  
+						    	                   ["Flags", "=", "*not-commissioned*"]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : true
+  }
+  
+]

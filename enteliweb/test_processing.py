@@ -47,7 +47,7 @@ def getReportBuildInfo():
     config.read(os.path.join(os.path.dirname(os.path.abspath(__file__)), "test_processing.ini"))
     return config.get("test_report", "build")
 
-def preProcessing():
+def preProcessing(reportTitle=None):
     # obtain build number
     import requests
     r = requests.get("http://%s/enteliweb"%settings.HOST, verify=False)
@@ -57,10 +57,14 @@ def preProcessing():
     build_number = m.group()
     build_number = "eweb%s"%build_number[13:-6]
     
-    # update build number in test_processing.ini file
+    # update report title and build number in test_processing.ini file
     config = configparser.ConfigParser()
     filePath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test_processing.ini")
     config.read(filePath)
+    if reportTitle is not None:
+        config.set('test_report', 'title', reportTitle)
+    else:
+        config.set('test_report', 'title', "enteliWEB Reporting Sanity Test Report")
     config.set('test_report', 'build', build_number)
     with open(filePath, 'w') as configfile:
         config.write(configfile)

@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Security Sanity Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Security Sanity Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-07 11:22:27</p>
+<p class='attribute'><strong>Duration:</strong> 00:02:09.363</p>
+<p class='attribute'><strong>Status:</strong> Pass 82 Failure 1</p>
+
+<p class='description'>Test against eweb4.4.315 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.security_test.eweb14019.TestCase</td>
+    <td>00:01:16.638</td>
+    <td>82</td>
+    <td>81</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',82)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify Request: Create Site</div></td>
+    <td>00:00:00.212</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_10: Verify Request: Create Group</div></td>
+    <td>00:00:00.229</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_11: Verify Request: Delete Group</div></td>
+    <td>00:00:00.283</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_12: Verify Request: Password Settings</div></td>
+    <td>00:00:00.216</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_13: Verify Request: Lockout Settings</div></td>
+    <td>00:00:00.199</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_14: Verify Request: Create System</div></td>
+    <td>00:00:00.204</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_15: Verify Request: Delete System</div></td>
+    <td>00:00:00.194</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_16: Verify Request: Create View</div></td>
+    <td>00:00:00.207</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_17: Verify Request: Delete View</div></td>
+    <td>00:00:00.220</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_18: Verify Request: Create Dashboard</div></td>
+    <td>00:00:00.224</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_19: Verify Request: Delete Dashboard</div></td>
+    <td>00:00:00.195</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_2: Verify Request: Modify Site</div></td>
+    <td>00:00:00.208</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_20: Verify Request: Create Personal Dashboard</div></td>
+    <td>00:00:00.203</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_21: Verify Request: Delete Personal Dashboard</div></td>
+    <td>00:00:00.201</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_22: Verify Request: Delete Widget</div></td>
+    <td>00:00:00.194</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_23: Verify Request: Cereat Area</div></td>
+    <td>00:00:00.185</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_24: Verify Request: Create Meter</div></td>
+    <td>00:00:00.187</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_25: Verify Request: Reset Meter</div></td>
+    <td>00:00:00.183</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_26: Verify Request: Delete Meter</div></td>
+    <td>00:00:00.200</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_27: Verify Request: Modify Virtual Datapoint</div></td>
+    <td>00:00:11.982</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_28: Verify Request: Delete Virtual Datapoint</div></td>
+    <td>00:00:00.327</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_29: Verify Request: Delete Dataset</div></td>
+    <td>00:00:00.299</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_3: Verify Request: Add Connection</div></td>
+    <td>00:00:00.211</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_30: Verify Request: BaseUnit Setup</div></td>
+    <td>00:00:12.486</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_31: Verify Request: Delete Active Report</div></td>
+    <td>00:00:00.204</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_32: Verify Request: Modify Report Schedule</div></td>
+    <td>00:00:12.253</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_33: Verify Request: Delete Report Schedule</div></td>
+    <td>00:00:00.237</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_34: Verify Request: Delete Alert</div></td>
+    <td>00:00:00.187</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_35: Verify Request: Modify Rule</div></td>
+    <td>00:00:00.210</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_36: Verify Request: Delete Rule</div></td>
+    <td>00:00:00.223</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_37: Verify Request: Create Task</div></td>
+    <td>00:00:00.233</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_38: Verify Request: Delete Task</div></td>
+    <td>00:00:00.225</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_39: Verify Request: Delete Condiguration Backup</div></td>
+    <td>00:00:00.222</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_4: Verify Request: Disable Connection</div></td>
+    <td>00:00:00.217</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_40: Verify Request: Delete Device Database</div></td>
+    <td>00:00:00.193</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_41: Verify Request: Load Device Database</div></td>
+    <td>00:00:00.188</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_42: Verify Request: Add Site Graphics New folder</div></td>
+    <td>00:00:00.187</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_43: Verify Request: Remove Site Graphics folder</div></td>
+    <td>00:00:00.195</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_44: Verify Request: Update custom widget type</div></td>
+    <td>00:00:00.186</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_45: Verify Request: Remove custom widget type</div></td>
+    <td>00:00:00.208</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_46: Verify Request: Add CopperCube Connection</div></td>
+    <td>00:00:00.237</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.42' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_47: Verify Request: Update CopperCube Connection</div></td>
+    <td>00:00:00.209</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.43' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_48: Verify Request: Delete CopperCube Connection</div></td>
+    <td>00:00:00.213</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.44' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_49: Verify Request: Update LDAP Configuration</div></td>
+    <td>00:00:00.218</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.45' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_5: Verify Request: Remove Connection</div></td>
+    <td>00:00:00.218</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.46' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_50: Verify Request: Update Extended Card User Setup</div></td>
+    <td>00:00:00.257</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.47' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_51: Verify Request: Update Email configuration</div></td>
+    <td>00:00:00.215</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.48' class='none'>
+    <td class='failCase'><div class='testcase'>testMain_52: Verify Request: Delete All Alarms</div></td>
+    <td>00:00:10.883</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.48')" >
+        fail</a>
+
+    <div id='div_ft1.48' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.48').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.48: Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\security_test\eweb14019.py", line 148, in testMain
+    self.fail("%s: CSRF Warning is not returned"%step)
+AssertionError: Verify Request: Delete All Alarms: CSRF Warning is not returned
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.49' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_53: Verify Request: Edit Alarm Group</div></td>
+    <td>00:00:00.259</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.50' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_54: Verify Request: Delete Alarm Group</div></td>
+    <td>00:00:00.213</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.51' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_55: Verify Request: Restore Configuration from Server</div></td>
+    <td>00:00:00.234</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.52' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_56: Verify Request: Reset Device</div></td>
+    <td>00:00:00.208</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.53' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_57: Verify Request: Set Time</div></td>
+    <td>00:00:00.205</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.54' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_58: Verify Request: Load Database From Server</div></td>
+    <td>00:00:00.198</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.55' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_59: Verify Request: Load Database From Flash</div></td>
+    <td>00:00:00.180</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.56' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_6: Verify Request: Reinitialize Descriptors</div></td>
+    <td>00:00:00.196</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.57' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_60: Verify Request: Clear Database</div></td>
+    <td>00:00:00.212</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.58' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_61: Verify Request: Create Object</div></td>
+    <td>00:00:00.231</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.59' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_62: Verify Request: Delete Object</div></td>
+    <td>00:00:00.210</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.60' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_63: Verify Request: Rename Object</div></td>
+    <td>00:00:00.205</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.61' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_64: Verify Request: Command Manual</div></td>
+    <td>00:00:00.208</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.62' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_65: Verify Request: Command Auto</div></td>
+    <td>00:00:00.215</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.63' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_66: Verify Request: Reset Object</div></td>
+    <td>00:00:00.203</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.64' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_67: Verify Request: Command Manual Value</div></td>
+    <td>00:00:00.190</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.65' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_68: Verify Request: Add to Historian</div></td>
+    <td>00:00:00.215</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.66' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_69: Verify Request: Put Property Value</div></td>
+    <td>00:00:00.230</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.67' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_7: Verify Request: Delete Site</div></td>
+    <td>00:00:00.204</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.68' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_70: Verify Request: Put Property</div></td>
+    <td>00:00:00.215</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.69' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_71: Verify Request: Acknowledge alarm</div></td>
+    <td>00:00:00.211</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.70' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_72: Verify Request: Save alarm</div></td>
+    <td>00:00:00.197</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.71' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_73: Verify Request: Clear alarm</div></td>
+    <td>00:00:00.295</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.72' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_74: Verify Request: Update filter</div></td>
+    <td>00:00:00.203</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.73' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_75: Verify Request: Remove filter</div></td>
+    <td>00:00:00.213</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.74' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_76: Verify Request: Dismiss All</div></td>
+    <td>00:00:00.268</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.75' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_77: Verify Request: Create Consumption Report</div></td>
+    <td>00:00:00.213</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.76' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_78: Verify Request: Update Consumption Report</div></td>
+    <td>00:00:00.242</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.77' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_79: Verify Request: Schedule Consumption Report</div></td>
+    <td>00:00:12.410</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.78' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_8: Verify Request: Create User</div></td>
+    <td>00:00:00.269</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.79' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_80: Verify Request: Delete Consumption Report</div></td>
+    <td>00:00:00.219</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.80' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_81: Verify Request: Add filter</div></td>
+    <td>00:00:00.204</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.81' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_82: Verify Request: Remove filter</div></td>
+    <td>00:00:00.197</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.82' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_9: Verify Request: Delete User</div></td>
+    <td>00:00:00.199</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.security_test.eweb14157.TestCase</td>
+    <td>00:00:52.725</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain: Verify Request aborted: CSRF verification failed</div></td>
+    <td>00:00:52.725</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:02:09.363</td>
+    <td>83</td>
+    <td>82</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
