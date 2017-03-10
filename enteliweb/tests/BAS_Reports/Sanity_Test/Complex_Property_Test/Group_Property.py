@@ -124,6 +124,14 @@ class TestCase(TestCaseTemplate):
         if not self.resultFromHelper:
             
             result = self.testingReport.generatedReportHasNoData()
+            if not result:
+                # verify if all returned data are from offline devices
+                currentRaw = self.testingReport.generatedReportGetData("grouping label")
+                current = []
+                for item in currentRaw:
+                    if not "Device Offline" in item:
+                        current.append(item)
+                result = (len(current) == 0)
             self.assertTrue(result, "Expecting no data returned in the generated report failed")
             
         else:
