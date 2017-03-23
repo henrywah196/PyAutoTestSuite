@@ -1,0 +1,17 @@
+[
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Output Points List Report",
+    "Report Title"       : "Sanity Test Output Points List Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200-1499, 1501-2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["OP"],
+                               "Instance"       : "*"
+						     }
+						   ],
+	"Is Default Filters" : true
+  }
+  
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Calibration Report",
+    "Report Title"       : "Sanity Test Calibration Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200-1499, 1501-2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["AI"],
+                               "Instance"       : "*",
+                               "Property Logic" : "AND",
+                               "Properties"     : [  
+						    	                   ["Calibration", "<>", "0"]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : true
+  }
+  
+]

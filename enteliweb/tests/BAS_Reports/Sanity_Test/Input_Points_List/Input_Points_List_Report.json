@@ -1,0 +1,17 @@
+[
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Input Points List Report",
+    "Report Title"       : "Sanity Test Input Points List Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200-1499, 1501-2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["IP", "PI"],
+                               "Instance"       : "*"
+						     }
+						   ],
+	"Is Default Filters" : false
+  }
+  
+]

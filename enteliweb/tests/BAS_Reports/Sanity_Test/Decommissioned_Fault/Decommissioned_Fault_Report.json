@@ -1,0 +1,22 @@
+[
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Decommissioned and Fault Report",
+    "Report Title"       : "Sanity Test Decommissioned and Fault Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200-1499, 1501-2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["IP", "OP", "PI"],
+                               "Instance"       : "*",
+                               "Property Logic" : "OR",
+                               "Properties"     : [  
+						    	                   ["Flags", "=", "*not-commissioned*"],
+						    	                   ["Flags", "=", "*fault*"]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : false
+  }
+  
+]

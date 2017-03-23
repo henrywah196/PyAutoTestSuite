@@ -154,8 +154,11 @@ class TestCase(TestCaseTemplate):
             if "descending" in self.testData.Description:
                 direction = "descending"
                 isReverse = True
-            expected = sorted(current, reverse=isReverse, key=unicode.lower)
-            self.assertListEqual(current, expected, "Verify object names (text) are alphabetically %s sorted failed."%direction)
+            expected = sorted(current, reverse=isReverse, key=unicode.upper)
+            errMessage = "Verify object names (text) are alphabetically %s sorted failed."%direction
+            if device is not None:
+                errMessage = "Device '%s', "%device + errMessage
+            self.assertListEqual(current, expected, errMessage)
             
             
     def _removeInvalidString(self, listOfString):

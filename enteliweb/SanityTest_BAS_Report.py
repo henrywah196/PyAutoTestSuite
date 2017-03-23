@@ -25,6 +25,11 @@ from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Union_Grou
 from tests.BAS_Reports.Sanity_Test.Complex_Property_Test import Array_Group_Union_Property
 
 from tests.BAS_Reports.Sanity_Test.Commissioning_Sheets import Commissioning_Sheets_Report
+from tests.BAS_Reports.Sanity_Test.Calibration import Calibration_Report
+from tests.BAS_Reports.Sanity_Test.Decommissioned_Fault import Decommissioned_Fault_Report
+from tests.BAS_Reports.Sanity_Test.Input_Points_List import Input_Points__List_Report
+from tests.BAS_Reports.Sanity_Test.Objects_In_Manual import Objects_In_Manual_Report
+from tests.BAS_Reports.Sanity_Test.Output_Points_List import Output_Points__List_Report
 
 from tests.BAS_Reports.Sanity_Test.Object_Query.Active_Alarms_Report import ActiveAlarmsReport
 from tests.BAS_Reports.Sanity_Test.Object_Query.AdHoc_Calibration_Report import AdHocCalibrationReport
@@ -38,7 +43,12 @@ from tests.BAS_Reports.Sanity_Test.Object_Query.Network_Number_Report import Net
 # prepare test suites
 ######################
 suites = []
+suites.append(Calibration_Report.TestCase.suite())
 suites.append(Commissioning_Sheets_Report.TestCase.suite())
+suites.append(Decommissioned_Fault_Report.TestCase.suite())
+suites.append(Input_Points__List_Report.TestCase.suite())
+suites.append(Objects_In_Manual_Report.TestCase.suite())
+suites.append(Output_Points__List_Report.TestCase.suite())
 
 suites.append(ActiveAlarmsReport.suite())
 suites.append(AdHocCalibrationReport.suite())

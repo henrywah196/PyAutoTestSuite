@@ -40,7 +40,37 @@ PROPERTY_TYPE_OPERATOR_MAPPING = {
 
 IP_OP_TYPE_MAPPING = {
                        "IP": ["AI", "BI", "MI", "PI"],
-                       "OP": ["AO", "BO", "MO", "LO"]
+                       "OP": ["AO", "BO", "MO", "LO"],
+                       "*" : [
+                                "AC", "ACC", "ACD", "ACI", "ACP", "ACR", "ACS", "ACU", "ACZ",
+                                "ADT", "AE", "AG", "AI", "AIC", "AK", "AO", "AOC", "AS", "ASO",
+                                "AST", "AT", "ATZ", "AV", "AVG", 
+                                "BCP", "BDC", "BDE", "BI", "BMD", "BO", "BST", "BSV", "BT", 
+                                "BTZ", "BV", 
+                                "CAL", "CCFG", "CEL", "CMS", "CNC", "CNL", "CNS", "CO", "COM",
+                                "CR", "CSV", "CU",
+                                "DBI", "DC", "DEL", "DER", "DES", "DEV", "DEW", "DG", "DGL",
+                                "DIA", "DPV", "DRT", "DTP", "DTV", "DV", "DWS",
+                                "EC", "EL", "EMN", "ENS", "EV", "EVA", "EVC", "EVF", "EVL",
+                                "EVN", "EVR", "EVS", "EVX",
+                                "FIL",
+                                "GCS", "GGP", "GRP", "GW", "GWD", "GWF", "GWS", "GWT",
+                                "HID", "HS",
+                                "INS", "IOM", "IP", "IPS", "IV", 
+                                "LAV", "LC", "LCD", "LG", "LIC", "LNK", "LO", "LPT", "LS", "LSP",
+                                "MDS", "MI", "MIC", "MN", "MNP", "MO", "MOC", "MT", "MV",
+                                "NET", "NF", "NP", "NS", "NVS", 
+                                "ODI", "OP", "ORS", "OS", "OSV",
+                                "PAN", "PC", "PG", "PI", "PIV", "PRN", "PRS",
+                                "RPL", "RPS", "RPT", "RS",
+                                "SAT", "SCH", "SD", "SDL", "SEL", "SEM", "SNC", "SNS", "SPI",
+                                "SS", "SSC", "SSS", "STA", "SUA", "SUG", "SV",
+                                "TL", "TLM", "TNS", "TPV", "TRM", "TV",
+                                "UNS", 
+                                "V2P", "VGS",
+                                "WDL", "WFS", "WSD",
+                                "ZBS", "ZC", "ZF", "ZN", "ZP"
+                             ]
                      }
 
 OBJECT_TYPE_MAPPING = { 
@@ -602,11 +632,17 @@ class BasReportTestHelper(object):
         root = etree.fromstring(self.r.content)
         elemObject = root.find("./Object")
         element = (elemObject.getchildren())[0]
-        result = element.get("isNULL")
-        if result == "TRUE":
-            return True
+        if (objectReference[0:3] == "SCH") and (propertyName in ("Manual_Override", "Present_Value", "Schedule_Default")):   # special handling of SCH, which is Union
+            if len(list(element)) > 0:
+                return False
+            else:
+                return True
         else:
-            return False
+            result = element.get("isNULL")
+            if result == "TRUE":
+                return True
+            else:
+                return False
         
     def isObjectExisting(self, siteName, deviceNumber, objectReference):
         """ return true if the specified object reference existing in device
@@ -742,7 +778,7 @@ class BasReportTestHelper(object):
         result = {}
         typeList = []
         for item in objectType:
-            if item in ("IP", "OP"):
+            if item in ("IP", "OP", "*"):
                 item = IP_OP_TYPE_MAPPING[item]
             if isinstance(item, list):
                 for subItem in item:
@@ -836,9 +872,6 @@ class BasReportTestHelper(object):
         if isinstance(propertyValueInfo, list):      # list or array
             pass
         else:
-            
-            #print "debug: %s"%propertyValueInfo
-            
             currentPropertyValue = None
             currentPropertyDataType = None
             if len(propertyName) > 1:
@@ -856,8 +889,32 @@ class BasReportTestHelper(object):
                     currentPropertyDataType = targetObj.dataType
                     
             else:
-                currentPropertyValue = propertyValueInfo.value
-                currentPropertyDataType = propertyValueInfo.dataType
+                #print "debug: //%s/%s.%s.%s"%(siteName, deviceNumber, objectReference, propertyName[0])
+                currentPropertyValue = None
+                currentPropertyDataType = None
+                if (objectReference[0:3] == "SCH") and (propertyName[0] in ("Manual_Override", "Present_Value", "Schedule_Default")):   # special handling of SCH, which is Union
+                    attrList = dir(propertyValueInfo)
+                    if "real" in attrList:
+                        currentPropertyValue = propertyValueInfo.real.value
+                        currentPropertyDataType = propertyValueInfo.real.dataType
+                    elif "enumerated" in attrList:
+                        currentPropertyValue = propertyValueInfo.enumerated.value
+                        currentPropertyDataType = propertyValueInfo.enumerated.dataType
+                    elif "unsigned" in attrList:
+                        currentPropertyValue = propertyValueInfo.unsigned.value
+                        currentPropertyDataType = propertyValueInfo.unsigned.dataType
+                    elif "boolean" in attrList:
+                        currentPropertyValue = propertyValueInfo.boolean.value
+                        currentPropertyDataType = propertyValueInfo.boolean.dataType
+                    else:   # is NULL
+                        currentPropertyValue = ""
+                        currentPropertyDataType = None
+                elif (objectReference[0:3] == "ACI") and (propertyName[0] in ("Manual_Override", "Present_Value")):   # special handling of ACI, which is Group
+                    currentPropertyValue = propertyValueInfo.value.value
+                    currentPropertyDataType = propertyValueInfo.value.dataType
+                else:
+                    currentPropertyValue = propertyValueInfo.value
+                    currentPropertyDataType = propertyValueInfo.dataType
             
             # dealing with special marker 'NULL'
             if propertyValue.lower() == "null":
@@ -872,7 +929,7 @@ class BasReportTestHelper(object):
                 return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
             
             # dealing property with multiple data type, such as Present_Value
-            elif propertyName[0] in ("Present_Value", "Manual_Override"):
+            elif propertyName[0] in ("Present_Value", "Manual_Override", "Schedule_Default"):
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
