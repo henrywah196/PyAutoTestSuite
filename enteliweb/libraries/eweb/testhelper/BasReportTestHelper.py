@@ -423,17 +423,25 @@ class BasReportTestHelper(object):
                     setattr(groupObj, elemObj.name, elemObj)
             return groupObj
     
-    def getPropertyValue(self, siteName, deviceNumber, objectReference, propertyName):
+    def getPropertyValue(self, siteName, deviceNumber, objectReference, propertyName, reTry=3):
         """ return property vlaue in different format based on the data type of the property """
         
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elemObject = root.find("./Object")
-        element = (elemObject.getchildren())[0]
+        if self.r is None:
+            if reTry >=1:
+                reTry = reTry - 1
+                time.sleep(180)
+                self.r = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName, reTry)
+            else:
+                raise Exception("No responding from get property value request '%s'"%url)
+        else:
+            root = etree.fromstring(self.r.content)
+            elemObject = root.find("./Object")
+            element = (elemObject.getchildren())[0]
         
-        #print deviceNumber, objectReference    # debug info
-        return self._propertyValueObjComposer(element)
+            #print deviceNumber, objectReference    # debug info
+            return self._propertyValueObjComposer(element)
     
     def getPresentValueStateText(self, siteName, deviceNumber, objectReference):
         """ return Active / Inactive text for binary object, state_text for multi-state object
