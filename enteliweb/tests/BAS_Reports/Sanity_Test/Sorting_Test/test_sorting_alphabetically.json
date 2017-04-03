@@ -7,7 +7,7 @@
     "Device Range"    : "1200",
     "Object Filters"  : [
 	                      {
-						    "Type"           : ["IP", "PI"],
+						    "Type"           : ["IP"],
                             "Instance"       : "*"
 						  }
 						],
@@ -27,7 +27,7 @@
     "Device Range"    : "1200",
     "Object Filters"  : [
 	                      {
-						    "Type"           : ["IP", "PI"],
+						    "Type"           : ["IP"],
                             "Instance"       : "*"
 						  }
 						],
@@ -47,7 +47,7 @@
     "Device Range"    : "1200-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
-						    "Type"           : ["IP","PI"],
+						    "Type"           : ["IP"],
                             "Instance"       : "*"
 						  }
 						],
@@ -68,7 +68,7 @@
     "Device Range"    : "1200-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
-						    "Type"           : ["IP","PI"],
+						    "Type"           : ["IP"],
                             "Instance"       : "*"
 						  }
 						],

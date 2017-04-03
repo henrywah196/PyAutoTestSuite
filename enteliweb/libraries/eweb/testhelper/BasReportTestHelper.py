@@ -39,7 +39,7 @@ PROPERTY_TYPE_OPERATOR_MAPPING = {
                                  }
 
 IP_OP_TYPE_MAPPING = {
-                       "IP": ["AI", "BI", "MI", "PI"],
+                       "IP": ["AI", "BI", "MI", "PI", "PC"],
                        "OP": ["AO", "BO", "MO", "LO"],
                        "*" : [
                                 "AC", "ACC", "ACD", "ACI", "ACP", "ACR", "ACS", "ACU", "ACZ",
@@ -432,9 +432,9 @@ class BasReportTestHelper(object):
             if reTry >=1:
                 reTry = reTry - 1
                 time.sleep(180)
-                self.r = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName, reTry)
+                self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName, reTry)
             else:
-                raise Exception("No responding from get property value request '%s'"%url)
+                raise Exception("No responding from request '%s'"%url)
         else:
             root = etree.fromstring(self.r.content)
             elemObject = root.find("./Object")
@@ -595,18 +595,26 @@ class BasReportTestHelper(object):
                 result = objDic
             return result
     
-    def isPropertyExisting(self, siteName, deviceNumber, objectReference, propertyName):
+    def isPropertyExisting(self, siteName, deviceNumber, objectReference, propertyName, reTry=3):
         """ helper to verify if the specified object reference contain the specified property """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elemObject = root.find("./Object")
-        element = (elemObject.getchildren())[0]
-        status = element.get("status")
-        if status == "OK":
-            return True
+        if self.r is None:
+            if reTry >= 1:
+                reTry = reTry - 1
+                time.sleep(180)
+                self.isPropertyExisting(siteName, deviceNumber, objectReference, propertyName, reTry)
+            else:
+                raise Exception("No responding from request '%s'"%url)
         else:
-            return False
+            root = etree.fromstring(self.r.content)
+            elemObject = root.find("./Object")
+            element = (elemObject.getchildren())[0]
+            status = element.get("status")
+            if status == "OK":
+                return True
+            else:
+                return False
         
         '''
         propertyValueObj = self._propertyValueObjComposer(element)

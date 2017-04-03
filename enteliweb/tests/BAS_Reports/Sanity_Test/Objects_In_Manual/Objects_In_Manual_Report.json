@@ -1,4 +1,22 @@
 [
+  {
+    "Description"        : "Default settings test",
+    "Report Name"        : "Sanity Test Objects In Manual Report",
+    "Report Title"       : "Sanity Test Objects In Manual Report",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1200, 2200",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["*"],
+                               "Instance"       : "*",
+                               "Property Logic" : "AND",
+                               "Properties"     : [  
+						    	                   ["Manual_Override", "<>", "null"]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : true
+  },
   
   {
     "Description"        : "Object type and instance range settings test",

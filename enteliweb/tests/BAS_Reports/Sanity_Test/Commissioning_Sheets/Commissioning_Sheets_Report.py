@@ -222,7 +222,7 @@ class TestCase(TestCaseTemplate):
                 
                 inputsExpected = []
                 for obj in objExpected:
-                    if obj["object type"] in ("AI", "BI", "MI"):
+                    if obj["object type"] in ("AI", "BI", "MI", "PI", "PC"):
                         inputsExpected.append(obj["object type"] + obj["object number"])
                         
                 errMessage = "Verify the accuracy of returned Inputs object references for device '%s' failed"%deviceNumber

@@ -166,7 +166,7 @@ class TestCase(TestCaseTemplate):
             if deviceNumber in self.resultFromHelper:
                 current = []
                 for item in value:
-                    current.append(item["ObjectID"])
+                    current.append(item["Object ID"])
                 expected = []
                 for item in self.resultFromHelper[deviceNumber]:
                     objReference = "%s.%s%s"%(deviceNumber, item["object type"], item["object number"])

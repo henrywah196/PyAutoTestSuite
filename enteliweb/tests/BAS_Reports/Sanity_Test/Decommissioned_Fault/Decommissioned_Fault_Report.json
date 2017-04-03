@@ -7,7 +7,7 @@
     "Device Range"       : "1200-1499, 1501-2200",
     "Object Filters"     : [
 	                         {
-						       "Type"           : ["IP", "OP", "PI"],
+						       "Type"           : ["IP", "OP"],
                                "Instance"       : "*",
                                "Property Logic" : "OR",
                                "Properties"     : [  
@@ -16,7 +16,7 @@
 							                     ]
 						     }
 						   ],
-	"Is Default Filters" : false
+	"Is Default Filters" : true
   }
   
 ]

@@ -29,7 +29,6 @@ encoding//tests/BAS_Reports/Sanity_Test/Object_Query/Controller_Firmware_Report.
 encoding//tests/BAS_Reports/Sanity_Test/Object_Query/DER_Failure_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Object_Query/Data_Exchange_Settings_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Object_Query/Network_Number_Report.py=utf-8
-encoding//tests/BAS_Reports/Sanity_Test/Object_Query/sanity_test.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Objects_In_Manual/Objects_In_Manual_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Output_Points_List/Output_Points__List_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Sorting_Test/test_sorting_alphabetically.py=utf-8
