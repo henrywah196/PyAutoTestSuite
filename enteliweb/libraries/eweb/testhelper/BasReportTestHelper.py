@@ -264,19 +264,27 @@ class BasReportTestHelper(object):
             else:
                 raise
         
-    def getDevicesList(self, siteName):
+    def getDevicesList(self, siteName, reTry=3):
         """ get a list of Devices on a site """
         url = "%s/api/.bacnet/%s/"%(self.base_url, siteName)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elements = root.getchildren()
-        result = []
-        for elem in elements:
-            objDic = {}
-            objDic["device number"] = elem.get("name")
-            objDic["device name"] = elem.get("displayName")
-            result.append(objDic)
-        return result
+        if self.r is None:
+            if reTry >= 1:
+                reTry = reTry - 1
+                time.sleep(60)
+                self.getDevicesList(siteName, reTry)
+            else:
+                raise Exception("No responding from request '%s'"%url)
+        else:
+            root = etree.fromstring(self.r.content)
+            elements = root.getchildren()
+            result = []
+            for elem in elements:
+                objDic = {}
+                objDic["device number"] = elem.get("name")
+                objDic["device name"] = elem.get("displayName")
+                result.append(objDic)
+            return result
         
     def getNumberOfObjects(self, siteName, deviceNumber, reTry=3):
         """ return the total number of objects in a device """
@@ -285,7 +293,7 @@ class BasReportTestHelper(object):
         if self.r is None:
             reTry = reTry -1
             if reTry > 0:
-                time.sleep(3)
+                time.sleep(60)
                 self.getNumberOfObjects(siteName, deviceNumber, reTry)
             else:
                 raise Exception("requests in getNumberOfObjects(%s, %s) returns null."%(siteName, deviceNumber))
@@ -295,56 +303,70 @@ class BasReportTestHelper(object):
         except ValueError: return result.get("value")
         
         
-    def getObjectsList(self, siteName, deviceNumber):
+    def getObjectsList(self, siteName, deviceNumber, reTry=3):
         """ return a list of objects in a device """
         numberOfObjects = self.getNumberOfObjects(siteName, deviceNumber)
         url = "%s/api/.bacnet/%s/%s?max-results=%s"%(self.base_url, siteName, deviceNumber, numberOfObjects)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elements = root.getchildren()
-        result = []
-        for elem in elements:
-            objDic = {}
-            objReference = elem.get("name")
-            if objReference is not None:
-                objReference = objReference.split(",")
+        if self.r is None:
+            if reTry >= 1:
+                reTry = reTry - 1
+                time.sleep(60)
+                self.getObjectsList(siteName, deviceNumber, reTry=3)
+            else:
+                raise Exception("No responding from request '%s'"%url)
+        else:
+            root = etree.fromstring(self.r.content)
+            elements = root.getchildren()
+            result = []
+            for elem in elements:
+                objDic = {}
+                objReference = elem.get("name")
+                if objReference is not None:
+                    objReference = objReference.split(",")
             
-                # objReference validation before contineu
-                if len(objReference) != 2:
-                    continue
-                try: int(objReference[1])
-                except ValueError: continue 
+                    # objReference validation before contineu
+                    if len(objReference) != 2:
+                        continue
+                    try: int(objReference[1])
+                    except ValueError: continue 
             
-                #print deviceNumber, objReference
-                try: objDic["object type"] = OBJECT_TYPE_MAPPING[objReference[0]]
-                except KeyError: objDic["object type"] = objReference[0]
-                objDic["object number"] = objReference[1]
-                objDic["object name"] = elem.get("displayName")
-                result.append(objDic)
-        return result
+                    #print deviceNumber, objReference
+                    try: objDic["object type"] = OBJECT_TYPE_MAPPING[objReference[0]]
+                    except KeyError: objDic["object type"] = objReference[0]
+                    objDic["object number"] = objReference[1]
+                    objDic["object name"] = elem.get("displayName")
+                    result.append(objDic)
+            return result
     
-    def getPropertyList(self, siteName, deviceNumber, objectReference):
+    def getPropertyList(self, siteName, deviceNumber, objectReference, reTry=3):
         """ return a list of property which the objectReference is supported """
         url = "%s/wsbac/getpropertyall?ObjRef=//%s/%s.%s"%(self.base_url, siteName, deviceNumber, objectReference)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elemObject = root.find("./Object")
-        elements = elemObject.getchildren()
-        result = []
-        for elem in elements:
-            objDic = {}
-            tagName = elem.tag
-            status = elem.get("status")
-            if tagName == "Property" and status == "OK":
-                objDic["name"] = elem.get("name")
-                objDic["data type"] = elem.get("dataType")
-            elif tagName in ("Array", "List", "Union") and (status == "OK" or status == None):
-                objDic["name"] = elem.get("name")
-                objDic["data type"] = tagName
-            else:
-                continue
-            result.append(objDic)
-        return result
+        if self.r is None:
+            if reTry >= 1:
+                reTry = reTry - 1
+                time.sleep(60)
+                self.getPropertyList(siteName, deviceNumber, objectReference, reTry)
+        else:
+            root = etree.fromstring(self.r.content)
+            elemObject = root.find("./Object")
+            elements = elemObject.getchildren()
+            result = []
+            for elem in elements:
+                objDic = {}
+                tagName = elem.tag
+                status = elem.get("status")
+                if tagName == "Property" and status == "OK":
+                    objDic["name"] = elem.get("name")
+                    objDic["data type"] = elem.get("dataType")
+                elif tagName in ("Array", "List", "Union") and (status == "OK" or status == None):
+                    objDic["name"] = elem.get("name")
+                    objDic["data type"] = tagName
+                else:
+                    continue
+                result.append(objDic)
+            return result
     
     def _propertyValueObjComposer(self, element):
         """ helper used by getPropertyValue() to compose and return property as an object """ 
@@ -431,7 +453,7 @@ class BasReportTestHelper(object):
         if self.r is None:
             if reTry >=1:
                 reTry = reTry - 1
-                time.sleep(180)
+                time.sleep(60)
                 self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName, reTry)
             else:
                 raise Exception("No responding from request '%s'"%url)
@@ -602,7 +624,7 @@ class BasReportTestHelper(object):
         if self.r is None:
             if reTry >= 1:
                 reTry = reTry - 1
-                time.sleep(180)
+                time.sleep(60)
                 self.isPropertyExisting(siteName, deviceNumber, objectReference, propertyName, reTry)
             else:
                 raise Exception("No responding from request '%s'"%url)
@@ -640,25 +662,33 @@ class BasReportTestHelper(object):
         '''
         
         
-    def propertyValueIsNull(self, siteName, deviceNumber, objectReference, propertyName):
+    def propertyValueIsNull(self, siteName, deviceNumber, objectReference, propertyName, reTry=3):
         """ helper to verify and return true if the web service has isNULL="TRUE" returned """
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
         #self.r = requests.get(url, cookies=self.cookie)
         self.r = self._getRequest(url)
-        root = etree.fromstring(self.r.content)
-        elemObject = root.find("./Object")
-        element = (elemObject.getchildren())[0]
-        if (objectReference[0:3] == "SCH") and (propertyName in ("Manual_Override", "Present_Value", "Schedule_Default")):   # special handling of SCH, which is Union
-            if len(list(element)) > 0:
-                return False
+        if self.r is None:
+            if reTry >= 1:
+                reTry = reTry - 1
+                time.sleep(60)
+                self.propertyValueIsNull(siteName, deviceNumber, objectReference, propertyName, reTry)
             else:
-                return True
+                raise Exception("No responding from request '%s'"%url)
         else:
-            result = element.get("isNULL")
-            if result == "TRUE":
-                return True
+            root = etree.fromstring(self.r.content)
+            elemObject = root.find("./Object")
+            element = (elemObject.getchildren())[0]
+            if (objectReference[0:3] == "SCH") and (propertyName in ("Manual_Override", "Present_Value", "Schedule_Default")):   # special handling of SCH, which is Union
+                if len(list(element)) > 0:
+                    return False
+                else:
+                    return True
             else:
-                return False
+                result = element.get("isNULL")
+                if result == "TRUE":
+                    return True
+                else:
+                    return False
         
     def isObjectExisting(self, siteName, deviceNumber, objectReference):
         """ return true if the specified object reference existing in device

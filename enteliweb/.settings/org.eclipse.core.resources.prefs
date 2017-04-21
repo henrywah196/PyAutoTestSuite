@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//tests/Access_Activity_Report/DB_Test/DB_Test.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722294.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722295.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722296.py=utf-8
@@ -10,6 +11,7 @@ encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/test_objfilter_03.py=utf-8
 encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88431.py=utf-8
 encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88432.py=utf-8
 encoding//tests/BAS_Reports/Commissioning_Sheets/Generating_Report/C88437.py=utf-8
+encoding//tests/BAS_Reports/Performance_Test/Object_Query_Perf_Test.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Calibration/Calibration_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Commissioning_Sheets/Commissioning_Sheets_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Complex_Property_Test/Array_Group_Property.py=utf-8

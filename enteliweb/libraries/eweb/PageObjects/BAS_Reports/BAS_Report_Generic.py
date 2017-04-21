@@ -389,22 +389,31 @@ class BASReportPageObj(BaseFrameObject):
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.ID, locator["value"])))
         except TimeoutException:
             raise Exception("%s Setup UI is not finish loading within %s seconds"%(self, timeout))
-
         
-    def generatingReport(self, timeout):
+        
+    def isReportUITimeOut(self):
+        """ return true if the generating report UI timeout
+        """
+        flag = "Time out generating report"
+        driver = self.driver
+        return flag in driver.page_source
+                    
+        
+    def generatingReport(self, timeout, clickRun=True):
         """ command to click run button and waits till the report is generated and if the waitting time exceed time limit
             it give timeout warning and return false otheer wise it will return true
             
-            @param string timeout    timeout time for the report generating
+            @param string timeout    timeout time for the report generating (seconds)
             @return boolean          return true if the node is successively created under the specified path.
         """
         result = False
         driver = self.driver
         try:
             self.focus()
-            self.run.click()
-            # wait 8 seconds first
-            time.sleep(8)
+            if clickRun:
+                self.run.click()
+                # wait 8 seconds first
+                time.sleep(8)
             # waiting for loading mask finish up
             elementID = self.loadingMask.locator.get("value")
             errMessage = "Report doesn't finish generating within %s seconds"%timeout

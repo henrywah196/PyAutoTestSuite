@@ -1,0 +1,22 @@
+[
+  {
+    "Description"        : "Description is blank",
+    "Report Name"        : "Object Query Perf Test",
+    "Report Title"       : "Object Query Perf Test",
+    "Site"               : "$LocalSite",
+    "Device Range"       : "1-1499, 1501-4194302",
+    "Object Filters"     : [
+	                         {
+						       "Type"           : ["*"],
+                               "Instance"       : "*",
+                               "Property Logic" : "AND",
+                               "Properties"     : [  
+						    	                   ["Description", "<>", "null"],
+						    	                   ["Description", "<>", ""]
+							                     ]
+						     }
+						   ],
+	"Is Default Filters" : false
+  }
+  
+]

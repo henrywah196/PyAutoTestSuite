@@ -4,7 +4,7 @@ from libraries.eweb.PageObjects.Header import HeaderPageObj
 from libraries.eweb.PageObjects.AdminFrame import AdminFrameObj
 from libraries.eweb.PageObjects.UnitsFrame import UnitsFrameObj
 from libraries.eweb.PageObjects.Accordion import AccordionPageObj
-import time
+import time, datetime
 
 
 #############
@@ -133,6 +133,29 @@ def SelectReportInstance(PathName):
             result = True
     errMessage = "Verify the report instance '%s' is selected (Expected, Current): %s, %s" %(PathName, True, result)
     assert result == True, errMessage
+    
+    
+def GenerateReport(RptPageObj, reportName, timeOut=600):
+    """ Commend to run and wait for a report generating
+    """
+    # generating report
+    startTime = datetime.datetime.now()
+    finishTime = startTime + datetime.timedelta(seconds=timeOut)
+    result = RptPageObj.generatingReport(timeout=600)
+    if not result:
+        if RptPageObj.isReportUITimeOut():
+            SelectReportInstance(reportName)
+        currentTime = datetime.datetime.now()
+        while currentTime <= finishTime:
+            result = RptPageObj.generatingReport(timeout=600, clickRun=False)
+            if result:
+                break
+            else:
+                currentTime = datetime.datetime.now()
+    assert result == True, "failed to generate report"
+    currentTime = datetime.datetime.now()
+    print "generating report '%s' take %s"%(reportName, currentTime - startTime)
+    
     
     
 if __name__ == "__main__":
