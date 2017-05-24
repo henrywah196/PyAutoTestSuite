@@ -5,6 +5,9 @@ Created on Oct 29, 2015
 '''
 import pyodbc
 import settings
+import datetime
+import calendar
+from __builtin__ import classmethod
 
 # Days mapping
 Days = {
@@ -1484,6 +1487,225 @@ class Demand(object):
             return result
         finally:
             del webgroupdb
+            
+            
+class AccessActivity(object):
+    """
+    class used filter query access activity event
+    """
+    
+    db_info = settings.WebGroupDBConn
+    db_conn = None
+    
+    @classmethod
+    def get_filtered_events(cls, testData, timestamp_format=None):
+        """
+        return events info based on search criteria in testData
+        """
+        try:
+            webgroupdb = cls.db_conn
+            if webgroupdb is None:
+                webgroupdb = WebGroupDBObj(cls.db_info)
+
+            site          = testData.site
+            date_range     = testData.dateRange
+            card_users     = testData.cardUsers
+            doors         = testData.doors
+            events        = testData.events
+            card_number    = testData.cardNumber
+            site_code      = testData.siteCode
+            params = []
+            
+            clause_string = "where SiteName = '%s'"%site
+            clause_string += " and Time_Stamp %s"%cls._get_date_range(date_range)
+            if events != "ALL":
+                clause_string += " and EventType in %s"%(tuple(events),)
+            card_users_range, selections = cls._get_objects_range(card_users)
+            if card_users_range is not None:
+                clause_string += " and CardUserName %s"%card_users_range
+                params.extend(selections)
+            doors_range, selections = cls._get_objects_range(doors)
+            if doors_range is not None:
+                clause_string += " and DeviceDoorObjectName %s"%doors_range
+                params.extend(selections)
+            if card_number is not None:
+                clause_string += " and CardUserNumber = '%s'"%card_number
+            if site_code is not None:
+                clause_string += " and CardUsersiteCode = '%s'"%site_code
+                
+            
+            sql_string = """select * from (select ID, str_to_date(TimeStamp, '%Y/%m/%d/%w %H:%i:%s') as Time_Stamp, SiteName, EventType, 
+                           EventName, DeviceDoorRef, DeviceDoorObjectName, CardUserRef, CardUserName, CardUsersiteCode, CardUserNumber 
+                           from (select access_event.ID, event.TimeStamp, access_event.SiteName, access_event.EventType, access_eventtype.`Value` 
+                           as EventName, access_event.DeviceDoorRef, access_event.DeviceDoorObjectName, CONCAT_WS('', access_event.CardUserObjectAbbr, 
+                           access_event.CardUserInstance) as CardUserRef, access_event.CardUserName, access_event.CardUsersiteCode, 
+                           access_event.CardUserNumber from access_event left join access_eventtype on access_event.EventType = access_eventtype.ID 
+                           left join event on access_event.ID = event.RecNo) as t) as t"""
+                           
+            sql_string += " %s;"%clause_string
+             
+            cursor = None
+            if len(params) > 0:
+                cursor = webgroupdb.cursor.execute(sql_string, params)
+            else:               
+                cursor = webgroupdb.cursor.execute(sql_string)
+            rows = cursor.fetchall()
+            
+            result = []
+            for row in rows:
+                record = {}
+                record["Timestamp"] = row.Time_Stamp
+                if timestamp_format is not None:
+                    record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
+                if row.CardUserName is None:
+                    record["Card User"]  = ""
+                else:
+                    record["Card User"]  = row.CardUserName
+                if row.CardUserNumber is None:
+                    record["Card Number"] = ""
+                else:
+                    record["Card Number"] = row.CardUserNumber
+                record["Door"] = (row.DeviceDoorObjectName).strip()
+                record["Event Type"] = row.EventName
+                result.append(record)
+                
+            return result
+                
+        
+        finally:
+            del webgroupdb
+            
+            
+    @classmethod
+    def _get_timestamp_format(cls, dt_timestamp, timestamp_format):
+        """ change datetime of timestamp to a pre formatted datetime string """
+        return dt_timestamp.strftime("%Y/%m/%d %I:%M %p")
+        
+            
+            
+    @classmethod
+    def _get_objects_range(cls, objects_setting):
+        """ helper used by get_filtered_events() """
+        if objects_setting is None:
+            return None, None
+        elif objects_setting["Find Option"] == "Find by Keyword" and objects_setting["Filter By"] == "*":
+            return None, None
+        else:
+            if objects_setting["Find Option"] == "Find by Keyword":
+                key_word = list(objects_setting["Filter By"])
+                if key_word[0] == "*":
+                    key_word[0] = "%"
+                if key_word[len(key_word) - 1] == "*":
+                    key_word[len(key_word) - 1] = "%"
+                key_word = "".join(key_word)
+                return "like '%s'"%key_word, None
+                
+            elif objects_setting["Find Option"] == "Find and Select by Name":
+                selections = []
+                for object_setting in objects_setting["Filter By"]:
+                    selections.append(object_setting[0])
+                    placeholder = ",".join("?" * len(selections))
+                return "in ({0})".format(placeholder), selections 
+            
+            
+    @classmethod
+    def _get_date_range(cls, date_range):
+        """ helper used by get_filtered_events() """
+        
+        date_range_option = date_range[0]
+        if date_range_option == "Custom":
+            dt_from = date_range[1]
+            dt_to = date_range[2]
+            date_start = cls._get_date_string(dt_from[0])
+            date_end = cls._get_date_string(dt_to[0])
+            return "BETWEEN '%s %s' AND '%s %s'"%(date_start, dt_from[1], date_end, dt_to[1])
+        elif date_range_option == "Today":
+            date_string = datetime.date.today().strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_string, date_string)
+        elif date_range_option == "Yesterday":
+            date_string = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_string, date_string)
+        elif date_range_option == "Previous 2 Days":
+            date_start = (datetime.date.today() - datetime.timedelta(days=2)).strftime("%Y-%m-%d")
+            date_end = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "This Week":
+            date_start = (datetime.datetime.today() - datetime.timedelta(days=datetime.datetime.today().isoweekday() % 7)).strftime("%Y-%m-%d")
+            date_end = (datetime.datetime.today() + datetime.timedelta(days=6 - datetime.datetime.today().isoweekday() % 7)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous Week":
+            target_date = datetime.date.today() - datetime.timedelta(days=7)
+            date_start = (target_date - datetime.timedelta(days=target_date.isoweekday() % 7)).strftime("%Y-%m-%d")
+            date_end = (target_date + datetime.timedelta(days=6 - target_date.isoweekday() % 7)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous 7 Days":
+            date_start = (datetime.date.today() - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+            date_end = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous 10 Days":
+            date_start = (datetime.date.today() - datetime.timedelta(days=10)).strftime("%Y-%m-%d")
+            date_end = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous 30 Days":
+            date_start = (datetime.date.today() - datetime.timedelta(days=30)).strftime("%Y-%m-%d")
+            date_end = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Month-to-Date":
+            today = datetime.date.today()
+            year = today.year
+            month = today.month
+            date_start = (datetime.date(year, month, 1)).strftime("%Y-%m-%d")
+            date_end = today.strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Current Month":
+            today = datetime.date.today()
+            num_days = calendar.monthrange(today.year, today.month)
+            date_start = (datetime.date(today.year, today.month, 1)).strftime("%Y-%m-%d")
+            date_end = (datetime.date(today.year, today.month, num_days[1])).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous Month":
+            today = datetime.date.today()
+            first_day = today.replace(day=1)
+            day_of_last_month = first_day - datetime.timedelta(days=1)
+            year = day_of_last_month.year
+            month = day_of_last_month.month
+            num_days = calendar.monthrange(year, month)
+            date_start = (datetime.date(year, month, 1)).strftime("%Y-%m-%d")
+            date_end = (datetime.date(year, month, num_days[1])).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Year-to-Date":
+            today = datetime.date.today()
+            year = today.year
+            date_start = (datetime.date(year, 1, 1)).strftime("%Y-%m-%d")
+            date_end = today.strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Current Year":
+            today = datetime.date.today()
+            year = today.year
+            date_start = (datetime.date(year, 1, 1)).strftime("%Y-%m-%d")
+            date_end = (datetime.date(year, 12, 31)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        elif date_range_option == "Previous Year":
+            today = datetime.date.today()
+            year = today.year - 1
+            date_start = (datetime.date(year, 1, 1)).strftime("%Y-%m-%d")
+            date_end = (datetime.date(year, 12, 31)).strftime("%Y-%m-%d")
+            return "BETWEEN '%s 00:00:00' AND '%s 23:59:59'"%(date_start, date_end)
+        
+        
+    @classmethod    
+    def _get_date_string(cls, date_string):
+        """ helper used by _get_date_range() """
+        if date_string == "%today%":
+            return datetime.date.today().strftime("%Y-%m-%d")
+        elif date_string == "%yesterday%":
+            result = datetime.date.today() - datetime.timedelta(days=1)
+            return result.strftime("%Y-%m-%d")
+        elif date_string == "%tomorrow%":
+            result = datetime.date.today() + datetime.timedelta(days=1)
+            return result.strftime("%Y-%m-%d")
+        else:
+            return date_string    
     
         
 if __name__ == "__main__":

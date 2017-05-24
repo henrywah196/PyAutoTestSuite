@@ -205,7 +205,7 @@ class TestCase(TestCaseTemplate):
         numberOfEvents = self.testData.numberOfEvents
         
         # update test doc string
-        self._testMethodDoc = "Verify all testing events are collected in event table" 
+        self._testMethodDoc = "Verify all generated testing events are collected in event table" 
         
         if numberOfEvents is None:
             self.skipTest("Test skipped on purpose.")
@@ -243,8 +243,8 @@ class TestCase(TestCaseTemplate):
         cursor = self.webgroup.cursor.execute(sqlString)
         row = cursor.fetchone()
         current = row.total
-        
-        self.assertEqual(current, expected, "Verify one-to-one mapping between event and access_event table by 'examine total number of records' failed")
+        errMessage = "Verify one-to-one mapping between event and access_event table by 'examine total number of records' failed"
+        self.perform(self.assertEqual, current, expected, errMessage)
         
         sqlString = "select RecNo from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value'"
         cursor = self.webgroup.cursor.execute(sqlString)
@@ -305,6 +305,8 @@ class TestCase(TestCaseTemplate):
                 errMessage = "Verify content '%s' in access_event table for id '%s' failed"%(key, recordNumber)
                 current = dicEventCurrent[key]
                 expected = value
+                if key == "EventType":
+                    expected = int(value)
                 self.perform(self.assertEqual, current, expected, errMessage)
                 
         

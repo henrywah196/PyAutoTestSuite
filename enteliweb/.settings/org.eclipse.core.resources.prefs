@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//tests/Access_Activity_Report/DB_Test/DB_Test.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity/Card_Access_Activity_Report.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722294.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722295.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722296.py=utf-8
@@ -33,6 +34,7 @@ encoding//tests/BAS_Reports/Sanity_Test/Object_Query/Data_Exchange_Settings_Repo
 encoding//tests/BAS_Reports/Sanity_Test/Object_Query/Network_Number_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Objects_In_Manual/Objects_In_Manual_Report.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Output_Points_List/Output_Points__List_Report.py=utf-8
+encoding//tests/BAS_Reports/Sanity_Test/Regression_Test/EWEB_21258.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Sorting_Test/test_sorting_alphabetically.py=utf-8
 encoding//tests/BAS_Reports/Sanity_Test/Sorting_Test/test_sorting_numerically.py=utf-8
 encoding//tests/energy_reports/TP01_Configuration/TC0101_Base_Units.py=utf-8

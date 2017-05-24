@@ -1,8 +1,8 @@
 [
   {
     "SiteName"        : "$LocalSite",
-    "ChangedValue"    : [969, 696],
-    "NumberOfEvents"  : 4094
+    "ChangedValue"    : [696, 969],
+    "NumberOfEvents"  : null
   }
   
 ]

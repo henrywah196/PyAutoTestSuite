@@ -39,6 +39,8 @@ from tests.BAS_Reports.Sanity_Test.Object_Query.Data_Exchange_Settings_Report im
 from tests.BAS_Reports.Sanity_Test.Object_Query.DER_Failure_Report import DERFailureReport
 from tests.BAS_Reports.Sanity_Test.Object_Query.Network_Number_Report import NetworkNumberReport
 
+from tests.BAS_Reports.Sanity_Test.Regression_Test import EWEB_21258
+
 ######################
 # prepare test suites
 ######################
@@ -69,6 +71,8 @@ suites.append(Array_Group_Union_Property.TestCase.suite())
 
 suites.append(test_sorting_alphabetically.TestCase.suite())
 suites.append(test_sorting_numerically.TestCase.suite())
+
+suites.append(EWEB_21258.TestCase.suite())
 
 
 mainTestSuite = TestSuiteTemplate()

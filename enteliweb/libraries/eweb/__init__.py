@@ -10,7 +10,7 @@ class Locators(object):
     """ class to wrap web element locator """
     def __init__(self):
         self.data = {}
-        self.jsonFiles = ["administration.json", "energy_report.json", "bas_report.json"]
+        self.jsonFiles = ["administration.json", "energy_report.json", "bas_report.json", "access_activity_report.json"]
         self.json_File_Location = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)), "locators")
         for item in self.jsonFiles:
             jsonFilePath = os.path.join(self.json_File_Location, item)

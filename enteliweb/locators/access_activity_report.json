@@ -1,0 +1,72 @@
+{
+
+  "AccessActivityReportPageObj.configPanel"           : {"by":"id", "value":"west-region",                      "parent":null, "tag_name":"div", "type":"Container"},
+  "AccessActivityReportPageObj.configPanel_Collapsed" : {"by":"id", "value":"west-region-placeholder-targetEl", "parent":null, "tag_name":"div", "type":"Container"},
+  "AccessActivityReportPageObj.configPanel_Header"    : {"by":"id", "value":"west-region_header-targetEl",      "parent":null, "tag_name":"div", "type":"Container"},
+  
+  "AccessActivityReportPageObj.save"                  : {"by":"id", "value":"saveButton",     "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.run"                   : {"by":"id", "value":"runButton",      "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.delete"                : {"by":"id", "value":"deleteButton",   "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.copy"                  : {"by":"id", "value":"copyButton",     "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.schedule"              : {"by":"id", "value":"scheduleButton", "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.email"                 : {"by":"id", "value":"emailButton",    "parent":null, "tag_name":"a",   "type":"Button"},
+  
+  "AccessActivityReportPageObj.reportHistory"         : {"by":"id", "value":"historyBtn",     "parent":null, "tag_name":"a",   "type":"DropDownBox"},
+  
+  "AccessActivityReportPageObj.reportName"  : {"by":"id", "value":"reportName-inputEl",  "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.reportTitle" : {"by":"id", "value":"reportTitle-inputEl", "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.site"        : {"by":"id", "value":"Site-trigger-picker", "parent":null, "tag_name":"input", "type":"DropDownBox"}, 
+  
+  "AccessActivityReportPageObj.dateRange"       : {"by":"id", "value":"reportFormPeriod-inputEl",              "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "AccessActivityReportPageObj.dateFrom"        : {"by":"id", "value":"reportFormStartTime-inputEl",           "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.dateFromTrigger" : {"by":"id", "value":"reportFormStartTime-trigger-picker",    "parent":null, "tag_name":"div",   "type":"Button"},
+  "AccessActivityReportPageObj.timeFrom"        : {"by":"id", "value":"reportFormOnHoursStart-inputEl",        "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.timeFromTrigger" : {"by":"id", "value":"reportFormOnHoursStart-trigger-picker", "parent":null, "tag_name":"div",   "type":"Button"},
+  "AccessActivityReportPageObj.dateTo"          : {"by":"id", "value":"reportFormEndTime-inputEl",             "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.dateToTrigger"   : {"by":"id", "value":"reportFormEndTime-trigger-picker",      "parent":null, "tag_name":"div",   "type":"Button"},
+  "AccessActivityReportPageObj.timeTo"          : {"by":"id", "value":"reportFormOnHoursEnd-inputEl",          "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.timeToTrigger"   : {"by":"id", "value":"reportFormOnHoursEnd-trigger-picker",   "parent":null, "tag_name":"div",   "type":"Button"},
+  
+  "AccessActivityReportPageObj.cardsDelete"  : {"by":"id", "value":"CardsDelete",  "parent":null, "tag_name":"a", "type":"Button"}, 
+  "AccessActivityReportPageObj.doorsDelete"  : {"by":"id", "value":"DoorsDelete",  "parent":null, "tag_name":"a", "type":"Button"}, 
+  "AccessActivityReportPageObj.eventsDelete" : {"by":"id", "value":"EventsDelete", "parent":null, "tag_name":"a", "type":"Button"}, 
+  "AccessActivityReportPageObj.cardsEdit"    : {"by":"id", "value":"Cards",        "parent":null, "tag_name":"a", "type":"Button"}, 
+  "AccessActivityReportPageObj.doorsEdit"    : {"by":"id", "value":"Doors",        "parent":null, "tag_name":"a", "type":"Button"}, 
+  "AccessActivityReportPageObj.eventsEdit"   : {"by":"id", "value":"Events",       "parent":null, "tag_name":"a", "type":"Button"}, 
+  
+  "AccessActivityReportPageObj.cardNumber" : {"by":"id", "value":"cardNumber-inputEl", "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.siteCode"   : {"by":"id", "value":"siteCode-inputEl",   "parent":null, "tag_name":"input", "type":"EditBox"},
+  
+  "AccessActivityReportPageObj.findCardUsersWindow" : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"}, 
+  "AccessActivityReportPageObj.findDoorsWindow"     : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"},
+  "AccessActivityReportPageObj.selectEventsWindow"  : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"},
+  
+  "AccessActivityReportPageObj.deleteConfirmWindow" : {"by":"xpath", "value":"//div[contains(@class, 'x-message-box')]", "parent":null, "tag_name":"div", "type":"Window"},
+  
+  "AccessActivityReportPageObj.loadingMask"   : {"by":"id", "value":"reportPanelLoader", "parent":null, "tag_name":"div", "type":""},
+  
+  "AccessActivityReportPageObj.generatedReportLogo" : {"by":"id", "value":"AUTOGENBOOKMARK_2_", "parent":null, "tag_name":"img", "type":"Image"},
+  
+  
+  "ObjectSelectWindow.popupWindowBody" : {"by":"id",    "value":"popupWindow-targetEl",        "parent":null,                                 "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.optionPanel"     : {"by":"id",    "value":"searchType-innerCt",          "parent":null,                                 "tag_name":"table", "type":"Container"},
+  "ObjectSelectWindow.toolBarPanel"    : {"by":"xpath", "value":"./div[2]",                    "parent":"ObjectSelectWindow.popupWindowBody", "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.mainPanel"       : {"by":"xpath", "value":"./div[3]",                    "parent":"ObjectSelectWindow.popupWindowBody", "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.headerPanel"     : {"by":"xpath", "value":"./div[1]/div/div/div/div[1]", "parent":"ObjectSelectWindow.mainPanel",       "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.gridPanel"       : {"by":"xpath", "value":"./div[1]/div/div/div/div[2]", "parent":"ObjectSelectWindow.mainPanel",       "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.pagingPanel"     : {"by":"xpath", "value":"./div[1]/div/div/div/div[3]", "parent":"ObjectSelectWindow.mainPanel",       "tag_name":"div",   "type":"Container"},
+  "ObjectSelectWindow.bottomPanel"     : {"by":"xpath", "value":"./div[2]",                    "parent":"ObjectSelectWindow.mainPanel",       "tag_name":"div",   "type":"Container"},
+  
+  "ObjectSelectWindow.btnByName"    : {"by":"xpath", "value":"./tbody/tr/td[1]/div/div/div[1]/input", "parent":"ObjectSelectWindow.optionPanel", "tag_name":"input", "type":"Button"},
+  "ObjectSelectWindow.btnByKeyword" : {"by":"xpath", "value":"./tbody/tr/td[2]/div/div/div[1]/input", "parent":"ObjectSelectWindow.optionPanel", "tag_name":"input", "type":"Button"},
+  
+  "ObjectSelectWindow.btnSelectAll"   : {"by":"xpath", "value":"./div/div/a[1]",      "parent":"ObjectSelectWindow.toolBarPanel", "tag_name":"a",     "type":"Button"},
+  "ObjectSelectWindow.btnUnselectAll" : {"by":"xpath", "value":"./div/div/a[2]",      "parent":"ObjectSelectWindow.toolBarPanel", "tag_name":"a",     "type":"Button"},
+  "ObjectSelectWindow.filterBy"       : {"by":"id",    "value":"popupSearch-inputEl", "parent":null,                              "tag_name":"input", "type":"EditBox"},
+  
+  "ObjectSelectWindow.pageNumber" : {"by":"name", "value":"inputItem", "parent":null, "tag_name":"input", "type":"EditBox"},
+  
+  "ObjectSelectWindow.btnOK"     : {"by":"xpath", "value":"./div/div/a[1]", "parent":"ObjectSelectWindow.bottomPanel", "tag_name":"a", "type":"Button"},
+  "ObjectSelectWindow.btnCancel" : {"by":"xpath", "value":"./div/div/a[2]", "parent":"ObjectSelectWindow.bottomPanel", "tag_name":"a", "type":"Button"}
+  
+}

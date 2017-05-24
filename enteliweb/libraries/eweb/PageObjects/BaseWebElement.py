@@ -155,6 +155,8 @@ class DropDownBoxWebElement(EditBoxWebElement):
             if target:
                 target.location_once_scrolled_into_view
                 target.click()
+            else:
+                raise Exception("'%s' was not found in dropdown box"%val)
      
     def getDropDownList(self): 
         """ return the drop down list element """ 

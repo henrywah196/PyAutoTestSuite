@@ -1,0 +1,17 @@
+[
+  {
+    "Description"     : "Regression Test EWEB_21258",
+    "Report Name"     : "Regression Test EWEB_21258",
+    "Report Title"    : "Regression Test EWEB_21258",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "2000",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["*"],
+                            "Instance"       : "1-10"
+						  }
+						]
+	
+  }
+  
+]
