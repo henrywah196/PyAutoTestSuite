@@ -1,6 +1,15 @@
 eclipse.preferences.version=1
 encoding//tests/Access_Activity_Report/DB_Test/DB_Test.py=utf-8
 encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity/Card_Access_Activity_Report.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity/EWEB_22010.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity_by_Card_User/Card_Access_Activity_by_Card_User_Report.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity_by_Card_User/EWEB_22010.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_User_Activity_by_Door/Card_User_Activity_by_Door_Report.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Card_User_Activity_by_Door/EWEB_22010.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Door_Activity/Door_Activity_Report.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Door_Activity/EWEB_22010.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Transactions_by_Event_Type/EWEB_22010.py=utf-8
+encoding//tests/Access_Activity_Report/Sanity_Test/Transactions_by_Event_Type/Transactions_by_Event_Type_Report.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722294.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722295.py=utf-8
 encoding//tests/BAS_Reports/Ad_Hoc/Generating_Report/C1722296.py=utf-8

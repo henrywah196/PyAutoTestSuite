@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Access Activity Sanity Test</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Access Activity Sanity Test</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-23 13:51:13</p>
+<p class='attribute'><strong>Duration:</strong> 00:00:00.421</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Failure 2</p>
+
+<p class='description'>Test against eweb4.6.37 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.Access_Activity_Report.DB_Test.DB_Test.TestCase</td>
+    <td>00:00:00.421</td>
+    <td>3</td>
+    <td>1</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test02_1: Verify one-to-one mapping between event and access_event table</div></td>
+    <td>00:00:00.059</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\DB_Test\DB_Test.py", line 237, in test02
+    self.assertItemsEqual(rows, [], "Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed")
+AssertionError: Element counts were not equal:
+First has 1, Second has 0:  (4226L, )
+First has 1, Second has 0:  (4230L, )
+First has 1, Second has 0:  (4232L, )
+First has 1, Second has 0:  (4233L, )
+First has 1, Second has 0:  (4236L, )
+First has 1, Second has 0:  (4237L, )
+First has 1, Second has 0:  (4238L, )
+First has 1, Second has 0:  (4239L, )
+First has 1, Second has 0:  (4240L, )
+First has 1, Second has 0:  (4241L, )
+First has 1, Second has 0:  (4242L, )
+First has 1, Second has 0:  (4243L, )
+First has 1, Second has 0:  (4244L, )
+First has 1, Second has 0:  (4245L, )
+First has 1, Second has 0:  (4246L, )
+First has 1, Second has 0:  (4248L, )
+First has 1, Second has 0:  (4254L, )
+First has 1, Second has 0:  (4255L, )
+First has 1, Second has 0:  (4256L, )
+First has 1, Second has 0:  (4257L, )
+First has 1, Second has 0:  (4265L, )
+First has 1, Second has 0:  (4266L, )
+First has 1, Second has 0:  (4267L, )
+First has 1, Second has 0:  (4268L, )
+First has 1, Second has 0:  (4270L, )
+First has 1, Second has 0:  (4271L, )
+First has 1, Second has 0:  (4277L, )
+First has 1, Second has 0:  (4278L, )
+First has 1, Second has 0:  (4279L, )
+First has 1, Second has 0:  (4281L, )
+First has 1, Second has 0:  (4282L, )
+First has 1, Second has 0:  (4283L, )
+First has 1, Second has 0:  (4284L, )
+First has 1, Second has 0:  (4285L, )
+First has 1, Second has 0:  (4286L, )
+First has 1, Second has 0:  (4287L, )
+First has 1, Second has 0:  (4300L, )
+First has 1, Second has 0:  (4305L, )
+First has 1, Second has 0:  (4306L, )
+First has 1, Second has 0:  (4307L, )
+First has 1, Second has 0:  (4309L, )
+First has 1, Second has 0:  (4310L, )
+First has 1, Second has 0:  (4317L, )
+First has 1, Second has 0:  (4319L, )
+First has 1, Second has 0:  (4320L, )
+First has 1, Second has 0:  (4321L, )
+First has 1, Second has 0:  (4322L, )
+First has 1, Second has 0:  (4323L, )
+First has 1, Second has 0:  (4324L, )
+First has 1, Second has 0:  (4325L, )
+First has 1, Second has 0:  (4335L, )
+First has 1, Second has 0:  (4336L, )
+First has 1, Second has 0:  (4338L, )
+First has 1, Second has 0:  (4339L, )
+First has 1, Second has 0:  (4340L, )
+First has 1, Second has 0:  (4341L, )
+First has 1, Second has 0:  (4348L, )
+First has 1, Second has 0:  (4349L, )
+First has 1, Second has 0:  (4350L, )
+First has 1, Second has 0:  (4352L, )
+First has 1, Second has 0:  (4353L, )
+First has 1, Second has 0:  (4355L, )
+First has 1, Second has 0:  (4356L, )
+First has 1, Second has 0:  (4357L, )
+First has 1, Second has 0:  (4358L, )
+First has 1, Second has 0:  (4359L, )
+First has 1, Second has 0:  (4360L, )
+First has 1, Second has 0:  (4368L, )
+First has 1, Second has 0:  (4369L, )
+First has 1, Second has 0:  (4370L, )
+First has 1, Second has 0:  (4371L, )
+First has 1, Second has 0:  (4372L, )
+First has 1, Second has 0:  (4373L, )
+First has 1, Second has 0:  (4374L, )
+First has 1, Second has 0:  (4375L, )
+First has 1, Second has 0:  (4376L, )
+First has 1, Second has 0:  (4377L, )
+First has 1, Second has 0:  (4378L, )
+First has 1, Second has 0:  (4379L, )
+First has 1, Second has 0:  (4380L, )
+First has 1, Second has 0:  (4382L, )
+First has 1, Second has 0:  (4383L, )
+First has 1, Second has 0:  (4384L, )
+First has 1, Second has 0:  (4385L, )
+First has 1, Second has 0:  (4390L, )
+First has 1, Second has 0:  (4392L, )
+First has 1, Second has 0:  (4393L, )
+First has 1, Second has 0:  (4394L, )
+First has 1, Second has 0:  (4395L, )
+First has 1, Second has 0:  (4396L, )
+First has 1, Second has 0:  (4397L, )
+First has 1, Second has 0:  (4398L, )
+First has 1, Second has 0:  (4399L, )
+First has 1, Second has 0:  (4408L, )
+First has 1, Second has 0:  (4409L, )
+First has 1, Second has 0:  (4411L, )
+First has 1, Second has 0:  (4412L, )
+First has 1, Second has 0:  (4413L, )
+First has 1, Second has 0:  (4415L, )
+First has 1, Second has 0:  (4416L, )
+First has 1, Second has 0:  (4417L, )
+First has 1, Second has 0:  (4418L, )
+First has 1, Second has 0:  (4419L, )
+First has 1, Second has 0:  (4428L, )
+First has 1, Second has 0:  (4430L, )
+First has 1, Second has 0:  (4431L, )
+First has 1, Second has 0:  (4432L, )
+First has 1, Second has 0:  (4433L, )
+First has 1, Second has 0:  (4434L, )
+First has 1, Second has 0:  (4435L, )
+First has 1, Second has 0:  (4436L, )
+First has 1, Second has 0:  (4437L, )
+First has 1, Second has 0:  (4438L, )
+First has 1, Second has 0:  (4439L, )
+First has 1, Second has 0:  (4441L, )
+First has 1, Second has 0:  (4443L, )
+First has 1, Second has 0:  (4444L, )
+First has 1, Second has 0:  (4448L, )
+First has 1, Second has 0:  (4450L, )
+First has 1, Second has 0:  (4451L, )
+First has 1, Second has 0:  (4453L, )
+First has 1, Second has 0:  (4454L, )
+First has 1, Second has 0:  (4455L, )
+First has 1, Second has 0:  (4456L, )
+First has 1, Second has 0:  (4457L, )
+First has 1, Second has 0:  (4458L, )
+First has 1, Second has 0:  (4466L, )
+First has 1, Second has 0:  (4467L, )
+First has 1, Second has 0:  (4469L, )
+First has 1, Second has 0:  (4472L, )
+First has 1, Second has 0:  (4473L, )
+First has 1, Second has 0:  (4474L, )
+First has 1, Second has 0:  (4476L, )
+First has 1, Second has 0:  (4477L, )
+First has 1, Second has 0:  (4478L, )
+First has 1, Second has 0:  (4479L, )
+First has 1, Second has 0:  (4486L, )
+First has 1, Second has 0:  (4487L, )
+First has 1, Second has 0:  (4488L, )
+First has 1, Second has 0:  (4494L, )
+First has 1, Second has 0:  (4495L, )
+First has 1, Second has 0:  (4498L, )
+First has 1, Second has 0:  (4499L, )
+First has 1, Second has 0:  (4500L, )
+First has 1, Second has 0:  (4501L, )
+First has 1, Second has 0:  (4502L, )
+First has 1, Second has 0:  (4503L, )
+First has 1, Second has 0:  (4504L, )
+First has 1, Second has 0:  (4505L, )
+First has 1, Second has 0:  (4506L, )
+First has 1, Second has 0:  (4507L, )
+First has 1, Second has 0:  (4511L, )
+First has 1, Second has 0:  (4513L, )
+First has 1, Second has 0:  (4514L, )
+First has 1, Second has 0:  (4515L, )
+First has 1, Second has 0:  (4516L, )
+First has 1, Second has 0:  (4517L, )
+First has 1, Second has 0:  (4518L, )
+First has 1, Second has 0:  (4519L, )
+First has 1, Second has 0:  (4520L, )
+First has 1, Second has 0:  (4521L, ) : Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test02_1: Verify one-to-one mapping between event and access_event table</div></td>
+    <td>00:00:00.000</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.2: AssertionError: False is not true : 
+3965L != 4126L : Verify one-to-one mapping between event and access_event table by 'examine total number of records' failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03: Verify content in access_event table</div></td>
+    <td>00:00:00.362</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:00:00.421</td>
+    <td>3</td>
+    <td>1</td>
+    <td>2</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

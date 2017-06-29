@@ -8,6 +8,23 @@ import settings
 import datetime
 import calendar
 from __builtin__ import classmethod
+from test.test_pyclbr import ClassMethodType
+
+
+# DateTime Format
+DateTimeFormat = {
+                  "MMMM d,y HH:mm"   : "%B %d,%Y %H:%M",
+                  "MMMM d,y hh:mm a" : "%B %d,%Y %I:%M %p",
+                  "MM d,y HH:mm"     : "%m %d,%Y %H:%M",
+                  "MM d,y hh:mm a"   : "%m %d,%Y %I:%M %p",
+                  "y/MM/dd HH:mm"    : "%Y/%m/%d %H:%M",
+                  "y/MM/dd hh:mm a"  : "%Y/%m/%d %I:%M %p",
+                  "dd MMMM y HH:mm"  : "%d %B %Y %H:%M",
+                  "dd MM y HH:mm"    : "%d %m %Y %H:%M",
+                  "dd.MM.y HH:mm"    : "%d.%m.%Y %H:%M",
+                  "y-MM-dd HH:mm"    : "%Y-%m-%d %H:%M"
+                 }
+
 
 # Days mapping
 Days = {
@@ -1497,8 +1514,149 @@ class AccessActivity(object):
     db_info = settings.WebGroupDBConn
     db_conn = None
     
+    
     @classmethod
-    def get_filtered_events(cls, testData, timestamp_format=None):
+    def get_filtered_events(cls, testData, timestamp_format=None, group_by=None):
+        
+        part_1 = cls._get_events_with_timerange(testData, timestamp_format, group_by)
+        
+        part_2 = cls._get_events_without_timerange(testData, timestamp_format)
+        
+        if group_by == "Door":
+            if len(part_2) > 0:
+                for item in part_2:
+                    if item["Door"] in part_1:
+                        (part_1[item["Door"]]).append({"Timestamp": item["Timestamp"], "Card User":item["Card User"], "Card Number":item["Card Number"], "Event Type":item["Event Type"]})
+                    else:
+                        part_1[item["Door"]] = []
+                        (part_1[item["Door"]]).append({"Timestamp": item["Timestamp"], "Card User":item["Card User"], "Card Number":item["Card Number"], "Event Type":item["Event Type"]})
+            return part_1
+        elif group_by == "Card User":
+            if len(part_2) > 0:
+                for item in part_2:
+                    if item["Card User"] in part_1:
+                        (part_1[item["Card User"]]).append({"Timestamp": item["Timestamp"], "Door":item["Door"], "Card Number":item["Card Number"], "Event Type":item["Event Type"]})
+                    else:
+                        part_1[item["Card User"]] = []
+                        (part_1[item["Card User"]]).append({"Timestamp": item["Timestamp"], "Door":item["Door"], "Card Number":item["Card Number"], "Event Type":item["Event Type"]})
+            return part_1
+        elif group_by == "Event Type":
+            if len(part_2) > 0:
+                for item in part_2:
+                    if item["Event Type"] in part_1:
+                        (part_1[item["Event Type"]]).append({"Timestamp": item["Timestamp"], "Door":item["Door"], "Card Number":item["Card Number"], "Card User":item["Card User"]})
+                    else:
+                        part_1[item["Event Type"]] = []
+                        (part_1[item["Event Type"]]).append({"Timestamp": item["Timestamp"], "Door":item["Door"], "Card Number":item["Card Number"], "Card User":item["Card User"]})
+            return part_1
+        else:
+            part_1.extend(part_2)
+            return part_1
+        
+    
+    @classmethod
+    def _valid_time_stamp(cls, time_stamp_string, date_range_setting):
+        
+        date_range_string = cls._get_date_range(date_range_setting)
+        result = date_range_string.split("' AND '")
+        part_1 = result[0]
+        part_2 = result[1]
+        result = part_1.split("'")
+        start = datetime.datetime.strptime(result[1], "%Y-%m-%d %H:%M:%S")
+        result = part_2.split("'")
+        end = datetime.datetime.strptime(result[0], "%Y-%m-%d %H:%M:%S")
+        
+        result = (time_stamp_string.strip()).split(" ")
+        part_1 = result[0][:-2]
+        part_2 = (result[1].split("."))[0]
+        time_stamp = datetime.datetime.strptime("%s %s"%(part_1, part_2), "%Y/%m/%d %H:%M:%S")
+        
+        if time_stamp >= start and time_stamp <= end:
+            return time_stamp, True
+        else:
+            return time_stamp, False
+        
+    
+    @classmethod
+    def _get_events_without_timerange(cls, testData, timestamp_format=None):
+        """
+           helper for a case mysql str_to_date(TimeStamp) return NULL
+        """
+        try:
+            webgroupdb = cls.db_conn
+            if webgroupdb is None:
+                webgroupdb = WebGroupDBObj(cls.db_info)
+                
+            site          = testData.site
+            date_range     = testData.dateRange
+            card_users     = testData.cardUsers
+            doors         = testData.doors
+            events        = testData.events
+            card_number    = testData.cardNumber
+            site_code      = testData.siteCode
+            params = []
+            
+            clause_string = "where SiteName = '%s'"%site
+            clause_string += " and Time_Stamp is NULL"
+            if events != "ALL":
+                events.append(-1)
+                clause_string += " and EventType in %s"%(tuple(events),)
+            card_users_range, selections = cls._get_objects_range(card_users)
+            if card_users_range is not None:
+                clause_string += " and CardUserName %s"%card_users_range
+                if selections is not None: params.extend(selections)
+            doors_range, selections = cls._get_objects_range(doors)
+            if doors_range is not None:
+                clause_string += " and DeviceDoorObjectName %s"%doors_range
+                if selections is not None: params.extend(selections)
+            if card_number is not None:
+                clause_string += " and CardUserNumber = '%s'"%card_number
+            if site_code is not None:
+                clause_string += " and CardUsersiteCode = '%s'"%site_code
+                
+            sql_string = """select * from (select ID, str_to_date(`TimeStamp`, '%Y/%m/%d/%w %H:%i:%s') as Time_Stamp, `TimeStamp`, SiteName, EventType, 
+                           EventName, DeviceDoorRef, DeviceDoorObjectName, CardUserRef, CardUserName, CardUsersiteCode, CardUserNumber 
+                           from (select access_event.ID, event.TimeStamp, access_event.SiteName, access_event.EventType, access_eventtype.`Value` 
+                           as EventName, access_event.DeviceDoorRef, access_event.DeviceDoorObjectName, CONCAT_WS('', access_event.CardUserObjectAbbr, 
+                           access_event.CardUserInstance) as CardUserRef, access_event.CardUserName, access_event.CardUsersiteCode, 
+                           access_event.CardUserNumber from access_event left join access_eventtype on access_event.EventType = access_eventtype.ID 
+                           left join event on access_event.ID = event.RecNo) as t) as t"""
+                           
+            sql_string += " %s;"%clause_string
+            
+            cursor = None
+            if len(params) > 0:
+                cursor = webgroupdb.cursor.execute(sql_string, params)
+            else:               
+                cursor = webgroupdb.cursor.execute(sql_string)
+            rows = cursor.fetchall()
+            
+            result = []
+            for row in rows:
+                time_stamp, is_valid = cls._valid_time_stamp(row.TimeStamp, date_range)
+                if is_valid:
+                    record = {}
+                    record["Timestamp"] = row.TimeStamp
+                    if timestamp_format is not None:
+                        record["Timestamp"] = cls._get_timestamp_format(time_stamp, timestamp_format)
+                    if row.CardUserName is None:
+                        record["Card User"]  = ""
+                    else:
+                        record["Card User"]  = row.CardUserName
+                    if row.CardUserNumber is None:
+                        record["Card Number"] = ""
+                    else:
+                        record["Card Number"] = row.CardUserNumber
+                    record["Door"] = (row.DeviceDoorObjectName).strip()
+                    record["Event Type"] = row.EventName
+                    result.append(record)
+            return result
+                
+        finally:
+            del webgroupdb
+    
+    @classmethod
+    def _get_events_with_timerange(cls, testData, timestamp_format=None, group_by=None):
         """
         return events info based on search criteria in testData
         """
@@ -1519,15 +1677,16 @@ class AccessActivity(object):
             clause_string = "where SiteName = '%s'"%site
             clause_string += " and Time_Stamp %s"%cls._get_date_range(date_range)
             if events != "ALL":
+                events.append(-1)
                 clause_string += " and EventType in %s"%(tuple(events),)
             card_users_range, selections = cls._get_objects_range(card_users)
             if card_users_range is not None:
                 clause_string += " and CardUserName %s"%card_users_range
-                params.extend(selections)
+                if selections is not None: params.extend(selections)
             doors_range, selections = cls._get_objects_range(doors)
             if doors_range is not None:
                 clause_string += " and DeviceDoorObjectName %s"%doors_range
-                params.extend(selections)
+                if selections is not None: params.extend(selections)
             if card_number is not None:
                 clause_string += " and CardUserNumber = '%s'"%card_number
             if site_code is not None:
@@ -1551,25 +1710,96 @@ class AccessActivity(object):
                 cursor = webgroupdb.cursor.execute(sql_string)
             rows = cursor.fetchall()
             
-            result = []
-            for row in rows:
-                record = {}
-                record["Timestamp"] = row.Time_Stamp
-                if timestamp_format is not None:
-                    record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
-                if row.CardUserName is None:
-                    record["Card User"]  = ""
-                else:
-                    record["Card User"]  = row.CardUserName
-                if row.CardUserNumber is None:
-                    record["Card Number"] = ""
-                else:
-                    record["Card Number"] = row.CardUserNumber
-                record["Door"] = (row.DeviceDoorObjectName).strip()
-                record["Event Type"] = row.EventName
-                result.append(record)
-                
-            return result
+            if group_by == "Door":
+                result = {}
+                for row in rows:
+                    record = {}
+                    record["Timestamp"] = row.Time_Stamp
+                    if timestamp_format is not None:
+                        record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
+                    if row.CardUserName is None:
+                        record["Card User"]  = ""
+                    else:
+                        record["Card User"]  = row.CardUserName
+                    if row.CardUserNumber is None:
+                        record["Card Number"] = ""
+                    else:
+                        record["Card Number"] = row.CardUserNumber
+                    record["Event Type"] = row.EventName
+                    door = (row.DeviceDoorObjectName).strip()
+                    if door in result:
+                        result[door].append(record)
+                    else:
+                        result[door] = []
+                        result[door].append(record)
+                return result
+            
+            elif group_by == "Card User":
+                result = {}
+                for row in rows:
+                    record = {}
+                    record["Timestamp"] = row.Time_Stamp
+                    if timestamp_format is not None:
+                        record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
+                    if row.CardUserNumber is None:
+                        record["Card Number"] = ""
+                    else:
+                        record["Card Number"] = row.CardUserNumber
+                    record["Door"] = (row.DeviceDoorObjectName).strip()
+                    record["Event Type"] = row.EventName    
+                    card_user = ""
+                    if row.CardUserName is not None:
+                        card_user = row.CardUserName
+                    if card_user in result:
+                        result[card_user].append(record)
+                    else:
+                        result[card_user] = []
+                        result[card_user].append(record)
+                return result
+            
+            elif group_by == "Event Type":
+                result = {}
+                for row in rows:
+                    record = {}
+                    record["Timestamp"] = row.Time_Stamp
+                    if timestamp_format is not None:
+                        record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
+                    if row.CardUserName is None:
+                        record["Card User"]  = ""
+                    else:
+                        record["Card User"]  = row.CardUserName
+                    if row.CardUserNumber is None:
+                        record["Card Number"] = ""
+                    else:
+                        record["Card Number"] = row.CardUserNumber
+                    record["Door"] = (row.DeviceDoorObjectName).strip()
+                    event_type = row.EventName
+                    if event_type in result:
+                        result[event_type].append(record)
+                    else:
+                        result[event_type] = []
+                        result[event_type].append(record)
+                return result
+            
+            else:
+                result = []
+                for row in rows:
+                    record = {}
+                    record["Timestamp"] = row.Time_Stamp
+                    if timestamp_format is not None:
+                        record["Timestamp"] = cls._get_timestamp_format(row.Time_Stamp, timestamp_format)
+                    if row.CardUserName is None:
+                        record["Card User"]  = ""
+                    else:
+                        record["Card User"]  = row.CardUserName
+                    if row.CardUserNumber is None:
+                        record["Card Number"] = ""
+                    else:
+                        record["Card Number"] = row.CardUserNumber
+                    record["Door"] = (row.DeviceDoorObjectName).strip()
+                    record["Event Type"] = row.EventName
+                    result.append(record)
+                return result
                 
         
         finally:
@@ -1580,7 +1810,6 @@ class AccessActivity(object):
     def _get_timestamp_format(cls, dt_timestamp, timestamp_format):
         """ change datetime of timestamp to a pre formatted datetime string """
         return dt_timestamp.strftime("%Y/%m/%d %I:%M %p")
-        
             
             
     @classmethod

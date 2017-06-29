@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from BAS_Report_Generic import BASReportPageObj
 from libraries.eweb.PageObjects.BaseWebElement import BaseWebElement, EditBoxWebElement, DropDownBoxWebElement, CheckBoxWebElement, ButtonWebElement
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, InvalidElementStateException
 import time
 
 
@@ -62,7 +62,9 @@ class ValueFormatDropDownBox(DropDownBoxWebElement):
         """ select a item from the drop down box """
         dropDownList = self.getDropDownList()
         if dropDownList:
+            time.sleep(1)
             itemObjs = dropDownList.find_elements_by_class_name('x-boundlist-item')
+            
             target = None
             for item in itemObjs:
                 if item.text == val:
@@ -70,6 +72,7 @@ class ValueFormatDropDownBox(DropDownBoxWebElement):
                     break
             if target:
                 target.location_once_scrolled_into_view
+                time.sleep(1)
                 target.click()
      
     def getDropDownList(self): 
@@ -223,6 +226,49 @@ class ReportFormatWindow(BaseWebElement):
                 if result:
                     menuItem = self._getContextMenuItem(sorting)
                     menuItem.click()
+                    
+    def editColumn(self, dicColumnSetting):
+        """ edit an existing column """
+        target = None
+        columnProperty = dicColumnSetting["Property"]
+        id = "reportPreviewGrid-body"
+        driver = self.getDriver()
+        targetElem = driver.find_element_by_id(id)
+        targetElem = targetElem.find_element_by_xpath('./div')
+        id = targetElem.get_attribute("id")
+        targetElem = driver.find_element_by_xpath("//table[starts-with(@id, '%s')]"%id)    # table elem
+        tdElems = targetElem.find_elements_by_tag_name("td")
+        for tdElem in tdElems:
+            if columnProperty in tdElem.text:
+                target = tdElem
+                break
+        if target is not None:
+            target.location_once_scrolled_into_view
+            target.click()
+            result = self.columnFormatWindow.isDisplayed()
+            if not result:
+                raise Exception("Edit Report Format - Edit Column window is not displayed")
+            if dicColumnSetting["Heading"] is not None:
+                self.columnFormatWindow.columnName = dicColumnSetting["Heading"]
+            if dicColumnSetting["Property"] is not None:
+                try: self.columnFormatWindow.columnProperty = dicColumnSetting["Property"]
+                except InvalidElementStateException: pass
+            if dicColumnSetting["Alignment"] is not None:
+                self.columnFormatWindow.alignment = dicColumnSetting["Alignment"]
+            if dicColumnSetting["Format"] is not None:
+                self.columnFormatWindow.valueFormat = dicColumnSetting["Format"]
+            if dicColumnSetting["Visible"] is not None:
+                self.columnFormatWindow.visible = dicColumnSetting["Visible"]
+            self.columnFormatWindow.ok.click()
+            time.sleep(1)
+        else:
+            raise Exception("column property '%s' was not found in Edit Report Format window"%columnProperty)
+                
+                
+            
+        
+        
+        
         
     def addNewColumn(self, dicColumnSetting):
         """ add a new column to preview grid """

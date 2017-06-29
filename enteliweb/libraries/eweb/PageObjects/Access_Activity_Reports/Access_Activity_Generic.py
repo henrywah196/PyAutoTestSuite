@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from libraries.eweb.PageObjects.BasePageObject import BaseFrameObject
 from libraries.eweb.PageObjects.BaseWebElement import BaseWebElement, TextBoxWebElement, EditBoxWebElement, ButtonWebElement, DropDownBoxWebElement, CheckBoxWebElement
 from libraries.eweb.PageObjects.BAS_Reports.BAS_Report_Generic import ReportHistoryDropDown, DeleteConfirmWindow, GeneratedReportLogo
+from libraries.eweb.PageObjects.BAS_Reports.Ad_Hoc import ReportFormatWindow
 import time, datetime
 import types
 
@@ -245,9 +246,10 @@ class AccessActivityReportPageObj(BaseFrameObject):
     schedule = ButtonWebElement("AccessActivityReportPageObj.schedule")
     email    = ButtonWebElement("AccessActivityReportPageObj.email")
     
-    reportName  = EditBoxWebElement("AccessActivityReportPageObj.reportName")
-    reportTitle = EditBoxWebElement("AccessActivityReportPageObj.reportTitle")
-    site        = DropDownBoxWebElement("AccessActivityReportPageObj.site") 
+    reportName     = EditBoxWebElement("AccessActivityReportPageObj.reportName")
+    reportTitle    = EditBoxWebElement("AccessActivityReportPageObj.reportTitle")
+    site           = DropDownBoxWebElement("AccessActivityReportPageObj.site") 
+    datetimeFormat = DropDownBoxWebElement("AccessActivityReportPageObj.datetimeFormat") 
     
     dateRange       = DropDownBoxWebElement("AccessActivityReportPageObj.dateRange")
     dateFrom        = EditBoxWebElement("AccessActivityReportPageObj.dateFrom")
@@ -272,6 +274,9 @@ class AccessActivityReportPageObj(BaseFrameObject):
     findCardUsersWindow = ObjectSelectWindow("AccessActivityReportPageObj.findCardUsersWindow")
     findDoorsWindow     = ObjectSelectWindow("AccessActivityReportPageObj.findDoorsWindow")
     selectEventsWindow  = ObjectSelectWindow("AccessActivityReportPageObj.selectEventsWindow")
+    
+    editFormat         = ButtonWebElement("AccessActivityReportPageObj.editFormat")
+    reportFormatWindow = ReportFormatWindow("AccessActivityReportPageObj.reportFormatWindow")
     
     deleteConfirmWindow = DeleteConfirmWindow("AccessActivityReportPageObj.deleteConfirmWindow")
     
@@ -339,46 +344,50 @@ class AccessActivityReportPageObj(BaseFrameObject):
     
     def setupCareUsers(self, settingCardUsers):
         """ setup card users criteria based on the given settings """
-        self.cardsDelete.click()
-        self.cardsEdit.click()
-        result = self.findCardUsersWindow.isDisplayed()
-        if result:
-            option = settingCardUsers["Find Option"]
-            filterBy = settingCardUsers["Filter By"]
-            if option == "Find by Keyword":
-                self.findCardUsersWindow.btnByKeyword.click()
-                self.findCardUsersWindow.filterBy = filterBy
-            elif option == "Find and Select by Name":
-                self.findCardUsersWindow.btnByName.click()
-                for item in filterBy:
-                    self.findCardUsersWindow.filterBy = item[0]
-                    time.sleep(1)
-                    self.findCardUsersWindow.selectObject(item)
-            self.findCardUsersWindow.btnOK.click()
-        else:
-            raise Exception("Find Card Users Window doesn't pop up.")
+        if self.cardsDelete.isDisplayed():
+            self.cardsDelete.click()
+        if settingCardUsers is not None:
+            self.cardsEdit.click()
+            result = self.findCardUsersWindow.isDisplayed()
+            if result:
+                option = settingCardUsers["Find Option"]
+                filterBy = settingCardUsers["Filter By"]
+                if option == "Find by Keyword":
+                    self.findCardUsersWindow.btnByKeyword.click()
+                    self.findCardUsersWindow.filterBy = filterBy
+                elif option == "Find and Select by Name":
+                    self.findCardUsersWindow.btnByName.click()
+                    for item in filterBy:
+                        self.findCardUsersWindow.filterBy = item[0]
+                        time.sleep(1)
+                        self.findCardUsersWindow.selectObject(item)
+                self.findCardUsersWindow.btnOK.click()
+            else:
+                raise Exception("Find Card Users Window doesn't pop up.")
             
     
     def setupDoors(self, settingDoors):
         """ setup doors criteria based on the given settings """
-        self.doorsDelete.click()
-        self.doorsEdit.click()
-        result = self.findDoorsWindow.isDisplayed()
-        if result:
-            option = settingDoors["Find Option"]
-            filterBy = settingDoors["Filter By"]
-            if option == "Find by Keyword":
-                self.findDoorsWindow.btnByKeyword.click()
-                self.findDoorsWindow.filterBy = filterBy
-            elif option == "Find and Select by Name":
-                self.findDoorsWindow.btnByName.click()
-                for item in filterBy:
-                    self.findDoorsWindow.filterBy = item[0]
-                    time.sleep(1)
-                    self.findDoorsWindow.selectObject(item)
-            self.findDoorsWindow.btnOK.click()
-        else:
-            raise Exception("Find Doors window doesn't pop up")
+        if self.doorsDelete.isDisplayed():
+            self.doorsDelete.click()
+        if settingDoors is not None:
+            self.doorsEdit.click()
+            result = self.findDoorsWindow.isDisplayed()
+            if result:
+                option = settingDoors["Find Option"]
+                filterBy = settingDoors["Filter By"]
+                if option == "Find by Keyword":
+                    self.findDoorsWindow.btnByKeyword.click()
+                    self.findDoorsWindow.filterBy = filterBy
+                elif option == "Find and Select by Name":
+                    self.findDoorsWindow.btnByName.click()
+                    for item in filterBy:
+                        self.findDoorsWindow.filterBy = item[0]
+                        time.sleep(1)
+                        self.findDoorsWindow.selectObject(item)
+                self.findDoorsWindow.btnOK.click()
+            else:
+                raise Exception("Find Doors window doesn't pop up")
     
     
     def setupEvents(self, settingEvents):

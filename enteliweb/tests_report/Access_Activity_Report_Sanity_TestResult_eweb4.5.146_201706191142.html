@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Access Activity Sanity Test</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Access Activity Sanity Test</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-19 11:42:03</p>
+<p class='attribute'><strong>Duration:</strong> 00:00:00.513</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Failure 2</p>
+
+<p class='description'>Test against eweb4.5.146 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.Access_Activity_Report.DB_Test.DB_Test.TestCase</td>
+    <td>00:00:00.513</td>
+    <td>3</td>
+    <td>1</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test02_1: Verify one-to-one mapping between event and access_event table</div></td>
+    <td>00:00:00.122</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\DB_Test\DB_Test.py", line 237, in test02
+    self.assertItemsEqual(rows, [], "Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed")
+AssertionError: Element counts were not equal:
+First has 1, Second has 0:  (4226L, )
+First has 1, Second has 0:  (4230L, )
+First has 1, Second has 0:  (4232L, )
+First has 1, Second has 0:  (4233L, )
+First has 1, Second has 0:  (4236L, )
+First has 1, Second has 0:  (4237L, )
+First has 1, Second has 0:  (4238L, )
+First has 1, Second has 0:  (4239L, )
+First has 1, Second has 0:  (4240L, )
+First has 1, Second has 0:  (4241L, )
+First has 1, Second has 0:  (4242L, )
+First has 1, Second has 0:  (4243L, )
+First has 1, Second has 0:  (4244L, )
+First has 1, Second has 0:  (4245L, )
+First has 1, Second has 0:  (4246L, )
+First has 1, Second has 0:  (4248L, )
+First has 1, Second has 0:  (4254L, )
+First has 1, Second has 0:  (4255L, )
+First has 1, Second has 0:  (4256L, )
+First has 1, Second has 0:  (4257L, )
+First has 1, Second has 0:  (4265L, )
+First has 1, Second has 0:  (4266L, )
+First has 1, Second has 0:  (4267L, )
+First has 1, Second has 0:  (4268L, )
+First has 1, Second has 0:  (4270L, )
+First has 1, Second has 0:  (4271L, )
+First has 1, Second has 0:  (4277L, )
+First has 1, Second has 0:  (4278L, )
+First has 1, Second has 0:  (4279L, )
+First has 1, Second has 0:  (4281L, )
+First has 1, Second has 0:  (4282L, )
+First has 1, Second has 0:  (4283L, )
+First has 1, Second has 0:  (4284L, )
+First has 1, Second has 0:  (4285L, )
+First has 1, Second has 0:  (4286L, )
+First has 1, Second has 0:  (4287L, )
+First has 1, Second has 0:  (4300L, )
+First has 1, Second has 0:  (4305L, )
+First has 1, Second has 0:  (4306L, )
+First has 1, Second has 0:  (4307L, )
+First has 1, Second has 0:  (4309L, )
+First has 1, Second has 0:  (4310L, )
+First has 1, Second has 0:  (4317L, )
+First has 1, Second has 0:  (4319L, )
+First has 1, Second has 0:  (4320L, )
+First has 1, Second has 0:  (4321L, )
+First has 1, Second has 0:  (4322L, )
+First has 1, Second has 0:  (4323L, )
+First has 1, Second has 0:  (4324L, )
+First has 1, Second has 0:  (4325L, )
+First has 1, Second has 0:  (4335L, )
+First has 1, Second has 0:  (4336L, )
+First has 1, Second has 0:  (4338L, )
+First has 1, Second has 0:  (4339L, )
+First has 1, Second has 0:  (4340L, )
+First has 1, Second has 0:  (4341L, )
+First has 1, Second has 0:  (4348L, )
+First has 1, Second has 0:  (4349L, )
+First has 1, Second has 0:  (4350L, )
+First has 1, Second has 0:  (4352L, )
+First has 1, Second has 0:  (4353L, )
+First has 1, Second has 0:  (4355L, )
+First has 1, Second has 0:  (4356L, )
+First has 1, Second has 0:  (4357L, )
+First has 1, Second has 0:  (4358L, )
+First has 1, Second has 0:  (4359L, )
+First has 1, Second has 0:  (4360L, )
+First has 1, Second has 0:  (4368L, )
+First has 1, Second has 0:  (4369L, )
+First has 1, Second has 0:  (4370L, )
+First has 1, Second has 0:  (4371L, )
+First has 1, Second has 0:  (4372L, )
+First has 1, Second has 0:  (4373L, )
+First has 1, Second has 0:  (4374L, )
+First has 1, Second has 0:  (4375L, )
+First has 1, Second has 0:  (4376L, )
+First has 1, Second has 0:  (4377L, )
+First has 1, Second has 0:  (4378L, )
+First has 1, Second has 0:  (4379L, )
+First has 1, Second has 0:  (4380L, )
+First has 1, Second has 0:  (4382L, )
+First has 1, Second has 0:  (4383L, )
+First has 1, Second has 0:  (4384L, )
+First has 1, Second has 0:  (4385L, )
+First has 1, Second has 0:  (4390L, )
+First has 1, Second has 0:  (4392L, )
+First has 1, Second has 0:  (4393L, )
+First has 1, Second has 0:  (4394L, )
+First has 1, Second has 0:  (4395L, )
+First has 1, Second has 0:  (4396L, )
+First has 1, Second has 0:  (4397L, )
+First has 1, Second has 0:  (4398L, )
+First has 1, Second has 0:  (4399L, )
+First has 1, Second has 0:  (4408L, )
+First has 1, Second has 0:  (4409L, )
+First has 1, Second has 0:  (4411L, )
+First has 1, Second has 0:  (4412L, )
+First has 1, Second has 0:  (4413L, )
+First has 1, Second has 0:  (4415L, )
+First has 1, Second has 0:  (4416L, )
+First has 1, Second has 0:  (4417L, )
+First has 1, Second has 0:  (4418L, )
+First has 1, Second has 0:  (4419L, )
+First has 1, Second has 0:  (4428L, )
+First has 1, Second has 0:  (4430L, )
+First has 1, Second has 0:  (4431L, )
+First has 1, Second has 0:  (4432L, )
+First has 1, Second has 0:  (4433L, )
+First has 1, Second has 0:  (4434L, )
+First has 1, Second has 0:  (4435L, )
+First has 1, Second has 0:  (4436L, )
+First has 1, Second has 0:  (4437L, )
+First has 1, Second has 0:  (4438L, )
+First has 1, Second has 0:  (4439L, )
+First has 1, Second has 0:  (4441L, )
+First has 1, Second has 0:  (4443L, )
+First has 1, Second has 0:  (4444L, )
+First has 1, Second has 0:  (4448L, )
+First has 1, Second has 0:  (4450L, )
+First has 1, Second has 0:  (4451L, )
+First has 1, Second has 0:  (4453L, )
+First has 1, Second has 0:  (4454L, )
+First has 1, Second has 0:  (4455L, )
+First has 1, Second has 0:  (4456L, )
+First has 1, Second has 0:  (4457L, )
+First has 1, Second has 0:  (4458L, )
+First has 1, Second has 0:  (4466L, )
+First has 1, Second has 0:  (4467L, )
+First has 1, Second has 0:  (4469L, )
+First has 1, Second has 0:  (4472L, )
+First has 1, Second has 0:  (4473L, )
+First has 1, Second has 0:  (4474L, )
+First has 1, Second has 0:  (4476L, )
+First has 1, Second has 0:  (4477L, )
+First has 1, Second has 0:  (4478L, )
+First has 1, Second has 0:  (4479L, )
+First has 1, Second has 0:  (4486L, )
+First has 1, Second has 0:  (4487L, )
+First has 1, Second has 0:  (4488L, )
+First has 1, Second has 0:  (4494L, )
+First has 1, Second has 0:  (4495L, )
+First has 1, Second has 0:  (4498L, )
+First has 1, Second has 0:  (4499L, )
+First has 1, Second has 0:  (4500L, )
+First has 1, Second has 0:  (4501L, )
+First has 1, Second has 0:  (4502L, )
+First has 1, Second has 0:  (4503L, )
+First has 1, Second has 0:  (4504L, )
+First has 1, Second has 0:  (4505L, )
+First has 1, Second has 0:  (4506L, )
+First has 1, Second has 0:  (4507L, )
+First has 1, Second has 0:  (4511L, )
+First has 1, Second has 0:  (4513L, )
+First has 1, Second has 0:  (4514L, )
+First has 1, Second has 0:  (4515L, )
+First has 1, Second has 0:  (4516L, )
+First has 1, Second has 0:  (4517L, )
+First has 1, Second has 0:  (4518L, )
+First has 1, Second has 0:  (4519L, )
+First has 1, Second has 0:  (4520L, )
+First has 1, Second has 0:  (4521L, )
+First has 1, Second has 0:  (4523L, )
+First has 1, Second has 0:  (4524L, )
+First has 1, Second has 0:  (4526L, )
+First has 1, Second has 0:  (4527L, )
+First has 1, Second has 0:  (4538L, )
+First has 1, Second has 0:  (4539L, )
+First has 1, Second has 0:  (4542L, )
+First has 1, Second has 0:  (4543L, )
+First has 1, Second has 0:  (4545L, )
+First has 1, Second has 0:  (4546L, )
+First has 1, Second has 0:  (4550L, )
+First has 1, Second has 0:  (4551L, )
+First has 1, Second has 0:  (4552L, )
+First has 1, Second has 0:  (4554L, )
+First has 1, Second has 0:  (4555L, )
+First has 1, Second has 0:  (4556L, )
+First has 1, Second has 0:  (4557L, )
+First has 1, Second has 0:  (4558L, )
+First has 1, Second has 0:  (4566L, )
+First has 1, Second has 0:  (4567L, )
+First has 1, Second has 0:  (4568L, )
+First has 1, Second has 0:  (4569L, )
+First has 1, Second has 0:  (4570L, )
+First has 1, Second has 0:  (4574L, )
+First has 1, Second has 0:  (4575L, )
+First has 1, Second has 0:  (4577L, )
+First has 1, Second has 0:  (4578L, )
+First has 1, Second has 0:  (4579L, )
+First has 1, Second has 0:  (4580L, )
+First has 1, Second has 0:  (4581L, )
+First has 1, Second has 0:  (4582L, )
+First has 1, Second has 0:  (4592L, )
+First has 1, Second has 0:  (4593L, )
+First has 1, Second has 0:  (4594L, )
+First has 1, Second has 0:  (4596L, )
+First has 1, Second has 0:  (4597L, )
+First has 1, Second has 0:  (4598L, )
+First has 1, Second has 0:  (4599L, )
+First has 1, Second has 0:  (4600L, )
+First has 1, Second has 0:  (4601L, )
+First has 1, Second has 0:  (4604L, )
+First has 1, Second has 0:  (4605L, )
+First has 1, Second has 0:  (4606L, )
+First has 1, Second has 0:  (4607L, )
+First has 1, Second has 0:  (4608L, )
+First has 1, Second has 0:  (4609L, )
+First has 1, Second has 0:  (4610L, )
+First has 1, Second has 0:  (4611L, )
+First has 1, Second has 0:  (4612L, )
+First has 1, Second has 0:  (4620L, )
+First has 1, Second has 0:  (4621L, )
+First has 1, Second has 0:  (4622L, )
+First has 1, Second has 0:  (4623L, )
+First has 1, Second has 0:  (4624L, )
+First has 1, Second has 0:  (4625L, )
+First has 1, Second has 0:  (4626L, )
+First has 1, Second has 0:  (4627L, )
+First has 1, Second has 0:  (4628L, )
+First has 1, Second has 0:  (4629L, )
+First has 1, Second has 0:  (4630L, )
+First has 1, Second has 0:  (4631L, )
+First has 1, Second has 0:  (4632L, )
+First has 1, Second has 0:  (4633L, )
+First has 1, Second has 0:  (4634L, )
+First has 1, Second has 0:  (4635L, )
+First has 1, Second has 0:  (4636L, )
+First has 1, Second has 0:  (4637L, )
+First has 1, Second has 0:  (4638L, )
+First has 1, Second has 0:  (4642L, )
+First has 1, Second has 0:  (4643L, )
+First has 1, Second has 0:  (4644L, )
+First has 1, Second has 0:  (4646L, )
+First has 1, Second has 0:  (4647L, )
+First has 1, Second has 0:  (4653L, )
+First has 1, Second has 0:  (4654L, )
+First has 1, Second has 0:  (4656L, )
+First has 1, Second has 0:  (4657L, )
+First has 1, Second has 0:  (4658L, )
+First has 1, Second has 0:  (4659L, )
+First has 1, Second has 0:  (4660L, )
+First has 1, Second has 0:  (4661L, )
+First has 1, Second has 0:  (4662L, )
+First has 1, Second has 0:  (4663L, )
+First has 1, Second has 0:  (4664L, )
+First has 1, Second has 0:  (4665L, )
+First has 1, Second has 0:  (4666L, )
+First has 1, Second has 0:  (4667L, )
+First has 1, Second has 0:  (4668L, )
+First has 1, Second has 0:  (4669L, )
+First has 1, Second has 0:  (4670L, )
+First has 1, Second has 0:  (4671L, )
+First has 1, Second has 0:  (4672L, )
+First has 1, Second has 0:  (4673L, )
+First has 1, Second has 0:  (4674L, )
+First has 1, Second has 0:  (4675L, )
+First has 1, Second has 0:  (4676L, )
+First has 1, Second has 0:  (4677L, )
+First has 1, Second has 0:  (4678L, )
+First has 1, Second has 0:  (4679L, )
+First has 1, Second has 0:  (4680L, )
+First has 1, Second has 0:  (4681L, )
+First has 1, Second has 0:  (4682L, )
+First has 1, Second has 0:  (4683L, )
+First has 1, Second has 0:  (4684L, )
+First has 1, Second has 0:  (4685L, )
+First has 1, Second has 0:  (4686L, )
+First has 1, Second has 0:  (4687L, )
+First has 1, Second has 0:  (4688L, )
+First has 1, Second has 0:  (4689L, )
+First has 1, Second has 0:  (4690L, )
+First has 1, Second has 0:  (4691L, )
+First has 1, Second has 0:  (4692L, )
+First has 1, Second has 0:  (4693L, )
+First has 1, Second has 0:  (4694L, )
+First has 1, Second has 0:  (4695L, )
+First has 1, Second has 0:  (4696L, )
+First has 1, Second has 0:  (4697L, )
+First has 1, Second has 0:  (4698L, )
+First has 1, Second has 0:  (4699L, )
+First has 1, Second has 0:  (4700L, )
+First has 1, Second has 0:  (4701L, )
+First has 1, Second has 0:  (4702L, )
+First has 1, Second has 0:  (4703L, )
+First has 1, Second has 0:  (4704L, )
+First has 1, Second has 0:  (4705L, )
+First has 1, Second has 0:  (4706L, )
+First has 1, Second has 0:  (4707L, )
+First has 1, Second has 0:  (4708L, )
+First has 1, Second has 0:  (4709L, )
+First has 1, Second has 0:  (4710L, )
+First has 1, Second has 0:  (4711L, )
+First has 1, Second has 0:  (4712L, )
+First has 1, Second has 0:  (4713L, )
+First has 1, Second has 0:  (4714L, )
+First has 1, Second has 0:  (4715L, )
+First has 1, Second has 0:  (4716L, )
+First has 1, Second has 0:  (4717L, )
+First has 1, Second has 0:  (4718L, )
+First has 1, Second has 0:  (4719L, )
+First has 1, Second has 0:  (4720L, )
+First has 1, Second has 0:  (4721L, )
+First has 1, Second has 0:  (4722L, )
+First has 1, Second has 0:  (4723L, )
+First has 1, Second has 0:  (4724L, )
+First has 1, Second has 0:  (4725L, )
+First has 1, Second has 0:  (4726L, )
+First has 1, Second has 0:  (4727L, )
+First has 1, Second has 0:  (4728L, )
+First has 1, Second has 0:  (4729L, )
+First has 1, Second has 0:  (4730L, )
+First has 1, Second has 0:  (4731L, )
+First has 1, Second has 0:  (4732L, )
+First has 1, Second has 0:  (4733L, )
+First has 1, Second has 0:  (4734L, )
+First has 1, Second has 0:  (4735L, )
+First has 1, Second has 0:  (4736L, )
+First has 1, Second has 0:  (4737L, )
+First has 1, Second has 0:  (4738L, )
+First has 1, Second has 0:  (4739L, )
+First has 1, Second has 0:  (4740L, )
+First has 1, Second has 0:  (4741L, )
+First has 1, Second has 0:  (4742L, )
+First has 1, Second has 0:  (4743L, )
+First has 1, Second has 0:  (4744L, )
+First has 1, Second has 0:  (4745L, )
+First has 1, Second has 0:  (4746L, )
+First has 1, Second has 0:  (4747L, )
+First has 1, Second has 0:  (4748L, )
+First has 1, Second has 0:  (4749L, )
+First has 1, Second has 0:  (4750L, )
+First has 1, Second has 0:  (4751L, )
+First has 1, Second has 0:  (4752L, )
+First has 1, Second has 0:  (4753L, )
+First has 1, Second has 0:  (4754L, )
+First has 1, Second has 0:  (4755L, )
+First has 1, Second has 0:  (4756L, )
+First has 1, Second has 0:  (4757L, )
+First has 1, Second has 0:  (4758L, )
+First has 1, Second has 0:  (4761L, )
+First has 1, Second has 0:  (4763L, )
+First has 1, Second has 0:  (4766L, )
+First has 1, Second has 0:  (4768L, )
+First has 1, Second has 0:  (4770L, )
+First has 1, Second has 0:  (4772L, )
+First has 1, Second has 0:  (4774L, )
+First has 1, Second has 0:  (4776L, )
+First has 1, Second has 0:  (4778L, )
+First has 1, Second has 0:  (4780L, )
+First has 1, Second has 0:  (4782L, )
+First has 1, Second has 0:  (4783L, )
+First has 1, Second has 0:  (4784L, )
+First has 1, Second has 0:  (4785L, )
+First has 1, Second has 0:  (4786L, )
+First has 1, Second has 0:  (4792L, )
+First has 1, Second has 0:  (4794L, )
+First has 1, Second has 0:  (4796L, )
+First has 1, Second has 0:  (4798L, )
+First has 1, Second has 0:  (4800L, )
+First has 1, Second has 0:  (4802L, )
+First has 1, Second has 0:  (4804L, )
+First has 1, Second has 0:  (4806L, )
+First has 1, Second has 0:  (4808L, )
+First has 1, Second has 0:  (4810L, )
+First has 1, Second has 0:  (4812L, )
+First has 1, Second has 0:  (4814L, )
+First has 1, Second has 0:  (4816L, )
+First has 1, Second has 0:  (4818L, )
+First has 1, Second has 0:  (4820L, )
+First has 1, Second has 0:  (4822L, )
+First has 1, Second has 0:  (4824L, )
+First has 1, Second has 0:  (4826L, )
+First has 1, Second has 0:  (4828L, )
+First has 1, Second has 0:  (4830L, )
+First has 1, Second has 0:  (4832L, )
+First has 1, Second has 0:  (4834L, )
+First has 1, Second has 0:  (4836L, )
+First has 1, Second has 0:  (4838L, )
+First has 1, Second has 0:  (4840L, )
+First has 1, Second has 0:  (4842L, )
+First has 1, Second has 0:  (4844L, )
+First has 1, Second has 0:  (4846L, )
+First has 1, Second has 0:  (4848L, )
+First has 1, Second has 0:  (4850L, )
+First has 1, Second has 0:  (4852L, )
+First has 1, Second has 0:  (4854L, )
+First has 1, Second has 0:  (4856L, )
+First has 1, Second has 0:  (4858L, )
+First has 1, Second has 0:  (4860L, )
+First has 1, Second has 0:  (4862L, )
+First has 1, Second has 0:  (4864L, )
+First has 1, Second has 0:  (4866L, )
+First has 1, Second has 0:  (4868L, )
+First has 1, Second has 0:  (4870L, )
+First has 1, Second has 0:  (4872L, )
+First has 1, Second has 0:  (4874L, )
+First has 1, Second has 0:  (4876L, )
+First has 1, Second has 0:  (4878L, )
+First has 1, Second has 0:  (4880L, )
+First has 1, Second has 0:  (4882L, )
+First has 1, Second has 0:  (4884L, )
+First has 1, Second has 0:  (4886L, )
+First has 1, Second has 0:  (4888L, )
+First has 1, Second has 0:  (4890L, )
+First has 1, Second has 0:  (4892L, )
+First has 1, Second has 0:  (4894L, )
+First has 1, Second has 0:  (4896L, )
+First has 1, Second has 0:  (4898L, )
+First has 1, Second has 0:  (4900L, )
+First has 1, Second has 0:  (4902L, )
+First has 1, Second has 0:  (4904L, )
+First has 1, Second has 0:  (4906L, )
+First has 1, Second has 0:  (4908L, )
+First has 1, Second has 0:  (4910L, )
+First has 1, Second has 0:  (4912L, )
+First has 1, Second has 0:  (4914L, )
+First has 1, Second has 0:  (4916L, )
+First has 1, Second has 0:  (4918L, )
+First has 1, Second has 0:  (4920L, )
+First has 1, Second has 0:  (4922L, )
+First has 1, Second has 0:  (4924L, )
+First has 1, Second has 0:  (4926L, )
+First has 1, Second has 0:  (4928L, )
+First has 1, Second has 0:  (4930L, )
+First has 1, Second has 0:  (4932L, )
+First has 1, Second has 0:  (4934L, )
+First has 1, Second has 0:  (4936L, )
+First has 1, Second has 0:  (4938L, )
+First has 1, Second has 0:  (4940L, )
+First has 1, Second has 0:  (4942L, )
+First has 1, Second has 0:  (4944L, )
+First has 1, Second has 0:  (4946L, )
+First has 1, Second has 0:  (4948L, )
+First has 1, Second has 0:  (4950L, )
+First has 1, Second has 0:  (4952L, )
+First has 1, Second has 0:  (4954L, )
+First has 1, Second has 0:  (4956L, )
+First has 1, Second has 0:  (4958L, )
+First has 1, Second has 0:  (4960L, )
+First has 1, Second has 0:  (4962L, )
+First has 1, Second has 0:  (4964L, )
+First has 1, Second has 0:  (4966L, )
+First has 1, Second has 0:  (4968L, )
+First has 1, Second has 0:  (4970L, )
+First has 1, Second has 0:  (4972L, )
+First has 1, Second has 0:  (4974L, )
+First has 1, Second has 0:  (4976L, )
+First has 1, Second has 0:  (4978L, )
+First has 1, Second has 0:  (4980L, )
+First has 1, Second has 0:  (4982L, )
+First has 1, Second has 0:  (4984L, )
+First has 1, Second has 0:  (4986L, )
+First has 1, Second has 0:  (4988L, )
+First has 1, Second has 0:  (4990L, )
+First has 1, Second has 0:  (4992L, )
+First has 1, Second has 0:  (4994L, )
+First has 1, Second has 0:  (4996L, )
+First has 1, Second has 0:  (4998L, )
+First has 1, Second has 0:  (5000L, )
+First has 1, Second has 0:  (5002L, )
+First has 1, Second has 0:  (5004L, )
+First has 1, Second has 0:  (5006L, )
+First has 1, Second has 0:  (5008L, )
+First has 1, Second has 0:  (5010L, )
+First has 1, Second has 0:  (5012L, )
+First has 1, Second has 0:  (5014L, )
+First has 1, Second has 0:  (5016L, )
+First has 1, Second has 0:  (5018L, )
+First has 1, Second has 0:  (5020L, )
+First has 1, Second has 0:  (5022L, )
+First has 1, Second has 0:  (5024L, )
+First has 1, Second has 0:  (5026L, )
+First has 1, Second has 0:  (5028L, )
+First has 1, Second has 0:  (5030L, )
+First has 1, Second has 0:  (5032L, )
+First has 1, Second has 0:  (5034L, )
+First has 1, Second has 0:  (5036L, )
+First has 1, Second has 0:  (5038L, )
+First has 1, Second has 0:  (5040L, )
+First has 1, Second has 0:  (5042L, )
+First has 1, Second has 0:  (5044L, )
+First has 1, Second has 0:  (5046L, )
+First has 1, Second has 0:  (5048L, )
+First has 1, Second has 0:  (5050L, )
+First has 1, Second has 0:  (5052L, )
+First has 1, Second has 0:  (5054L, )
+First has 1, Second has 0:  (5056L, )
+First has 1, Second has 0:  (5058L, )
+First has 1, Second has 0:  (5060L, )
+First has 1, Second has 0:  (5062L, )
+First has 1, Second has 0:  (5064L, )
+First has 1, Second has 0:  (5066L, )
+First has 1, Second has 0:  (5068L, )
+First has 1, Second has 0:  (5070L, )
+First has 1, Second has 0:  (5072L, )
+First has 1, Second has 0:  (5074L, )
+First has 1, Second has 0:  (5076L, )
+First has 1, Second has 0:  (5078L, )
+First has 1, Second has 0:  (5080L, )
+First has 1, Second has 0:  (5082L, )
+First has 1, Second has 0:  (5084L, )
+First has 1, Second has 0:  (5086L, )
+First has 1, Second has 0:  (5088L, )
+First has 1, Second has 0:  (5090L, )
+First has 1, Second has 0:  (5092L, )
+First has 1, Second has 0:  (5094L, )
+First has 1, Second has 0:  (5096L, )
+First has 1, Second has 0:  (5098L, )
+First has 1, Second has 0:  (5100L, )
+First has 1, Second has 0:  (5102L, )
+First has 1, Second has 0:  (5104L, )
+First has 1, Second has 0:  (5106L, )
+First has 1, Second has 0:  (5108L, )
+First has 1, Second has 0:  (5110L, )
+First has 1, Second has 0:  (5112L, )
+First has 1, Second has 0:  (5114L, )
+First has 1, Second has 0:  (5116L, )
+First has 1, Second has 0:  (5118L, )
+First has 1, Second has 0:  (5120L, )
+First has 1, Second has 0:  (5122L, )
+First has 1, Second has 0:  (5124L, )
+First has 1, Second has 0:  (5126L, )
+First has 1, Second has 0:  (5128L, )
+First has 1, Second has 0:  (5130L, )
+First has 1, Second has 0:  (5132L, )
+First has 1, Second has 0:  (5134L, )
+First has 1, Second has 0:  (5136L, )
+First has 1, Second has 0:  (5138L, )
+First has 1, Second has 0:  (5140L, )
+First has 1, Second has 0:  (5142L, )
+First has 1, Second has 0:  (5144L, )
+First has 1, Second has 0:  (5146L, )
+First has 1, Second has 0:  (5148L, )
+First has 1, Second has 0:  (5150L, )
+First has 1, Second has 0:  (5152L, )
+First has 1, Second has 0:  (5154L, )
+First has 1, Second has 0:  (5156L, )
+First has 1, Second has 0:  (5158L, )
+First has 1, Second has 0:  (5160L, )
+First has 1, Second has 0:  (5162L, )
+First has 1, Second has 0:  (5164L, )
+First has 1, Second has 0:  (5166L, )
+First has 1, Second has 0:  (5168L, )
+First has 1, Second has 0:  (5170L, )
+First has 1, Second has 0:  (5172L, )
+First has 1, Second has 0:  (5174L, )
+First has 1, Second has 0:  (5176L, )
+First has 1, Second has 0:  (5178L, )
+First has 1, Second has 0:  (5180L, )
+First has 1, Second has 0:  (5182L, )
+First has 1, Second has 0:  (5184L, )
+First has 1, Second has 0:  (5186L, )
+First has 1, Second has 0:  (5188L, )
+First has 1, Second has 0:  (5190L, )
+First has 1, Second has 0:  (5192L, )
+First has 1, Second has 0:  (5194L, )
+First has 1, Second has 0:  (5196L, )
+First has 1, Second has 0:  (5198L, )
+First has 1, Second has 0:  (5200L, )
+First has 1, Second has 0:  (5202L, )
+First has 1, Second has 0:  (5204L, )
+First has 1, Second has 0:  (5206L, )
+First has 1, Second has 0:  (5208L, )
+First has 1, Second has 0:  (5210L, )
+First has 1, Second has 0:  (5212L, )
+First has 1, Second has 0:  (5214L, )
+First has 1, Second has 0:  (5216L, )
+First has 1, Second has 0:  (5218L, )
+First has 1, Second has 0:  (5220L, )
+First has 1, Second has 0:  (5222L, )
+First has 1, Second has 0:  (5224L, )
+First has 1, Second has 0:  (5226L, )
+First has 1, Second has 0:  (5228L, )
+First has 1, Second has 0:  (5230L, )
+First has 1, Second has 0:  (5232L, )
+First has 1, Second has 0:  (5234L, )
+First has 1, Second has 0:  (5236L, )
+First has 1, Second has 0:  (5238L, )
+First has 1, Second has 0:  (5240L, )
+First has 1, Second has 0:  (5242L, )
+First has 1, Second has 0:  (5244L, )
+First has 1, Second has 0:  (5246L, )
+First has 1, Second has 0:  (5248L, )
+First has 1, Second has 0:  (5250L, )
+First has 1, Second has 0:  (5252L, )
+First has 1, Second has 0:  (5254L, )
+First has 1, Second has 0:  (5256L, )
+First has 1, Second has 0:  (5258L, )
+First has 1, Second has 0:  (5260L, )
+First has 1, Second has 0:  (5262L, )
+First has 1, Second has 0:  (5264L, )
+First has 1, Second has 0:  (5266L, )
+First has 1, Second has 0:  (5268L, )
+First has 1, Second has 0:  (5270L, )
+First has 1, Second has 0:  (5272L, )
+First has 1, Second has 0:  (5274L, )
+First has 1, Second has 0:  (5276L, )
+First has 1, Second has 0:  (5278L, )
+First has 1, Second has 0:  (5280L, )
+First has 1, Second has 0:  (5282L, )
+First has 1, Second has 0:  (5284L, )
+First has 1, Second has 0:  (5286L, )
+First has 1, Second has 0:  (5288L, )
+First has 1, Second has 0:  (5290L, )
+First has 1, Second has 0:  (5292L, )
+First has 1, Second has 0:  (5294L, )
+First has 1, Second has 0:  (5296L, )
+First has 1, Second has 0:  (5298L, )
+First has 1, Second has 0:  (5300L, )
+First has 1, Second has 0:  (5302L, )
+First has 1, Second has 0:  (5304L, )
+First has 1, Second has 0:  (5306L, )
+First has 1, Second has 0:  (5308L, )
+First has 1, Second has 0:  (5310L, )
+First has 1, Second has 0:  (5312L, )
+First has 1, Second has 0:  (5314L, )
+First has 1, Second has 0:  (5316L, )
+First has 1, Second has 0:  (5318L, )
+First has 1, Second has 0:  (5320L, )
+First has 1, Second has 0:  (5322L, )
+First has 1, Second has 0:  (5324L, )
+First has 1, Second has 0:  (5326L, )
+First has 1, Second has 0:  (5328L, )
+First has 1, Second has 0:  (5330L, )
+First has 1, Second has 0:  (5332L, )
+First has 1, Second has 0:  (5334L, )
+First has 1, Second has 0:  (5336L, )
+First has 1, Second has 0:  (5338L, )
+First has 1, Second has 0:  (5340L, )
+First has 1, Second has 0:  (5342L, )
+First has 1, Second has 0:  (5344L, )
+First has 1, Second has 0:  (5346L, )
+First has 1, Second has 0:  (5348L, )
+First has 1, Second has 0:  (5350L, )
+First has 1, Second has 0:  (5352L, )
+First has 1, Second has 0:  (5354L, )
+First has 1, Second has 0:  (5356L, )
+First has 1, Second has 0:  (5358L, )
+First has 1, Second has 0:  (5360L, )
+First has 1, Second has 0:  (5362L, )
+First has 1, Second has 0:  (5364L, )
+First has 1, Second has 0:  (5366L, )
+First has 1, Second has 0:  (5368L, )
+First has 1, Second has 0:  (5370L, )
+First has 1, Second has 0:  (5372L, )
+First has 1, Second has 0:  (5374L, )
+First has 1, Second has 0:  (5376L, )
+First has 1, Second has 0:  (5378L, )
+First has 1, Second has 0:  (5380L, )
+First has 1, Second has 0:  (5382L, )
+First has 1, Second has 0:  (5384L, )
+First has 1, Second has 0:  (5386L, )
+First has 1, Second has 0:  (5388L, )
+First has 1, Second has 0:  (5390L, )
+First has 1, Second has 0:  (5392L, )
+First has 1, Second has 0:  (5394L, )
+First has 1, Second has 0:  (5396L, )
+First has 1, Second has 0:  (5398L, )
+First has 1, Second has 0:  (5400L, )
+First has 1, Second has 0:  (5402L, )
+First has 1, Second has 0:  (5404L, )
+First has 1, Second has 0:  (5406L, )
+First has 1, Second has 0:  (5408L, )
+First has 1, Second has 0:  (5410L, )
+First has 1, Second has 0:  (5412L, )
+First has 1, Second has 0:  (5414L, )
+First has 1, Second has 0:  (5416L, )
+First has 1, Second has 0:  (5418L, )
+First has 1, Second has 0:  (5420L, )
+First has 1, Second has 0:  (5422L, )
+First has 1, Second has 0:  (5424L, )
+First has 1, Second has 0:  (5426L, )
+First has 1, Second has 0:  (5428L, )
+First has 1, Second has 0:  (5430L, )
+First has 1, Second has 0:  (5432L, )
+First has 1, Second has 0:  (5434L, )
+First has 1, Second has 0:  (5436L, )
+First has 1, Second has 0:  (5438L, )
+First has 1, Second has 0:  (5440L, )
+First has 1, Second has 0:  (5442L, )
+First has 1, Second has 0:  (5444L, )
+First has 1, Second has 0:  (5446L, )
+First has 1, Second has 0:  (5448L, )
+First has 1, Second has 0:  (5451L, )
+First has 1, Second has 0:  (5453L, )
+First has 1, Second has 0:  (5455L, )
+First has 1, Second has 0:  (5457L, )
+First has 1, Second has 0:  (5459L, )
+First has 1, Second has 0:  (5461L, )
+First has 1, Second has 0:  (5463L, )
+First has 1, Second has 0:  (5465L, )
+First has 1, Second has 0:  (5467L, )
+First has 1, Second has 0:  (5469L, )
+First has 1, Second has 0:  (5471L, )
+First has 1, Second has 0:  (5473L, )
+First has 1, Second has 0:  (5475L, )
+First has 1, Second has 0:  (5477L, )
+First has 1, Second has 0:  (5479L, )
+First has 1, Second has 0:  (5481L, )
+First has 1, Second has 0:  (5483L, )
+First has 1, Second has 0:  (5485L, )
+First has 1, Second has 0:  (5487L, )
+First has 1, Second has 0:  (5489L, )
+First has 1, Second has 0:  (5491L, )
+First has 1, Second has 0:  (5493L, )
+First has 1, Second has 0:  (5495L, )
+First has 1, Second has 0:  (5497L, )
+First has 1, Second has 0:  (5499L, )
+First has 1, Second has 0:  (5501L, )
+First has 1, Second has 0:  (5503L, )
+First has 1, Second has 0:  (5505L, )
+First has 1, Second has 0:  (5507L, )
+First has 1, Second has 0:  (5509L, )
+First has 1, Second has 0:  (5511L, )
+First has 1, Second has 0:  (5513L, )
+First has 1, Second has 0:  (5515L, )
+First has 1, Second has 0:  (5517L, )
+First has 1, Second has 0:  (5519L, )
+First has 1, Second has 0:  (5521L, )
+First has 1, Second has 0:  (5523L, )
+First has 1, Second has 0:  (5525L, )
+First has 1, Second has 0:  (5527L, )
+First has 1, Second has 0:  (5529L, )
+First has 1, Second has 0:  (5531L, )
+First has 1, Second has 0:  (5533L, )
+First has 1, Second has 0:  (5535L, )
+First has 1, Second has 0:  (5537L, )
+First has 1, Second has 0:  (5539L, )
+First has 1, Second has 0:  (5541L, )
+First has 1, Second has 0:  (5543L, )
+First has 1, Second has 0:  (5545L, )
+First has 1, Second has 0:  (5547L, )
+First has 1, Second has 0:  (5549L, )
+First has 1, Second has 0:  (5551L, )
+First has 1, Second has 0:  (5553L, )
+First has 1, Second has 0:  (5555L, )
+First has 1, Second has 0:  (5557L, )
+First has 1, Second has 0:  (5559L, )
+First has 1, Second has 0:  (5561L, )
+First has 1, Second has 0:  (5563L, )
+First has 1, Second has 0:  (5565L, )
+First has 1, Second has 0:  (5567L, )
+First has 1, Second has 0:  (5569L, )
+First has 1, Second has 0:  (5571L, )
+First has 1, Second has 0:  (5573L, )
+First has 1, Second has 0:  (5575L, )
+First has 1, Second has 0:  (5579L, )
+First has 1, Second has 0:  (5581L, )
+First has 1, Second has 0:  (5583L, )
+First has 1, Second has 0:  (5585L, )
+First has 1, Second has 0:  (5587L, )
+First has 1, Second has 0:  (5589L, )
+First has 1, Second has 0:  (5591L, )
+First has 1, Second has 0:  (5593L, )
+First has 1, Second has 0:  (5595L, )
+First has 1, Second has 0:  (5597L, )
+First has 1, Second has 0:  (5599L, )
+First has 1, Second has 0:  (5601L, )
+First has 1, Second has 0:  (5603L, )
+First has 1, Second has 0:  (5605L, )
+First has 1, Second has 0:  (5607L, )
+First has 1, Second has 0:  (5609L, )
+First has 1, Second has 0:  (5611L, )
+First has 1, Second has 0:  (5613L, )
+First has 1, Second has 0:  (5615L, )
+First has 1, Second has 0:  (5617L, )
+First has 1, Second has 0:  (5619L, )
+First has 1, Second has 0:  (5621L, )
+First has 1, Second has 0:  (5623L, )
+First has 1, Second has 0:  (5625L, )
+First has 1, Second has 0:  (5627L, )
+First has 1, Second has 0:  (5629L, )
+First has 1, Second has 0:  (5631L, )
+First has 1, Second has 0:  (5633L, )
+First has 1, Second has 0:  (5635L, )
+First has 1, Second has 0:  (5637L, )
+First has 1, Second has 0:  (5639L, )
+First has 1, Second has 0:  (5641L, )
+First has 1, Second has 0:  (5643L, )
+First has 1, Second has 0:  (5645L, )
+First has 1, Second has 0:  (5647L, )
+First has 1, Second has 0:  (5649L, )
+First has 1, Second has 0:  (5651L, )
+First has 1, Second has 0:  (5653L, )
+First has 1, Second has 0:  (5655L, )
+First has 1, Second has 0:  (5657L, )
+First has 1, Second has 0:  (5659L, )
+First has 1, Second has 0:  (5661L, )
+First has 1, Second has 0:  (5663L, )
+First has 1, Second has 0:  (5665L, )
+First has 1, Second has 0:  (5667L, )
+First has 1, Second has 0:  (5669L, )
+First has 1, Second has 0:  (5671L, )
+First has 1, Second has 0:  (5673L, )
+First has 1, Second has 0:  (5675L, )
+First has 1, Second has 0:  (5677L, )
+First has 1, Second has 0:  (5679L, )
+First has 1, Second has 0:  (5681L, )
+First has 1, Second has 0:  (5683L, )
+First has 1, Second has 0:  (5685L, )
+First has 1, Second has 0:  (5687L, )
+First has 1, Second has 0:  (5689L, )
+First has 1, Second has 0:  (5691L, )
+First has 1, Second has 0:  (5693L, )
+First has 1, Second has 0:  (5695L, )
+First has 1, Second has 0:  (5697L, )
+First has 1, Second has 0:  (5699L, )
+First has 1, Second has 0:  (5701L, )
+First has 1, Second has 0:  (5703L, )
+First has 1, Second has 0:  (5705L, )
+First has 1, Second has 0:  (5707L, )
+First has 1, Second has 0:  (5709L, )
+First has 1, Second has 0:  (5711L, )
+First has 1, Second has 0:  (5713L, )
+First has 1, Second has 0:  (5715L, )
+First has 1, Second has 0:  (5717L, )
+First has 1, Second has 0:  (5719L, )
+First has 1, Second has 0:  (5721L, )
+First has 1, Second has 0:  (5723L, )
+First has 1, Second has 0:  (5725L, )
+First has 1, Second has 0:  (5727L, )
+First has 1, Second has 0:  (5729L, )
+First has 1, Second has 0:  (5731L, )
+First has 1, Second has 0:  (5733L, )
+First has 1, Second has 0:  (5735L, )
+First has 1, Second has 0:  (5737L, )
+First has 1, Second has 0:  (5739L, )
+First has 1, Second has 0:  (5741L, )
+First has 1, Second has 0:  (5743L, )
+First has 1, Second has 0:  (5745L, )
+First has 1, Second has 0:  (5747L, )
+First has 1, Second has 0:  (5749L, )
+First has 1, Second has 0:  (5751L, )
+First has 1, Second has 0:  (5753L, )
+First has 1, Second has 0:  (5755L, )
+First has 1, Second has 0:  (5757L, )
+First has 1, Second has 0:  (5759L, )
+First has 1, Second has 0:  (5761L, )
+First has 1, Second has 0:  (5763L, )
+First has 1, Second has 0:  (5765L, )
+First has 1, Second has 0:  (5767L, )
+First has 1, Second has 0:  (5769L, )
+First has 1, Second has 0:  (5771L, )
+First has 1, Second has 0:  (5773L, )
+First has 1, Second has 0:  (5775L, )
+First has 1, Second has 0:  (5777L, )
+First has 1, Second has 0:  (5779L, )
+First has 1, Second has 0:  (5781L, )
+First has 1, Second has 0:  (5783L, )
+First has 1, Second has 0:  (5785L, )
+First has 1, Second has 0:  (5787L, )
+First has 1, Second has 0:  (5789L, )
+First has 1, Second has 0:  (5791L, )
+First has 1, Second has 0:  (5793L, )
+First has 1, Second has 0:  (5795L, )
+First has 1, Second has 0:  (5797L, )
+First has 1, Second has 0:  (5799L, )
+First has 1, Second has 0:  (5801L, )
+First has 1, Second has 0:  (5803L, )
+First has 1, Second has 0:  (5805L, )
+First has 1, Second has 0:  (5807L, )
+First has 1, Second has 0:  (5809L, )
+First has 1, Second has 0:  (5811L, )
+First has 1, Second has 0:  (5813L, )
+First has 1, Second has 0:  (5815L, )
+First has 1, Second has 0:  (5817L, )
+First has 1, Second has 0:  (5819L, )
+First has 1, Second has 0:  (5821L, )
+First has 1, Second has 0:  (5823L, )
+First has 1, Second has 0:  (5825L, )
+First has 1, Second has 0:  (5827L, )
+First has 1, Second has 0:  (5829L, )
+First has 1, Second has 0:  (5831L, )
+First has 1, Second has 0:  (5833L, )
+First has 1, Second has 0:  (5835L, )
+First has 1, Second has 0:  (5837L, )
+First has 1, Second has 0:  (5839L, )
+First has 1, Second has 0:  (5841L, )
+First has 1, Second has 0:  (5843L, )
+First has 1, Second has 0:  (5845L, )
+First has 1, Second has 0:  (5847L, )
+First has 1, Second has 0:  (5849L, )
+First has 1, Second has 0:  (5851L, )
+First has 1, Second has 0:  (5853L, )
+First has 1, Second has 0:  (5855L, )
+First has 1, Second has 0:  (5857L, )
+First has 1, Second has 0:  (5859L, )
+First has 1, Second has 0:  (5861L, )
+First has 1, Second has 0:  (5863L, )
+First has 1, Second has 0:  (5865L, )
+First has 1, Second has 0:  (5867L, )
+First has 1, Second has 0:  (5869L, )
+First has 1, Second has 0:  (5871L, )
+First has 1, Second has 0:  (5873L, )
+First has 1, Second has 0:  (5875L, )
+First has 1, Second has 0:  (5877L, )
+First has 1, Second has 0:  (5879L, )
+First has 1, Second has 0:  (5881L, )
+First has 1, Second has 0:  (5883L, )
+First has 1, Second has 0:  (5885L, )
+First has 1, Second has 0:  (5887L, )
+First has 1, Second has 0:  (5889L, )
+First has 1, Second has 0:  (5891L, )
+First has 1, Second has 0:  (5893L, )
+First has 1, Second has 0:  (5895L, )
+First has 1, Second has 0:  (5897L, )
+First has 1, Second has 0:  (5899L, )
+First has 1, Second has 0:  (5901L, )
+First has 1, Second has 0:  (5903L, )
+First has 1, Second has 0:  (5905L, )
+First has 1, Second has 0:  (5907L, )
+First has 1, Second has 0:  (5909L, )
+First has 1, Second has 0:  (5911L, )
+First has 1, Second has 0:  (5913L, )
+First has 1, Second has 0:  (5915L, )
+First has 1, Second has 0:  (5917L, )
+First has 1, Second has 0:  (5919L, )
+First has 1, Second has 0:  (5921L, )
+First has 1, Second has 0:  (5923L, )
+First has 1, Second has 0:  (5925L, )
+First has 1, Second has 0:  (5927L, )
+First has 1, Second has 0:  (5929L, )
+First has 1, Second has 0:  (5931L, )
+First has 1, Second has 0:  (5933L, )
+First has 1, Second has 0:  (5935L, )
+First has 1, Second has 0:  (5937L, )
+First has 1, Second has 0:  (5939L, )
+First has 1, Second has 0:  (5941L, )
+First has 1, Second has 0:  (5943L, )
+First has 1, Second has 0:  (5945L, )
+First has 1, Second has 0:  (5947L, )
+First has 1, Second has 0:  (5949L, )
+First has 1, Second has 0:  (5951L, )
+First has 1, Second has 0:  (5953L, )
+First has 1, Second has 0:  (5955L, )
+First has 1, Second has 0:  (5957L, )
+First has 1, Second has 0:  (5959L, )
+First has 1, Second has 0:  (5961L, )
+First has 1, Second has 0:  (5963L, )
+First has 1, Second has 0:  (5965L, )
+First has 1, Second has 0:  (5967L, )
+First has 1, Second has 0:  (5969L, )
+First has 1, Second has 0:  (5971L, )
+First has 1, Second has 0:  (5973L, )
+First has 1, Second has 0:  (5975L, )
+First has 1, Second has 0:  (5977L, )
+First has 1, Second has 0:  (5979L, )
+First has 1, Second has 0:  (5981L, )
+First has 1, Second has 0:  (5983L, )
+First has 1, Second has 0:  (5985L, )
+First has 1, Second has 0:  (5987L, )
+First has 1, Second has 0:  (5989L, )
+First has 1, Second has 0:  (5991L, )
+First has 1, Second has 0:  (5993L, )
+First has 1, Second has 0:  (5995L, )
+First has 1, Second has 0:  (5997L, )
+First has 1, Second has 0:  (5999L, )
+First has 1, Second has 0:  (6001L, )
+First has 1, Second has 0:  (6003L, )
+First has 1, Second has 0:  (6005L, )
+First has 1, Second has 0:  (6007L, )
+First has 1, Second has 0:  (6009L, )
+First has 1, Second has 0:  (6011L, )
+First has 1, Second has 0:  (6013L, )
+First has 1, Second has 0:  (6015L, )
+First has 1, Second has 0:  (6017L, )
+First has 1, Second has 0:  (6019L, )
+First has 1, Second has 0:  (6021L, )
+First has 1, Second has 0:  (6023L, )
+First has 1, Second has 0:  (6025L, )
+First has 1, Second has 0:  (6027L, )
+First has 1, Second has 0:  (6029L, )
+First has 1, Second has 0:  (6031L, )
+First has 1, Second has 0:  (6033L, )
+First has 1, Second has 0:  (6035L, )
+First has 1, Second has 0:  (6037L, )
+First has 1, Second has 0:  (6039L, )
+First has 1, Second has 0:  (6041L, )
+First has 1, Second has 0:  (6043L, )
+First has 1, Second has 0:  (6045L, )
+First has 1, Second has 0:  (6047L, )
+First has 1, Second has 0:  (6049L, )
+First has 1, Second has 0:  (6051L, )
+First has 1, Second has 0:  (6053L, )
+First has 1, Second has 0:  (6055L, )
+First has 1, Second has 0:  (6057L, )
+First has 1, Second has 0:  (6059L, )
+First has 1, Second has 0:  (6061L, )
+First has 1, Second has 0:  (6063L, )
+First has 1, Second has 0:  (6065L, )
+First has 1, Second has 0:  (6067L, )
+First has 1, Second has 0:  (6069L, )
+First has 1, Second has 0:  (6071L, )
+First has 1, Second has 0:  (6073L, )
+First has 1, Second has 0:  (6075L, )
+First has 1, Second has 0:  (6077L, )
+First has 1, Second has 0:  (6079L, )
+First has 1, Second has 0:  (6081L, )
+First has 1, Second has 0:  (6083L, )
+First has 1, Second has 0:  (6085L, )
+First has 1, Second has 0:  (6087L, )
+First has 1, Second has 0:  (6089L, )
+First has 1, Second has 0:  (6091L, )
+First has 1, Second has 0:  (6093L, )
+First has 1, Second has 0:  (6095L, )
+First has 1, Second has 0:  (6097L, )
+First has 1, Second has 0:  (6099L, )
+First has 1, Second has 0:  (6101L, )
+First has 1, Second has 0:  (6103L, )
+First has 1, Second has 0:  (6105L, )
+First has 1, Second has 0:  (6107L, )
+First has 1, Second has 0:  (6109L, )
+First has 1, Second has 0:  (6111L, )
+First has 1, Second has 0:  (6113L, )
+First has 1, Second has 0:  (6115L, )
+First has 1, Second has 0:  (6117L, )
+First has 1, Second has 0:  (6119L, )
+First has 1, Second has 0:  (6121L, )
+First has 1, Second has 0:  (6123L, )
+First has 1, Second has 0:  (6125L, )
+First has 1, Second has 0:  (6127L, )
+First has 1, Second has 0:  (6129L, )
+First has 1, Second has 0:  (6131L, )
+First has 1, Second has 0:  (6133L, )
+First has 1, Second has 0:  (6135L, )
+First has 1, Second has 0:  (6137L, )
+First has 1, Second has 0:  (6139L, )
+First has 1, Second has 0:  (6141L, )
+First has 1, Second has 0:  (6143L, )
+First has 1, Second has 0:  (6145L, )
+First has 1, Second has 0:  (6147L, )
+First has 1, Second has 0:  (6149L, )
+First has 1, Second has 0:  (6151L, )
+First has 1, Second has 0:  (6153L, )
+First has 1, Second has 0:  (6155L, )
+First has 1, Second has 0:  (6158L, )
+First has 1, Second has 0:  (6160L, )
+First has 1, Second has 0:  (6162L, )
+First has 1, Second has 0:  (6164L, )
+First has 1, Second has 0:  (6166L, )
+First has 1, Second has 0:  (6168L, )
+First has 1, Second has 0:  (6170L, )
+First has 1, Second has 0:  (6172L, )
+First has 1, Second has 0:  (6174L, )
+First has 1, Second has 0:  (6176L, )
+First has 1, Second has 0:  (6178L, )
+First has 1, Second has 0:  (6180L, )
+First has 1, Second has 0:  (6182L, )
+First has 1, Second has 0:  (6184L, )
+First has 1, Second has 0:  (6186L, )
+First has 1, Second has 0:  (6188L, )
+First has 1, Second has 0:  (6190L, )
+First has 1, Second has 0:  (6192L, )
+First has 1, Second has 0:  (6194L, )
+First has 1, Second has 0:  (6196L, )
+First has 1, Second has 0:  (6198L, )
+First has 1, Second has 0:  (6200L, )
+First has 1, Second has 0:  (6202L, )
+First has 1, Second has 0:  (6204L, )
+First has 1, Second has 0:  (6206L, )
+First has 1, Second has 0:  (6208L, )
+First has 1, Second has 0:  (6210L, )
+First has 1, Second has 0:  (6212L, )
+First has 1, Second has 0:  (6214L, )
+First has 1, Second has 0:  (6216L, )
+First has 1, Second has 0:  (6218L, )
+First has 1, Second has 0:  (6220L, )
+First has 1, Second has 0:  (6222L, )
+First has 1, Second has 0:  (6224L, ) : Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test02_1: Verify one-to-one mapping between event and access_event table</div></td>
+    <td>00:00:00.000</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.2: AssertionError: False is not true : 
+4184L != 5253L : Verify one-to-one mapping between event and access_event table by 'examine total number of records' failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03: Verify content in access_event table</div></td>
+    <td>00:00:00.391</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:00:00.513</td>
+    <td>3</td>
+    <td>1</td>
+    <td>2</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+[
+  {
+    "Description"        : "Transactions by Event Type 2 - 2",
+    "Report Name"        : "Transactions by Event Type 2 - 2",
+    "Report Title"       : "Transactions by Event Type 2 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Previous 2 Days"],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [20, 21, 22, 23, 24, 25]
+  }
+  
+]

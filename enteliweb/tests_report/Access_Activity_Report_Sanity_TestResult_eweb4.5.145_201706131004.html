@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>enteliWEB Access Activity Sanity Test</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+.result_detail {
+    width: 500px;
+    overflow: auto;
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>enteliWEB Access Activity Sanity Test</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-13 09:52:35</p>
+<p class='attribute'><strong>Duration:</strong> 00:11:57.487</p>
+<p class='attribute'><strong>Status:</strong> Pass 7 Failure 3 Error 1</p>
+
+<p class='description'>Test against eweb4.5.145 on Windows 2012 Server (host: win-0lr5jb1f7u0.network.com).</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.Access_Activity_Report.DB_Test.DB_Test.TestCase</td>
+    <td>00:00:00.417</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_1: Verify one-to-one mapping between event and access_event table</div></td>
+    <td>00:00:00.057</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test03: Verify content in access_event table</div></td>
+    <td>00:00:00.360</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft1.2: AssertionError: False is not true : 
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13473' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13538' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13560' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13641' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13670' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13673' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13681' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13684' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13692' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13695' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13703' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13706' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13713' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13723' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13726' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13728' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13747' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13749' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13806' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13869' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13905' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '13926' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14164' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14181' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14184' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14197' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14198' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14201' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14218' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14229' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14230' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14238' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14244' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14256' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14258' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14259' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14274' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14351' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14356' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14376' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14377' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14382' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14396' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14398' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14400' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14406' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14415' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14424' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14430' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14432' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14440' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14442' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14459' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14461' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14463' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14471' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14484' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14486' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14487' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14500' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14502' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14511' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14610' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14612' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14630' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14637' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14645' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14648' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14658' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14670' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14681' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14683' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14685' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14720' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14799' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14800' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14819' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14820' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14828' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14830' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14835' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14840' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14851' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14856' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14860' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14891' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14902' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14934' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14961' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '14968' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15002' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15003' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15015' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15020' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15124' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15126' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15136' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15140' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15142' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15150' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15153' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15158' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15163' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15178' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15183' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15190' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15197' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15491' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15504' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15509' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15512' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15531' failed
+
+None != 0 : Verify content 'EventArg' of event type 'Database Save' in access_event table for id '15703' failed
+
+u'Manual Relinquish (26): 700.DC202,0,\nExit Card + Exit Pin' != u'Exit Card + Exit Pin'
+- Manual Relinquish (26): 700.DC202,0,
+  Exit Card + Exit Pin : Verify content 'DeviceDoorObjectName' of event type 'Manual Relinquish' in access_event table for id '22097' failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>tests.Access_Activity_Report.Sanity_Test.Card_Access_Activity.Card_Access_Activity_Report.TestCase</td>
+    <td>00:06:24.912</td>
+    <td>5</td>
+    <td>3</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',5)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: date and time range</div></td>
+    <td>00:01:30.358</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\Sanity_Test\Card_Access_Activity\Card_Access_Activity_Report.py", line 186, in testMain
+    self.assertItemsEqual(self.resultFromReport, self.resultFromHelper, "verify the accuracy of returned events failed")
+AssertionError: Element counts were not equal:
+First has 1, Second has 0:  {u'Timestamp': u'2017/06/13 09:49 AM', u'Event Type': u'', u'Door': u'Beta_RM_1707', u'Card Number': u'', u'Card User': u''}
+First has 1, Second has 0:  {u'Timestamp': u'2017/06/13 09:45 AM', u'Event Type': u'', u'Door': u'Alfa_RM_2936', u'Card Number': u'', u'Card User': u''}
+First has 1, Second has 0:  {u'Timestamp': u'2017/06/13 09:28 AM', u'Event Type': u'', u'Door': u'Delta_RM_0747', u'Card Number': u'', u'Card User': u''}
+First has 0, Second has 1:  {'Timestamp': '2017/06/13 09:28 AM', 'Event Type': u'Door Group Manual Lock Down', 'Door': u'Delta_RM_0747', 'Card Number': '', 'Card User': ''}
+First has 0, Second has 1:  {'Timestamp': '2017/06/13 09:45 AM', 'Event Type': u'Door Group Manual Lock Down', 'Door': u'Alfa_RM_2936', 'Card Number': '', 'Card User': ''}
+First has 0, Second has 1:  {'Timestamp': '2017/06/13 09:49 AM', 'Event Type': u'Door Group Manual Lock Down', 'Door': u'Beta_RM_1707', 'Card Number': '', 'Card User': ''} : verify the accuracy of returned events failed
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_2: Verify report data returned for filter: specific event types</div></td>
+    <td>00:01:27.254</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.2: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_3: Verify report data returned for filter: specific card users</div></td>
+    <td>00:01:14.087</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.3: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_4: Verify report data returned for filter: specific card users and event types</div></td>
+    <td>00:01:17.780</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt2.4: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.5' class='none'>
+    <td class='errorCase'><div class='testcase'>testMain_5: Verify report data returned for filter: specific doors</div></td>
+    <td>00:00:55.433</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.5')" >
+        error</a>
+
+    <div id='div_ft2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft2.5: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\Sanity_Test\Card_Access_Activity\Card_Access_Activity_Report.py", line 122, in testMain
+    self._setupReportInstance()
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\Sanity_Test\Card_Access_Activity\Card_Access_Activity_Report.py", line 215, in _setupReportInstance
+    self.testingReport.setupDoors(doors)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Access_Activity_Reports\Access_Activity_Generic.py", line 382, in setupDoors
+    self.findDoorsWindow.selectObject(item)
+  File "U:\PyAutoTestSuite\enteliweb\libraries\eweb\PageObjects\Access_Activity_Reports\Access_Activity_Generic.py", line 229, in selectObject
+    raise Exception("'%s' was not found in the current page of the grid"%target)
+Exception: '[u'Gamma_RM_0527', u'DC40527']' was not found in the current page of the grid
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.Access_Activity_Report.Sanity_Test.Card_Access_Activity_by_Card_User.Card_Access_Activity_by_Card_User_Report.TestCase</td>
+    <td>00:01:13.357</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Card Access Activity by Card User 2 - 2</div></td>
+    <td>00:01:13.357</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt3.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>tests.Access_Activity_Report.Sanity_Test.Card_User_Activity_by_Door.Card_User_Activity_by_Door_Report.TestCase</td>
+    <td>00:01:08.367</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>testMain_1: Verify report data returned for filter: Card User Activity by Door 2 - 2</div></td>
+    <td>00:01:08.367</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+ft4.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+generatingReport(): get Exception: 'AccessActivityReportPageObj.run' cannot be located on page.
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "U:\PyAutoTestSuite\enteliweb\tests\Access_Activity_Report\Sanity_Test\Card_User_Activity_by_Door\Card_User_Activity_by_Door_Report.py", line 129, in testMain
+    self.assertTrue(result, "failed to generate report")
+AssertionError: False is not true : failed to generate report
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.Access_Activity_Report.Sanity_Test.Door_Activity.Door_Activity_Report.TestCase</td>
+    <td>00:01:49.282</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Door Activity 2 - 2</div></td>
+    <td>00:01:49.282</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt5.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.Access_Activity_Report.Sanity_Test.Transactions_by_Event_Type.Transactions_by_Event_Type_Report.TestCase</td>
+    <td>00:01:21.152</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testMain_1: Verify report data returned for filter: Transactions by Event Type 2 - 2</div></td>
+    <td>00:01:21.152</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <div class="result_detail"><pre>
+        
+pt6.1: debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch back to default
+debug: switch to frame mainFrame
+debug: switch back to default
+debug: switch to frame mainFrame
+
+
+        </pre></div>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>00:11:57.487</td>
+    <td>11</td>
+    <td>7</td>
+    <td>3</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

@@ -1,10 +1,10 @@
 [
   {
-    "Description"        : "Card Access Activity 1 - 1",
+    "Description"        : "date and time range",
     "Report Name"        : "Card Access Activity 1 - 1",
     "Report Title"       : "Card Access Activity 1 - 1",
     "Site"               : "$LocalSite",
-    "Date Range"         : ["Custom", ["%today%", "12:34:56"], ["%tomorrow%", "12:34:56"]],
+    "Date Range"         : ["Custom", ["%today%", "09:10:21"], ["%tomorrow%", "09:10:21"]],
     "Card Users"         : {
 	                         "Find Option" : "Find by Keyword",
 	                         "Filter By"   : "*"
@@ -17,7 +17,7 @@
   },
   
   {
-    "Description"        : "Card Access Activity 2 - 2",
+    "Description"        : "specific event types",
     "Report Name"        : "Card Access Activity 2 - 2",
     "Report Title"       : "Card Access Activity 2 - 2",
     "Site"               : "$LocalSite",
@@ -30,11 +30,11 @@
 	                         "Find Option" : "Find by Keyword",
 	                         "Filter By"   : "*"
 	                       },
-	"Events"             : [2, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+	"Events"             : [2, 4, 7, 9, 11]
   },
   
   {
-    "Description"        : "Card Access Activity 3 - 2",
+    "Description"        : "specific card users",
     "Report Name"        : "Card Access Activity 3 - 2",
     "Report Title"       : "Card Access Activity 3 - 2",
     "Site"               : "$LocalSite",
@@ -56,7 +56,7 @@
   },
   
   {
-    "Description"        : "Card Access Activity 4 - 1",
+    "Description"        : "specific card users and event types",
     "Report Name"        : "Card Access Activity 4 - 1",
     "Report Title"       : "Card Access Activity 4 - 1",
     "Site"               : "$LocalSite",
@@ -78,7 +78,7 @@
   },
   
   {
-    "Description"        : "Card Access Activity 5 - 2",
+    "Description"        : "specific doors",
     "Report Name"        : "Card Access Activity 5 - 2",
     "Report Title"       : "Card Access Activity 5 - 2",
     "Site"               : "$LocalSite",

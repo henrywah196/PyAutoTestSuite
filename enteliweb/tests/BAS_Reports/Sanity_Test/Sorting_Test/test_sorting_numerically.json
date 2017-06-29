@@ -4,7 +4,7 @@
     "Report Name"     : "test sorting numerically",
     "Report Title"    : "test sorting numerically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200",
+    "Device Range"    : "1300",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI","AO","AV"],
@@ -24,7 +24,7 @@
     "Report Name"     : "test sorting numerically",
     "Report Title"    : "test sorting numerically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200",
+    "Device Range"    : "1300",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI","AO","AV"],
@@ -44,7 +44,7 @@
     "Report Name"     : "test sorting numerically",
     "Report Title"    : "test sorting numerically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200",
+    "Device Range"    : "1300",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI","AO","AV"],
@@ -64,7 +64,7 @@
     "Report Name"     : "test sorting numerically",
     "Report Title"    : "test sorting numerically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-1499, 1501-2200",
+    "Device Range"    : "1300-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI","AO","AV"],
@@ -85,7 +85,7 @@
     "Report Name"     : "test sorting numerically",
     "Report Title"    : "test sorting numerically",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200-1499, 1501-2200",
+    "Device Range"    : "1300-1499, 1501-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI","AO","AV"],

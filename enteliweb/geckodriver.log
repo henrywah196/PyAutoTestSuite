@@ -1,226 +1,221 @@
-1494896877582	geckodriver	INFO	Listening on 127.0.0.1:36740
-1494896879564	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.y8NUrp0GHTTv
-1494896879618	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1494896879628	geckodriver::marionette	INFO	Connecting to Marionette on localhost:36746
-1494896879931	addons.manager	DEBUG	Application has been upgraded
-1494896879948	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
-1494896879949	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
-1494896879951	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
-1494896879952	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
-1494896879952	addons.manager	DEBUG	Starting provider: XPIProvider
-1494896879952	addons.xpi	DEBUG	startup
-1494896879952	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
-1494896879953	addons.xpi	INFO	Mapping loop@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1494896879953	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-1494896879954	addons.xpi	DEBUG	checkForChanges
-1494896879954	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
-1494896879955	addons.xpi	DEBUG	New add-on loop@mozilla.org in app-system-defaults
-1494896879955	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1494896879955	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
-1494896879955	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1494896879956	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"loop@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","st":1465414448130}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1492705265732}}}
-1494896879961	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.y8NUrp0GHTTv\extensions.json
-1494896879962	addons.xpi-utils	DEBUG	New add-on loop@mozilla.org installed in app-system-defaults
+1498772978532	geckodriver	INFO	Listening on 127.0.0.1:64314
+1498772980294	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.jvS2gLcQa1fW
+1498772980330	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1498772980338	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64325
+1498772980657	addons.manager	DEBUG	Application has been upgraded
+1498772980682	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1498772980684	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1498772980686	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1498772980688	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1498772980688	addons.manager	DEBUG	Starting provider: XPIProvider
+1498772980689	addons.xpi	DEBUG	startup
+1498772980689	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1498772980690	addons.xpi	INFO	Mapping aushelper@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1498772980690	addons.xpi	INFO	Mapping e10srollout@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1498772980690	addons.xpi	INFO	Mapping firefox@getpocket.com to C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1498772980690	addons.xpi	INFO	Mapping webcompat@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1498772980691	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1498772980691	addons.xpi	DEBUG	checkForChanges
+1498772980691	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1498772980691	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1498772980692	addons.xpi	DEBUG	New add-on aushelper@mozilla.org in app-system-defaults
+1498772980693	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
+1498772980693	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
+1498772980693	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1498772980694	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
+1498772980694	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1498772980694	addons.xpi	DEBUG	New add-on webcompat@mozilla.org in app-system-defaults
+1498772980694	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
+1498772980695	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1498772980695	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1498772980695	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"aushelper@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","st":1497651063739},"e10srollout@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","st":1497651063739},"firefox@getpocket.com":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","st":1497651063738},"webcompat@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","st":1497651063695}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1497651063740}}}
+1498772980702	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.jvS2gLcQa1fW\extensions.json
+1498772980703	addons.xpi-utils	DEBUG	New add-on aushelper@mozilla.org installed in app-system-defaults
 *** Blocklist::_loadBlocklistFromFile: blocklist is disabled
-1494896879970	DeferredSave.extensions.json	DEBUG	Save changes
-1494896879970	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
-1494896879972	DeferredSave.extensions.json	DEBUG	Starting timer
-1494896879972	DeferredSave.extensions.json	DEBUG	Save changes
-1494896879973	addons.xpi-utils	INFO	Hiding the updated system add-ons.
-1494896879977	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1494896879985	addons.xpi	DEBUG	Calling bootstrap method install on loop@mozilla.org version 1.1.14
-1494896879985	addons.xpi-utils	DEBUG	Make addon app-system-defaults:loop@mozilla.org visible
-1494896879985	DeferredSave.extensions.json	DEBUG	Save changes
-1494896879985	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
-1494896879985	DeferredSave.extensions.json	DEBUG	Save changes
-1494896879985	addons.xpi	DEBUG	Updating XPIState for {"id":"loop@mozilla.org","syncGUID":"AcJ20QAQ2Ucn","location":"app-system-defaults","version":"1.1.14","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox Hello Beta","description":"Web sharing for Firefox","creator":"Mozilla","homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1465414448130,"updateDate":1465414448130,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4109769,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.0","maxVersion":"45.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
-1494896879985	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1494896879986	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"-gHXVso2kzkT","location":"app-global","version":"45.9.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1492705265732,"updateDate":1492705265732,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"45.9.0","maxVersion":"45.9.0"}],"targetPlatforms":[],"seen":true}
-1494896879986	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1494896879986	DeferredSave.extensions.json	DEBUG	Save changes
-1494896879986	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1494896879986	addons.xpi-utils	DEBUG	Updating add-on states
-1494896879988	addons.xpi-utils	DEBUG	Writing add-ons list
-1494896879990	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1494896879990	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.1.14
-1494896879992	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1494896879992	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1494896879992	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1494896879993	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1494896879993	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1494896879993	addons.manager	DEBUG	Starting provider: GMPProvider
-1494896879997	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1494896879997	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1494896879997	addons.manager	DEBUG	Starting provider: PluginProvider
-1494896879997	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1494896879997	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1494896879997	addons.manager	DEBUG	Completed startup sequence
-1494896880245	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1494896880245	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1494896880246	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-1494896880352	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
-1494896880352	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
-1494896880352	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
-1494896880353	DeferredSave.extensions.json	DEBUG	Starting write
-1494896880549	DeferredSave.extensions.json	DEBUG	Write succeeded
-1494896880549	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 17
-1494896881679 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: password, tagName: INPUT, className: field
-1494896881710 Marionette: Element is missing an accesible name -> id: btn_login, tagName: INPUT, className: loginBtn
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896888165 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
-1494896894751 Marionette: Element does not have an accessible object -> id: , tagName: DIV, className:  x-tree-elbow-img x-tree-elbow-plus x-tree-expander
-1494896909855 Marionette: Element does not have an accessible object -> id: treeview-1039-record-49, tagName: TABLE, className: x-grid-item
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896924287 Marionette: Element does not have an accessible object -> id: Site-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1494896924569 Marionette: Element is missing an accesible name -> id: , tagName: A, className: 
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-1494896926797 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1494896928139 Marionette: Element does not have an accessible object -> id: filterObject-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  x-form-trigger-focus
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896938654 Marionette: Element does not have an accessible object -> id: treeview-1039-record-49, tagName: TABLE, className: x-grid-item x-grid-item-selected
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896941025	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/45.9.0/20170411115307/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
-1494896941104	addons.productaddons	INFO	Completed downloading document
-1494896941119	addons.productaddons	INFO	Downloading from https://cdmdownload.adobe.com/firefox/win/x86/primetime_gmp_win_x86_gmc_30527.1.zip to C:\Users\hwang\AppData\Local\Temp\tmpaddon-2
-1494896942193	addons.productaddons	INFO	Downloading from http://ciscobinary.openh264.org/openh264-win32-0410d336bb748149a4f560eb6108090f078254b1.zip to C:\Users\hwang\AppData\Local\Temp\tmpaddon-2
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896960873	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-assName: x-column-header-text
-1494896815543 Marionette: Element does not have an accessible object -> id: gridcolumn-1068-triggerEl, tagName: DIV, className: x-column-header-trigger
-1494896816765 Marionette: Element does not support any accessible actions -> id: menuitem-1059-textEl, tagName: SPAN, className: x-menu-item-text x-menu-item-text-default x-menu-item-indent
-1494896817983 Marionette: Element does not have an accessible object -> id: gridcolumn-1068-textEl, tagName: DIV, className: x-column-header-text
-1494896820066 Marionette: Element does not have an accessible object -> id: gridcolumn-1068-triggerEl, tagName: DIV, className: x-column-header-trigger
-1494896821243 Marionette: Element does not support any accessible actions -> id: menuitem-1061-textEl, tagName: SPAN, className: x-menu-item-text x-menu-item-text-default x-menu-item-indent
-1494896822508 Marionette: Element does not have an accessible object -> id: sortProperty-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-1494896823706 Marionette: Element does not have an accessible object -> id: sortDirection-trigger-picker, tagName: DIV, className: x-form-trigger x-form-trigger-default x-form-arrow-trigger x-form-arrow-trigger-default  
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896834797 Marionette: Element does not have an accessible object -> id: treeview-1039-record-66, tagName: TABLE, className: x-grid-item x-grid-item-selected
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494896870931	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494895746332 Marionette: Element does not have an accessible object -> id: treeview-1039-record-58, tagName: TABLE, className: x-grid-item x-grid-item-selected
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494895794216	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-rk.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494894336730	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-rk.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494893435265	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-ct -> id: treeview-1039-record-55, tagName: TABLE, className: x-grid-item x-grid-item-selected
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494893074188	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.103, line 2687: unreachable code after return statement
-1494886284182	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-on loop@mozilla.org version 1.1.14
-r return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.5.12, line 2687: unreachable code after return statement
-1489169677806	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
--0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 45811: unreachable code after return statement
-JavaScript warning: http://win-0lr5jb1f7u0.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.4.298, line 2687: unreachable code after return statement
-1487712990423	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.1.14
-1487712990536	addons.manager	DEBUG	shutdown
-1487712990537	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
-1487712990537	addons.xpi	DEBUG	shutdown
-1487712990537	addons.xpi-utils	DEBUG	shutdown
-1487712990537	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
-1487712990537	addons.manager	DEBUG	Calling shutdown blocker for GMPProvider
-1487712990538	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
-1487712990538	addons.manager	DEBUG	Calling shutdown blocker for <unnamed-provider>
-1487712990539	addons.manager	DEBUG	Calling shutdown blocker for PreviousExperimentProvider
-1487712990541	addons.xpi	DEBUG	Notifying XPI shutdown observers
-1487712990545	addons.manager	DEBUG	Async provider shutdown done
+1498772980710	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980710	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
+1498772980712	DeferredSave.extensions.json	DEBUG	Starting timer
+1498772980714	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980714	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
+1498772980718	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980718	addons.xpi-utils	DEBUG	New add-on webcompat@mozilla.org installed in app-system-defaults
+1498772980721	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980722	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1498772980724	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980724	addons.manager	DEBUG	Registering startup change 'installed' for aushelper@mozilla.org
+1498772980730	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1498772980733	addons.xpi	DEBUG	Calling bootstrap method install on aushelper@mozilla.org version 2.0
+1498772980734	addons.xpi-utils	DEBUG	Make addon app-system-defaults:aushelper@mozilla.org visible
+1498772980734	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980734	addons.manager	DEBUG	Registering startup change 'installed' for e10srollout@mozilla.org
+1498772980734	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1498772980736	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 1.10
+1498772980737	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
+1498772980737	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980738	addons.manager	DEBUG	Registering startup change 'installed' for firefox@getpocket.com
+1498772980738	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1498772980741	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0.5
+1498772980741	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
+1498772980741	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980741	addons.manager	DEBUG	Registering startup change 'installed' for webcompat@mozilla.org
+1498772980742	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1498772980743	addons.xpi	DEBUG	Calling bootstrap method install on webcompat@mozilla.org version 1.0
+1498772980743	addons.xpi-utils	DEBUG	Make addon app-system-defaults:webcompat@mozilla.org visible
+1498772980743	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980743	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1498772980744	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980744	addons.xpi	DEBUG	Updating XPIState for {"id":"aushelper@mozilla.org","syncGUID":"{042bd5a5-dc04-4de2-a01d-c2997f862796}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Application Update Service Helper","description":"Sets value(s) in the update url based on custom checks.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","installDate":1497651063739,"updateDate":1497651063739,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8488,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1498772980744	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
+1498772980744	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"{dca4e270-92f7-4af3-b4e4-4e11b022cd74}","location":"app-system-defaults","version":"1.10","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","installDate":1497651063739,"updateDate":1497651063739,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8145,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1498772980744	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"{a53aa327-97a2-492b-93ab-851bc2b5e4e2}","location":"app-system-defaults","version":"1.0.5","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","installDate":1497651063738,"updateDate":1497651063738,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":920283,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"webcompat@mozilla.org","syncGUID":"{fecd56c4-ccf7-457b-8e88-cdb2d5a997ab}","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Web Compat","description":"Urgent post-release fixes for web compatibility.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","installDate":1497651063695,"updateDate":1497651063695,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":1456,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
+1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"{e55621da-42c4-41b0-8a65-0cc9d4bb114d}","location":"app-global","version":"52.2.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1497651063740,"updateDate":1497651063740,"applyBackgroundUpdates":1,"skinnable":true,"size":19587,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.2.0"}],"targetPlatforms":[],"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false}
+1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1498772980746	DeferredSave.extensions.json	DEBUG	Save changes
+1498772980746	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1498772980746	addons.xpi-utils	DEBUG	Updating add-on states
+1498772980748	addons.xpi-utils	DEBUG	Writing add-ons list
+1498772980750	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1498772980750	addons.xpi	DEBUG	Calling bootstrap method startup on aushelper@mozilla.org version 2.0
+1498772980752	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1498772980752	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.10
+1498772980752	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1498772980753	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0.5
+1498772980754	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1498772980754	addons.xpi	DEBUG	Calling bootstrap method startup on webcompat@mozilla.org version 1.0
+1498772980755	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1498772980756	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1498772980756	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1498772980756	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1498772980756	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1498772980756	addons.manager	DEBUG	Starting provider: GMPProvider
+1498772980762	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1498772980762	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1498772980762	addons.manager	DEBUG	Starting provider: PluginProvider
+1498772980762	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1498772980762	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1498772980762	addons.manager	DEBUG	Completed startup sequence
+1498772980956	Marionette	INFO	Listening on port 64325
+1498772981088	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1498772981088	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1498772981089	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1498772981108	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1498772981108	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1498772981108	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1498772981110	DeferredSave.extensions.json	DEBUG	Starting write
+1498772981239	DeferredSave.extensions.json	DEBUG	Write succeeded
+1498772981240	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 19
+1498772981796	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+1498773041603	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/52.2.0/20170607123825/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
+1498773041716	addons.productaddons	INFO	Completed downloading document
+1498773041818	addons.productaddons	INFO	downloadXHR File download. status=200
+1498773041821	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-3515ed
+1498773042491	addons.productaddons	INFO	downloadXHR File download. status=200
+1498773042493	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-ba3b87
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+1498773066848	Marionette	INFO	New connections will no longer be accepted
+[Child 11776] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
+1498770822271	Marionette	INFO	New connections will no longer be accepted
+[Child 964] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+ 512
+[Child 9372] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+1498189819094	Marionette	INFO	New connections will no longer be accepted
+[Child 7680] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+vascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
+1498189305833	Marionette	INFO	New connections will no longer be accepted
+[Child 7288] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152

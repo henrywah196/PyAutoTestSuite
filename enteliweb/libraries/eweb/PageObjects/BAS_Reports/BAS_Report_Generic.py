@@ -69,7 +69,13 @@ class ObjectFilterTypeDropDown(DropDownBoxWebElement):
                     break
             if target:
                 target.location_once_scrolled_into_view
+                time.sleep(1)
                 target.click()
+            else:
+                raise Exception("%s was not find and selected from Object Type drop down list"%val)
+        else:
+            raise Exception("Object Type drop down list doesn't expand and displayed")
+            
         
     def getDropDownList(self): 
         """ return the drop down list web element """ 
@@ -154,14 +160,22 @@ class ObjectFilterWindow(BaseWebElement):
         else:
             self.logicOR.click()
             
-    def addProperty(self, propertyValueComparison):
+    def addProperty(self, propertyValueComparison, retry=3):
         """ add a new property based on propertyValueComparison.
             The propertyValueComparison is a list of [property_name, operator, value]  
         """
         self.btnAddProperty.click()
         total = self.getTotalPropertyFilters()
-        targetElem = self.getPropertyFilter(total)
-        self._modifyProperty(targetElem, propertyValueComparison)
+        if total == 0 and retry > 0:
+            retry = retry - 1
+            time.sleep(1)
+            self.addProperty(propertyValueComparison, retry)
+        else:
+            if total == 0:
+                raise Exception("new item was not added to property comparison list")
+            else:
+                targetElem = self.getPropertyFilter(total)
+                self._modifyProperty(targetElem, propertyValueComparison)
         
     def addRule(self, propertyValueComparisonRule):
         """ Add a new property rule based on propertyValueComparisonRule.
@@ -463,9 +477,11 @@ class BASReportPageObj(BaseFrameObject):
         objectInstance = dicObjectFilter["Instance"]
         self.objectFilterWindow.instance = objectInstance
         
+        time.sleep(3)
+        
         if "Properties" in dicObjectFilter:
             properties = dicObjectFilter["Properties"]
-            if properties != None: 
+            if properties != None:
                 for property in properties:
                     if isinstance(property, types.ListType):
                         self.objectFilterWindow.addProperty(property)

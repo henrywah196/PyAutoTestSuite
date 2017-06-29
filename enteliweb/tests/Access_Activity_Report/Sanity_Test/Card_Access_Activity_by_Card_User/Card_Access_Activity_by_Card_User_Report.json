@@ -1,0 +1,14 @@
+[
+  {
+    "Description"        : "Card Access Activity by Card User 2 - 2",
+    "Report Name"        : "Card Access Activity by Card User 2 - 2",
+    "Report Title"       : "Card Access Activity by Card User 2 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Yesterday"],
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [11, 12]
+  }
+]

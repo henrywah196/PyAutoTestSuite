@@ -46,7 +46,7 @@ from tests.BAS_Reports.Sanity_Test.Regression_Test import EWEB_21258
 ######################
 suites = []
 suites.append(Calibration_Report.TestCase.suite())
-suites.append(Commissioning_Sheets_Report.TestCase.suite())
+#suites.append(Commissioning_Sheets_Report.TestCase.suite())
 suites.append(Decommissioned_Fault_Report.TestCase.suite())
 suites.append(Input_Points__List_Report.TestCase.suite())
 suites.append(Objects_In_Manual_Report.TestCase.suite())

@@ -13,9 +13,10 @@
   
   "AccessActivityReportPageObj.reportHistory"         : {"by":"id", "value":"historyBtn",     "parent":null, "tag_name":"a",   "type":"DropDownBox"},
   
-  "AccessActivityReportPageObj.reportName"  : {"by":"id", "value":"reportName-inputEl",  "parent":null, "tag_name":"input", "type":"EditBox"},
-  "AccessActivityReportPageObj.reportTitle" : {"by":"id", "value":"reportTitle-inputEl", "parent":null, "tag_name":"input", "type":"EditBox"},
-  "AccessActivityReportPageObj.site"        : {"by":"id", "value":"Site-trigger-picker", "parent":null, "tag_name":"input", "type":"DropDownBox"}, 
+  "AccessActivityReportPageObj.reportName"     : {"by":"id", "value":"reportName-inputEl",        "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.reportTitle"    : {"by":"id", "value":"reportTitle-inputEl",       "parent":null, "tag_name":"input", "type":"EditBox"},
+  "AccessActivityReportPageObj.site"           : {"by":"id", "value":"Site-trigger-picker",       "parent":null, "tag_name":"input", "type":"DropDownBox"},
+  "AccessActivityReportPageObj.datetimeFormat" : {"by":"id", "value":"DateFormat-trigger-picker", "parent":null, "tag_name":"input", "type":"DropDownBox"},
   
   "AccessActivityReportPageObj.dateRange"       : {"by":"id", "value":"reportFormPeriod-inputEl",              "parent":null, "tag_name":"input", "type":"DropDownBox"},
   "AccessActivityReportPageObj.dateFrom"        : {"by":"id", "value":"reportFormStartTime-inputEl",           "parent":null, "tag_name":"input", "type":"EditBox"},
@@ -40,6 +41,10 @@
   "AccessActivityReportPageObj.findCardUsersWindow" : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"}, 
   "AccessActivityReportPageObj.findDoorsWindow"     : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"},
   "AccessActivityReportPageObj.selectEventsWindow"  : {"by":"id", "value":"popupWindow", "parent":null, "tag_name":"div", "type":"Container"},
+  
+  "AccessActivityReportPageObj.editFormat"         : {"by":"xpath", "value":"//a[contains(@onclick, 'editFormatWindow')]", "parent":null, "tag_name":"a",   "type":"Button"},
+  "AccessActivityReportPageObj.reportFormatWindow" : {"by":"id",    "value":"reportFormatWindow",                          "parent":null, "tag_name":"div", "type":"Window"},
+  
   
   "AccessActivityReportPageObj.deleteConfirmWindow" : {"by":"xpath", "value":"//div[contains(@class, 'x-message-box')]", "parent":null, "tag_name":"div", "type":"Window"},
   

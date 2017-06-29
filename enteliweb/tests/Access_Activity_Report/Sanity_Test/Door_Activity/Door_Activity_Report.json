@@ -1,0 +1,19 @@
+[
+  {
+    "Description"        : "Door Activity 2 - 2",
+    "Report Name"        : "Door Activity 2 - 2",
+    "Report Title"       : "Door Activity 2 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Today"],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [14, 15, 16, 18, 23, 46]
+  }
+  
+]

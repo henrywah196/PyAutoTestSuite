@@ -1,0 +1,14 @@
+[
+  {
+    "Description"        : "Card User Activity by Door 2 - 2",
+    "Report Name"        : "Card User Activity by Door 2 - 2",
+    "Report Title"       : "Card User Activity by Door 2 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Previous 2 Days"],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [5, 7, 8]
+  }
+]

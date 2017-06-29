@@ -64,6 +64,7 @@ ACCESS_EVENT_TYPES = {"None"              : "",
                       "Door Group Manual Locked"     : "DC",
                       "Door Group Manual Life Safety"   : "DC",
                       "Door Group Manual Lock Down"      : "DC",
+                      "Door Group Manual Lockdown"       : "DC",
                       "Door Group Control Relinquished" : "DC",
                       "Door Ajar"                       : "DC",
                       "Door Ajar Ended"                 : "DC",
@@ -82,7 +83,7 @@ ACCESS_EVENT_TYPES = {"None"              : "",
                       "Device Offline"                  : "",
                       "Device Reset"                    : "",
                       "Request To Exit"                 : "DC",
-                      "Approval Denied"                 : "DC",
+                      "Approval Denied"                 : "CU",
                       "Relock Mode Relinquished"        : "DC",
                       "Muster"                          : "CU",
                       "Database Load"                   : "",
@@ -168,31 +169,6 @@ class TestCase(TestCaseTemplate):
 
     def tearDown(self):
         super(TestCase, self).tearDown()
-     
-
-    #@unittest.skip("")
-    @data(*getTestingData())
-    def _testMain(self, testData):
-        
-        # prepare test data
-        self.testData = testData
-        siteName = self.testData.siteName
-        changedValue = self.testData.changedValue
-        numberOfEvents = self.testData.numberOfEvents
-        
-        
-        # update test doc string
-        self._testMethodDoc = "Verify report data returned for filter" 
-        
-        cursor = self.webgroup.cursor.execute("select * from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value'")
-        rows = cursor.fetchall()
-        
-        for row in rows:
-            print ""
-            print row.pAlarmText
-            print ""
-            result = self._getEventInfo(row)
-            print result
             
             
     @data(*getTestingData())        
@@ -211,11 +187,15 @@ class TestCase(TestCaseTemplate):
             self.skipTest("Test skipped on purpose.")
         
         expected = numberOfEvents
+        cursor = self.webgroup.cursor.execute("select id from alarm_category where category = 7")
+        row = cursor.fetchone()
+        category_id = row.id
+        
         sqlString = None
         if len(changedValue) > 1:
-            sqlString = "select count(*) as total from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value' and (pParameterText like '%changed-value={0}%' or pParameterText like '%changed-value={1}%')".format(changedValue[0],changedValue[1])
+            sqlString = "select count(*) as total from event where category = {0} and NotifyTypeText = 'event' and (pParameterText like '%changed-value={1}%' or pParameterText like '%changed-value={2}%')".format(category_id,changedValue[0],changedValue[1])
         else:
-            sqlString = "select count(*) as total from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value' and pParameterText like '%changed-value={0}%'".format(changedValue[0])
+            sqlString = "select count(*) as total from event where category = {0} and NotifyTypeText = 'event' and pParameterText like '%changed-value={1}%'".format(category_id,changedValue[0])
         cursor = self.webgroup.cursor.execute(sqlString)
         row = cursor.fetchone()
         current = row.total
@@ -234,7 +214,11 @@ class TestCase(TestCaseTemplate):
         # update test doc string
         self._testMethodDoc = "Verify one-to-one mapping between event and access_event table"
         
-        sqlString = "select count(*) as total from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value'"
+        cursor = self.webgroup.cursor.execute("select id from alarm_category where category = 7")
+        row = cursor.fetchone()
+        category_id = row.id
+        
+        sqlString = "select count(*) as total from event where category = {0} and NotifyTypeText = 'event' and EventType = 2 and pAlarmText is not NULL".format(category_id)
         cursor = self.webgroup.cursor.execute(sqlString)
         row = cursor.fetchone()
         expected = row.total
@@ -246,75 +230,59 @@ class TestCase(TestCaseTemplate):
         errMessage = "Verify one-to-one mapping between event and access_event table by 'examine total number of records' failed"
         self.perform(self.assertEqual, current, expected, errMessage)
         
-        sqlString = "select RecNo from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value'"
+        sqlString = "Select Recno from Event where category ={0} and NotifyTypeText = 'event' and EventType = 2 and pAlarmText is not NULL and not Exists(Select 1 from access_event where access_event.ID =  event.RecNo)".format(category_id)
         cursor = self.webgroup.cursor.execute(sqlString)
         rows = cursor.fetchall()
-        resultExpected = []
-        for row in rows:
-            resultExpected.append(str(row.RecNo))
-        sqlString = "select ID from access_event"
-        cursor = self.webgroup.cursor.execute(sqlString)
-        rows = cursor.fetchall()
-        resultCurrent = []
-        for row in rows:
-            resultCurrent.append(str(row.ID))
         
-        self.assertItemsEqual(resultCurrent, resultExpected, "Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed")
+        self.assertItemsEqual(rows, [], "Verify one-to-one mapping between event and access_event table by 'examine record numbers' failed")
         
     
-    @data(*getTestingData())    
-    def test03(self, testData):   
-        
-        # prepare test data
-        self.testData = testData
-        siteName = self.testData.siteName
-        changedValue = self.testData.changedValue
-        numberOfEvents = self.testData.numberOfEvents
+    def test03(self):
         
         # update test doc string
         self._testMethodDoc = "Verify content in access_event table"
         
-        sqlString = "select RecNo, pAlarmText from event where category = 7 and NotifyTypeText = 'event' and EventTypeText = 'change-of-value'"
+        sqlString = """select t.ID, t.SiteName, t.EventType, t.DeviceDoorRef, t.DeviceDoorObjectName, t.DeviceDoorDeviceNumber, t.DeviceDoorObjectAbbr,
+                       t.DeviceDoorObjectInstance, t.CardUserName, t.CardUserObjectAbbr, t.CardUserInstance, t.CardUserNumber, t.CardUserSiteCode,
+                       t.EventArg, t.FloorName, t.pAlarmText, alarm_detail.EventId
+                       from (select access_event.ID, access_event.SiteName, access_event.EventType, access_event.DeviceDoorRef, access_event.DeviceDoorObjectName, 
+                       access_event.DeviceDoorDeviceNumber, access_event.DeviceDoorObjectAbbr, access_event.DeviceDoorObjectInstance,
+                       access_event.CardUserName, access_event.CardUserObjectAbbr, access_event.CardUserInstance, access_event.CardUserNumber,
+                       access_event.CardUserSiteCode, access_event.EventArg, access_event.FloorName, event.InputRef, event.pAlarmText from access_event
+                       left join event on access_event.ID = event.recno) as t
+                       left join alarm_detail on t.InputRef = alarm_detail.ID;"""
+                       
         cursor = self.webgroup.cursor.execute(sqlString)
         rows = cursor.fetchall()
         for row in rows:
             dicEventExpected = self._getEventInfo(row)
-            recordNumber = dicEventExpected["ID"]
-            sqlString = "select * from access_event where id = %s"%recordNumber
-            cursor = self.webgroup.cursor.execute(sqlString)
-            subRow = cursor.fetchone()
-            dicEventCurrent = {}
-            dicEventCurrent["SiteName"] = subRow.SiteName
-            dicEventCurrent["EventType"] = subRow.EventType
-            dicEventCurrent["DeviceDoorRef"] = subRow.DeviceDoorRef
-            dicEventCurrent["DeviceDoorObjectName"] = subRow.DeviceDoorObjectName
-            dicEventCurrent["DeviceDoorDeviceNumber"] = subRow.DeviceDoorDeviceNumber
-            dicEventCurrent["DeviceDoorObjectAbbr"] = subRow.DeviceDoorObjectAbbr
-            dicEventCurrent["DeviceDoorObjectInstance"] = subRow.DeviceDoorObjectInstance
-            dicEventCurrent["CardUserName"] = subRow.CardUserName
-            dicEventCurrent["CardUserObjectAbbr"] = subRow.CardUserObjectAbbr
-            dicEventCurrent["CardUserInstance"] = subRow.CardUserInstance
-            dicEventCurrent["CardUserNumber"] = subRow.CardUserNumber
-            dicEventCurrent["CardUserSiteCode"] = subRow.CardUserSiteCode
-            dicEventCurrent["EventArg"] = subRow.EventArg
-            dicEventCurrent["FloorName"] = subRow.FloorName
             
+            recordNumber = row.ID
+            eventName = dicEventExpected["EventName"]
             for key, value in dicEventExpected.iteritems():
                 if key in ("ID", "EventName"):
                     continue
-                errMessage = "Verify content '%s' in access_event table for id '%s' failed"%(key, recordNumber)
-                current = dicEventCurrent[key]
+                errMessage = "Verify content '%s' of event type '%s' in access_event table for id '%s' failed"%(key, eventName, recordNumber)
+                current = row.__getattribute__(key)
                 expected = value
-                if key == "EventType":
+                if key in ("EventType", "EventArg") and value is not None and value != "":
                     expected = int(value)
-                self.perform(self.assertEqual, current, expected, errMessage)
+                if key == "CardUserObjectAbbr" and value == "":    # special case dealing
+                    expected = "CU" 
+                if key == "CardUserName" and current is not None:  # special case dealing
+                    current = current.rstrip()
+                if key == "DeviceDoorObjectName" and current is not None: # special case dealing
+                    current = current.rstrip()
+                if key == "SiteName":
+                    self.perform(self.assertTrue, current in expected, errMessage)
+                else:
+                    self.perform(self.assertEqual, current, expected, errMessage)
                 
-        
         
     def _getEventInfo(self, row):
         """ convert and return dict by alarmText """
         dicEvent = {"ID"                       : None,
-                     "SiteName"                 : self.testData.siteName,
+                     "SiteName"                 : row.EventId,
                      "EventType"                : None, 
                      "EventName"                : None,
                      "DeviceDoorRef"            : None,
@@ -329,37 +297,44 @@ class TestCase(TestCaseTemplate):
                      "CardUserSiteCode"         : None,
                      "EventArg"                 : None,
                      "FloorName"                : None }
-        dicEvent["ID"] = row.RecNo
+        #dicEvent["ID"] = row.RecNo
         
         alarmText = row.pAlarmText
         dicAlarmText = self._getAlarmTextInfo(alarmText)
         result = dicAlarmText["Event"].split(" (")
-        dicEvent["EventType"] = (result[1][:-1]).strip()
         dicEvent["EventName"] = (result[0]).strip()
-        dicEvent["DeviceDoorRef"] = dicAlarmText["DCRef"].strip()
-        dicEvent["DeviceDoorObjectName"] = dicAlarmText["DCName"].strip()
-        result = dicEvent["DeviceDoorRef"].split(".")
-        dicEvent["DeviceDoorDeviceNumber"] = result[0].strip()
-        result = self._splitObjectRef(result[1].strip())
-        dicEvent["DeviceDoorObjectAbbr"] = result[0]
-        dicEvent["DeviceDoorObjectInstance"] = result[1] 
-        dicEvent["EventArg"] = dicAlarmText["Arg"].strip()
-        
-        if ACCESS_EVENT_TYPES[dicEvent["EventName"]] == "CU":
-            dicEvent["CardUserName"] = dicAlarmText["CUName"].strip()
-            result = dicAlarmText["CURef"].strip()
-            result = result.split(".")
-            if len(result) > 1:
-                result = result[1]
+        if dicEvent["EventName"] in ACCESS_EVENT_TYPES:
+            dicEvent["EventType"] = (result[1][:-1]).strip()
+            dicEvent["DeviceDoorRef"] = dicAlarmText["DCRef"].strip()
+            if dicAlarmText["DCName"] is not None:
+                dicEvent["DeviceDoorObjectName"] = dicAlarmText["DCName"].strip()
             else:
-                result = result[0]
-            result = self._splitObjectRef(result)
-            dicEvent["CardUserObjectAbbr"] = result[0]
-            dicEvent["CardUserInstance"] = result[1]
-            result = dicAlarmText["Card"].strip()
-            result = result.split("(")
-            dicEvent["CardUserNumber"] = result[0].strip()
-            dicEvent["CardUserSiteCode"] = (result[1][:-1]).strip()
+                dicEvent["DeviceDoorObjectName"] = dicAlarmText["DCName"]
+            result = dicEvent["DeviceDoorRef"].split(".")
+            dicEvent["DeviceDoorDeviceNumber"] = result[0].strip()
+            result = self._splitObjectRef(result[1].strip())
+            dicEvent["DeviceDoorObjectAbbr"] = result[0]
+            dicEvent["DeviceDoorObjectInstance"] = result[1] 
+            dicEvent["EventArg"] = dicAlarmText["Arg"].strip()
+        
+            if ACCESS_EVENT_TYPES[dicEvent["EventName"]] == "CU":
+                if dicAlarmText["CUName"] is not None:
+                    dicEvent["CardUserName"] = dicAlarmText["CUName"].strip()
+                else:
+                    dicEvent["CardUserName"] = dicAlarmText["CUName"]
+                result = dicAlarmText["CURef"].strip()
+                result = result.split(".")
+                if len(result) > 1:
+                    result = result[1]
+                else:
+                    result = result[0]
+                result = self._splitObjectRef(result)
+                dicEvent["CardUserObjectAbbr"] = result[0]
+                dicEvent["CardUserInstance"] = result[1]
+                result = dicAlarmText["Card"].strip()
+                result = result.split("(")
+                dicEvent["CardUserNumber"] = result[0].strip()
+                dicEvent["CardUserSiteCode"] = (result[1][:-1]).strip()
             
         return dicEvent
             
@@ -385,7 +360,7 @@ class TestCase(TestCaseTemplate):
         start = len(result["DCRef"]) + 1
         alarmText = alarmText[start:]
         eventName = ((result["Event"].split(" ("))[0]).strip()
-        if ACCESS_EVENT_TYPES[eventName] == "CU":
+        if (eventName in ACCESS_EVENT_TYPES) and (ACCESS_EVENT_TYPES[eventName] == "CU"):
             arrAlarmText = alarmText.split(",")
             result["CURef"] = arrAlarmText[0]
             start = len(result["CURef"]) + 1
@@ -398,10 +373,17 @@ class TestCase(TestCaseTemplate):
             result["Arg"] = arrAlarmText[0]
             start = len(result["Arg"]) + 1
             alarmText = alarmText[start:]
+            alarmText = alarmText.rstrip()    # removing new line char from the end
             arrAlarmText = alarmText.split("\n")
-            result["DCName"] = arrAlarmText[1]
-            result["CUName"] = arrAlarmText[2]
-        elif ACCESS_EVENT_TYPES[eventName] == "DC":
+            try:
+                result["DCName"] = arrAlarmText[1]
+            except:
+                result["DCName"] = None
+            try:
+                result["CUName"] = arrAlarmText[2]
+            except:
+                result["CUName"] = None
+        elif (eventName in ACCESS_EVENT_TYPES) and (ACCESS_EVENT_TYPES[eventName] == "DC"):
             arrAlarmText = alarmText.split(",")
             result["Arg"] = arrAlarmText[0]
             start = len(result["Arg"]) + 1
@@ -414,7 +396,8 @@ class TestCase(TestCaseTemplate):
             start = len(result["Arg"])
             alarmText = alarmText[start:]
             arrAlarmText = alarmText.split("\n")
-            result["DCName"] = arrAlarmText[1]
+            try: result["DCName"] = arrAlarmText[1]
+            except: pass
             
         return result
     
