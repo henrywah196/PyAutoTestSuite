@@ -51,7 +51,7 @@ class TestCaseTemplate(unittest.TestCase):
         self.verificationErrors = []
         self.addCleanup(self._verifyErrors)
     
-    def getCurrentTestName(self,):
+    def getCurrentTestName(self):
         return self._testMethodName
         
     def setCurrentTestDoc(self, testMethodDocString):

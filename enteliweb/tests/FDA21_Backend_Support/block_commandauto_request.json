@@ -1,0 +1,29 @@
+[ 
+  
+ { "object_type" : "AI", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_AI220"},
+ 
+ { "object_type" : "BO", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_BO220"},
+ 
+ { "object_type" : "MV", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_MV220"},
+ 
+ { "object_type" : "CAL", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_CAL220"},
+ 
+ { "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_SCH220"},
+ 
+ { "object_type" : "TL", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_TL220"},
+ 
+ { "object_type" : "EV", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_EV220"},
+ 
+ { "object_type" : "CO", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_CO220"},
+ 
+ { "object_type" : "AT", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_AT220"},
+ 
+ { "object_type" : "LO", "site" : "$LocalSite", "device_number" : "2200", "instance_number" : "220", "object_name" : "Henry_Test_LO220"},
+ 
+ { "object_type" : "LC", "site" : "$LocalSite", "device_number" : "2200", "instance_number" : "220", "object_name" : "Henry_Test_LC220"},
+ 
+ { "object_type" : "MO", "site" : "$LocalSite", "device_number" : "2200", "instance_number" : "220", "object_name" : "Henry_Test_MO220"},
+ 
+ { "object_type" : "AST", "site" : "$LocalSite", "device_number" : "2200", "instance_number" : "220", "object_name" : "Henry_Test_AST220"}
+ 
+]

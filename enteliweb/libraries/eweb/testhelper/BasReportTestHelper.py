@@ -418,7 +418,7 @@ class BasReportTestHelper(object):
             result.name = element.get("name")
             elements = element.getchildren()
             if len(elements) > 0:
-                result.append(len(elements))
+                #result.append(len(elements))
                 for elem in elements:
                     result.append(self._propertyValueObjComposer(elem))
             return result
@@ -619,6 +619,17 @@ class BasReportTestHelper(object):
     
     def isPropertyExisting(self, siteName, deviceNumber, objectReference, propertyName, reTry=3):
         """ helper to verify if the specified object reference contain the specified property """
+        
+        # verify if property name containing sub property
+        propertyNameList = propertyName.split('.')
+        propertyName = propertyNameList[0]
+        
+        # verify if property name is array list with wild card
+        array_list_with_wildcard = False
+        if "[*]" in propertyName:
+            array_list_with_wildcard = True
+            propertyName = re.sub('\[\*\]$', '', propertyName)
+        
         url = "%s/wsbac/getproperty?ObjRef=//%s/%s.%s.%s"%(self.base_url, siteName, deviceNumber, objectReference, propertyName)
         self.r = self._getRequest(url)
         if self.r is None:
@@ -632,6 +643,12 @@ class BasReportTestHelper(object):
             root = etree.fromstring(self.r.content)
             elemObject = root.find("./Object")
             element = (elemObject.getchildren())[0]
+            if array_list_with_wildcard:
+                elements = element.getchildren()
+                if len(elements) > 0:
+                    element = elements[0]
+                else:
+                    return False
             status = element.get("status")
             if status == "OK":
                 return True
@@ -915,9 +932,14 @@ class BasReportTestHelper(object):
         
         propertyValueInfo = self.getPropertyValue(siteName, deviceNumber, objectReference, propertyName[0])
         
+        propertyValueInfoList = []
         if isinstance(propertyValueInfo, list):      # list or array
-            pass
+            propertyValueInfoList = propertyValueInfo
         else:
+            propertyValueInfoList.append(propertyValueInfo)
+            
+        result = []
+        for propertyValueInfo in propertyValueInfoList:
             currentPropertyValue = None
             currentPropertyDataType = None
             if len(propertyName) > 1:
@@ -965,37 +987,43 @@ class BasReportTestHelper(object):
             # dealing with special marker 'NULL'
             if propertyValue.lower() == "null":
                 isNull = self.propertyValueIsNull(siteName, deviceNumber, objectReference, propertyName[0])
-                return self._valueCompareNull(isNull, operator)
+                result.append(self._valueCompareNull(isNull, operator))
             
             # dealing with Priority_Array
             elif "Priority_Array" in propertyName[0]:
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
-                return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
+                result.append(self._valueComparePresentValue(currentPropertyValue, propertyValue, operator))
             
             # dealing property with multiple data type, such as Present_Value
             elif propertyName[0] in ("Present_Value", "Manual_Override", "Schedule_Default"):
                 self.siteName        = siteName
                 self.deviceNumber    = deviceNumber
                 self.objectReference = objectReference
-                return self._valueComparePresentValue(currentPropertyValue, propertyValue, operator)
+                result.append(self._valueComparePresentValue(currentPropertyValue, propertyValue, operator))
             
             # dealing with number value
             elif currentPropertyDataType in ("Signed", "Unsigned", "Real"):
-                return self._valueCompareNumber(currentPropertyValue, propertyValue, operator)
+                result.append(self._valueCompareNumber(currentPropertyValue, propertyValue, operator))
             
             # dealing with string value
             elif currentPropertyDataType in ("Text", "Bitlist", "Ref", "Device Object Property Reference"):
-                return self._valueCompareString(currentPropertyValue, propertyValue, operator)
+                result.append(self._valueCompareString(currentPropertyValue, propertyValue, operator))
             
             # dealing with date time value
             elif currentPropertyDataType in ("Time Date", "Time", "Date"):
-                return self._valueCompareDateTime(currentPropertyDataType, currentPropertyValue, propertyValue, operator)
+                result.append(self._valueCompareDateTime(currentPropertyDataType, currentPropertyValue, propertyValue, operator))
             
             # dealing with other value for exactly match
             elif currentPropertyDataType in ("Object Id", "Boolean", "Enumeration", "Octet"):
-                return self._valueCompare(currentPropertyValue, propertyValue, operator)
+                result.append(self._valueCompare(currentPropertyValue, propertyValue, operator))
+                
+        if True in result:
+            return True
+        else:
+            return False
+            
             
     def _valueCompare(self, valueCurrent, valueExpected, operator):
         """ the basic value compare """

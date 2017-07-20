@@ -1,0 +1,11 @@
+[ 
+  
+ { "object_type" : "DEV", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "1300", "object_name" : "Henry_Test_DEV1300", "property_name" : "Time_Sync_Timer", "property_value" : "12345678", "property_name_verify" : "Time_Sync_Timer", "property_value_verify" : "%dynamic%"},
+ 
+ { "object_type" : "PI", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_PI220", "property_name" : "Reset", "property_value" : "1", "property_name_verify" : "Last_Reset", "property_value_verify" : "%dynamic%"},
+ 
+ { "object_type" : "LO", "site" : "$LocalSite", "device_number" : "2200", "instance_number" : "220", "object_name" : "Henry_Test_LO220", "property_name" : "Identify_Active", "property_value" : "1", "property_name_verify" : "Identify_Active", "property_value_verify" : "%dynamic%"},
+ 
+ { "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "220", "object_name" : "Henry_Test_SCH220", "property_name" : "Weekly_Schedule", "property_value" : "%dynamic%", "property_name_verify" : "Weekly_Schedule", "property_value_verify" : "%dynamic%"}
+ 
+]

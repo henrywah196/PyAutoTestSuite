@@ -1,0 +1,52 @@
+[ 
+  {
+    "Description"     : "Array of Group_Property 01",
+    "Report Name"     : "Array of Group_Property 01",
+    "Report Title"    : "Array of Group_Property 01",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["MT"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Trend_Log_List[*].reference", "<>", "*_Buffer*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  },
+  
+   {
+    "Description"     : "Array of Group_Property 02",
+    "Report Name"     : "Array of Group_Property 02",
+    "Report Title"    : "Array of Group_Property 02",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "*",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["DC"],
+                            "Instance"       : "*",
+                            "Property Logic" : "AND",
+                            "Properties"     : [  
+							                      ["Input_Array[*].inputRef", "=", "*CR1.*"]
+							                   ]
+						  }
+						],
+	"Dynamic Columns" : [
+	                      {"Heading" : "ObjectID",       "Property" : "Object_Ref "},
+	                      {"Heading" : "Name",           "Property" : "Object_Name "},
+	                      {"Heading" : "Device Number",  "Property" : "Device_Number ", "Visible" : false},
+	                      {"Heading" : "Device Name",    "Property" : "Device_Name ",   "Visible" : false}
+	                    ],
+	"Sort and Group"  : {"Sort By" : ["Device Number", "Sort Ascending"], "Group By" : "Device Number"}
+  }
+
+]
