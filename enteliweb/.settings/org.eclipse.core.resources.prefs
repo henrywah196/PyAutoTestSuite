@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//Utilities/populate_log_table.py=utf-8
 encoding//tests/Access_Activity_Report/DB_Test/DB_Test.py=utf-8
 encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity/Card_Access_Activity_Report.py=utf-8
 encoding//tests/Access_Activity_Report/Sanity_Test/Card_Access_Activity/EWEB_22010.py=utf-8

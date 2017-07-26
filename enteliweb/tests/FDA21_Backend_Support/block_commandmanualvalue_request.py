@@ -412,7 +412,7 @@ class TestCase(TestCaseTemplate):
             root = etree.fromstring(self.r.content)
             self.csrf_token = root.get("_csrfToken")
             if not self.csrf_token:
-                raise Exception("Login to enteliWEB '%s' using REST API failed"%self.Host)
+                raise Exception("Login to enteliWEB '%s' using REST API failed:\n%s"%(self.Host, self.r.text))
         
         
     def _get_request(self, url, retry=3):

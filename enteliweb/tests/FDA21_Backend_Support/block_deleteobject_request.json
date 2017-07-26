@@ -1,15 +1,15 @@
 [ 
   
- { "object_type" : "AI", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_AI100"},
+ { "object_type" : "AI", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_AI100"},
  
- { "object_type" : "BO", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_BO100"},
+ { "object_type" : "BO", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_BO100"},
  
- { "object_type" : "MV", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_MV100"},
+ { "object_type" : "MV", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_MV100"},
  
- { "object_type" : "PG", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_PG100"},
+ { "object_type" : "PG", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_PG100"},
  
- { "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_SCH100"},
+ { "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_SCH100"},
  
- { "object_type" : "TL", "site" : "$LocalSite", "device_number" : "1300", "instance_number" : "100", "object_name" : "Henry_Test_TL100"}
+ { "object_type" : "TL", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "100", "object_name" : "Henry_Test_TL100"}
  
 ]

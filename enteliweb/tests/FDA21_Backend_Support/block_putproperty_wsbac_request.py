@@ -151,13 +151,13 @@ class TestCase(TestCaseTemplate):
         self._testMethodDoc = "Request 'wsbac/putproperty' for '%s' without ESignature will be blocked if feature is enabled"%test_data.getObjRef()
         
         if test_data.object_type == "DEV":
-            self._test_DEV(test_data)
+            self._test_DEV()
         elif test_data.object_type == "PI":
-            self._test_PI(test_data)
+            self._test_PI()
         elif test_data.object_type == "LO":
-            self._test_LO(test_data)
+            self._test_LO()
         elif test_data.object_type == "SCH":
-            self._test_SCH(test_data)
+            self._test_SCH()
         
         
     @data(*getTestingData())   
@@ -167,13 +167,13 @@ class TestCase(TestCaseTemplate):
         self._testMethodDoc = "Request 'wsbac//putproperty' for %s with invalid ESignature will be blocked if feature is enabled"%test_data.getObjRef()
         
         if test_data.object_type == "DEV":
-            self._test_DEV(test_data)
+            self._test_DEV()
         elif test_data.object_type == "PI":
-            self._test_PI(test_data)
+            self._test_PI()
         elif test_data.object_type == "LO":
-            self._test_LO(test_data)
+            self._test_LO()
         elif test_data.object_type == "SCH":
-            self._test_SCH(test_data)
+            self._test_SCH()
         
     
     @data(*getTestingData())
@@ -183,13 +183,13 @@ class TestCase(TestCaseTemplate):
         self._testMethodDoc = "Request 'wsbac//putproperty' for %s with valid ESignature will get through if feature is enabled"%test_data.getObjRef()
         
         if test_data.object_type == "DEV":
-            self._test_DEV(test_data)
+            self._test_DEV()
         elif test_data.object_type == "PI":
-            self._test_PI(test_data)
+            self._test_PI()
         elif test_data.object_type == "LO":
-            self._test_LO(test_data)
+            self._test_LO()
         elif test_data.object_type == "SCH":
-            self._test_SCH(test_data)
+            self._test_SCH()
         
         
     @data(*getTestingData())  
@@ -199,18 +199,19 @@ class TestCase(TestCaseTemplate):
         self._testMethodDoc = "Request 'wsbac//putproperty' for %s without ESignature will get through if feature is disabled"%test_data.getObjRef()
         
         if test_data.object_type == "DEV":
-            self._test_DEV(test_data)
+            self._test_DEV()
         elif test_data.object_type == "PI":
-            self._test_PI(test_data)
+            self._test_PI()
         elif test_data.object_type == "LO":
-            self._test_LO(test_data)
+            self._test_LO()
         elif test_data.object_type == "SCH":
-            self._test_SCH(test_data)
+            self._test_SCH()
         
         
-    def _test_SCH(self, test_data):
+    def _test_SCH(self):
+        test_data = self.test_data
         
-        value_new     =    ('<PropertyList>'
+        self.value_new  =    ('<PropertyList>'
                               '<Object ref="//$LocalSite/1300.SCH220">'
                                 '<Array name="Weekly_Schedule">'
                                   '<Group name="Weekly_Schedule" arrayIndex="1">'
@@ -239,7 +240,7 @@ class TestCase(TestCaseTemplate):
                               '</Object>'
                             '</PropertyList>')
         
-        value_old     =    ('<PropertyList>'
+        self.value_old  =    ('<PropertyList>'
                               '<Object ref="//$LocalSite/1300.SCH220">'
                                 '<Array name="Weekly_Schedule">'
                                   '<Group name="Weekly_Schedule" arrayIndex="1"><List name="day-schedule"></List></Group>'
@@ -262,44 +263,30 @@ class TestCase(TestCaseTemplate):
             self._enable_esignature()
         
             # send POST request
-            test_data.property_value = value_new
+            test_data.property_value = self.value_new
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_NEEDS_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked()
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            self.assertEqual(response_content, value_old, "Verify object property not being changed failed")
-        
+            self._verify_state_not_changed_sch()
+            
         elif "test02" in self._testMethodDoc:
             
             # enable ESignature feature
             self._enable_esignature()
         
             # send POST request
-            test_data.property_value = value_new
+            test_data.property_value = self.value_new
             self._wsbac_putproperty(test_data, self.password)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_INVALID_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked(no_signature=False)
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            self.assertEqual(response_content, value_old, "Verify object property not being changed failed")
-        
+            self._verify_state_not_changed_sch()
+            
         elif "test03" in self._testMethodDoc:
             
             # enable ESignature feature
@@ -307,43 +294,45 @@ class TestCase(TestCaseTemplate):
         
             # send POST request
             password_base64 = base64.b64encode(self.password)
-            test_data.property_value = value_new
+            test_data.property_value = self.value_new
             self._wsbac_putproperty(test_data, password_base64)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
             
             # verify Object property get changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            self.assertEqual(response_content, value_new, "Verify object property get changed failed")
-        
+            self._verify_state_changed_sch()
+            
         elif "test04" in self._testMethodDoc:
             
             # send POST request
-            test_data.property_value = value_new
+            test_data.property_value = self.value_new
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
         
             # verify Object property get changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            self.assertEqual(response_content, value_new, "Verify object property get changed failed")
+            self._verify_state_changed_sch()
+            
+            
+    def _verify_state_not_changed_sch(self):
+        # verify Object property not being changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        self.assertEqual(response_content, self.value_old, "Verify object property not being changed failed")
+        
+        
+    def _verify_state_changed_sch(self):
+        # verify Object property get changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        self.assertEqual(response_content, self.value_new, "Verify object property get changed failed")
+            
             
     
-    def _test_LO(self, test_data):
+    def _test_LO(self):
+        test_data = self.test_data
         
         # create testing BACnet object
         self._wsbac_createobject(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name)
@@ -357,18 +346,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_NEEDS_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked()
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            result = ('status="OK"' in response_content) and ('value="0"' in response_content)
-            self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
+            self._verify_state_not_changed_lo()
             
         elif "test02" in self._testMethodName:
             
@@ -379,19 +360,11 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, self.password)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_INVALID_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked(no_signature=False)
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            result = ('status="OK"' in response_content) and ('value="0"' in response_content)
-            self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
-        
+            self._verify_state_not_changed_lo()
+            
         elif "test03" in self._testMethodName:
             
             # enable ESignature feature
@@ -402,42 +375,42 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, password_base64)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
             
             # verify Object property get changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            result = int(value_after_test) > 0
-            self.assertTrue(result, "Verify object property get changed failed.")
-        
+            self._verify_state_changed_lo()
+            
         elif "test04" in self._testMethodName:
             
             # send POST request
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
         
             # verify Object property get changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            result = int(value_after_test) > 0
-            self.assertTrue(result, "Verify object property get changed failed.")
+            self._verify_state_changed_lo()
+            
+            
+    def _verify_state_not_changed_lo(self):
+        # verify Object property not being changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        result = ('status="OK"' in response_content) and ('value="0"' in response_content)
+        self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
+        
+        
+    def _verify_state_changed_lo(self):
+        # verify Object property get changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        value_after_test = self._fetch_property_value(response_content)
+        result = int(value_after_test) > 0
+        self.assertTrue(result, "Verify object property get changed failed.")
+            
     
-    
-    def _test_PI(self, test_data):
+    def _test_PI(self):
+        test_data = self.test_data
         
         # create testing BACnet object
         self._wsbac_createobject(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name)
@@ -445,7 +418,7 @@ class TestCase(TestCaseTemplate):
         # obtain current value of PI.Last_Reset
         self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
         response_content = self.r.content
-        value_before_test = self._fetch_property_value(response_content)
+        self.value_before_test = self._fetch_property_value(response_content)
         #print "Before test, PI.Last_Reset = %s"%value_before_test
         
         if "test01" in self._testMethodName:
@@ -457,19 +430,11 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_NEEDS_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked()
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            result = ('status="OK"' in response_content) and ('value="%s"'%value_before_test in response_content)
-            self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
-            
+            self._verify_state_not_changed_pi()
+             
         elif "test02" in self._testMethodName:
             
             # enable ESignature feature
@@ -479,18 +444,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, self.password)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_INVALID_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked(no_signature=False)
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            result = ('status="OK"' in response_content) and ('value="%s"'%value_before_test in response_content)
-            self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
+            self._verify_state_not_changed_pi()
             
         elif "test03" in self._testMethodName:
             
@@ -504,20 +461,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, password_base64)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
             
             # verify Object property get changed
-            time.sleep(3)
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            self.assertNotEqual(value_before_test, value_after_test, "Verify object property get changed failed.")
-        
+            self._verify_state_changed_pi()
             
         elif "test04" in self._testMethodName:
             
@@ -527,27 +474,36 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data)
         
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
         
             # verify Object property get changed
-            time.sleep(3)
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            self.assertNotEqual(value_before_test, value_after_test, "Verify object property get changed failed.")
+            self._verify_state_changed_pi()
+            
+    
+    def _verify_state_not_changed_pi(self):
+        # verify Object property not being changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        result = ('status="OK"' in response_content) and ('value="%s"'%self.value_before_test in response_content)
+        self.assertTrue(result, "Verify object property not being changed failed. Respond content '%s' is not expected"%response_content)
+        
+    
+    def _verify_state_changed_pi(self):
+        # verify Object property get changed
+        time.sleep(3)
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        value_after_test = self._fetch_property_value(response_content)
+        self.assertNotEqual(self.value_before_test, value_after_test, "Verify object property get changed failed.")
     
     
-    def _test_DEV(self, test_data):
+    def _test_DEV(self):
+        test_data = self.test_data
         
         # obtain current value of DEV.Time_Sync_Timer
         self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
         response_content = self.r.content
-        value_before_test = self._fetch_property_value(response_content)
+        self.value_before_test = self._fetch_property_value(response_content)
         #print "Before test, DEV.Time_Sync_Timer = %s"%value_before_test
         
         if "test01" in self._testMethodName:
@@ -559,19 +515,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data)
             
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_NEEDS_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked()
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            result = int(value_before_test) >= int(value_after_test)
-            self.assertTrue(result, "Verify object property not being changed failed")
+            self._verify_state_not_changed_dev()
         
         elif "test02" in self._testMethodName:
             
@@ -582,19 +529,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, self.password)
             
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
-        
-            response_content = self.r.content
-            result = "QERR_CODE_INVALID_SIGNATURE" in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_blocked(no_signature=False)
             
             # verify Object property not being changed
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            result = int(value_before_test) >= int(value_after_test)
-            self.assertTrue(result, "Verify object property not being changed failed")
+            self._verify_state_not_changed_dev()
         
         elif "test03" in self._testMethodName:
             
@@ -606,21 +544,10 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data, password_base64)
             
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
             
             # verify Object property get changed
-            time.sleep(5)
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            #print "After test, DEV.Time_Sync_Timer = %s"%value_after_test
-            result = int(value_before_test) < int(value_after_test)
-            self.assertTrue(result, "Verify object property being changed failed")
+            self._verify_state_changed_dev()
         
         elif "test04" in self._testMethodName:
             
@@ -628,21 +555,54 @@ class TestCase(TestCaseTemplate):
             self._wsbac_putproperty(test_data)
             
             # verify response
-            result = self.r.status_code
-            self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
-        
-            response_content = self.r.content
-            result = 'status="OK"' in response_content
-            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            self._verify_request_getthrough()
             
             # verify Object property get changed
-            time.sleep(5)
-            self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.property_name_verify)
-            response_content = self.r.content
-            value_after_test = self._fetch_property_value(response_content)
-            #print "After test, DEV.Time_Sync_Timer = %s"%value_after_test
-            result = int(value_before_test) < int(value_after_test)
-            self.assertTrue(result, "Verify object property being changed failed")
+            self._verify_state_changed_dev()
+            
+            
+    def _verify_state_not_changed_dev(self):
+        # verify Object property not being changed
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        value_after_test = self._fetch_property_value(response_content)
+        result = int(self.value_before_test) >= int(value_after_test)
+        self.assertTrue(result, "Verify object property not being changed failed")
+        
+        
+    def _verify_state_changed_dev(self):
+        # verify Object property get changed
+        time.sleep(5)
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.property_name_verify)
+        response_content = self.r.content
+        value_after_test = self._fetch_property_value(response_content)
+        #print "After test, DEV.Time_Sync_Timer = %s"%value_after_test
+        result = int(self.value_before_test) < int(value_after_test)
+        self.assertTrue(result, "Verify object property being changed failed")
+            
+            
+    def _verify_request_getthrough(self):
+        # verify response
+        result = self.r.status_code
+        self.assertEqual(result, 200, "Expect request return HTTP code 200 failed")
+        
+        response_content = self.r.content
+        result = 'status="OK"' in response_content
+        self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+            
+            
+    def _verify_request_blocked(self, no_signature=True):
+        # verify response
+        result = self.r.status_code
+        self.assertEqual(result, 403, "Expect request return HTTP code 403 failed")
+        
+        response_content = self.r.content
+        if no_signature:
+            result = "QERR_CODE_NEEDS_SIGNATURE" in response_content
+            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
+        else:
+            result = "QERR_CODE_INVALID_SIGNATURE" in response_content
+            self.assertTrue(result, "Respond content '%s' is not expected"%response_content)
             
     
     def _fetch_property_value(self, xml_string):

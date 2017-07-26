@@ -146,10 +146,7 @@ class TestCase(TestCaseTemplate):
         self._verify_request_blocked()
         
         # verify Object not being created
-        self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name, "Object_Name")
-        response_content = self.r.content
-        result = 'status="QERR_CLASS_OBJECT::QERR_CODE_UNKNOWN_OBJECT"' in response_content
-        self.assertTrue(result, "Verify object not being created failed. Respond content '%s' is not expected"%response_content)
+        self._verify_state_not_changed()
         
     
     @data(*getTestingData())    
@@ -168,11 +165,7 @@ class TestCase(TestCaseTemplate):
         self._verify_request_blocked(no_signature=False)
         
         # verify Object not being created
-        self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name, "Object_Name")
-        response_content = self.r.content
-        result = 'status="QERR_CLASS_OBJECT::QERR_CODE_UNKNOWN_OBJECT"' in response_content
-        self.assertTrue(result, "Verify object not being created failed. Respond content '%s' is not expected"%response_content)
-        
+        self._verify_state_not_changed()
         
         
     @data(*getTestingData())    
@@ -192,11 +185,7 @@ class TestCase(TestCaseTemplate):
         self._verify_request_getthrough()
         
         # verify Object being created
-        self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name, "Object_Name")
-        response_content = self.r.content
-        result = 'status="OK"' in response_content
-        self.assertTrue(result, "Verify object being created failed. Respond content '%s' is not expected"%response_content)
-        
+        self._verify_state_changed()
     
     @data(*getTestingData())    
     def test04_createobject_wsbac(self, test_data):
@@ -214,7 +203,19 @@ class TestCase(TestCaseTemplate):
         self._verify_request_getthrough()
         
         # verify Object being created
-        self._wsbac_getproperty(test_data.site, test_data.device_number, test_data.object_type, test_data.instance_number, test_data.object_name, "Object_Name")
+        self._verify_state_changed()
+        
+    def _verify_state_not_changed(self):
+        # verify Object not being created
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.object_name, "Object_Name")
+        response_content = self.r.content
+        result = 'status="QERR_CLASS_OBJECT::QERR_CODE_UNKNOWN_OBJECT"' in response_content
+        self.assertTrue(result, "Verify object not being created failed. Respond content '%s' is not expected"%response_content)
+        
+        
+    def _verify_state_changed(self):
+        # verify Object being created
+        self._wsbac_getproperty(self.test_data.site, self.test_data.device_number, self.test_data.object_type, self.test_data.instance_number, self.test_data.object_name, "Object_Name")
         response_content = self.r.content
         result = 'status="OK"' in response_content
         self.assertTrue(result, "Verify object being created failed. Respond content '%s' is not expected"%response_content)
