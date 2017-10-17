@@ -1,0 +1,11 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "LO",  "site" : "$LocalSite", "device_number" : "2100", "instance_number" : "220", "object_name" : "Henry_Test_LO220"},
+ 
+ { "device_category" : "delta", "object_type" : "BO",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_BO220"},
+ 
+ { "device_category" : "delta", "object_type" : "MV",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_MV220"},
+ 
+ { "device_category" : "delta", "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_SCH220"}
+ 
+]

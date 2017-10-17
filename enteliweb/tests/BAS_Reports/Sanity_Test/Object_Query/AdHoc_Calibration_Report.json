@@ -4,7 +4,7 @@
     "Report Name"     : "Sanity Test AdHoc Calibration Report",
     "Report Title"    : "Sanity Test AdHoc Calibration Report",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200,2200",
+    "Device Range"    : "1300,2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI"],

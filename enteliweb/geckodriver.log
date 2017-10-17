@@ -1,221 +1,293 @@
-1498772978532	geckodriver	INFO	Listening on 127.0.0.1:64314
-1498772980294	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.jvS2gLcQa1fW
-1498772980330	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1498772980338	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64325
-1498772980657	addons.manager	DEBUG	Application has been upgraded
-1498772980682	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
-1498772980684	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
-1498772980686	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
-1498772980688	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
-1498772980688	addons.manager	DEBUG	Starting provider: XPIProvider
-1498772980689	addons.xpi	DEBUG	startup
-1498772980689	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
-1498772980690	addons.xpi	INFO	Mapping aushelper@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
-1498772980690	addons.xpi	INFO	Mapping e10srollout@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1498772980690	addons.xpi	INFO	Mapping firefox@getpocket.com to C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1498772980690	addons.xpi	INFO	Mapping webcompat@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
-1498772980691	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-1498772980691	addons.xpi	DEBUG	checkForChanges
-1498772980691	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
-1498772980691	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
-1498772980692	addons.xpi	DEBUG	New add-on aushelper@mozilla.org in app-system-defaults
-1498772980693	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
-1498772980693	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
-1498772980693	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
-1498772980694	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
-1498772980694	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
-1498772980694	addons.xpi	DEBUG	New add-on webcompat@mozilla.org in app-system-defaults
-1498772980694	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
-1498772980695	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
-1498772980695	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1498772980695	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"aushelper@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","st":1497651063739},"e10srollout@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","st":1497651063739},"firefox@getpocket.com":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","st":1497651063738},"webcompat@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","st":1497651063695}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1497651063740}}}
-1498772980702	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.jvS2gLcQa1fW\extensions.json
-1498772980703	addons.xpi-utils	DEBUG	New add-on aushelper@mozilla.org installed in app-system-defaults
+1501901233043	geckodriver	INFO	Listening on 127.0.0.1:11937
+1501901235040	mozprofile::profile	INFO	Using profile path C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.170xnEYJ0Y09
+1501901235075	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1501901235090	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11944
+1501901235312	addons.manager	DEBUG	Application has been upgraded
+1501901235335	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1501901235336	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1501901235339	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1501901235341	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1501901235341	addons.manager	DEBUG	Starting provider: XPIProvider
+1501901235342	addons.xpi	DEBUG	startup
+1501901235342	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1501901235343	addons.xpi	INFO	Mapping aushelper@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1501901235343	addons.xpi	INFO	Mapping e10srollout@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1501901235343	addons.xpi	INFO	Mapping firefox@getpocket.com to C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1501901235344	addons.xpi	INFO	Mapping webcompat@mozilla.org to C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1501901235344	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1501901235344	addons.xpi	DEBUG	checkForChanges
+1501901235345	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1501901235345	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1501901235346	addons.xpi	DEBUG	New add-on aushelper@mozilla.org in app-system-defaults
+1501901235346	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
+1501901235346	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
+1501901235347	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1501901235347	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
+1501901235348	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1501901235348	addons.xpi	DEBUG	New add-on webcompat@mozilla.org in app-system-defaults
+1501901235348	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
+1501901235348	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1501901235349	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1501901235349	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"aushelper@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","st":1499186365063},"e10srollout@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","st":1499186365062},"firefox@getpocket.com":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","st":1499186365061},"webcompat@mozilla.org":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","st":1499186365055}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1499186365064}}}
+1501901235356	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\hwang\AppData\Local\Temp\rust_mozprofile.170xnEYJ0Y09\extensions.json
+1501901235357	addons.xpi-utils	DEBUG	New add-on aushelper@mozilla.org installed in app-system-defaults
 *** Blocklist::_loadBlocklistFromFile: blocklist is disabled
-1498772980710	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980710	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
-1498772980712	DeferredSave.extensions.json	DEBUG	Starting timer
-1498772980714	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980714	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
-1498772980718	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980718	addons.xpi-utils	DEBUG	New add-on webcompat@mozilla.org installed in app-system-defaults
-1498772980721	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980722	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
-1498772980724	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980724	addons.manager	DEBUG	Registering startup change 'installed' for aushelper@mozilla.org
-1498772980730	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
-1498772980733	addons.xpi	DEBUG	Calling bootstrap method install on aushelper@mozilla.org version 2.0
-1498772980734	addons.xpi-utils	DEBUG	Make addon app-system-defaults:aushelper@mozilla.org visible
-1498772980734	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980734	addons.manager	DEBUG	Registering startup change 'installed' for e10srollout@mozilla.org
-1498772980734	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1498772980736	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 1.10
-1498772980737	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
-1498772980737	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980738	addons.manager	DEBUG	Registering startup change 'installed' for firefox@getpocket.com
-1498772980738	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1498772980741	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0.5
-1498772980741	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
-1498772980741	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980741	addons.manager	DEBUG	Registering startup change 'installed' for webcompat@mozilla.org
-1498772980742	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
-1498772980743	addons.xpi	DEBUG	Calling bootstrap method install on webcompat@mozilla.org version 1.0
-1498772980743	addons.xpi-utils	DEBUG	Make addon app-system-defaults:webcompat@mozilla.org visible
-1498772980743	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980743	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
-1498772980744	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980744	addons.xpi	DEBUG	Updating XPIState for {"id":"aushelper@mozilla.org","syncGUID":"{042bd5a5-dc04-4de2-a01d-c2997f862796}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Application Update Service Helper","description":"Sets value(s) in the update url based on custom checks.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","installDate":1497651063739,"updateDate":1497651063739,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8488,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
-1498772980744	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
-1498772980744	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"{dca4e270-92f7-4af3-b4e4-4e11b022cd74}","location":"app-system-defaults","version":"1.10","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","installDate":1497651063739,"updateDate":1497651063739,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8145,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
-1498772980744	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
-1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"{a53aa327-97a2-492b-93ab-851bc2b5e4e2}","location":"app-system-defaults","version":"1.0.5","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","installDate":1497651063738,"updateDate":1497651063738,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":920283,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
-1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
-1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"webcompat@mozilla.org","syncGUID":"{fecd56c4-ccf7-457b-8e88-cdb2d5a997ab}","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Web Compat","description":"Urgent post-release fixes for web compatibility.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","installDate":1497651063695,"updateDate":1497651063695,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":1456,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
-1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
-1498772980745	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"{e55621da-42c4-41b0-8a65-0cc9d4bb114d}","location":"app-global","version":"52.2.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1497651063740,"updateDate":1497651063740,"applyBackgroundUpdates":1,"skinnable":true,"size":19587,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.0","maxVersion":"52.2.0"}],"targetPlatforms":[],"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false}
-1498772980745	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1498772980746	DeferredSave.extensions.json	DEBUG	Save changes
-1498772980746	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1498772980746	addons.xpi-utils	DEBUG	Updating add-on states
-1498772980748	addons.xpi-utils	DEBUG	Writing add-ons list
-1498772980750	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
-1498772980750	addons.xpi	DEBUG	Calling bootstrap method startup on aushelper@mozilla.org version 2.0
-1498772980752	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1498772980752	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.10
-1498772980752	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1498772980753	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0.5
-1498772980754	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
-1498772980754	addons.xpi	DEBUG	Calling bootstrap method startup on webcompat@mozilla.org version 1.0
-1498772980755	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1498772980756	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1498772980756	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1498772980756	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1498772980756	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1498772980756	addons.manager	DEBUG	Starting provider: GMPProvider
-1498772980762	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1498772980762	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1498772980762	addons.manager	DEBUG	Starting provider: PluginProvider
-1498772980762	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1498772980762	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1498772980762	addons.manager	DEBUG	Completed startup sequence
-1498772980956	Marionette	INFO	Listening on port 64325
-1498772981088	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1498772981088	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1498772981089	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-1498772981108	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
-1498772981108	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
-1498772981108	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
-1498772981110	DeferredSave.extensions.json	DEBUG	Starting write
-1498772981239	DeferredSave.extensions.json	DEBUG	Write succeeded
-1498772981240	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 19
-1498772981796	Marionette	WARN	Using deprecated data structure for setting timeouts
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-1498773041603	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/52.2.0/20170607123825/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
-1498773041716	addons.productaddons	INFO	Completed downloading document
-1498773041818	addons.productaddons	INFO	downloadXHR File download. status=200
-1498773041821	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-3515ed
-1498773042491	addons.productaddons	INFO	downloadXHR File download. status=200
-1498773042493	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-ba3b87
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-1498773066848	Marionette	INFO	New connections will no longer be accepted
-[Child 11776] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.44, line 2687: unreachable code after return statement
-1498770822271	Marionette	INFO	New connections will no longer be accepted
-[Child 964] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
- 512
-[Child 9372] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
-.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 45811: unreachable code after return statement
-JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-1498189819094	Marionette	INFO	New connections will no longer be accepted
-[Child 7680] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
-vascript/ext6/ext-all-debug.js?4.6.31, line 2687: unreachable code after return statement
-1498189305833	Marionette	INFO	New connections will no longer be accepted
-[Child 7288] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+1501901235364	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235364	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
+1501901235366	DeferredSave.extensions.json	DEBUG	Starting timer
+1501901235367	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235367	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
+1501901235372	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235372	addons.xpi-utils	DEBUG	New add-on webcompat@mozilla.org installed in app-system-defaults
+1501901235375	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235376	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1501901235378	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235379	addons.manager	DEBUG	Registering startup change 'installed' for aushelper@mozilla.org
+1501901235384	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1501901235387	addons.xpi	DEBUG	Calling bootstrap method install on aushelper@mozilla.org version 2.0
+1501901235387	addons.xpi-utils	DEBUG	Make addon app-system-defaults:aushelper@mozilla.org visible
+1501901235388	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235388	addons.manager	DEBUG	Registering startup change 'installed' for e10srollout@mozilla.org
+1501901235388	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1501901235390	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 1.10
+1501901235391	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
+1501901235391	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235392	addons.manager	DEBUG	Registering startup change 'installed' for firefox@getpocket.com
+1501901235392	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1501901235395	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0.5
+1501901235395	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
+1501901235395	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235395	addons.manager	DEBUG	Registering startup change 'installed' for webcompat@mozilla.org
+1501901235395	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1501901235397	addons.xpi	DEBUG	Calling bootstrap method install on webcompat@mozilla.org version 1.0
+1501901235397	addons.xpi-utils	DEBUG	Make addon app-system-defaults:webcompat@mozilla.org visible
+1501901235397	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235397	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1501901235397	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235397	addons.xpi	DEBUG	Updating XPIState for {"id":"aushelper@mozilla.org","syncGUID":"{e8a6dccc-c955-4607-b1f7-e17abaa54f3e}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Application Update Service Helper","description":"Sets value(s) in the update url based on custom checks.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\aushelper@mozilla.org.xpi","installDate":1499186365063,"updateDate":1499186365063,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8488,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.1","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1501901235397	addons.xpi	DEBUG	getModTime: Recursive scan of aushelper@mozilla.org
+1501901235398	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"{cbccbed3-2afe-405f-884e-4f5725f950c7}","location":"app-system-defaults","version":"1.10","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","installDate":1499186365062,"updateDate":1499186365062,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":8145,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.1","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1501901235398	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1501901235398	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"{85f51c7c-5cb2-476d-bee0-7e06fd899dd8}","location":"app-system-defaults","version":"1.0.5","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","installDate":1499186365061,"updateDate":1499186365061,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":920283,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.1","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1501901235398	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1501901235398	addons.xpi	DEBUG	Updating XPIState for {"id":"webcompat@mozilla.org","syncGUID":"{288fcf89-7d32-4eb3-b25a-0b942823eb3b}","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Web Compat","description":"Urgent post-release fixes for web compatibility.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\features\\webcompat@mozilla.org.xpi","installDate":1499186365055,"updateDate":1499186365055,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":1456,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.1","maxVersion":"52.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false}
+1501901235398	addons.xpi	DEBUG	getModTime: Recursive scan of webcompat@mozilla.org
+1501901235399	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"{f905c58e-7580-4461-8a4d-f8f4ec3a8834}","location":"app-global","version":"52.2.1","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1499186365064,"updateDate":1499186365064,"applyBackgroundUpdates":1,"skinnable":true,"size":19587,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.2.1","maxVersion":"52.2.1"}],"targetPlatforms":[],"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false}
+1501901235399	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1501901235400	DeferredSave.extensions.json	DEBUG	Save changes
+1501901235400	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1501901235400	addons.xpi-utils	DEBUG	Updating add-on states
+1501901235401	addons.xpi-utils	DEBUG	Writing add-ons list
+1501901235404	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi
+1501901235404	addons.xpi	DEBUG	Calling bootstrap method startup on aushelper@mozilla.org version 2.0
+1501901235406	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1501901235406	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.10
+1501901235406	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1501901235407	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0.5
+1501901235408	addons.xpi	DEBUG	Registering manifest for C:\Program Files (x86)\Mozilla Firefox\browser\features\webcompat@mozilla.org.xpi
+1501901235408	addons.xpi	DEBUG	Calling bootstrap method startup on webcompat@mozilla.org version 1.0
+1501901235410	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1501901235410	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1501901235410	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1501901235410	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1501901235410	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1501901235411	addons.manager	DEBUG	Starting provider: GMPProvider
+1501901235417	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1501901235417	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1501901235417	addons.manager	DEBUG	Starting provider: PluginProvider
+1501901235418	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1501901235418	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1501901235418	addons.manager	DEBUG	Completed startup sequence
+1501901235647	Marionette	INFO	Listening on port 11944
+1501901235811	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1501901235811	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1501901235811	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1501901235832	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1501901235832	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1501901235832	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1501901235836	DeferredSave.extensions.json	DEBUG	Starting write
+1501901236020	DeferredSave.extensions.json	DEBUG	Write succeeded
+1501901236021	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 19
+1501901236683	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+1501901296488	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/52.2.1/20170627155318/WINNT_x86-msvc-x64/en-GB/esr/Windows_NT%206.1.1.0%20(x64)/default/default/update.xml
+1501901296564	addons.productaddons	INFO	Completed downloading document
+1501901296997	addons.productaddons	INFO	downloadXHR File download. status=200
+1501901297002	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-d39eb3
+1501901297465	addons.productaddons	INFO	downloadXHR File download. status=200
+1501901297469	addons.productaddons	INFO	Downloaded file will be saved to C:\Users\hwang\AppData\Local\Temp\tmpaddon-21642c
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+1501901353197	Marionette	INFO	New connections will no longer be accepted
+[Child 11064] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+12
+[Child 7612] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+1501898873968	Marionette	INFO	New connections will no longer be accepted
+[Child 8348] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+
+ing: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+1501890481526	DeferredSave.extensions.json	DEBUG	Save changes
+1501890481526	DeferredSave.extensions.json	DEBUG	Starting timer
+1501890481547	DeferredSave.extensions.json	DEBUG	Starting write
+1501890481550	DeferredSave.extensions.json	DEBUG	Write succeeded
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 45811: unreachable code after return statement
+JavaScript warning: http://delsry3860.network.com/enteliweb/javascript/ext6/ext-all-debug.js?4.6.83, line 2687: unreachable code after return statement
+1501892730911	Marionette	INFO	New connections will no longer be accepted
+[Child 13060] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+w=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,992) Status: 10 format 1
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,992) Status: 10 format 1
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,992) Status: 10 format 1
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,992) Status: 10 format 1
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+[GFX1-]: Failed 2 buffer db=00000000 dw=00000000 for 0, 0, 1280, 904
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,968) Status: 10 format 1
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1280,992) Status: 10 format 1
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1920,1048) Status: 10 format 0
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1920,1048) Status: 10 format 0
+??????????p: N[GFX1]: Failed to create similar cairo surface! Size: Size(1920,1048) Status: 10 format 0

@@ -1,0 +1,17 @@
+[
+  {
+    "Description"     : "Regression Test EWEB_23194",
+    "Report Name"     : "Regression Test EWEB_23194",
+    "Report Title"    : "Regression Test EWEB_23194",
+    "Site"            : "$LocalSite",
+    "Device Range"    : "1300,7314,2100-2200",
+    "Object Filters"  : [
+	                      {
+						    "Type"           : ["*"],
+                            "Instance"       : "*"
+						  }
+						]
+	
+  }
+  
+]

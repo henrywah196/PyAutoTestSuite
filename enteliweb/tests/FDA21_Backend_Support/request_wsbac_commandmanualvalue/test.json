@@ -1,0 +1,5 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "AI", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AI220", "property_name" : "Present_Value", "property_value" : "50", "property_name_verify" : "Present_Value", "property_value_verify" : "50"}
+
+]

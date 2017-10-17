@@ -4,7 +4,7 @@
     "Report Name"        : "Sanity Test Commissioning Sheets Report",
     "Report Title"       : "Sanity Test Commissioning Sheets Report",
     "Site"               : "$LocalSite",
-    "Device Range"       : "1200-1499, 1501-2200",
+    "Device Range"       : "1300, 2100-2200",
     "Object Filters"     : [
 	                         {
 						       "Type"           : ["IP", "OP"],

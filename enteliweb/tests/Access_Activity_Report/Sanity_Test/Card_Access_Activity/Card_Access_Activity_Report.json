@@ -4,7 +4,7 @@
     "Report Name"        : "Card Access Activity 1 - 1",
     "Report Title"       : "Card Access Activity 1 - 1",
     "Site"               : "$LocalSite",
-    "Date Range"         : ["Custom", ["%today%", "09:10:21"], ["%tomorrow%", "09:10:21"]],
+    "Date Range"         : ["Custom", ["%today%", "09:10:21"], ["%tomorrow%", "01:02:03"]],
     "Card Users"         : {
 	                         "Find Option" : "Find by Keyword",
 	                         "Filter By"   : "*"
@@ -30,7 +30,7 @@
 	                         "Find Option" : "Find by Keyword",
 	                         "Filter By"   : "*"
 	                       },
-	"Events"             : [2, 4, 7, 9, 11]
+	"Events"             : [2, 4]
   },
   
   {
@@ -40,13 +40,8 @@
     "Site"               : "$LocalSite",
     "Date Range"         : ["Previous 10 Days"],
     "Card Users"         : {
-	                         "Find Option" : "Find and Select by Name",
-	                         "Filter By"   : [
-	                                           ["Clarke, Randy", "CU9424"],
-	                                           ["Hawkins, Paul", "CU8359"],
-	                                           ["Lawrence, Jesse", "CU6060"],
-	                                           ["Washington, Thomas", "CU26934"]
-	                                         ]
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "Wa*"
 	                       },
 	"Doors"              : {
 	                         "Find Option" : "Find by Keyword",
@@ -62,13 +57,8 @@
     "Site"               : "$LocalSite",
     "Date Range"         : ["Previous 30 Days"],
     "Card Users"         : {
-                             "Find Option" : "Find and Select by Name",
-	                         "Filter By"   : [
-	                                           ["Clarke, Randy", "CU9424"],
-	                                           ["Hawkins, Paul", "CU8359"],
-	                                           ["Lawrence, Jesse", "CU6060"],
-	                                           ["Washington, Thomas", "CU26934"]
-	                                         ]
+                             "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "Wa*"
 	                       },
 	"Doors"              : {
 	                         "Find Option" : "Find by Keyword",

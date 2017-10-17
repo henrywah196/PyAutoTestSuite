@@ -1,0 +1,11 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "AI", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AI220", "command" : "ManualValue", "commandvalue" : "22", "property_name_verify" : "Present_Value",  "property_value_verify" : "22"},
+ 
+ { "device_category" : "delta", "object_type" : "BO", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_BO220", "command" : "ManualOn",    "commandvalue" : "null", "property_name_verify" : "Present_Value", "property_value_verify" : "active"},
+ 
+ { "device_category" : "3rd",   "object_type" : "AI", "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3",   "object_name" : "3rd_Test_AI3",     "command" : "ManualValue", "commandvalue" : "50", "property_name_verify" : "Present_Value", "property_value_verify" : "50"},
+ 
+ { "device_category" : "3rd",   "object_type" : "BO", "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3", "object_name" :   "3rd_Test_BO3",     "command" : "ManualOn",    "commandvalue" : "null", "property_name_verify" : "Present_Value", "property_value_verify" : "active"}
+
+]

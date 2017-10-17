@@ -1,0 +1,28 @@
+[ 
+
+ { 
+  "description"    : "Verify Auto Log off for personal dashboard page", 
+  "url"            : "/dashboard/display/dashboard/5c911d19-7629-11e7-af9e-080027f18e75", 
+  "page flag"      : ["title", "tester's Dashboard"]
+ },
+ 
+ { 
+  "description"    : "Verify Auto Log off for enterprise dashboard page", 
+  "url"            : "/dashboard/display/dashboard/419d9268-7651-11e7-a948-080027f18e75", 
+  "page flag"      : ["title", "Test Enterprise Dashboard"]
+ },
+ 
+  { 
+  "description"    : "Verify Auto Log off for svg graphic page", 
+  "url"            : "/svggraphics/graphics/%24LocalSite/maintenance_viper/maintenance%20viper.asp", 
+  "page flag"      : ["string", "enteliTOUCH Device 1300</text>"]
+ },
+  
+ { 
+  "description"    : "Verify Auto Log off for AV object page", 
+  "url"            : "/object/display/ObjRef/%2F%2F%24LocalSite%2F1300.AV5/", 
+  "page flag"      : ["title", "Henry_Test_AV5"]
+ }
+ 
+ 
+]

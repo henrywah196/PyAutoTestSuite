@@ -1,8 +1,8 @@
 [
   {
     "Description"     : "sort ascending alphabetically",
-    "Report Name"     : "test sorting alphabetically",
-    "Report Title"    : "test sorting alphabetically",
+    "Report Name"     : "test sorting alphabetically 01",
+    "Report Title"    : "test sorting alphabetically 01",
     "Site"            : "$LocalSite",
     "Device Range"    : "1300",
     "Object Filters"  : [
@@ -21,8 +21,8 @@
   
   {
     "Description"     : "sort descending alphabetically",
-    "Report Name"     : "test sorting alphabetically",
-    "Report Title"    : "test sorting alphabetically",
+    "Report Name"     : "test sorting alphabetically 02",
+    "Report Title"    : "test sorting alphabetically 02",
     "Site"            : "$LocalSite",
     "Device Range"    : "1300",
     "Object Filters"  : [
@@ -41,10 +41,10 @@
   
   {
     "Description"     : "in group sort ascending alphabetically",
-    "Report Name"     : "test sorting alphabetically",
-    "Report Title"    : "test sorting alphabetically",
+    "Report Name"     : "test sorting alphabetically 03",
+    "Report Title"    : "test sorting alphabetically 03",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1300-1499, 1501-2200",
+    "Device Range"    : "1300, 2100-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP"],
@@ -62,10 +62,10 @@
   
   {
     "Description"     : "in group sort descending alphabetically",
-    "Report Name"     : "test sorting alphabetically",
-    "Report Title"    : "test sorting alphabetically",
+    "Report Name"     : "test sorting alphabetically 04",
+    "Report Title"    : "test sorting alphabetically 04",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1300-1499, 1501-2200",
+    "Device Range"    : "1300, 2100-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["IP"],

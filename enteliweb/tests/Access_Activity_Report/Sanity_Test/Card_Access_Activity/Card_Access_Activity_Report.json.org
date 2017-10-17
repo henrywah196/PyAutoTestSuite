@@ -1,0 +1,102 @@
+[
+  {
+    "Description"        : "date and time range",
+    "Report Name"        : "Card Access Activity 1 - 1",
+    "Report Title"       : "Card Access Activity 1 - 1",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Custom", ["%today%", "09:10:21"], ["%tomorrow%", "01:02:03"]],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : "ALL"
+  },
+  
+  {
+    "Description"        : "specific event types",
+    "Report Name"        : "Card Access Activity 2 - 2",
+    "Report Title"       : "Card Access Activity 2 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["This Week"],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [2, 4]
+  },
+  
+  {
+    "Description"        : "specific card users",
+    "Report Name"        : "Card Access Activity 3 - 2",
+    "Report Title"       : "Card Access Activity 3 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Previous 10 Days"],
+    "Card Users"         : {
+	                         "Find Option" : "Find and Select by Name",
+	                         "Filter By"   : [
+	                                           ["Clarke, Randy", "CU9424"],
+	                                           ["Hawkins, Paul", "CU8359"],
+	                                           ["Lawrence, Jesse", "CU6060"],
+	                                           ["Washington, Thomas", "CU26934"]
+	                                         ]
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : "ALL"
+  },
+  
+  {
+    "Description"        : "specific card users and event types",
+    "Report Name"        : "Card Access Activity 4 - 1",
+    "Report Title"       : "Card Access Activity 4 - 1",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["Previous 30 Days"],
+    "Card Users"         : {
+                             "Find Option" : "Find and Select by Name",
+	                         "Filter By"   : [
+	                                           ["Clarke, Randy", "CU9424"],
+	                                           ["Hawkins, Paul", "CU8359"],
+	                                           ["Lawrence, Jesse", "CU6060"],
+	                                           ["Washington, Thomas", "CU26934"]
+	                                         ]
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Events"             : [12, 65]
+  },
+  
+  {
+    "Description"        : "specific doors",
+    "Report Name"        : "Card Access Activity 5 - 2",
+    "Report Title"       : "Card Access Activity 5 - 2",
+    "Site"               : "$LocalSite",
+    "Date Range"         : ["This Week"],
+    "Card Users"         : {
+	                         "Find Option" : "Find by Keyword",
+	                         "Filter By"   : "*"
+	                       },
+	"Doors"              : {
+	                         "Find Option" : "Find and Select by Name",
+	                         "Filter By"   : [
+	                                           ["Golf Café", "DC40113"],
+	                                           ["<div id=\"Casino\">", "DC10108"],
+	                                           ["<div id=\"Kumi\">", "DC10117"],
+	                                           ["Gamma_RM_0527", "DC40527"]
+	                                         ]
+	                       },
+	"Events"             : "ALL"
+  }
+  
+]

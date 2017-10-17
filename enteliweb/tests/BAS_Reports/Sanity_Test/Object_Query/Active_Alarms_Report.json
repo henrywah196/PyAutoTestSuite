@@ -4,7 +4,7 @@
     "Report Name"     : "Sanity Test Active Alarms Report1",
     "Report Title"    : "Sanity Test Active Alarms Report1",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200,2200",
+    "Device Range"    : "1300,2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["EV"],

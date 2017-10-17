@@ -31,7 +31,6 @@ from tests.Access_Activity_Report.Sanity_Test.Transactions_by_Event_Type import 
 ######################
 suites = []
 suites.append(DB_Test.TestCase.suite())
-'''
 suites.append(Card_Access_Activity_Report.TestCase.suite())
 suites.append(Card_Access_Activity_by_Card_User_Report.TestCase.suite())
 suites.append(Card_User_Activity_by_Door_Report.TestCase.suite())
@@ -43,7 +42,6 @@ suites.append(EWEB_22010_2.TestCase.suite())
 suites.append(EWEB_22010_3.TestCase.suite())
 suites.append(EWEB_22010_4.TestCase.suite())
 suites.append(EWEB_22010_5.TestCase.suite())
-'''
 
 
 

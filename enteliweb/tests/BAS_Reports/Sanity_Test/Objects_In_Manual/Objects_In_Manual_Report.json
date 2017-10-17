@@ -23,7 +23,7 @@
     "Report Name"        : "Sanity Test Objects In Manual Report",
     "Report Title"       : "Sanity Test Objects In Manual Report",
     "Site"               : "$LocalSite",
-    "Device Range"       : "1300, 2200-3000, 5000",
+    "Device Range"       : "1300, 2100-2200",
     "Object Filters"     : [
 	                         {
 						       "Type"           : ["*"],

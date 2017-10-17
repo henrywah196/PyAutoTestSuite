@@ -1,0 +1,17 @@
+[ 
+
+ { 
+  "description"    : "Verify session time out for device list page", 
+  "url"            : "/site/display/site/%24LocalSite", 
+  "page flag"      : ["string", "<span id=\"headertitle\" style=\"\">$LocalSite</span>"],
+  "action"         : "reload"
+ },
+ 
+ { 
+  "description"    : "Verify session time out for object list page", 
+  "url"            : "/device/display/#%2F%2F%24LocalSite%2F1300.DEV1300", 
+  "page flag"      : ["title", "enteliTOUCH Device 1300 (1300)"],
+  "action"         : "reload"
+ }
+ 
+]

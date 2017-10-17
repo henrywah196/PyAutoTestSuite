@@ -8,7 +8,6 @@ import settings
 import datetime
 import calendar
 from __builtin__ import classmethod
-from test.test_pyclbr import ClassMethodType
 
 
 # DateTime Format

@@ -1,0 +1,14 @@
+[ 
+  
+ {
+   "obj1"    : { "device_category" : "delta", "object_type" : "AI",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AI220", "object_name_new" : "Test_Henry_AI220"},
+ 
+   "obj2"    : { "device_category" : "delta", "object_type" : "BO",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_BO220", "object_name_new" : "Test_Henry_BO220"},
+   
+   "find"    : "Henry_Test_",
+   
+   "replace" : "Test_Henry_"
+ }
+ 
+ 
+]

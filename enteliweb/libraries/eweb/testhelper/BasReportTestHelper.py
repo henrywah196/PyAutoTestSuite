@@ -51,8 +51,7 @@ IP_OP_TYPE_MAPPING = {
                                 "CR", "CSV", "CU",
                                 "DBI", "DC", "DEL", "DER", "DES", "DEV", "DEW", "DG", "DGL",
                                 "DIA", "DPV", "DRT", "DTP", "DTV", "DV", "DWS",
-                                "EC", "EL", "EMN", "ENS", "EV", "EVA", "EVC", "EVF", "EVL",
-                                "EVN", "EVR", "EVS", "EVX",
+                                "EC", "EL", "EMN", "ENS", "EV", "EVC", "EVF", "EVL", "EVR", "EVS",
                                 "FIL",
                                 "GCS", "GGP", "GRP", "GW", "GWD", "GWF", "GWS", "GWT",
                                 "HID", "HS",
@@ -67,7 +66,6 @@ IP_OP_TYPE_MAPPING = {
                                 "SS", "SSC", "SSS", "STA", "SUA", "SUG", "SV",
                                 "TL", "TLM", "TNS", "TPV", "TRM", "TV",
                                 "UNS", 
-                                "V2P", "VGS",
                                 "WDL", "WFS", "WSD",
                                 "ZBS", "ZC", "ZF", "ZN", "ZP"
                              ]
@@ -117,20 +115,21 @@ OBJECT_TYPE_MAPPING = {
                         "cu"                    : "CU",
                         "cms"                   : "CMS",
                         
-                        "date-pattern-value"     : "DPV",
-                        "datetime-pattern-value" : "DTP",
-                        "datetime-value"         : "DTV",
-                        "date-value"             : "DV",
-                        "dbi"                    : "DBI",
-                        "dc"                     : "DC",
-                        "del"                    : "DEL", 
-                        "der"                    : "DER",
-                        "des"                    : "DES",
-                        "device"                 : "DEV",
-                        "dg"                     : "DG",
-                        "dgl"                    : "DGL",
-                        "drt"                    : "DRT",
-                        "dws"                    : "DWS",
+                        "date-pattern-value"       : "DPV",
+                        "datetime-pattern-value"   : "DTP",
+                        "datetime-value"           : "DTV",
+                        "date-value"               : "DV",
+                        "dbi"                      : "DBI",
+                        "dc"                       : "DC",
+                        "del"                      : "DEL", 
+                        "der"                      : "DER",
+                        "des"                      : "DES",
+                        "device"                   : "DEV",
+                        "dew"                      : "DEW",
+                        "dg"                       : "DG",
+                        "dgl"                      : "DGL",
+                        "drt"                      : "DRT",
+                        "dws"                      : "DWS",
                         
                         
                         "ec"                    : "EC",
@@ -221,6 +220,10 @@ OBJECT_TYPE_MAPPING = {
                         "uns"                   : "UNS",
                         "vgs"                   : "VGS",
                         
+                        "wdl"                   : "WDL",
+                        "wsd"                   : "WSD",
+                        
+                        "zbs"                   : "ZBS",
                         "zc"                    : "ZC",
                         "zf"                    : "ZF"
                         

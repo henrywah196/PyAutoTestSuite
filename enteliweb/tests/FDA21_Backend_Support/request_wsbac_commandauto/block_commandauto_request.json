@@ -1,0 +1,33 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "AI",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AI220"},
+ 
+ { "device_category" : "delta", "object_type" : "BO",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_BO220"},
+ 
+ { "device_category" : "delta", "object_type" : "MV",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_MV220"},
+ 
+ { "device_category" : "delta", "object_type" : "CAL", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_CAL220"},
+ 
+ { "device_category" : "delta", "object_type" : "SCH", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_SCH220"},
+ 
+ { "device_category" : "delta", "object_type" : "TL",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_TL220"},
+ 
+ { "device_category" : "delta", "object_type" : "EV",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_EV220"},
+ 
+ { "device_category" : "delta", "object_type" : "CO",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_CO220"},
+ 
+ { "device_category" : "delta", "object_type" : "AT",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AT220"},
+ 
+ { "device_category" : "delta", "object_type" : "LO",  "site" : "$LocalSite", "device_number" : "2100", "instance_number" : "220", "object_name" : "Henry_Test_LO220"},
+ 
+ { "device_category" : "delta", "object_type" : "LC",  "site" : "$LocalSite", "device_number" : "2100", "instance_number" : "220", "object_name" : "Henry_Test_LC220"},
+ 
+ { "device_category" : "delta", "object_type" : "MO",  "site" : "$LocalSite", "device_number" : "2100", "instance_number" : "220", "object_name" : "Henry_Test_MO220"},
+ 
+ { "device_category" : "delta", "object_type" : "AST", "site" : "$LocalSite", "device_number" : "2100", "instance_number" : "220", "object_name" : "Henry_Test_AST220"},
+ 
+ { "device_category" : "3rd",   "object_type" : "AI",  "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3",   "object_name" : "3rd_Test_AI3"},
+ 
+ { "device_category" : "3rd",   "object_type" : "BO",  "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3",   "object_name" : "3rd_Test_BO3"}
+ 
+]

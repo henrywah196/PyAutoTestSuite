@@ -13,9 +13,9 @@ def populate_log_table(total=1000000):
     
     webgroup = WebGroupDBObj()
     sql_string = """insert into log (Timestamp, LogType, User, Action, Object, Property, OldValue, NewValue, Result, Comment)
-                    values(str_to_date('2017-01-05 21:30:09', '%Y-%m-%d %H:%i:%s'), 'ADMIN', '642c64d1-4e58-11e3-af19-0050569611b3', 
-                    'CREATE', '57bb5fd3-ce5f-11e2-8e7e-0050569611b3', 'User', '', 'Delta', 
-                    'QERR_CLASS_LICENSE::QERR_CODE_LICENSESERVER_NO_LICENSE', 'faked testing log record');"""
+                    values(str_to_date('2017-01-05 21:30:09', '%Y-%m-%d %H:%i:%s'), 'ADMIN', '231b1eb6-f579-11e6-92dc-080027f18e75', 
+                    'LOGIN', '231b1eb6-f579-11e6-92dc-080027f18e75', 'User', '', '', 
+                    'OK', 'faked testing log record');"""
     i = 1
     while i <= total:
         webgroup.cursor.execute(sql_string)

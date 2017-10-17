@@ -1,0 +1,9 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "PG", "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_PG220", "property_name" : "Program_Change", "property_value" : "halt", "property_name_verify" : "Program_State", "property_value_verify" : "halted"},
+ 
+ { "device_category" : "3rd",   "object_type" : "PG", "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3",   "object_name" : "3rd_Test_PG3",     "property_name" : "Program_Change", "property_value" : "ready", "property_name_verify" : "Program_Change", "property_value_verify" : "ready"}
+ 
+
+ 
+]

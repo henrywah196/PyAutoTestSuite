@@ -1,0 +1,7 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "AV",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "4194303", "object_name" : "Henry_Test_AV100"},
+ 
+ { "device_category" : "delta", "object_type" : "CU",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "", "object_name" : "Henry_Test_CU100"}
+ 
+]

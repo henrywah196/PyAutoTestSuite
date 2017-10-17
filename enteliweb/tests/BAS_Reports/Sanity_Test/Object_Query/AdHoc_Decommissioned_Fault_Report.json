@@ -4,7 +4,7 @@
     "Report Name"     : "Sanity Test Decommissioned - Fault Report1",
     "Report Title"    : "Sanity Test Decommissioned - Fault Report1",
     "Site"            : "$LocalSite",
-    "Device Range"    : "1200,2200",
+    "Device Range"    : "1300,2100-2200",
     "Object Filters"  : [
 	                      {
 						    "Type"           : ["AI", "BI", "MI", "AO", "BO", "MO"],

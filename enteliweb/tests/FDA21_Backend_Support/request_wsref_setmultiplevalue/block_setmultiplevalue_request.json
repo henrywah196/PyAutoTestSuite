@@ -1,0 +1,14 @@
+[ 
+  
+ { "device_category" : "delta", "object_type" : "AI",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_AI220", "property_name" : "COV_Increment",   "property_value" : "3",                  "property_name_verify" : "COV_Increment",   "property_value_verify" : "3"},
+ 
+ { "device_category" : "delta", "object_type" : "BO",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_BO220", "property_name" : "Commission_Flag", "property_value" : "commissioned",       "property_name_verify" : "Commission_Flag", "property_value_verify" : "commissioned"},
+ 
+ { "device_category" : "delta", "object_type" : "MV",  "site" : "$LocalSite", "device_number" : "1000", "instance_number" : "220", "object_name" : "Henry_Test_MV220", "property_name" : "Description",     "property_value" : "ESignature Testing", "property_name_verify" : "Description",     "property_value_verify" : "ESignature Testing"},
+ 
+ { "device_category" : "3rd",   "object_type" : "TLM", "site" : "$LocalSite", "device_number" : "9901", "instance_number" : "3",   "object_name" : "3rd_Test_TLM3",    "property_name" : "Buffer_Size",     "property_value" : "150",                "property_name_verify" : "Buffer_Size",     "property_value_verify" : "150"},
+ 
+ { "device_category" : "eweb",  "object_type" : "FIL", "site" : "$LocalSite", "device_number" : "933395", "instance_number" : "220",   "object_name" : "Henry_Test_FIL220",    "property_name" : "Read_Only",     "property_value" : "1",            "property_name_verify" : "Read_Only",       "property_value_verify" : "1"}
+
+ 
+]
